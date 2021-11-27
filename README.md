@@ -8,7 +8,7 @@ proxylogon, proxyshell, proxyoracle full chain exploit tool
 
 ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exchange Server! [Slides](https://i.blackhat.com/USA21/Wednesday-Handouts/us-21-ProxyLogon-Is-Just-The-Tip-Of-The-Iceberg-A-New-Attack-Surface-On-Microsoft-Exchange-Server.pdf) [Video](https://www.youtube.com/watch?v=5mqid-7zp8k)
 
-## most of the exploit is recoded with golang to speed up...:)
+## most of the exploit is recoded with golang to speed up... and for learning golang purpose :)
 
  - ![](./pics/logo-black.png)
 
