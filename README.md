@@ -108,7 +108,7 @@ https://xxx.xxx.xxx.xxx/autodiscover/autodiscover.json?@foo.com/mapi/nspi/?&Emai
 
  - may update later to support detect from mass url file
 
- - ![](pics/proxyshell1.png)
+ - ![](pics/proxyshell11.png)
 
 ## step1: generate proxyshell specified webshell payload.
 
