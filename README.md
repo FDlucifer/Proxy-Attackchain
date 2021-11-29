@@ -104,6 +104,12 @@ https://xxx.xxx.xxx.xxx/autodiscover/autodiscover.json?@foo.com/mapi/nspi/?&Emai
  - CVE-2021-34523 - Exchange PowerShell Backend Elevation-of-Privilege
  - CVE-2021-31207 - Post-auth Arbitrary-File-Write
 
+## simple script to confirm is proxyshell exists
+
+ - may update later to support detect from mass url file
+
+ - ![](pics/proxyshell1.png)
+
 ## step1: generate proxyshell specified webshell payload.
 
  - proxyshell_payload_gen.py
@@ -113,6 +119,7 @@ just put the webshell content you want to "webshell", then it will be fine...
  - ![](pics/proxyshell.png)
 
 
+coming soon...
 
 # proxytoken
 
