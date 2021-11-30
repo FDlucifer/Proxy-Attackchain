@@ -104,13 +104,9 @@ https://xxx.xxx.xxx.xxx/autodiscover/autodiscover.json?@foo.com/mapi/nspi/?&Emai
  - CVE-2021-34523 - Exchange PowerShell Backend Elevation-of-Privilege
  - CVE-2021-31207 - Post-auth Arbitrary-File-Write
 
-## simple script to confirm is proxyshell exists
+## let's getting started...
 
- - may update later to support detect from mass url file
-
- - ![](pics/proxyshell11.png)
-
-## step1: generate proxyshell specified webshell payload.
+generate proxyshell specified webshell payload.
 
  - proxyshell_payload_gen.py
 
@@ -118,7 +114,33 @@ just put the webshell content you want to "webshell", then it will be fine...
 
  - ![](pics/proxyshell.png)
 
-coming soon...
+then put the encoded webshell to <t:Content>...</t:Content> in chkproxyshell.go
+
+confirm proxyshell and get the sid value to generate token.
+
+ - ![](pics/proxyshell12.png)
+
+use the following py script to gen token value
+
+ - ![](pics/proxyshell13.png)
+
+confirm the token is valid
+
+ - ![](pics/proxyshell14.png)
+
+now use the token to send a email with shell attachment in, this may be saved as a draft in administrator's mailbox...
+
+ - ![](pics/proxyshell15.png)
+
+ - ![](pics/proxyshell16.png)
+
+finnaly use the following wsman python script to export The draft to webshell :)
+
+ - ![](pics/proxyshell17.png)
+
+ - ![](pics/proxyshell18.png)
+
+ - ![](pics/proxyshell19.png)
 
 # proxytoken
 
@@ -132,7 +154,7 @@ coming soon...
 
  - ![](pics/CVE-2021-42321.png)
 
-# ***more exp coming soon......***
+# ***more newest exchange exp coming soon......***
 
 # Reference (worship to orange!)
  - [Proxylogon](https://proxylogon.com/)
@@ -156,3 +178,5 @@ coming soon...
  - [Proof of Concept Exploit for Microsoft Exchange CVE-2021-34473, CVE-2021-34523, CVE-2021-31207](https://github.com/horizon3ai/proxyshell)
  - [Generate proxyshell payload by Py Permutative Encoding](https://github.com/Ridter/proxyshell_payload)
  - [CVE-2021-34473-Exchange-ProxyShell](https://github.com/je6k/CVE-2021-34473-Exchange-ProxyShell)
+ - [Exchange ProxyShell 远程代码执行漏洞复现](https://www.buaq.net/go-83692.html)
+ - [exchange-proxyshell漏洞复现及分析](https://blog.riskivy.com/exchange-proxyshell%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0%E5%8F%8A%E5%88%86%E6%9E%90/)
