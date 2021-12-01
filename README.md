@@ -149,11 +149,30 @@ finnaly use the following wsman python script to export The draft to webshell :)
 
  - ![](pics/proxytoken.png)
 
-# Exchange RCE CVE-2021-42321
+# Exchange RCE CVE-2021-42321 (target user & pass needed exploit)
 
-coming soon...
+Exchange 2016 CU 21,22 and Exchange 2019 CU 10,11. This means the only recent latest version of Exchange 2016,2019 are vulnerable to this CVE
+
+1. Create UserConfiguration with BinaryData as our Gadget Chain
+2. Request to EWS for GetClientAccessToken to trigger the Deserialization
+
+change DisableActivitySurrogateSelectorTypeCheck to True to overcome the limitation of .NET and later inject DLL to achieve mem-shell with Jscript to bypass the detection
+
+usage:
+
+use [ysoserial.net](https://github.com/pwntester/ysoserial.net) generate the command execution payload...
+
+``` bash
+./ysoserial.exe -f BinaryFormatter -g ActivitySurrogateDisableTypeCheck -o base64 -c "whoami /all" -t
+```
+
+then replace USER, PASS, target, gadgetData1 fileds you want...
+
+ - youtube channel exp prove:
 
  - ![](pics/CVE-2021-42321.png)
+
+i'm not found a proper envirenment to test the script...so test it yourself.
 
 # ***more newest exchange exp coming soon......***
 
@@ -182,3 +201,4 @@ coming soon...
  - [Exchange ProxyShell 远程代码执行漏洞复现](https://www.buaq.net/go-83692.html)
  - [exchange-proxyshell漏洞复现及分析](https://blog.riskivy.com/exchange-proxyshell%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0%E5%8F%8A%E5%88%86%E6%9E%90/)
  - [CVE-2021-33766-ProxyToken](https://github.com/demossl/CVE-2021-33766-ProxyToken)
+ - [ysoserial.net](https://github.com/pwntester/ysoserial.net)
