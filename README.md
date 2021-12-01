@@ -24,6 +24,8 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | proxytoken | [CVE-2021-33766](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-33766) | July 13, 2021 | With this vulnerability, an unauthenticated attacker can perform configuration actions on mailboxes belonging to arbitrary users. As an illustration of the impact, this can be used to copy all emails addressed to a target and account and forward them to an account controlled by the attacker. | yes |
 | Microsoft Exchange Server 远程执行代码漏洞 | [CVE-2021-42321](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-42321) | Nov 17, 2021 | Exchange Deserialization RCE | yes |
 
+***more exchange exp coming soon...***
+
 # proxylogon
 
  - ![](pics/proxylogon.png)
@@ -151,7 +153,7 @@ finnaly use the following wsman python script to export The draft to webshell :)
 
 # Exchange RCE CVE-2021-42321 (target user & pass needed exploit)
 
- - CVE-2021-42321_poc.py
+ - [CVE-2021-42321_poc.py](./CVE-2021-42321_poc.py)
 
 Exchange 2016 CU 21,22 and Exchange 2019 CU 10,11. This means the only recent latest version of Exchange 2016,2019 are vulnerable to this CVE
 
