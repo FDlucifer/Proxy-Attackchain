@@ -144,7 +144,8 @@ finnaly use the following wsman python script to export The draft to webshell :)
 
 # proxytoken
 
-coming soon...
+ - -te: is the email that you want to redirect to...
+ - -ve: is the email that you want to attack and read...
 
  - ![](pics/proxytoken.png)
 
@@ -180,3 +181,4 @@ coming soon...
  - [CVE-2021-34473-Exchange-ProxyShell](https://github.com/je6k/CVE-2021-34473-Exchange-ProxyShell)
  - [Exchange ProxyShell 远程代码执行漏洞复现](https://www.buaq.net/go-83692.html)
  - [exchange-proxyshell漏洞复现及分析](https://blog.riskivy.com/exchange-proxyshell%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0%E5%8F%8A%E5%88%86%E6%9E%90/)
+ - [CVE-2021-33766-ProxyToken](https://github.com/demossl/CVE-2021-33766-ProxyToken)
