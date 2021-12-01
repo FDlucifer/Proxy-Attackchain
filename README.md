@@ -1,6 +1,6 @@
 # Proxy-Attackchain
 
-proxylogon, proxyshell, proxyoracle full chain exploit tool
+proxylogon, proxyshell, proxyoracle, proxytoken, CVE-2021-42321 Deserialization RCE full chain exploit tool
 
 1. ProxyLogon: The most well-known and impactful Exchange exploit chain
 2. ProxyOracle: The attack which could recover any password in plaintext format of Exchange users
