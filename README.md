@@ -133,7 +133,7 @@ https://xxx.xxx.xxx.xxx/autodiscover/autodiscover.json?@foo.com/mapi/nspi/?&Emai
 
 generate proxyshell specified webshell payload.
 
- - proxyshell_payload_gen.py
+ - [proxyshell_payload_gen.py](./proxyshell_payload_gen.py)
 
 just put the webshell content you want to "webshell", then it will be fine...
 
@@ -172,10 +172,11 @@ finnaly use the following wsman python script to export The draft to webshell :)
 
  - [PROXYTOKEN: AN AUTHENTICATION BYPASS IN MICROSOFT EXCHANGE SERVER](https://www.zerodayinitiative.com/blog/2021/8/30/proxytoken-an-authentication-bypass-in-microsoft-exchange-server)
  - [CVE-2021-33766-ProxyToken](https://github.com/demossl/CVE-2021-33766-ProxyToken)
+ - Options
 
 ``` bash
--te: is the email that you want to redirect to...
--ve: is the email that you want to attack and read...
+    -te: is the email that you want to redirect to...
+    -ve: is the email that you want to attack and read...
 ```
 
  - ![](pics/proxytoken.png)
@@ -200,19 +201,6 @@ change DisableActivitySurrogateSelectorTypeCheck to True to overcome the limitat
 
 usage:
 
-use [ysoserial.net](https://github.com/pwntester/ysoserial.net) generate the command execution payload...
-
-``` bash
-./ysoserial.exe -f BinaryFormatter -g ActivitySurrogateDisableTypeCheck -o base64 -c "whoami /all" -t
-```
-
-then replace USER, PASS, target, gadgetData1 fileds you want...
-
- - youtube channel exp prove:
-
- - ![](pics/cve-2021-42321.png)
-
-i'm not found a proper envirenment to test the script...so test it yourself.
 
 
 # ProxyRelay
