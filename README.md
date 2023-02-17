@@ -23,6 +23,7 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | ProxyShell | [CVE-2021-31207](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-31207) | May 11, 2021 | Post-auth Arbitrary-File-Write leads to RCE | yes |
 | proxytoken | [CVE-2021-33766](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-33766) | July 13, 2021 | With this vulnerability, an unauthenticated attacker can perform configuration actions on mailboxes belonging to arbitrary users. As an illustration of the impact, this can be used to copy all emails addressed to a target and account and forward them to an account controlled by the attacker. | yes |
 | Microsoft Exchange Server 远程执行代码漏洞 | [CVE-2021-42321](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-42321) | Nov 17, 2021 | Exchange Deserialization RCE | yes |
+| ProxyRelay |  |  |  | yes |
 
 ***more exchange exp coming soon...***
 
@@ -30,6 +31,7 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 
  - ![](pics/proxylogon.png)
  - ![](pics/proxylogon1.png)
+ - ![](pics/proxylogon2.png)
 
 # proxyoracle
 
@@ -178,11 +180,11 @@ then replace USER, PASS, target, gadgetData1 fileds you want...
 
 i'm not found a proper envirenment to test the script...so test it yourself.
 
-# 
+# ProxyRelay
 
 
 
-# ***more newest exchange exp coming soon......***
+
 
 # Reference (worship to orange!)
  - [Proxylogon](https://proxylogon.com/)
