@@ -196,17 +196,17 @@ i'm not found a proper envirenment to test the script...so test it yourself.
 
 # Reference links
 
+## CVE-2021-42321 part links
+
+ - [CVE-2021-42321](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-42321)
+ - [Some notes about Microsoft Exchange Deserialization RCE (CVE-2021–42321)](https://peterjson.medium.com/some-notes-about-microsoft-exchange-deserialization-rce-cve-2021-42321-110d04e8852)
+
 ## proxylogon part links
 
  - [Proxylogon](https://proxylogon.com/)
  - [A New Attack Surface on MS Exchange Part 1 - ProxyLogon!](https://blog.orange.tw/2021/08/proxylogon-a-new-attack-surface-on-ms-exchange-part-1.html)
  - [ProxyLogon漏洞分析](https://hosch3n.github.io/2021/08/22/ProxyLogon%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/)
  - [复现Microsoft Exchange Proxylogon漏洞利用链](https://xz.aliyun.com/t/9305)
-
-## CVE-2021-42321 part links
-
- - [CVE-2021-42321](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-42321)
- - [Some notes about Microsoft Exchange Deserialization RCE (CVE-2021–42321)](https://peterjson.medium.com/some-notes-about-microsoft-exchange-deserialization-rce-cve-2021-42321-110d04e8852)
 
 ## proxyoracle part links
 
