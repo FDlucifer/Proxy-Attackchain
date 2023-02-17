@@ -26,8 +26,6 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | ProxyRelay |  |  |  | yes |
 
 
-***more exchange exp coming soon...***
-
 # proxylogon
 
  - ![](pics/proxylogon.png)
