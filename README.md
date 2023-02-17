@@ -8,7 +8,7 @@ proxylogon, proxyshell, proxyoracle, proxytoken, CVE-2021-42321 Deserialization 
 
 ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exchange Server! [Slides](https://i.blackhat.com/USA21/Wednesday-Handouts/us-21-ProxyLogon-Is-Just-The-Tip-Of-The-Iceberg-A-New-Attack-Surface-On-Microsoft-Exchange-Server.pdf) [Video](https://www.youtube.com/watch?v=5mqid-7zp8k)
 
-## most of the exploit is recoded with golang to speed up... and for learning golang purpose :)
+## most of the exploit is recoded with golang to practice my golang skills purpose :)
 
  - ![](./pics/logo-black.png)
 
@@ -24,6 +24,7 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | proxytoken | [CVE-2021-33766](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-33766) | July 13, 2021 | With this vulnerability, an unauthenticated attacker can perform configuration actions on mailboxes belonging to arbitrary users. As an illustration of the impact, this can be used to copy all emails addressed to a target and account and forward them to an account controlled by the attacker. | yes |
 | Microsoft Exchange Server 远程执行代码漏洞 | [CVE-2021-42321](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-42321) | Nov 17, 2021 | Exchange Deserialization RCE | yes |
 | ProxyRelay |  |  |  | yes |
+
 
 ***more exchange exp coming soon...***
 
@@ -153,7 +154,7 @@ finnaly use the following wsman python script to export The draft to webshell :)
 
  - ![](pics/proxytoken.png)
 
-# Exchange RCE CVE-2021-42321 (target user & pass needed exploit)
+# Exchange Authenticated RCE CVE-2021-42321
 
  - [CVE-2021-42321_poc.py](./CVE-2021-42321_poc.py)
 
@@ -181,6 +182,7 @@ then replace USER, PASS, target, gadgetData1 fileds you want...
 i'm not found a proper envirenment to test the script...so test it yourself.
 
 # ProxyRelay
+
 
 
 
