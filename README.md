@@ -196,28 +196,47 @@ i'm not found a proper envirenment to test the script...so test it yourself.
 
 # Reference links
 
+## proxylogon part links
+
  - [Proxylogon](https://proxylogon.com/)
  - [A New Attack Surface on MS Exchange Part 1 - ProxyLogon!](https://blog.orange.tw/2021/08/proxylogon-a-new-attack-surface-on-ms-exchange-part-1.html)
  - [ProxyLogon漏洞分析](https://hosch3n.github.io/2021/08/22/ProxyLogon%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/)
+ - [复现Microsoft Exchange Proxylogon漏洞利用链](https://xz.aliyun.com/t/9305)
+
+## CVE-2021-42321 part links
+
  - [CVE-2021-42321](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-42321)
  - [Some notes about Microsoft Exchange Deserialization RCE (CVE-2021–42321)](https://peterjson.medium.com/some-notes-about-microsoft-exchange-deserialization-rce-cve-2021-42321-110d04e8852)
+
+## proxyoracle part links
+
  - [A New Attack Surface on MS Exchange Part 2 - ProxyOracle!](https://blog.orange.tw/2021/08/proxyoracle-a-new-attack-surface-on-ms-exchange-part-2.html)
  - [ProxyOracle漏洞分析](https://hosch3n.github.io/2021/08/23/ProxyOracle%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/)
+
+## proxyshell part links
+
  - [My Steps of Reproducing ProxyShell](https://y4y.space/2021/08/12/my-steps-of-reproducing-proxyshell/)
  - [ProxyShell漏洞分析](https://hosch3n.github.io/2021/08/24/ProxyShell%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/)
  - [FROM PWN2OWN 2021: A NEW ATTACK SURFACE ON MICROSOFT EXCHANGE - PROXYSHELL!](https://www.zerodayinitiative.com/blog/2021/8/17/from-pwn2own-2021-a-new-attack-surface-on-microsoft-exchange-proxyshell)
- - [ProxyVulns](https://github.com/hosch3n/ProxyVulns)
- - [pax](https://github.com/liamg/pax)
- - [padre](https://github.com/glebarez/padre)
- - [python-paddingoracle](https://github.com/mwielgoszewski/python-paddingoracle)
  - [Reproducing The ProxyShell Pwn2Own Exploit](https://peterjson.medium.com/reproducing-the-proxyshell-pwn2own-exploit-49743a4ea9a1)
  - [ProxyShell](https://github.com/ktecv2000/ProxyShell)
- - [PROXYTOKEN: AN AUTHENTICATION BYPASS IN MICROSOFT EXCHANGE SERVER](https://www.zerodayinitiative.com/blog/2021/8/30/proxytoken-an-authentication-bypass-in-microsoft-exchange-server)
  - [A basic proxyshell scanner](https://github.com/dinosn/proxyshell)
- - [Proof of Concept Exploit for Microsoft Exchange CVE-2021-34473, CVE-2021-34523, CVE-2021-31207](https://github.com/horizon3ai/proxyshell)
  - [Generate proxyshell payload by Py Permutative Encoding](https://github.com/Ridter/proxyshell_payload)
  - [CVE-2021-34473-Exchange-ProxyShell](https://github.com/je6k/CVE-2021-34473-Exchange-ProxyShell)
  - [Exchange ProxyShell 远程代码执行漏洞复现](https://www.buaq.net/go-83692.html)
  - [exchange-proxyshell漏洞复现及分析](https://blog.riskivy.com/exchange-proxyshell%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0%E5%8F%8A%E5%88%86%E6%9E%90/)
+ - [Proof of Concept Exploit for Microsoft Exchange CVE-2021-34473, CVE-2021-34523, CVE-2021-31207](https://github.com/horizon3ai/proxyshell)
+
+## proxytoken part links
+
+ - [PROXYTOKEN: AN AUTHENTICATION BYPASS IN MICROSOFT EXCHANGE SERVER](https://www.zerodayinitiative.com/blog/2021/8/30/proxytoken-an-authentication-bypass-in-microsoft-exchange-server)
  - [CVE-2021-33766-ProxyToken](https://github.com/demossl/CVE-2021-33766-ProxyToken)
+
+## other links
+
+ - [ProxyVulns](https://github.com/hosch3n/ProxyVulns)
+ - [pax](https://github.com/liamg/pax)
+ - [padre](https://github.com/glebarez/padre)
+ - [python-paddingoracle](https://github.com/mwielgoszewski/python-paddingoracle)
  - [ysoserial.net](https://github.com/pwntester/ysoserial.net)
+ - []()
