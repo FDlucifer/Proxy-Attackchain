@@ -1,14 +1,12 @@
 # Proxy-Attackchain
 
-proxylogon, proxyshell, proxyoracle, proxytoken, CVE-2021-42321 Deserialization RCE full chain exploit tool
+proxylogon & proxyshell & proxyoracle & proxytoken & all exchange server vulns summarization :)
 
 1. ProxyLogon: The most well-known and impactful Exchange exploit chain
 2. ProxyOracle: The attack which could recover any password in plaintext format of Exchange users
 3. ProxyShell: The exploit chain demonstrated at [Pwn2Own 2021](https://twitter.com/thezdi/status/1379467992862449664) to take over Exchange and earn $200,000 bounty
 
 ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exchange Server! [Slides](https://i.blackhat.com/USA21/Wednesday-Handouts/us-21-ProxyLogon-Is-Just-The-Tip-Of-The-Iceberg-A-New-Attack-Surface-On-Microsoft-Exchange-Server.pdf) [Video](https://www.youtube.com/watch?v=5mqid-7zp8k)
-
-## most of the exploit is recoded with golang to practice my golang skills purpose :)
 
  - ![](./pics/logo-black.png)
 
@@ -24,11 +22,11 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | proxytoken | [CVE-2021-33766](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-33766) | July 13, 2021 | With this vulnerability, an unauthenticated attacker can perform configuration actions on mailboxes belonging to arbitrary users. As an illustration of the impact, this can be used to copy all emails addressed to a target and account and forward them to an account controlled by the attacker. | yes |
 | Microsoft Exchange Server 远程执行代码漏洞 | [CVE-2021-42321](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-42321) | Nov 17, 2021 | Exchange Deserialization RCE | yes |
 | ProxyRelay |  |  |  | yes |
+| ProxyNotShell |  |  |  | yes |
+| ProxyNotRelay |  |  |  | yes |
 
-
-# proxylogon
-
-## proxylogon part links
+# ProxyLogon
+## ProxyLogon part links
 
  - [Proxylogon](https://proxylogon.com/)
  - [A New Attack Surface on MS Exchange Part 1 - ProxyLogon!](https://blog.orange.tw/2021/08/proxylogon-a-new-attack-surface-on-ms-exchange-part-1.html)
@@ -39,8 +37,8 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
  - ![](pics/proxylogon1.png)
  - ![](pics/proxylogon2.png)
 
-# proxyoracle
-## proxyoracle part links
+# ProxyOracle
+## ProxyOracle part links
 
  - [A New Attack Surface on MS Exchange Part 2 - ProxyOracle!](https://blog.orange.tw/2021/08/proxyoracle-a-new-attack-surface-on-ms-exchange-part-2.html)
  - [ProxyOracle漏洞分析](https://hosch3n.github.io/2021/08/23/ProxyOracle%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/)
@@ -105,8 +103,8 @@ Decrypt this cookie to plaintext:
 
  - ![](pics/proxyoracle1.png)
 
-# proxyshell
-## proxyshell part links
+# ProxyShell
+## ProxyShell part links
 
  - [My Steps of Reproducing ProxyShell](https://y4y.space/2021/08/12/my-steps-of-reproducing-proxyshell/)
  - [ProxyShell漏洞分析](https://hosch3n.github.io/2021/08/24/ProxyShell%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/)
@@ -169,8 +167,8 @@ finnaly use the following wsman python script to export The draft to webshell :)
 
  - ![](pics/proxyshell19.png)
 
-# proxytoken
-## proxytoken part links
+# ProxyToken
+## ProxyToken part links
 
  - [PROXYTOKEN: AN AUTHENTICATION BYPASS IN MICROSOFT EXCHANGE SERVER](https://www.zerodayinitiative.com/blog/2021/8/30/proxytoken-an-authentication-bypass-in-microsoft-exchange-server)
  - [CVE-2021-33766-ProxyToken](https://github.com/demossl/CVE-2021-33766-ProxyToken)
@@ -187,6 +185,10 @@ finnaly use the following wsman python script to export The draft to webshell :)
 
  - [CVE-2021-42321](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-42321)
  - [Some notes about Microsoft Exchange Deserialization RCE (CVE-2021–42321)](https://peterjson.medium.com/some-notes-about-microsoft-exchange-deserialization-rce-cve-2021-42321-110d04e8852)
+ - [Exchange 反序列化代码执行漏洞 (CVE-2021-42321)](https://www.freebuf.com/vuls/306423.html)
+ - [DotNet安全-CVE-2021-42321漏洞复现](https://mp.weixin.qq.com/s?__biz=MzkwNjMyNzM1Nw==&mid=2247499027&idx=1&sn=b40c9d534a6348811eca5058f88e47ba&chksm=c0e89941f79f105751c585422b668d75876da756112ccc4c1c86b775895f80d0605b1b478cf3&scene=126&sessionid=1665278223&key=7d0747fd59e25d7fc14682baa83c157852e9f28a01f69543a2fdb2b695f79b9ef4267cccad8b785069cca2a20cb51e2679f0e0526a914525751d8e709e28df1868705eec82e72e359f365ce4f05d2d16e149c96d4c1922cdcbd8284dbf0799d268b0b3483c5a9e05d25a93859af1f2aaea1a96bdd77e589978af2c47de41841f&ascene=15&uin=NTY2NTA4NjQ%3D&devicetype=Windows+Server+2016+x64&version=63070517&lang=zh_CN&session_us=gh_60a91832e906&exportkey=A4QvNX5OamEXK%2FKbg9An%2BzY%3D&acctmode=0&pass_ticket=emYPUvePlyg8wO4dtUjIAJrcKT55D9BHk%2FhyodJ4reYwATwMSaSFlnkTuO%2BiaCfs&wx_header=0&fontgear=2)
+ - [exch_CVE-2021-42321](https://github.com/7BitsTeam/exch_CVE-2021-42321)
+ - [CVE-2021-42321-天府杯Exchange 反序列化漏洞分析](https://www.wangan.com/p/7fygf33f38821d6b)
  - [CVE-2021-42321_poc.py](./CVE-2021-42321_poc.py)
 
 Exchange 2016 CU 21,22 and Exchange 2019 CU 10,11. This means the only recent latest version of Exchange 2016,2019 are vulnerable to this CVE
@@ -212,9 +214,29 @@ then replace USER, PASS, target, gadgetData1 fileds you want...
 
 i'm not found a proper envirenment to test the script...so test it yourself.
 
+
 # ProxyRelay
+## ProxyRelay part links
+
+ - [A New Attack Surface on MS Exchange Part 4 - ProxyRelay!](https://blog.orange.tw/2022/10/proxyrelay-a-new-attack-surface-on-ms-exchange-part-4.html)
+ - []()
 
 
+
+# ProxyNotShell
+## ProxyNotShell part links
+
+ - [ProxyNotShell — the story of the claimed zero days in Microsoft Exchange](https://doublepulsar.com/proxynotshell-the-story-of-the-claimed-zero-day-in-microsoft-exchange-5c63d963a9e9)
+ - [ProxyNotShell: CVE-2022-41040 and CVE-2022-41082 Exploits Explained](https://www.picussecurity.com/resource/blog/proxynotshellcve-2022-41040-and-cve-2022-41082-exploits-explained)
+ - [Microsoft Exchange ProxyNotShell vulnerability explained and how to mitigate it](https://www.csoonline.com/article/3682762/microsoft-exchange-proxynotshell-vulnerability-explained-and-how-to-mitigate-it.html)
+
+
+
+
+# ProxyNotRelay
+## https://rw.md/2022/11/09/ProxyNotRelay.html
+
+ - [ProxyNotRelay - An Exchange Vulnerability](https://rw.md/2022/11/09/ProxyNotRelay.html)
 
 
 
@@ -226,7 +248,8 @@ i'm not found a proper envirenment to test the script...so test it yourself.
  - []()
  - []()
 
-## other links
+
+## Other Links
 
  - [ProxyVulns](https://github.com/hosch3n/ProxyVulns)
  - [pax](https://github.com/liamg/pax)
@@ -234,4 +257,7 @@ i'm not found a proper envirenment to test the script...so test it yourself.
  - [python-paddingoracle](https://github.com/mwielgoszewski/python-paddingoracle)
  - [ysoserial.net](https://github.com/pwntester/ysoserial.net)
  - [使用 ProxyShell 和 ProxyLogon 劫持邮件链](https://paper.seebug.org/1764/)
+ - [Abusing Exchange: One API call away from Domain Admin](https://dirkjanm.io/abusing-exchange-one-api-call-away-from-domain-admin/)
+ - [后渗透/实验/Exchange](https://github.com/ffffffff0x/1earn/blob/master/1earn/Security/RedTeam/%E5%90%8E%E6%B8%97%E9%80%8F/%E5%AE%9E%E9%AA%8C/Exchange.md)
+ - [Pwn2Own 2021 Microsoft Exchange Exploit Chain](https://blog.viettelcybersecurity.com/pwn2own-2021-microsoft-exchange-exploit-chain/)
  - []()
