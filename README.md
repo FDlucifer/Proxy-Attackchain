@@ -178,6 +178,10 @@ then replace USER, PASS, target, gadgetData1 fileds you want...
 
 i'm not found a proper envirenment to test the script...so test it yourself.
 
+# 
+
+
+
 # ***more newest exchange exp coming soon......***
 
 # Reference (worship to orange!)
