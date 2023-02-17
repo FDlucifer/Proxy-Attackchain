@@ -234,13 +234,13 @@ i'm not found a proper envirenment to test the script...so test it yourself.
 
 
 # ProxyNotRelay
-## https://rw.md/2022/11/09/ProxyNotRelay.html
+## ProxyNotRelay part links
 
  - [ProxyNotRelay - An Exchange Vulnerability](https://rw.md/2022/11/09/ProxyNotRelay.html)
 
 
 
-# Research PDFs
+# Research write paper PDFs
 
  - [Friday the 13th JSON Attacks](research-pdfs/us-17-Munoz-Friday-The-13th-JSON-Attacks-wp.pdf)
  - [ProxyLogon is Just the Tip of the Iceberg](research-pdfs/us-21-ProxyLogon-Is-Just-The-Tip-Of-The-Iceberg-A-New-Attack-Surface-On-Microsoft-Exchange-Server.pdf)
