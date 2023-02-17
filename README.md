@@ -187,14 +187,16 @@ i'm not found a proper envirenment to test the script...so test it yourself.
 
 
 
-# Research-PDFs
+# Research PDFs
 
  - [Friday the 13th JSON Attacks](research-pdfs/us-17-Munoz-Friday-The-13th-JSON-Attacks-wp.pdf)
  - [ProxyLogon is Just the Tip of the Iceberg](research-pdfs/us-21-ProxyLogon-Is-Just-The-Tip-Of-The-Iceberg-A-New-Attack-Surface-On-Microsoft-Exchange-Server.pdf)
+ - [Are you my Type? - Breaking .NET Through Serialization](research-pdfs/BH_US_12_Forshaw_Are_You_My_Type_WP.pdf)
+ - []()
  - []()
 
 
-# Reference (worship to orange!)
+# Reference links
 
  - [Proxylogon](https://proxylogon.com/)
  - [A New Attack Surface on MS Exchange Part 1 - ProxyLogon!](https://blog.orange.tw/2021/08/proxylogon-a-new-attack-surface-on-ms-exchange-part-1.html)
