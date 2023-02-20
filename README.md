@@ -24,9 +24,9 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | ProxyRelay |  |  |  | yes |
 | ProxyNotShell |  |  |  | yes |
 | ProxyNotRelay |  |  |  | yes |
-| OWASSRF(CVE-2022-41080) |  |  |  | yes |
-| TabShell(CVE-2022-41076) |  |  |  | yes |
-| CVE-2022-23277 |  |  |  | yes |
+| OWASSRF(CVE-2022-41080) | [CVE-2022-41080]() |  |  | yes |
+| TabShell(CVE-2022-41076) | [CVE-2022-41076]() |  |  | yes |
+| CVE-2022-23277 | [CVE-2022-23277]() |  |  | yes |
 
 # ProxyLogon
 ## ProxyLogon part links
@@ -223,7 +223,7 @@ change DisableActivitySurrogateSelectorTypeCheck to True to overcome the limitat
  - [ProxyNotShell — the story of the claimed zero days in Microsoft Exchange](https://doublepulsar.com/proxynotshell-the-story-of-the-claimed-zero-day-in-microsoft-exchange-5c63d963a9e9)
  - [ProxyNotShell: CVE-2022-41040 and CVE-2022-41082 Exploits Explained](https://www.picussecurity.com/resource/blog/proxynotshellcve-2022-41040-and-cve-2022-41082-exploits-explained)
  - [Microsoft Exchange ProxyNotShell vulnerability explained and how to mitigate it](https://www.csoonline.com/article/3682762/microsoft-exchange-proxynotshell-vulnerability-explained-and-how-to-mitigate-it.html)
-
+ - [CONTROL YOUR TYPES OR GET PWNED: REMOTE CODE EXECUTION IN EXCHANGE POWERSHELL BACKEND](https://www.zerodayinitiative.com/blog/2022/11/14/control-your-types-or-get-pwned-remote-code-execution-in-exchange-powershell-backend)
 
 
 
@@ -270,11 +270,20 @@ change DisableActivitySurrogateSelectorTypeCheck to True to overcome the limitat
  - [Friday the 13th JSON Attacks](research-pdfs/us-17-Munoz-Friday-The-13th-JSON-Attacks-wp.pdf)
  - [ProxyLogon is Just the Tip of the Iceberg](research-pdfs/us-21-ProxyLogon-Is-Just-The-Tip-Of-The-Iceberg-A-New-Attack-Surface-On-Microsoft-Exchange-Server.pdf)
  - [Are you my Type? - Breaking .NET Through Serialization](research-pdfs/BH_US_12_Forshaw_Are_You_My_Type_WP.pdf)
+ - [Pwn2Own 2021 Microsoft Exchange Exploit Chain 3rd Vulnerability doc](research-pdfs/pwn2own2021msexchange3rdvulnpdf.docx)
  - []()
+
+# offline address book
+
  - []()
 
 
-## Other Links
+# Low Level API (RPC)
+
+ - []()
+
+
+# Other Links
 
  - [ProxyVulns](https://github.com/hosch3n/ProxyVulns)
  - [pax](https://github.com/liamg/pax)
