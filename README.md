@@ -24,6 +24,9 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | ProxyRelay |  |  |  | yes |
 | ProxyNotShell |  |  |  | yes |
 | ProxyNotRelay |  |  |  | yes |
+| OWASSRF(CVE-2022-41080) |  |  |  | yes |
+| TabShell(CVE-2022-41076) |  |  |  | yes |
+| CVE-2022-23277 |  |  |  | yes |
 
 # ProxyLogon
 ## ProxyLogon part links
@@ -199,7 +202,8 @@ Exchange 2016 CU 21,22 and Exchange 2019 CU 10,11. This means the only recent la
 
 change DisableActivitySurrogateSelectorTypeCheck to True to overcome the limitation of .NET and later inject DLL to achieve mem-shell with Jscript to bypass the detection
 
-usage:
+## recurrence step1
+
 
 
 
@@ -208,6 +212,8 @@ usage:
 
  - [A New Attack Surface on MS Exchange Part 4 - ProxyRelay!](https://blog.orange.tw/2022/10/proxyrelay-a-new-attack-surface-on-ms-exchange-part-4.html)
  - []()
+
+
 
 
 
@@ -221,10 +227,41 @@ usage:
 
 
 
+
+
+
 # ProxyNotRelay
 ## ProxyNotRelay part links
 
  - [ProxyNotRelay - An Exchange Vulnerability](https://rw.md/2022/11/09/ProxyNotRelay.html)
+
+
+
+
+
+
+# OWASSRF + TabShell
+## OWASSRF + TabShell part links
+
+ - [The OWASSRF + TabShell exploit chain](https://blog.viettelcybersecurity.com/tabshell-owassrf/)
+
+
+
+
+
+# CVE-2022-23277
+## CVE-2022-23277 part links
+
+ - [DotNet安全-CVE-2022-23277漏洞复现](https://mp.weixin.qq.com/s/lrlZiVH3QZI3rMRZwk_l6A)
+ - [《DotNet安全-CVE-2022-23277漏洞复现》涉及到的工具](https://github.com/7BitsTeam/CVE-2022-23277)
+ - [Bypassing .NET Serialization Binders](https://codewhitesec.blogspot.com/2022/06/bypassing-dotnet-serialization-binders.html)
+ - [dotnet反序列化之并不安全的SerializationBinder](https://y4er.com/posts/dotnet-deserialize-bypass-binder/)
+ - [2022 Exchange 再相遇之反序列化漏洞分析（二）](https://zhuanlan.zhihu.com/p/531190946)
+ - [Deep understand ASPX file handling and some related attack vectors](https://blog.viettelcybersecurity.com/deep-understand-aspx-file-handling-and-some-related-attack-vector/)
+ - [The journey of exploiting a Sharepoint vulnerability.](https://blog.viettelcybersecurity.com/the-journey-of-exploiting-a-sharepoint-vulnerability/)
+
+
+
 
 
 
@@ -249,3 +286,5 @@ usage:
  - [后渗透/实验/Exchange](https://github.com/ffffffff0x/1earn/blob/master/1earn/Security/RedTeam/%E5%90%8E%E6%B8%97%E9%80%8F/%E5%AE%9E%E9%AA%8C/Exchange.md)
  - [Pwn2Own 2021 Microsoft Exchange Exploit Chain](https://blog.viettelcybersecurity.com/pwn2own-2021-microsoft-exchange-exploit-chain/)
  - []()
+
+
