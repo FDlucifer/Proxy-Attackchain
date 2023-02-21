@@ -32,5 +32,4 @@ def gen_token(uname, sid):
     return data
 
 
-print(gen_token("administrator@ex.com","S-1-5-21-3109812776-1473611157-1400307056-500")) # change here...
-# VgEAVAdXaW5kb3dzQwBBCEtlcmJlcm9zTBRhZG1pbmlzdHJhdG9yQGV4LmNvbVUtUy0xLTUtMjEtMzEwOTgxMjc3Ni0xNDczNjExMTU3LTE0MDAzMDcwNTYtNTAwRwEAAAAHAAAADFMtMS01LTMyLTU0NEUAAAAA
+print(gen_token("test@exchange2016.com","S-1-5-21-46962994-2066588249-799565096-1145")) # change here...
