@@ -121,6 +121,8 @@ Decrypt this cookie to plaintext:
  - [exchange-proxyshell漏洞复现及分析](https://blog.riskivy.com/exchange-proxyshell%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0%E5%8F%8A%E5%88%86%E6%9E%90/)
  - [Proof of Concept Exploit for Microsoft Exchange CVE-2021-34473, CVE-2021-34523, CVE-2021-31207](https://github.com/horizon3ai/proxyshell)
 
+## short intro
+
  - CVE-2021-34473 - Pre-auth Path Confusion
 
 This faulty URL normalization lets us access an arbitrary backend URL while running as the Exchange Server machine account. Although this bug is not as powerful as the SSRF in ProxyLogon, and we could manipulate only the path part of the URL, it’s still powerful enough for us to conduct further attacks with arbitrary backend access.
@@ -132,7 +134,7 @@ https://xxx.xxx.xxx.xxx/autodiscover/autodiscover.json?@foo.com/mapi/nspi/?&Emai
  - CVE-2021-34523 - Exchange PowerShell Backend Elevation-of-Privilege
  - CVE-2021-31207 - Post-auth Arbitrary-File-Write
 
-## let's getting started...
+## let's getting started and split proxyshell part to part ......
 
 generate proxyshell specified webshell payload.
 
@@ -190,6 +192,13 @@ view-source:https://192.168.186.130//aspnet_client/redhedh.aspx?cmd=Response.Wri
 
  - ![](pics/proxyshell11.png)
  - ![](pics/proxyshell12.png)
+
+## exploit proxyshell by using one click shell scripts from github
+
+ - [proxyshell-auto](https://github.com/Udyz/proxyshell-auto)
+ - [ProxyShell: More Ways for More Shells](https://www.horizon3.ai/proxyshell-more-ways-for-more-shells/)
+ - ![](pics/proxyshell13.png)
+
 
 # ProxyToken
 ## ProxyToken part links

