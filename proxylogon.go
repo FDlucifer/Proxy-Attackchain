@@ -11,8 +11,6 @@ import (
 	"io/ioutil"
 	"math/rand"
 	"net/http"
-	"os"
-	"os/exec"
 	"regexp"
 	"strconv"
 	"strings"
@@ -89,42 +87,6 @@ func Between(str, starting, ending string) string {
 // 声明两个新的错误返回
 var ErrNotPath = errors.New("Path Required")
 var ErrRegexp = errors.New("Regexp Fail")
-
-func execShell(input string) error {
-	// 去除输入中最后的换行
-	input = strings.TrimSuffix(input, "\n")
-
-	// 去除输入前后的空格
-	input = strings.TrimSpace(input)
-
-	// 正则匹配输入字符中连续多个空格替换为一个空格
-	r, err := regexp.Compile(" +")
-	if err != nil {
-		return ErrRegexp
-	}
-	input = r.ReplaceAllString(input, " ")
-
-	args := strings.Split(input, " ")
-
-	// 判断用户输入是否为cd
-	switch args[0] {
-	case "cd":
-		if len(args) < 2 {
-			return ErrNotPath
-		}
-		return os.Chdir(args[1])
-
-	case "exit":
-		os.Exit(0)
-	}
-
-	cmd := exec.Command(args[0], args[1:]...)
-
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
-
-	return cmd.Run()
-}
 
 func splitBackEnd(sess string) string {
 	sess1 := strings.Split(sess, "X-BackEndCookie=")
