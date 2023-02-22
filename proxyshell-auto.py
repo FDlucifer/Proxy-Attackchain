@@ -334,8 +334,8 @@ def shell(command, port):
         ps = PowerShell(pool)
         ps.add_script(command)
         output = ps.invoke()
-    # print("OUTPUT:\n%s" % "\n".join([str(s) for s in output]))
-    # print("ERROR:\n%s" % "\n".join([str(s) for s in ps.streams.error]))
+    print("OUTPUT:\n%s" % "\n".join([str(s) for s in output]))
+    print("ERROR:\n%s" % "\n".join([str(s) for s in ps.streams.error]))
 def exec_cmd(shell_url, code="exec_code"):
     try:
         while True:
