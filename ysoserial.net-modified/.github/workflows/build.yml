@@ -1,0 +1,26 @@
+on: [push, pull_request]
+
+name: Build
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup Nuget.exe
+        uses: nuget/setup-nuget@v1
+      - name: Restore packages
+        run: nuget restore ysoserial.sln
+      - name: Setup MSBuild.exe
+        uses: microsoft/setup-msbuild@v1.1
+      - name: Build with MSBuild
+        run: msbuild ysoserial.sln -p:Configuration=Release
+      - name: Prepare build artifact for stashing
+        run: |
+          mkdir release
+          move D:\a\ysoserial.net\ysoserial.net\ysoserial\bin\Release .\release
+      - name: Upload artifact
+        uses: actions/upload-artifact@v1.0.0
+        with:
+          name: ysoserial-${{ github.sha }}
+          path: .\release
