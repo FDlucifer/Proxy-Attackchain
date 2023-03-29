@@ -12,6 +12,14 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 
 | NAME | CVE | patch time | description | avaliable |
 | ----------- | ----------- | ----------- | ----------- | ----------- |
+| CVE-2018-8581 | [CVE-2018-8581]() |  |  | yes |
+| CVE-2018-8302 | [CVE-2018-8302]() |  |  | yes |
+| CVE-2019-1040 | [CVE-2019-1040]() |  |  | yes |
+| CVE-2020-0688 | [CVE-2020-0688]() |  |  | yes |
+| CVE-2020-16875 | [CVE-2020-16875]() |  |  | yes |
+| CVE-2020-17083 | [CVE-2020-17083]() |  |  | yes |
+| CVE-2020-17143 | [CVE-2020-17143]() |  |  | yes |
+| CVE-2020-17144 | [CVE-2020-17144]() |  |  | yes |
 | ProxyLogon | [CVE-2021-26855](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-26855) | Mar 02, 2021 | server-side request forgery (SSRF) | yes |
 | ProxyLogon | [CVE-2021-27065](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-27065) | Mar 02, 2021 | Microsoft.Exchange.Management.DDIService.WriteFileActivity未校验写文件后缀，可由文件内容部分可控的相关功能写入WebShell | yes |
 | ProxyOracle | [CVE-2021-31196](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-31196) | Jul 13, 2021 | Reflected Cross-Site Scripting | yes |
@@ -287,12 +295,41 @@ Content-Length: 327
 ## CVE-2018-8581 part links
 
  - [Exchange2domain](https://github.com/Ridter/Exchange2domain)
+ - [CVE-2018-8581](https://github.com/WyAtu/CVE-2018-8581)
 
 
 # CVE-2018-8302
 ## CVE-2018-8302 part links
 
  - []()
+
+# CVE-2019-1040
+## CVE-2019-1040 part links
+
+ - [CVE-2019-1040 with Exchange](https://github.com/Ridter/CVE-2019-1040)
+ - [Exploiting CVE-2019-1040 - Combining relay vulnerabilities for RCE and Domain Admin](https://dirkjanm.io/exploiting-CVE-2019-1040-relay-vulnerabilities-for-rce-and-domain-admin/)
+ - [CVE-2019-1040-dcpwn](https://github.com/Ridter/CVE-2019-1040-dcpwn)
+
+
+# CVE-2020-16875
+## CVE-2020-16875 part links
+
+ - [Microsoft Exchange Server DlpUtils AddTenantDlpPolicy Remote Code Execution Vulnerability](https://srcincite.io/pocs/cve-2020-16875.py.txt)
+
+
+# CVE-2020-17083
+## CVE-2020-17083 part links
+
+ - [Microsoft Exchange Server ExportExchangeCertificate WriteCertiricate File Write Remote Code Execution Vulnerability](https://srcincite.io/pocs/cve-2020-17083.ps1.txt)
+ - [CVE-2020-17083 Microsoft Exchange Server任意代码执行漏洞 POC](https://mp.weixin.qq.com/s/LMUMmuGfT3nmKN88O5hBAA)
+
+# CVE-2020-17143
+## CVE-2020-17143 part links
+
+ - [Microsoft Exchange Server OWA OneDriveProUtilities GetWacUrl XML External Entity Processing Information Disclosure Vulnerability](https://srcincite.io/pocs/cve-2020-17143.py.txt)
+
+
+
 
 # CVE-2020-0688
 ## CVE-2020-0688 part links
@@ -305,6 +342,7 @@ Content-Length: 327
 
  - [CVE-2020-17144漏洞分析与武器化](https://www.zcgonvh.com/post/analysis_of_CVE-2020-17144_and_to_weaponizing.html)
  - [CVE-2020-17144 zcgonvh github exp](https://github.com/zcgonvh/CVE-2020-17144)
+ - [Exchange2010 authorized RCE](https://github.com/Airboi/CVE-2020-17144-EXP)
 
 
 # Exchange Authenticated RCE CVE-2021-42321
@@ -541,8 +579,8 @@ ClientExtensionCollectionFormatter.Deserialize() 改为使用 ExchangeBinaryForm
  - [ProxyNotShell: CVE-2022-41040 and CVE-2022-41082 Exploits Explained](https://www.picussecurity.com/resource/blog/proxynotshellcve-2022-41040-and-cve-2022-41082-exploits-explained)
  - [Microsoft Exchange ProxyNotShell vulnerability explained and how to mitigate it](https://www.csoonline.com/article/3682762/microsoft-exchange-proxynotshell-vulnerability-explained-and-how-to-mitigate-it.html)
  - [CONTROL YOUR TYPES OR GET PWNED: REMOTE CODE EXECUTION IN EXCHANGE POWERSHELL BACKEND](https://www.zerodayinitiative.com/blog/2022/11/14/control-your-types-or-get-pwned-remote-code-execution-in-exchange-powershell-backend)
-
-
+ - [Threat Brief: CVE-2022-41040 and CVE-2022-41082: Microsoft Exchange Server (ProxyNotShell)](https://unit42.paloaltonetworks.com/proxynotshell-cve-2022-41040-cve-2022-41082/)
+ - [ProxyNotShell-PoC](https://github.com/testanull/ProxyNotShell-PoC)
 
 
 
