@@ -20,18 +20,18 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | CVE-2020-17083 | [CVE-2020-17083]() |  |  | yes |
 | CVE-2020-17143 | [CVE-2020-17143]() |  |  | yes |
 | CVE-2020-17144 | [CVE-2020-17144]() |  |  | yes |
-| ProxyLogon | [CVE-2021-26855](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-26855) | Mar 02, 2021 | server-side request forgery (SSRF) | yes |
-| ProxyLogon | [CVE-2021-27065](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-27065) | Mar 02, 2021 | Microsoft.Exchange.Management.DDIService.WriteFileActivity未校验写文件后缀，可由文件内容部分可控的相关功能写入WebShell | yes |
-| ProxyOracle | [CVE-2021-31196](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-31196) | Jul 13, 2021 | Reflected Cross-Site Scripting | yes |
-| ProxyOracle | [CVE-2021-31195](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-31195) | May 11, 2021 | Padding Oracle Attack on Exchange Cookies Parsing | yes |
-| ProxyShell | [CVE-2021-34473](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-34473) | Apr 13, 2021 | Pre-auth Path Confusion leads to ACL Bypass | yes |
-| ProxyShell | [CVE-2021-34523](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-34523) | Apr 13, 2021 | Elevation of Privilege on Exchange PowerShell Backend | yes |
-| ProxyShell | [CVE-2021-31207](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-31207) | May 11, 2021 | Post-auth Arbitrary-File-Write leads to RCE | yes |
-| proxytoken | [CVE-2021-33766](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-33766) | July 13, 2021 | With this vulnerability, an unauthenticated attacker can perform configuration actions on mailboxes belonging to arbitrary users. As an illustration of the impact, this can be used to copy all emails addressed to a target and account and forward them to an account controlled by the attacker. | yes |
-| Microsoft Exchange Server 远程执行代码漏洞 | [CVE-2021-42321](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-42321) | Nov 17, 2021 | Exchange Deserialization RCE | yes |
-| ProxyRelay | [CVE-2021-33768](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-33768) | July 13, 2021 | Relay to Exchange FrontEnd | yes |
-| ProxyRelay | [CVE-2022-21979](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-21979) | October 11, 2022 | Relay to Exchange BackEnd | yes |
-| ProxyRelay | [CVE-2021-26414](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-26414) | June 8, 2021 | Relay to Exchange DCOM | yes |
+| ProxyLogon (completed) | [CVE-2021-26855](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-26855) | Mar 02, 2021 | server-side request forgery (SSRF) | yes |
+| ProxyLogon (completed) | [CVE-2021-27065](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-27065) | Mar 02, 2021 | Microsoft.Exchange.Management.DDIService.WriteFileActivity未校验写文件后缀，可由文件内容部分可控的相关功能写入WebShell | yes |
+| ProxyOracle (completed) | [CVE-2021-31196](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-31196) | Jul 13, 2021 | Reflected Cross-Site Scripting | yes |
+| ProxyOracle (completed) | [CVE-2021-31195](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-31195) | May 11, 2021 | Padding Oracle Attack on Exchange Cookies Parsing | yes |
+| ProxyShell (completed) | [CVE-2021-34473](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-34473) | Apr 13, 2021 | Pre-auth Path Confusion leads to ACL Bypass | yes |
+| ProxyShell (completed) | [CVE-2021-34523](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-34523) | Apr 13, 2021 | Elevation of Privilege on Exchange PowerShell Backend | yes |
+| ProxyShell (completed) | [CVE-2021-31207](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-31207) | May 11, 2021 | Post-auth Arbitrary-File-Write leads to RCE | yes |
+| proxytoken (completed) | [CVE-2021-33766](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-33766) | July 13, 2021 | With this vulnerability, an unauthenticated attacker can perform configuration actions on mailboxes belonging to arbitrary users. As an illustration of the impact, this can be used to copy all emails addressed to a target and account and forward them to an account controlled by the attacker. | yes |
+| Microsoft Exchange Server 远程执行代码漏洞 (completed) | [CVE-2021-42321](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-42321) | Nov 17, 2021 | Exchange Deserialization RCE | yes |
+| ProxyRelay (test failed) | [CVE-2021-33768](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-33768) | July 13, 2021 | Relay to Exchange FrontEnd | yes |
+| ProxyRelay (test failed) | [CVE-2022-21979](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-21979) | October 11, 2022 | Relay to Exchange BackEnd | yes |
+| ProxyRelay (test failed) | [CVE-2021-26414](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-26414) | June 8, 2021 | Relay to Exchange DCOM | yes |
 | ProxyNotShell |  |  |  | yes |
 | ProxyNotRelay |  |  |  | yes |
 | OWASSRF(CVE-2022-41080) | [CVE-2022-41080]() |  |  | yes |
@@ -40,7 +40,7 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | ProxyNotFound | [CVE-2021-28480](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-28480) | April 13, 2021 | Pre-auth SSRF/ACL bypass | no |
 | ProxyNotFound | [CVE-2021-28481](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-28481) | April 13, 2021 | Pre-auth SSRF/ACL bypass | no |
 
-# ProxyLogon
+# ProxyLogon (completed)
 ## ProxyLogon part links
 
  - [Proxylogon](https://proxylogon.com/)
@@ -52,7 +52,7 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
  - ![](pics/proxylogon1.png)
  - ![](pics/proxylogon2.png)
 
-# ProxyOracle
+# ProxyOracle (completed)
 ## ProxyOracle part links
 
  - [A New Attack Surface on MS Exchange Part 2 - ProxyOracle!](https://blog.orange.tw/2021/08/proxyoracle-a-new-attack-surface-on-ms-exchange-part-2.html)
@@ -118,7 +118,7 @@ Decrypt this cookie to plaintext:
 
  - ![](pics/proxyoracle1.png)
 
-# ProxyShell
+# ProxyShell (completed)
 ## ProxyShell part links
 
  - [My Steps of Reproducing ProxyShell](https://y4y.space/2021/08/12/my-steps-of-reproducing-proxyshell/)
@@ -218,7 +218,7 @@ view-source:https://192.168.186.130//aspnet_client/redhedh.aspx?cmd=Response.Wri
  - [Pwn2Own2021MSExchangeExploit.py](https://gist.github.com/rskvp93/4e353e709c340cb18185f82dbec30e58)
 
 
-# ProxyToken
+# ProxyToken (completed)
 ## ProxyToken part links
 
  - [PROXYTOKEN: AN AUTHENTICATION BYPASS IN MICROSOFT EXCHANGE SERVER](https://www.zerodayinitiative.com/blog/2021/8/30/proxytoken-an-authentication-bypass-in-microsoft-exchange-server)
@@ -349,7 +349,7 @@ Content-Length: 327
  - [Exchange2010 authorized RCE](https://github.com/Airboi/CVE-2020-17144-EXP)
 
 
-# Exchange Authenticated RCE CVE-2021-42321
+# Exchange Authenticated RCE CVE-2021-42321 (completed)
 ## CVE-2021-42321 part links
 
  - [Get started with EWS client applications](https://learn.microsoft.com/en-us/exchange/client-developer/exchange-web-services/get-started-with-ews-client-applications)
@@ -566,7 +566,7 @@ ClientExtensionCollectionFormatter.Deserialize() 改为使用 ExchangeBinaryForm
 开发人员把类名写错，System.Security.ClaimsPrincipal 的正确写法应该是 System.Security.Claims.ClaimsPrincipal,直接改为正确的类名。
 
 
-# ProxyRelay
+# ProxyRelay (test failed)
 ## ProxyRelay part links
 
  - [A New Attack Surface on MS Exchange Part 4 - ProxyRelay!](https://blog.orange.tw/2022/10/proxyrelay-a-new-attack-surface-on-ms-exchange-part-4.html)
