@@ -32,15 +32,63 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | ProxyRelay (test failed) | [CVE-2021-33768](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-33768) | July 13, 2021 | Relay to Exchange FrontEnd | yes |
 | ProxyRelay (test failed) | [CVE-2022-21979](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-21979) | October 11, 2022 | Relay to Exchange BackEnd | yes |
 | ProxyRelay (test failed) | [CVE-2021-26414](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-26414) | June 8, 2021 | Relay to Exchange DCOM | yes |
-| ProxyNotShell (WIP) | [CVE-2022-41040](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-41040) | 2022年11月8日 | 服务端请求伪造(SSRF)漏洞 | yes |
-| ProxyNotShell (WIP) | [CVE-2022-41082](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-41082) | 2022年11月8日 | 远程执行代码RCE漏洞 | yes |
+| ProxyNotShell (completed) | [CVE-2022-41040](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-41040) | 2022年11月8日 | 服务端请求伪造(SSRF)漏洞 | yes |
+| ProxyNotShell (completed) | [CVE-2022-41082](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-41082) | 2022年11月8日 | 远程执行代码RCE漏洞 | yes |
 | ProxyNotRelay |  |  |  | yes |
 | OWASSRF(CVE-2022-41080) | [CVE-2022-41080]() |  |  | yes |
 | TabShell(CVE-2022-41076) | [CVE-2022-41076]() |  |  | yes |
 | CVE-2022-23277 | [CVE-2022-23277]() |  |  | yes |
-| ProxyNotFound | [CVE-2021-28480](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-28480) | April 13, 2021 | Pre-auth SSRF/ACL bypass | yes |
-| ProxyNotFound | [CVE-2021-28481](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-28481) | April 13, 2021 | Pre-auth SSRF/ACL bypass | yes |
+| ProxyNotFound | [CVE-2021-28480](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-28480) | April 13, 2021 | Pre-auth SSRF/ACL bypass | no |
+| ProxyNotFound | [CVE-2021-28481](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-28481) | April 13, 2021 | Pre-auth SSRF/ACL bypass | no |
 | CVE-2023-21707 | [CVE-2023-21707](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-21707) | 2023年3月9日 | Microsoft Exchange Server 远程执行代码漏洞 | yes |
+
+# CVE-2018-8581
+## CVE-2018-8581 part links
+
+ - [Exchange2domain](https://github.com/Ridter/Exchange2domain)
+ - [CVE-2018-8581](https://github.com/WyAtu/CVE-2018-8581)
+
+
+# CVE-2018-8302
+## CVE-2018-8302 part links
+
+ - []()
+
+# CVE-2019-1040
+## CVE-2019-1040 part links
+
+ - [CVE-2019-1040 with Exchange](https://github.com/Ridter/CVE-2019-1040)
+ - [Exploiting CVE-2019-1040 - Combining relay vulnerabilities for RCE and Domain Admin](https://dirkjanm.io/exploiting-CVE-2019-1040-relay-vulnerabilities-for-rce-and-domain-admin/)
+ - [CVE-2019-1040-dcpwn](https://github.com/Ridter/CVE-2019-1040-dcpwn)
+
+# CVE-2020-0688
+## CVE-2020-0688 part links
+
+ - [CVE-2020-0688-Exchange-远程代码执行分析及复现](https://fdlucifer.github.io/2020/10/12/cve-2020-0688/)
+ - [Ridter/cve-2020-0688](https://github.com/Ridter/cve-2020-0688/)
+
+# CVE-2020-16875
+## CVE-2020-16875 part links
+
+ - [Microsoft Exchange Server DlpUtils AddTenantDlpPolicy Remote Code Execution Vulnerability](https://srcincite.io/pocs/cve-2020-16875.py.txt)
+
+# CVE-2020-17083
+## CVE-2020-17083 part links
+
+ - [Microsoft Exchange Server ExportExchangeCertificate WriteCertiricate File Write Remote Code Execution Vulnerability](https://srcincite.io/pocs/cve-2020-17083.ps1.txt)
+ - [CVE-2020-17083 Microsoft Exchange Server任意代码执行漏洞 POC](https://mp.weixin.qq.com/s/LMUMmuGfT3nmKN88O5hBAA)
+
+# CVE-2020-17143
+## CVE-2020-17143 part links
+
+ - [Microsoft Exchange Server OWA OneDriveProUtilities GetWacUrl XML External Entity Processing Information Disclosure Vulnerability](https://srcincite.io/pocs/cve-2020-17143.py.txt)
+
+# CVE-2020-17144
+## CVE-2020-17144 part links
+
+ - [CVE-2020-17144漏洞分析与武器化](https://www.zcgonvh.com/post/analysis_of_CVE-2020-17144_and_to_weaponizing.html)
+ - [CVE-2020-17144 zcgonvh github exp](https://github.com/zcgonvh/CVE-2020-17144)
+ - [Exchange2010 authorized RCE](https://github.com/Airboi/CVE-2020-17144-EXP)
 
 # ProxyLogon (completed)
 ## ProxyLogon part links
@@ -296,60 +344,6 @@ Content-Length: 327
  - ![](pics/proxytoken4.png)
  - ![](pics/proxytoken5.png)
  - ![](pics/proxytoken6.png)
-
-# CVE-2018-8581
-## CVE-2018-8581 part links
-
- - [Exchange2domain](https://github.com/Ridter/Exchange2domain)
- - [CVE-2018-8581](https://github.com/WyAtu/CVE-2018-8581)
-
-
-# CVE-2018-8302
-## CVE-2018-8302 part links
-
- - []()
-
-# CVE-2019-1040
-## CVE-2019-1040 part links
-
- - [CVE-2019-1040 with Exchange](https://github.com/Ridter/CVE-2019-1040)
- - [Exploiting CVE-2019-1040 - Combining relay vulnerabilities for RCE and Domain Admin](https://dirkjanm.io/exploiting-CVE-2019-1040-relay-vulnerabilities-for-rce-and-domain-admin/)
- - [CVE-2019-1040-dcpwn](https://github.com/Ridter/CVE-2019-1040-dcpwn)
-
-
-# CVE-2020-16875
-## CVE-2020-16875 part links
-
- - [Microsoft Exchange Server DlpUtils AddTenantDlpPolicy Remote Code Execution Vulnerability](https://srcincite.io/pocs/cve-2020-16875.py.txt)
-
-
-# CVE-2020-17083
-## CVE-2020-17083 part links
-
- - [Microsoft Exchange Server ExportExchangeCertificate WriteCertiricate File Write Remote Code Execution Vulnerability](https://srcincite.io/pocs/cve-2020-17083.ps1.txt)
- - [CVE-2020-17083 Microsoft Exchange Server任意代码执行漏洞 POC](https://mp.weixin.qq.com/s/LMUMmuGfT3nmKN88O5hBAA)
-
-# CVE-2020-17143
-## CVE-2020-17143 part links
-
- - [Microsoft Exchange Server OWA OneDriveProUtilities GetWacUrl XML External Entity Processing Information Disclosure Vulnerability](https://srcincite.io/pocs/cve-2020-17143.py.txt)
-
-
-
-
-# CVE-2020-0688
-## CVE-2020-0688 part links
-
- - [CVE-2020-0688-Exchange-远程代码执行分析及复现](https://fdlucifer.github.io/2020/10/12/cve-2020-0688/)
- - [Ridter/cve-2020-0688](https://github.com/Ridter/cve-2020-0688/)
-
-# CVE-2020-17144
-## CVE-2020-17144 part links
-
- - [CVE-2020-17144漏洞分析与武器化](https://www.zcgonvh.com/post/analysis_of_CVE-2020-17144_and_to_weaponizing.html)
- - [CVE-2020-17144 zcgonvh github exp](https://github.com/zcgonvh/CVE-2020-17144)
- - [Exchange2010 authorized RCE](https://github.com/Airboi/CVE-2020-17144-EXP)
-
 
 # Exchange Authenticated RCE CVE-2021-42321 (completed)
 ## CVE-2021-42321 part links
@@ -613,7 +607,7 @@ DCERPC Runtime Error: code: 0x5 - rpc_s_access_denied
 
 
 
-# ProxyNotShell (WIP)
+# ProxyNotShell (completed)
 ## ProxyNotShell part links
 
  - [ProxyNotShell — the story of the claimed zero days in Microsoft Exchange](https://doublepulsar.com/proxynotshell-the-story-of-the-claimed-zero-day-in-microsoft-exchange-5c63d963a9e9)
@@ -669,13 +663,45 @@ ProxyNotShell链中的第二个漏洞是CVE-2022-41082，这是一个在Exchange
 
 ProxyShell漏洞的利用只发生在端口443上(HTTPS)，而ProxyNotShell端口5985(HTTP)和5986(HTTPS)也在利用范围内
 
+## ProxyNotShell 利用细节
+### step1
+
+使用XML SOAP发起PsRemoting的HTTP POST请求
+
+通过WSMAN协议访问基于web的企业管理(WBEM)。攻击者在易受攻击的系统上启动shell，以便通过Windows远程管理(PsRemoting)进一步执行PowerShell脚本。
+
+ - ![](pics/proxynotshell5.png)
+
+### step2
+
+使用XML SOAP的HTTP POST请求来延长shell的生命周期
+
+启动shell后，攻击者立即延长其生命周期；否则，默认情况下，由于shell的过期时间太短，shell将被关闭。这是在Exchange Server上进一步执行命令所必需的。要做到这一点，攻击者立即通过启用keep alive选项的WSMAN发送一个特殊请求。
+
+ - ![](pics/proxynotshell6.png)
+
+### step3
+
+使用XML SOAP启动新流程的HTTP POST请求
+
+之后，攻击者利用第二个漏洞CVE-2022-41082。通过使用PowerShell Remoting，攻击者发送一个创建地址簿的请求，传递带有特殊payload的编码和序列化数据作为参数。在发布的PoC中，这个编码的数据包含一个名为System.UnitySerializationHolder的gadget生成System.Windows.Markup.XamlReader类的对象。该类处理来自payload的XAML数据，从而创建System.Diagnostics类的新对象。并在目标系统上打开新进程的方法调用。在网上公布的PoC中，这个进程是calc.exe。
+
+ - ![](pics/proxynotshell7.png)
+
+执行calc.exe进程的主payload部分
+
+ - ![](pics/proxynotshell8.png)
+
  - 本地成功测试exchange版本:
 
 | 测试状态 | exchange版本 | File Name | 出版日期 | File Size |
 | ----------- | ----------- | ----------- | ----------- | ----------- |
-| 测试成功 | Exchange Server 2016 累计更新 CU17(KB4556414) 15.01.2044.004 | ExchangeServer2016-x64-cu17.iso | 2020/6/12 | 6.6 GB |
+| python poc成功 but msf失败 | Exchange Server 2016 累计更新 CU17(KB4556414) 15.01.2044.004 | ExchangeServer2016-x64-cu17.iso | 2020/6/12 | 6.6 GB |
 | 测试失败 | Exchange Server 2019 累计更新 12 (KB5011156) 15.02.1118.007 | ExchangeServer2019-x64-CU12.ISO | 2022/4/20 | 5.8 GB |
+| 测试失败 | Exchange Server 2016 累计更新 22 (KB5005333) 15.01.2375.007 | ExchangeServer2016-x64-CU22.ISO | 2021/9/24 | 6.6 GB |
+| 测试失败 | Exchange Server 2013 累计更新 23 (KB4489622) 15.00.1497.002 | Exchange2013-x64-cu23.exe | 2021/5/3 | 1.6 GB |
 
+需要后续修改poc脚本以适配各个版本exchange
 
 ## Janggggg 公开 ProxyNotShell PoC 本地测试
 
@@ -683,7 +709,7 @@ ProxyShell漏洞的利用只发生在端口443上(HTTPS)，而ProxyNotShell端�
 
  - [twitter poc利用截图证明](https://twitter.com/wdormann/status/1593311129874403335?s=20&t=VlkAC7azYSOHl9MF4bOc3g)
 
-使用poc脚本启动notepad.exe
+1. 使用poc脚本启动notepad.exe
 
 ``` bash
 root@fdvoid0:/mnt/d/1.recent-research/exchange/proxy-attackchain# python2 proxynotshell.py https://192.168.14.6 'username' 'password' notepad.exe
@@ -701,7 +727,7 @@ root@fdvoid0:/mnt/d/1.recent-research/exchange/proxy-attackchain# python2 proxyn
 
  - ![](pics/proxynotshell1.png)
 
-使用poc脚本写入txt文本
+2. 使用poc脚本写入txt文本
 
 ``` bash
 root@fdvoid0:/mnt/d/1.recent-research/exchange/proxy-attackchain# python2 proxynotshell.py https://192.168.14.6 'username' 'password' "echo 'proxynotshell is here' > C:\proxynotshell.txt"
@@ -717,7 +743,7 @@ root@fdvoid0:/mnt/d/1.recent-research/exchange/proxy-attackchain# python2 proxyn
 
  - ![](pics/proxynotshell2.png)
 
-使用poc脚本启动cmd.exe
+3. 使用poc脚本启动cmd.exe
 
 ``` bash
 root@fdvoid0:/mnt/d/1.recent-research/exchange/proxy-attackchain# python2 proxynotshell.py https://192.168.14.6 'username' 'password' cmd.exe
@@ -733,23 +759,18 @@ root@fdvoid0:/mnt/d/1.recent-research/exchange/proxy-attackchain# python2 proxyn
 
  - ![](pics/proxynotshell3.png)
 
-
-
 ## Metasploit ProxyNotShell RCE exp 本地测试
 
 11月17日，[ZeroSteiner](https://github.com/zeroSteiner)向MetaSploit分享了一个[pull请求](https://github.com/rapid7/metasploit-framework/pull/17275)，该请求提供了一种常见的方法来利用该漏洞，并且还提供了一个绕过[Exchange紧急缓解(EM)服务](https://learn.microsoft.com/en-us/exchange/exchange-emergency-mitigation-service?view=exchserver-2019)的方法，或微软推荐的IIS URL重写。此外，PR中还有对ProxyShell漏洞的更新。
 
  - [metasploit Microsoft Exchange ProxyNotShell RCE](https://www.rapid7.com/db/modules/exploit/windows/http/exchange_proxynotshell_rce/)
 
+官方说仅支持Exchange Server 2019，可以使用CU12之前的未打补丁的exchange试试，本地暂无环境
 
+ - ![](pics/proxynotshell4.png)
+ - [exchange_proxynotshell_rce.rb](./exchange_proxynotshell_rce.rb)
 
-
-
-
-
-
-
-
+需要后续修改metasploit proxynotshell rb脚本以适配各个版本exchange
 
 # ProxyNotRelay
 ## ProxyNotRelay part links
@@ -765,8 +786,6 @@ root@fdvoid0:/mnt/d/1.recent-research/exchange/proxy-attackchain# python2 proxyn
 ## OWASSRF + TabShell part links
 
  - [The OWASSRF + TabShell exploit chain](https://blog.viettelcybersecurity.com/tabshell-owassrf/)
-
-
 
 
 
@@ -797,7 +816,6 @@ root@fdvoid0:/mnt/d/1.recent-research/exchange/proxy-attackchain# python2 proxyn
  - [Microsoft Exchange Powershell Remoting Deserialization lead to RCE (CVE-2023–21707)](https://testbnull.medium.com/microsoft-exchange-powershell-remoting-deserialization-lead-to-rce-cve-2023-21707-4d0e6d282f02)
  - [CVE-2023-21707 Exchange 反序列化payload生成](https://github.com/N1k0la-T/CVE-2023-21707/)
  - [Proxynotshell 反序列化及 CVE-2023-21707 漏洞研究](https://xz.aliyun.com/t/12634?accounttraceid=97643b6cad1f48a9bc8b9b3016267889gmyp)
-
 
 
 
@@ -854,6 +872,3 @@ root@fdvoid0:/mnt/d/1.recent-research/exchange/proxy-attackchain# python2 proxyn
  - [使用 ProxyShell 和 ProxyLogon 劫持邮件链](https://paper.seebug.org/1764/)
  - [Abusing Exchange: One API call away from Domain Admin](https://dirkjanm.io/abusing-exchange-one-api-call-away-from-domain-admin/)
  - [后渗透/实验/Exchange](https://github.com/ffffffff0x/1earn/blob/master/1earn/Security/RedTeam/%E5%90%8E%E6%B8%97%E9%80%8F/%E5%AE%9E%E9%AA%8C/Exchange.md)
- - []()
-
-
