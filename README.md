@@ -619,16 +619,22 @@ DCERPC Runtime Error: code: 0x5 - rpc_s_access_denied
  - [WARNING: NEW ATTACK CAMPAIGN UTILIZED A NEW 0-DAY RCE VULNERABILITY ON MICROSOFT EXCHANGE SERVER](https://gteltsc.vn/blog/warning-new-attack-campaign-utilized-a-new-0day-rce-vulnerability-on-microsoft-exchange-server-12715.html)
  - [ProxyNotShell: CVE-2022-41040 and CVE-2022-41082 Exploits Explained](https://www.picussecurity.com/resource/blog/proxynotshellcve-2022-41040-and-cve-2022-41082-exploits-explained)
  - [Microsoft Exchange ProxyNotShell vulnerability explained and how to mitigate it](https://www.csoonline.com/article/3682762/microsoft-exchange-proxynotshell-vulnerability-explained-and-how-to-mitigate-it.html)
- - [CONTROL YOUR TYPES OR GET PWNED: REMOTE CODE EXECUTION IN EXCHANGE POWERSHELL BACKEND](https://www.zerodayinitiative.com/blog/2022/11/14/control-your-types-or-get-pwned-remote-code-execution-in-exchange-powershell-backend)
  - [Threat Brief: CVE-2022-41040 and CVE-2022-41082: Microsoft Exchange Server (ProxyNotShell)](https://unit42.paloaltonetworks.com/proxynotshell-cve-2022-41040-cve-2022-41082/)
  - [Analyzing attacks using the Exchange vulnerabilities CVE-2022-41040 and CVE-2022-41082](https://www.microsoft.com/en-us/security/blog/2022/09/30/analyzing-attacks-using-the-exchange-vulnerabilities-cve-2022-41040-and-cve-2022-41082/)
+
+## 漏洞POC利用及原理分析
+
+ - [CONTROL YOUR TYPES OR GET PWNED: REMOTE CODE EXECUTION IN EXCHANGE POWERSHELL BACKEND](https://www.zerodayinitiative.com/blog/2022/11/14/control-your-types-or-get-pwned-remote-code-execution-in-exchange-powershell-backend)
+ - [CVE-2022-41040 and CVE-2022-41082 – zero-days in MS Exchange](https://securelist.com/cve-2022-41040-and-cve-2022-41082-zero-days-in-ms-exchange/108364/)
+ - [Proxynotshell 反序列化及 CVE-2023-21707 漏洞研究](https://xz.aliyun.com/t/12634?accounttraceid=97643b6cad1f48a9bc8b9b3016267889gmyp)
  - [All the Proxy(Not)Shells](https://www.splunk.com/en_us/blog/security/all-the-proxy-not-shells.html)
 
+## 详情总结
 
-| | |
+| ZDI | CVE |
 | ----------- | ----------- |
-| ZDI-CAN-18333 | ZDI-CAN-18802 |
-| CVE-2022-41040 | CVE-2022-41082 |
+| ZDI-CAN-18802 | CVE-2022-41040 |
+| ZDI-CAN-18333 | CVE-2022-41082 |
 
 该漏洞利用链为认证后RCE(需要输入账号密码)
 
@@ -662,9 +668,22 @@ ProxyNotShell链中的第二个漏洞是CVE-2022-41082，这是一个在Exchange
 
 ProxyShell漏洞的利用只发生在端口443上(HTTPS)，而ProxyNotShell端口5985(HTTP)和5986(HTTPS)也在利用范围内
 
+ - 本地测试exchange版本:
+
+## Janggggg 公开 ProxyNotShell PoC 本地测试
+
  - [Janggggg's github 公开 ProxyNotShell PoC](https://github.com/testanull/ProxyNotShell-PoC)
 
- - [poc利用证明](https://twitter.com/wdormann/status/1593311129874403335?s=20&t=VlkAC7azYSOHl9MF4bOc3g)
+ - [poc利用截图证明](https://twitter.com/wdormann/status/1593311129874403335?s=20&t=VlkAC7azYSOHl9MF4bOc3g)
+
+
+
+
+
+
+
+
+## Metasploit ProxyNotShell RCE exp 本地测试
 
 11月17日，[ZeroSteiner](https://github.com/zeroSteiner)向MetaSploit分享了一个[pull请求](https://github.com/rapid7/metasploit-framework/pull/17275)，该请求提供了一种常见的方法来利用该漏洞，并且还提供了一个绕过[Exchange紧急缓解(EM)服务](https://learn.microsoft.com/en-us/exchange/exchange-emergency-mitigation-service?view=exchserver-2019)的方法，或微软推荐的IIS URL重写。此外，PR中还有对ProxyShell漏洞的更新。
 
@@ -731,10 +750,15 @@ ProxyShell漏洞的利用只发生在端口443上(HTTPS)，而ProxyNotShell端�
  - [Are you my Type? - Breaking .NET Through Serialization](research-pdfs/BH_US_12_Forshaw_Are_You_My_Type_WP.pdf)
  - [Pwn2Own 2021 Microsoft Exchange Exploit Chain 3rd Vulnerability doc](research-pdfs/pwn2own2021msexchange3rdvulnpdf.docx)
  - [高级攻防演练下的Webshell](https://github.com/knownsec/KCon/blob/master/2021/%E9%AB%98%E7%BA%A7%E6%94%BB%E9%98%B2%E6%BC%94%E7%BB%83%E4%B8%8B%E7%9A%84Webshell.pdf)
- - []()
-
-
-
+ - [Cracking the Lens: Targeting HTTP's Hidden Attack Surface](research-pdfs/)
+ - [DPAPI exploitation during pentest and password cracking](research-pdfs/)
+ - [How I Hacked Microsoft Teams and got $150,000 in Pwn2Own](research-pdfs/)
+ - [SCALEABLE HASH TABLE FOR SHARED MEMORY MULTIPROCESSOR SYSTEM](research-pdfs/)
+ - [Vulnerability Exchange: One Domain Account for More Than Exchange Server RCE](research-pdfs/)
+ - [File Operation Induced Unserialization via the "phar://" Stream Wrapper](research-pdfs/)
+ - [Timeless Timing Attacks](research-pdfs/)
+ - [Practical Web Cache Poisoning: Redefining 'Unexploitable'](research-pdfs/)
+ - [An ACE Up the Sleeve: Designing Active Directory DACL Backdoors](research-pdfs/)
 
 
 # offline address book
