@@ -11,7 +11,7 @@ warnings.filterwarnings("ignore")
 warnings.filterwarnings("ignore", category=DeprecationWarning)
 from requests_ntlm2 import HttpNtlmAuth
 import requests
-from requests_toolbelt.utils import dump
+# from requests_toolbelt.utils import dump
 
 
 proxies = {}

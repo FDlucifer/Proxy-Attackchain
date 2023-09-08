@@ -887,7 +887,7 @@ Content-Length: 537
 
 ### step4
 
-攻击结束，移除SessionId
+攻击结束，移除SessionId，以便于再次利用漏洞
 
  - request
 
