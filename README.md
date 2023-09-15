@@ -20,6 +20,7 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | CVE-2020-17083 | [CVE-2020-17083]() |  |  | yes |
 | CVE-2020-17143 | [CVE-2020-17143]() |  |  | yes |
 | CVE-2020-17144 | [CVE-2020-17144]() |  |  | yes |
+| CVE-2021-28482 | [CVE-2021-28482]() |  |  | yes |
 | ProxyLogon (completed) | [CVE-2021-26855](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-26855) | Mar 02, 2021 | server-side request forgery (SSRF) | yes |
 | ProxyLogon (completed) | [CVE-2021-27065](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-27065) | Mar 02, 2021 | Microsoft.Exchange.Management.DDIService.WriteFileActivity未校验写文件后缀，可由文件内容部分可控的相关功能写入WebShell | yes |
 | ProxyOracle (completed) | [CVE-2021-31196](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-31196) | Jul 13, 2021 | Reflected Cross-Site Scripting | yes |
@@ -1018,7 +1019,7 @@ root@fdvoid0:/mnt/d/1.recent-research/exchange/proxy-attackchain# python2 proxyn
 
  - [metasploit Microsoft Exchange ProxyNotShell RCE](https://www.rapid7.com/db/modules/exploit/windows/http/exchange_proxynotshell_rce/)
 
-官方说仅支持Exchange Server 2019，可以使用CU12之前的未打补丁的exchange试试，本地暂无环境
+官方说仅支持Exchange Server 2019 (version 15.2)，可以使用CU12之前的未打补丁的exchange试试，本地暂无环境
 
  - ![](pics/proxynotshell4.png)
  - [exchange_proxynotshell_rce.rb](./exchange_proxynotshell_rce.rb)
@@ -1062,14 +1063,37 @@ root@fdvoid0:/mnt/d/1.recent-research/exchange/proxy-attackchain# python2 proxyn
  - [Deep understand ASPX file handling and some related attack vectors](https://blog.viettelcybersecurity.com/deep-understand-aspx-file-handling-and-some-related-attack-vector/)
  - [The journey of exploiting a Sharepoint vulnerability.](https://blog.viettelcybersecurity.com/the-journey-of-exploiting-a-sharepoint-vulnerability/)
 
-# CVE-2023-21707
+# CVE-2023-21707 (反序列化远程代码执行)
 ## CVE-2023-21707 part links
 
- - [Microsoft Exchange Powershell Remoting Deserialization leading to RCE (CVE-2023-21707)](https://starlabs.sg/blog/2023/04-microsoft-exchange-powershell-remoting-deserialization-leading-to-rce-cve-2023-21707/)
- - [Microsoft Exchange Powershell Remoting Deserialization lead to RCE (CVE-2023–21707)](https://testbnull.medium.com/microsoft-exchange-powershell-remoting-deserialization-lead-to-rce-cve-2023-21707-4d0e6d282f02)
+ - [Microsoft Exchange Powershell Remoting Deserialization leading to RCE (CVE-2023-21707) 英语版](https://starlabs.sg/blog/2023/04-microsoft-exchange-powershell-remoting-deserialization-leading-to-rce-cve-2023-21707/)
+ - [Microsoft Exchange Powershell Remoting Deserialization lead to RCE (CVE-2023–21707) 越南语原版](https://testbnull.medium.com/microsoft-exchange-powershell-remoting-deserialization-lead-to-rce-cve-2023-21707-4d0e6d282f02)
  - [CVE-2023-21707 Exchange 反序列化payload生成](https://github.com/N1k0la-T/CVE-2023-21707/)
- - [Proxynotshell 反序列化及 CVE-2023-21707 漏洞研究](https://xz.aliyun.com/t/12634?accounttraceid=97643b6cad1f48a9bc8b9b3016267889gmyp)
 
+此exp使用报如下错误，处理起来比较棘手
+
+``` bash
+gssapi.raw.misc.GSSError: Major (851968): Unspecified GSS failure.  Minor code may provide more information, Minor (2529639053): Matching credential not found
+
+spnego.exceptions.SpnegoError: SpnegoError (4294967295): Major (851968): Unspecified GSS failure.  Minor code may provide more information, Minor (2529639053): Matching credential not found, Context: Processing security token
+```
+
+漏洞原作者的exp使用.net写的
+
+ - ![](./pics/CVE-2023-21707.png)
+
+ - [Proxynotshell 反序列化及 CVE-2023-21707 漏洞研究](https://xz.aliyun.com/t/12634?accounttraceid=97643b6cad1f48a9bc8b9b3016267889gmyp)
+ - [Microsoft Exchange Remote Powershell RCE (CVE-2023-21707)](https://www.youtube.com/watch?v=zB-VMAnF82c)
+
+该漏洞为proxynotshell的变体
+
+Microsoft.Exchange.Security.Authentication.GenericSidIdentity是ClaimsIdentity的子类。在反序列化期间，首先重构ClaimsIdentity对象，然后调用ClaimsIdentity.OnDeserializedMethod()
+
+这为漏洞利用提供了机会，可以在第二个反序列化阶段滥用来触发RCE
+
+ - 该exp必须在存在域的内网环境中使用，且需要知道目标机的账号密码，有些鸡肋
+
+利用 ysoserial.net 生成 ClaimsIdentity 的 BinaryFormatter 的反序列化 payload，再将 payload 的 b64 编码数据通过反射放入 ClaimsIdentity 的 m_serializedClaims 中。也就是 Microsoft.Exchange.Security.Authentication.GenericSidIdentity 的 m_serializedClaims 中，再将这个类通过 BinaryFormatter 进行序列化，将序列化结果写入exception的SerializationData，就得到了可用的 payload
 
 
 
