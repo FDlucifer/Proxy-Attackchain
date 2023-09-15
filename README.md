@@ -41,7 +41,7 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | CVE-2022-23277 | [CVE-2022-23277]() |  |  | yes |
 | ProxyNotFound | [CVE-2021-28480](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-28480) | April 13, 2021 | Pre-auth SSRF/ACL bypass | no |
 | ProxyNotFound | [CVE-2021-28481](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-28481) | April 13, 2021 | Pre-auth SSRF/ACL bypass | no |
-| CVE-2023-21707 | [CVE-2023-21707](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-21707) | 2023年3月9日 | Microsoft Exchange Server 远程执行代码漏洞 | yes |
+| CVE-2023-21707 (test failed) | [CVE-2023-21707](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-21707) | 2023年3月9日 | Microsoft Exchange Server 远程执行代码漏洞 | yes |
 
 # CVE-2018-8581
 ## CVE-2018-8581 part links
@@ -1063,7 +1063,7 @@ root@fdvoid0:/mnt/d/1.recent-research/exchange/proxy-attackchain# python2 proxyn
  - [Deep understand ASPX file handling and some related attack vectors](https://blog.viettelcybersecurity.com/deep-understand-aspx-file-handling-and-some-related-attack-vector/)
  - [The journey of exploiting a Sharepoint vulnerability.](https://blog.viettelcybersecurity.com/the-journey-of-exploiting-a-sharepoint-vulnerability/)
 
-# CVE-2023-21707 (反序列化远程代码执行)
+# CVE-2023-21707 (反序列化远程代码执行) (test failed)
 ## CVE-2023-21707 part links
 
  - [Microsoft Exchange Powershell Remoting Deserialization leading to RCE (CVE-2023-21707) 英语版](https://starlabs.sg/blog/2023/04-microsoft-exchange-powershell-remoting-deserialization-leading-to-rce-cve-2023-21707/)
