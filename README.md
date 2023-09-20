@@ -15,7 +15,7 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | CVE-2018-8581 | [CVE-2018-8581]() |  |  | yes |
 | CVE-2018-8302 | [CVE-2018-8302]() |  |  | yes |
 | CVE-2019-1040 | [CVE-2019-1040]() |  |  | yes |
-| CVE-2020-0688 | [CVE-2020-0688]() |  |  | yes |
+| CVE-2020-0688 (completed) | [CVE-2020-0688](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2020-0688) | Feb 11, 2020 | Microsoft Exchange Validation Key Remote Code Execution Vulnerability | yes |
 | CVE-2020-16875 | [CVE-2020-16875]() |  |  | yes |
 | CVE-2020-17083 | [CVE-2020-17083]() |  |  | yes |
 | CVE-2020-17143 | [CVE-2020-17143]() |  |  | yes |
@@ -65,11 +65,24 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
  - [Exploiting CVE-2019-1040 - Combining relay vulnerabilities for RCE and Domain Admin](https://dirkjanm.io/exploiting-CVE-2019-1040-relay-vulnerabilities-for-rce-and-domain-admin/)
  - [CVE-2019-1040-dcpwn](https://github.com/Ridter/CVE-2019-1040-dcpwn)
 
-# CVE-2020-0688
+# CVE-2020-0688 (completed)
 ## CVE-2020-0688 part links
 
  - [CVE-2020-0688-Exchange-远程代码执行分析及复现](https://fdlucifer.github.io/2020/10/12/cve-2020-0688/)
- - [Ridter/cve-2020-0688](https://github.com/Ridter/cve-2020-0688/)
+ - [github cve-2020-0688 武器化工具](https://github.com/search?q=CVE-2020-0688&type=repositories)
+ - [DotNet安全-ViewState反序列化利用](https://mp.weixin.qq.com/s/UGFu7zLDUMaCGNYlYm3WRw)
+ - [Hunting Down MS Exchange Attacks. Part 2 (CVE-2020-0688, CVE-2020-16875, CVE-2021-24085)](https://cyberpolygon.com/materials/okhota-na-ataki-ms-exchange-chast-2-cve-2020-0688-cve-2020-16875-cve-2021-24085/)
+ - [CVE-2020-0688: REMOTE CODE EXECUTION ON MICROSOFT EXCHANGE SERVER THROUGH FIXED CRYPTOGRAPHIC KEYS](https://www.zerodayinitiative.com/blog/2020/2/24/cve-2020-0688-remote-code-execution-on-microsoft-exchange-server-through-fixed-cryptographic-keys)
+ - [exploit-db Microsoft Exchange 2019 15.2.221.12 - Authenticated Remote Code Execution](https://www.exploit-db.com/exploits/48153)
+ - [Exchange Exploit Case Study – CVE-2020-0688](https://community.netwitness.com/t5/netwitness-community-blog/exchange-exploit-case-study-cve-2020-0688/ba-p/517916)
+ - [CVE-2020-0688的武器化与.net反序列化漏洞那些事](https://www.zcgonvh.com/post/weaponizing_CVE-2020-0688_and_about_dotnet_deserialize_vulnerability.html)
+ - [【实战篇】记一次CVE-2020-0688的漏洞利用](https://www.modb.pro/db/143283)
+
+该模块利用了Exchange控制面板(ECP)中的.net序列化漏洞。该漏洞是由于Microsoft Exchange Server没有在每次安装的基础上随机化密钥，导致它们使用相同的validationKey和decryptionKey值。有了这些值，攻击者可以制作一个特殊的ViewState，使用.net反序列化NT_AUTHORITY\SYSTEM来执行操作系统命令。
+
+viewstate 的反序列化，成为第一个能直接在 exchange 服务器上执行命令的漏洞，所以漏洞刚出时影响非常大且很有代表性
+
+网上分析文章也多，还有很多开源的武器化实现，就不过多写了
 
 # CVE-2020-16875
 ## CVE-2020-16875 part links
@@ -1040,6 +1053,9 @@ root@fdvoid0:/mnt/d/1.recent-research/exchange/proxy-attackchain# python2 proxyn
 
 
 
+
+
+
 # OWASSRF + TabShell
 ## OWASSRF + TabShell part links
 
@@ -1549,6 +1565,8 @@ root@fdvoid0:/mnt/d/1.recent-research/exchange/proxy-attackchain/proxymaybeshell
  - ![](./pics/proxymaybeshell3.png)
 
  - ![](./pics/proxymaybeshell4.png)
+
+
 
 
 
