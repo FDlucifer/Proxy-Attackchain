@@ -50,13 +50,13 @@ namespace ysoserial.Generators
             {
                 binaryFormatterPayload = (byte[])new TextFormattingRunPropertiesGenerator().GenerateWithNoTest("BinaryFormatter", inputArgs);
             }
-            
+
             DataSetMarshal payloadDataSetMarshal = new DataSetMarshal(binaryFormatterPayload);
 
             if (formatter.Equals("binaryformatter", StringComparison.OrdinalIgnoreCase)
                 || formatter.Equals("losformatter", StringComparison.OrdinalIgnoreCase)
                 || formatter.Equals("soapformatter", StringComparison.OrdinalIgnoreCase))
-            { 
+            {
                 return Serialize(payloadDataSetMarshal, formatter, inputArgs);
             }
             else

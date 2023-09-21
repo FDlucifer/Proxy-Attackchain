@@ -42,7 +42,7 @@ namespace ysoserial.Generators
                 binaryFormatterPayload = (byte[])new TextFormattingRunPropertiesGenerator().GenerateWithNoTest("BinaryFormatter", inputArgs);
             }
 
-                
+
             DataSetSpoofMarshal payloadDataSetMarshal = new DataSetSpoofMarshal(binaryFormatterPayload);
             if (formatter.Equals("binaryformatter", StringComparison.OrdinalIgnoreCase)
                 || formatter.Equals("losformatter", StringComparison.OrdinalIgnoreCase)

