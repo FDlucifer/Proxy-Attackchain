@@ -45,7 +45,9 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | CVE-2023-21707 (test failed) | [CVE-2023-21707](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-21707) | 2023年3月9日 | Microsoft Exchange Server 远程执行代码漏洞 | yes |
 | proxymaybeshell (completed) | [proxymaybeshell](https://mp.weixin.qq.com/s/mvc-HS1nB2rWzWHLBkYz2A) | 2023年9月15日 | proxyshell ssrf + proxynotshell伪造X-Rps-CAT token | yes |
 
+ - 所有exchange server的iso镜像版本CU及安全更新补丁SU信息均可在以下microsoft官网查询和下载到
 
+ - [Exchange Server build numbers and release dates](https://learn.microsoft.com/en-us/exchange/new-features/build-numbers-and-release-dates?view=exchserver-2019)
 
 # CVE-2018-8581
 ## CVE-2018-8581 part links
@@ -399,6 +401,7 @@ Exchange Server 2019 CU10 <= Oct21SU 15.2.922.14 15.02.0922.014
 | 测试状态 | exchange版本 | File Name | 出版日期 | File Size |
 | ----------- | ----------- | ----------- | ----------- | ----------- |
 | 测试成功 | Exchange Server 2016 累计更新 22 (KB5005333) 15.01.2375.007 | ExchangeServer2016-x64-CU22.ISO | 2021/9/24 | 6.6 GB |
+| 测试失败 | Security Update For Exchange Server 2016 CU22 (KB5008631) 15.01.2375.018 | Exchange2016-KB5008631-x64-zh-hans.msp | 2022/1/11 | 151.2 MB |
 
 
 ## 直接修改ysoserial.net为写入aspx webshell
@@ -1102,26 +1105,26 @@ root@fdvoid0:/mnt/d/1.recent-research/exchange/proxy-attackchain# python2 proxyn
  - 漏洞仅仅影响下面几个特定安全更新的版本:
 
 ``` bash
-'15.1.2308.20', # Exchange Server 2016 CU21 Nov21SU
-'15.1.2308.21', # Exchange Server 2016 CU21 Jan22SU
-'15.1.2375.17', # Exchange Server 2016 CU22 Nov21SU
-'15.1.2375.18', # Exchange Server 2016 CU22 Jan22SU
-'15.2.922.19', # Exchange Server 2019 CU10 Nov21SU
-'15.2.922.20', # Exchange Server 2019 CU10 Jan22SU
-'15.2.986.14', # Exchange Server 2019 CU11 Nov21SU
-'15.2.986.15'  # Exchange Server 2019 CU11 Jan22SU
+Exchange Server 2016 CU22 <= Jan22SU 15.1.2375.18 15.01.2375.018
+Exchange Server 2016 CU21 <= Jan22SU 15.1.2308.21 15.01.2308.021
+Exchange Server 2019 CU11 <= Jan22SU 15.2.986.15 15.02.0986.015
+Exchange Server 2019 CU10 <= Jan22SU 15.2.922.20 15.02.0922.020
+Exchange Server 2013 CU23 <= Jan22SU 15.0.1497.28 15.00.1497.028
 ```
 
  - 本地测试exchange环境(Exchange Server 2016 安装15.01.2375.018安全更新):
 
 | 测试状态 | exchange版本 | File Name | 出版日期 | File Size |
 | ----------- | ----------- | ----------- | ----------- | ----------- |
-| 测试失败 | Exchange Server 2016 累计更新 22 (KB5005333) 15.01.2375.007 | ExchangeServer2016-x64-CU22.ISO | 2021/9/24 | 6.6 GB |
+| 测试成功 | Exchange Server 2016 累计更新 22 (KB5005333) 15.01.2375.007 | ExchangeServer2016-x64-CU22.ISO | 2021/9/24 | 6.6 GB |
 | 测试成功 | Security Update For Exchange Server 2016 CU22 (KB5008631) 15.01.2375.018 | Exchange2016-KB5008631-x64-zh-hans.msp | 2022/1/11 | 151.2 MB |
 
-未更新KB5008631补丁包的原始CU22版本无法利用此漏洞，因为利用链在安全更新补丁包中
 
-该漏洞和之前的CVE-2021-42321漏洞利用exp的请求流程是一样的，只是新的DataSetTypeSpoof .net反序列化利用链绕过了安全更新
+该漏洞和之前的CVE-2021-42321漏洞利用exp的请求流程是一样的，只是使用新的DataSetTypeSpoof .net反序列化利用链，CVE-2022-23277 是针对 ChainedSerializationBinder.GlobalDisallowedTypesForDeserialization 黑名单的完全绕过，利用该漏洞可以反序列化任意恶意类。
+
+CVE-2021-42321 只影响 2016 CU21/22 和 2019 CU10/11。鉴于 CVE-2022-23277 对引入 ChainedSerializationBinder() 后的所有 Exchange 版本都将造成影响，如果能挖掘出更多的反序列化触发点，也许能影响历史上更多版本 Exchange。
+
+过低版本或未引入ChainedSerializationBinder()的exchange版本无法利用此漏洞
 
 1. 使用ysoserial.net的原始未修改的DataSetTypeSpoofGenerator.cs写入test.txt文件
 
