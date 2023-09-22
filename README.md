@@ -20,6 +20,7 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | CVE-2020-17083 | [CVE-2020-17083]() |  |  | yes |
 | CVE-2020-17143 | [CVE-2020-17143]() |  |  | yes |
 | CVE-2020-17144 | [CVE-2020-17144]() |  |  | yes |
+| CVE-2021-24085 | [CVE-2021-24085](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2021-24085) | Feb 9, 2021 | An authenticated attacker can leak a cert file which results in a CSRF token to be generated. | yes |
 | CVE-2021-28482 | [CVE-2021-28482]() |  |  | yes |
 | ProxyLogon (completed) | [CVE-2021-26855](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-26855) | Mar 02, 2021 | server-side request forgery (SSRF) | yes |
 | ProxyLogon (completed) | [CVE-2021-27065](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-27065) | Mar 02, 2021 | Microsoft.Exchange.Management.DDIService.WriteFileActivity未校验写文件后缀，可由文件内容部分可控的相关功能写入WebShell | yes |
@@ -83,6 +84,12 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
  - [Exploiting ViewState Deserialization using Blacklist3r and YSoSerial.Net](https://notsosecure.com/exploiting-viewstate-deserialization-using-blacklist3r-and-ysoserial-net)
  - [Deep Dive into .NET ViewState deserialization and its exploitation](https://swapneildash.medium.com/deep-dive-into-net-viewstate-deserialization-and-its-exploitation-54bf5b788817)
 
+ - 漏洞影响的exchange版本信息
+
+``` bash
+MS Exchange Server 2010 SP3 up to 2019 CU4
+```
+
 该模块利用了Exchange控制面板(ECP)中的.net序列化漏洞。该漏洞是由于Microsoft Exchange Server没有在每次安装的基础上随机化密钥，导致它们使用相同的validationKey和decryptionKey值。有了这些值，攻击者可以制作一个特殊的ViewState，使用.net反序列化NT_AUTHORITY\SYSTEM来执行操作系统命令。
 
 viewstate 的反序列化，成为第一个能直接在 exchange 服务器上执行命令的漏洞，所以漏洞刚出时影响非常大且很有代表性
@@ -112,6 +119,19 @@ viewstate 的反序列化，成为第一个能直接在 exchange 服务器上执
  - [CVE-2020-17144 zcgonvh github exp](https://github.com/zcgonvh/CVE-2020-17144)
  - [Exchange2010 authorized RCE](https://github.com/Airboi/CVE-2020-17144-EXP)
 
+# CVE-2021-24085
+## CVE-2021-24085 part links
+
+ - [Hunting Down MS Exchange Attacks. Part 2 (CVE-2020–0688, CVE-2020–16875, CVE-2021–24085)](https://bi-zone.medium.com/hunting-down-ms-exchange-attacks-part-2-cve-2020-0688-cve-2020-16875-cve-2021-24085-8355ec0917c)
+
+
+
+# CVE-2021-28482
+## CVE-2021-28482 part links
+
+
+
+
 # ProxyLogon (completed)
 ## ProxyLogon part links
 
@@ -119,6 +139,15 @@ viewstate 的反序列化，成为第一个能直接在 exchange 服务器上执
  - [A New Attack Surface on MS Exchange Part 1 - ProxyLogon!](https://blog.orange.tw/2021/08/proxylogon-a-new-attack-surface-on-ms-exchange-part-1.html)
  - [ProxyLogon漏洞分析](https://hosch3n.github.io/2021/08/22/ProxyLogon%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/)
  - [复现Microsoft Exchange Proxylogon漏洞利用链](https://xz.aliyun.com/t/9305)
+
+ - 漏洞影响exchange版本信息
+
+``` bash
+Exchange Server 2019 < 15.02.0792.010
+Exchange Server 2019 < 15.02.0721.013
+Exchange Server 2016 < 15.01.2106.013
+Exchange Server 2013 < 15.00.1497.012
+```
 
  - ![](pics/proxylogon.png)
  - ![](pics/proxylogon1.png)
@@ -129,6 +158,22 @@ viewstate 的反序列化，成为第一个能直接在 exchange 服务器上执
 
  - [A New Attack Surface on MS Exchange Part 2 - ProxyOracle!](https://blog.orange.tw/2021/08/proxyoracle-a-new-attack-surface-on-ms-exchange-part-2.html)
  - [ProxyOracle漏洞分析](https://hosch3n.github.io/2021/08/23/ProxyOracle%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/)
+
+ - 影响版本
+
+CVE-2021-31195
+``` bash
+Exchange Server 2013 < May21SU
+Exchange Server 2016 < May21SU < CU21
+Exchange Server 2019 < May21SU < CU10
+```
+
+CVE-2021-31196
+``` bash
+Exchange Server 2013 < Jul21SU
+Exchange Server 2016 < Jul21SU
+Exchange Server 2019 < Jul21SU
+```
 
 Once a victim clicks this link, evil.com will receive the cookies.
 
@@ -206,6 +251,22 @@ Decrypt this cookie to plaintext:
  - [Proof of Concept Exploit for Microsoft Exchange CVE-2021-34473, CVE-2021-34523, CVE-2021-31207](https://github.com/horizon3ai/proxyshell)
 
 ## short intro
+
+ - 影响exchange版本信息
+
+CVE-2021-34473 & CVE-2021-34523
+``` bash
+Exchange Server 2013 < Apr21SU
+Exchange Server 2016 < Apr21SU < CU21
+Exchange Server 2019 < Apr21SU < CU10
+```
+
+CVE-2021-31207
+``` bash
+Exchange Server 2013 < May21SU
+Exchange Server 2016 < May21SU < CU21
+Exchange Server 2019 < May21SU < CU10
+```
 
  - CVE-2021-34473 - Pre-auth Path Confusion
 
@@ -296,6 +357,12 @@ view-source:https://192.168.186.130//aspnet_client/redhedh.aspx?cmd=Response.Wri
  - [PROXYTOKEN: AN AUTHENTICATION BYPASS IN MICROSOFT EXCHANGE SERVER](https://www.zerodayinitiative.com/blog/2021/8/30/proxytoken-an-authentication-bypass-in-microsoft-exchange-server)
  - [CVE-2021-33766-ProxyToken](https://github.com/demossl/CVE-2021-33766-ProxyToken)
  - [CVE-2021-33766](https://github.com/bhdresh/CVE-2021-33766)
+
+ - 影响exchange版本信息
+
+``` bash
+<= July 2021 Exchange cumulative updates.
+```
 
 ## proxytoken复现
 
@@ -598,6 +665,14 @@ ClientExtensionCollectionFormatter.Deserialize() 改为使用 ExchangeBinaryForm
  - [A New Attack Surface on MS Exchange Part 4 - ProxyRelay!](https://blog.orange.tw/2022/10/proxyrelay-a-new-attack-surface-on-ms-exchange-part-4.html)
  - [ProxyRelay](https://github.com/HuanGMZzz/ProxyRelay)
 
+ - 漏洞影响exchange版本信息
+
+``` bash
+ <= Exchange Server 2013 CU23
+ <= Exchange Server 2016 CU23
+ <= Exchange Server 2019 CU12
+```
+
 github的这个脚本报错，待后续深入研究relay attack后再来解决
 
 ``` bash
@@ -646,6 +721,12 @@ DCERPC Runtime Error: code: 0x5 - rpc_s_access_denied
  - [Microsoft Exchange ProxyNotShell vulnerability explained and how to mitigate it](https://www.csoonline.com/article/3682762/microsoft-exchange-proxynotshell-vulnerability-explained-and-how-to-mitigate-it.html)
  - [Threat Brief: CVE-2022-41040 and CVE-2022-41082: Microsoft Exchange Server (ProxyNotShell)](https://unit42.paloaltonetworks.com/proxynotshell-cve-2022-41040-cve-2022-41082/)
  - [Analyzing attacks using the Exchange vulnerabilities CVE-2022-41040 and CVE-2022-41082](https://www.microsoft.com/en-us/security/blog/2022/09/30/analyzing-attacks-using-the-exchange-vulnerabilities-cve-2022-41040-and-cve-2022-41082/)
+
+ - 漏洞影响exchange版本信息
+
+``` bash
+ <= Microsoft Exchange Server 2013, Exchange Server 2016, and Exchange Server 2019. September 2021 Cumulative Update (CU)
+```
 
 ## 漏洞POC利用及原理分析
 
@@ -1120,7 +1201,7 @@ Exchange Server 2013 CU23 <= Jan22SU 15.0.1497.28 15.00.1497.028
 | 测试成功 | Security Update For Exchange Server 2016 CU22 (KB5008631) 15.01.2375.018 | Exchange2016-KB5008631-x64-zh-hans.msp | 2022/1/11 | 151.2 MB |
 
 
-该漏洞和之前的CVE-2021-42321漏洞利用exp的请求流程是一样的，只是使用新的DataSetTypeSpoof .net反序列化利用链，CVE-2022-23277 是针对 ChainedSerializationBinder.GlobalDisallowedTypesForDeserialization 黑名单的完全绕过，利用该漏洞可以反序列化任意恶意类。
+该漏洞和之前的CVE-2021-42321漏洞利用exp的请求流程是一样的，只是使用新的DataSetTypeSpoof .net反序列化利用链，CVE-2022-23277 是针对 ChainedSerializationBinder.GlobalDisallowedTypesForDeserialization 黑名单的完全绕过，当binder返回null值时，binder对反序列化的类型校验不起作用, 利用该漏洞可以反序列化任意恶意类。
 
 CVE-2021-42321 只影响 2016 CU21/22 和 2019 CU10/11。鉴于 CVE-2022-23277 对引入 ChainedSerializationBinder() 后的所有 Exchange 版本都将造成影响，如果能挖掘出更多的反序列化触发点，也许能影响历史上更多版本 Exchange。
 
@@ -1192,6 +1273,15 @@ psi.Arguments = " -EncodedCommand UwBlAHQALQBDAG8AbgB0AGUAbgB0ACAALQBQAGEAdABoAC
  - [Microsoft Exchange Powershell Remoting Deserialization lead to RCE (CVE-2023–21707) 越南语原版](https://testbnull.medium.com/microsoft-exchange-powershell-remoting-deserialization-lead-to-rce-cve-2023-21707-4d0e6d282f02)
  - [CVE-2023-21707 Exchange 反序列化payload生成](https://github.com/N1k0la-T/CVE-2023-21707/)
 
+ - 漏洞影响exchange版本信息
+
+``` bash
+ < Exchange Server 2019 CU12 Feb23SU	February 14, 2023	15.2.1118.25	15.02.1118.025
+ < Exchange Server 2019 CU11 Feb23SU	February 14, 2023	15.2.986.41	15.02.0986.041
+ < Exchange Server 2016 CU23 Feb23SU	February 14, 2023	15.1.2507.21	15.01.2507.021
+ < Exchange Server 2013 CU23 Feb23SU	February 14, 2023	15.0.1497.47	15.00.1497.047
+```
+
 此exp使用报如下错误，处理起来比较棘手
 
 ``` bash
@@ -1224,6 +1314,8 @@ Microsoft.Exchange.Security.Authentication.GenericSidIdentity是ClaimsIdentity�
  - [7BitsTeam - ProxyMaybeShell](https://github.com/7BitsTeam/ProxyMaybeShell)
 
  - 说明：proxymaybeshell漏洞是结合proxyshell的ssrf漏洞 + proxynotshell的poc请求powershell端点的NTLM身份认证方式改成了之前proxyshell漏洞中使用的伪造administrator的X-Rps-CAT token方式进行身份认证，且将原proxynotshell的命令执行poc改成了文件写入exp的方式写入shell，适合在不知道目标exchange服务器的账号密码的极端情况下使用，适合实战
+
+ - 漏洞影响exchange版本信息同proxyshell和proxynotshell
 
 ## 漏洞复现利用
 
