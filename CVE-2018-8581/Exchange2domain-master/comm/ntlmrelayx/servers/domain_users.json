@@ -1,0 +1,3462 @@
+[{
+    "attributes": {
+        "accountExpires": [
+            "9999-12-31 23:59:59.999999"
+        ],
+        "badPasswordTime": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "badPwdCount": [
+            0
+        ],
+        "cn": [
+            "HealthMailbox290b0cfecefa49fdbacbcddd20810074"
+        ],
+        "codePage": [
+            0
+        ],
+        "countryCode": [
+            0
+        ],
+        "dSCorePropagationData": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "displayName": [
+            "HealthMailbox407c8a00cc82449c831a28177634ce64"
+        ],
+        "distinguishedName": [
+            "CN=HealthMailbox290b0cfecefa49fdbacbcddd20810074,CN=Monitoring Mailboxes,CN=Microsoft Exchange System Objects,DC=pcmgr,DC=local"
+        ],
+        "garbageCollPeriod": [
+            1209600
+        ],
+        "homeMDB": [
+            "CN=Mailbox Database 1845309341,CN=Databases,CN=Exchange Administrative Group (FYDIBOHF23SPDLT),CN=Administrative Groups,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "instanceType": [
+            4
+        ],
+        "internetEncoding": [
+            0
+        ],
+        "lastLogoff": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "lastLogon": [
+            "2019-01-04 07:03:55.273455+00:00"
+        ],
+        "lastLogonTimestamp": [
+            "2019-01-04 06:49:29.129902+00:00"
+        ],
+        "legacyExchangeDN": [
+            "/o=pcmgrExchange/ou=Monitoring Mailboxes/cn=Recipients/cn=HealthMailbox290b0cfecefa49fdbacbcddd20810074"
+        ],
+        "logonCount": [
+            4
+        ],
+        "mail": [
+            "HealthMailbox290b0cfecefa49fdbacbcddd20810074@pcmgr.local"
+        ],
+        "mailNickname": [
+            "HealthMailbox290b0cfecefa49fdbacbcddd20810074"
+        ],
+        "msExchAddressBookFlags": [
+            1
+        ],
+        "msExchArchiveDatabaseLink": [
+            "CN=Mailbox Database 1845309341,CN=Databases,CN=Exchange Administrative Group (FYDIBOHF23SPDLT),CN=Administrative Groups,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchArchiveGUID": [
+            {
+                "encoded": "9vwZEz9Bv0OQOoUMDXIUwQ==",
+                "encoding": "base64"
+            }
+        ],
+        "msExchArchiveName": [
+            "\u5c31\u5730\u5b58\u6863 - HealthMailbox290b0cfecefa49fdbacbcddd20810074"
+        ],
+        "msExchArchiveStatus": [
+            1
+        ],
+        "msExchBypassAudit": [
+            false
+        ],
+        "msExchHideFromAddressLists": [
+            true
+        ],
+        "msExchHomeServerName": [
+            "/o=pcmgrExchange/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Configuration/cn=Servers/cn=LABDC"
+        ],
+        "msExchMDBRulesQuota": [
+            64
+        ],
+        "msExchMailboxAuditEnable": [
+            false
+        ],
+        "msExchMailboxAuditLogAgeLimit": [
+            7776000
+        ],
+        "msExchMailboxGuid": [
+            {
+                "encoded": "pJI/jYJ/J0Sj+x6NhWQuqA==",
+                "encoding": "base64"
+            }
+        ],
+        "msExchModerationFlags": [
+            0
+        ],
+        "msExchProvisioningFlags": [
+            0
+        ],
+        "msExchRBACPolicyLink": [
+            "CN=Default Role Assignment Policy,CN=Policies,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchRecipientSoftDeletedStatus": [
+            0
+        ],
+        "msExchRecipientTypeDetails": [
+            549755813888
+        ],
+        "msExchTextMessagingState": [
+            302120705,
+            16842751
+        ],
+        "msExchTransportRecipientSettingsFlags": [
+            0
+        ],
+        "msExchUMDtmfMap": [
+            "emailAddress:432584624526929020233233249332222233320810074",
+            "lastNameFirstName:432584624526940728200228244928312281776342364",
+            "firstNameLastName:432584624526940728200228244928312281776342364"
+        ],
+        "msExchUMEnabledFlags2": [
+            -1
+        ],
+        "msExchUserAccountControl": [
+            0
+        ],
+        "msExchVersion": [
+            1130555651391488
+        ],
+        "name": [
+            "HealthMailbox290b0cfecefa49fdbacbcddd20810074"
+        ],
+        "objectCategory": [
+            "CN=Person,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "person",
+            "organizationalPerson",
+            "user"
+        ],
+        "objectGUID": [
+            "{f67a24f1-c934-4891-9645-0a20f34eef74}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1140"
+        ],
+        "primaryGroupID": [
+            513
+        ],
+        "proxyAddresses": [
+            "SIP:HealthMailbox290b0cfecefa49fdbacbcddd20810074@pcmgr.local",
+            "SMTP:HealthMailbox290b0cfecefa49fdbacbcddd20810074@pcmgr.local"
+        ],
+        "pwdLastSet": [
+            "2019-01-04 06:49:18.110846+00:00"
+        ],
+        "sAMAccountName": [
+            "SM_b143a0ca8e0c44648"
+        ],
+        "sAMAccountType": [
+            805306368
+        ],
+        "uSNChanged": [
+            36576
+        ],
+        "uSNCreated": [
+            36568
+        ],
+        "userAccountControl": [
+            66080
+        ],
+        "userPrincipalName": [
+            "HealthMailbox290b0cfecefa49fdbacbcddd20810074@pcmgr.local"
+        ],
+        "whenChanged": [
+            "2019-01-04 06:49:29+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-04 06:49:13+00:00"
+        ]
+    },
+    "dn": "CN=HealthMailbox290b0cfecefa49fdbacbcddd20810074,CN=Monitoring Mailboxes,CN=Microsoft Exchange System Objects,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "accountExpires": [
+            "9999-12-31 23:59:59.999999"
+        ],
+        "badPasswordTime": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "badPwdCount": [
+            0
+        ],
+        "cn": [
+            "HealthMailbox7626cbde48c74b00a15443e450475b63"
+        ],
+        "codePage": [
+            0
+        ],
+        "countryCode": [
+            0
+        ],
+        "dSCorePropagationData": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "displayName": [
+            "HealthMailbox250097eb6c3c479382c90235864156fc"
+        ],
+        "distinguishedName": [
+            "CN=HealthMailbox7626cbde48c74b00a15443e450475b63,CN=Monitoring Mailboxes,CN=Microsoft Exchange System Objects,DC=pcmgr,DC=local"
+        ],
+        "garbageCollPeriod": [
+            1209600
+        ],
+        "homeMDB": [
+            "CN=Mailbox Database 1845309341,CN=Databases,CN=Exchange Administrative Group (FYDIBOHF23SPDLT),CN=Administrative Groups,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "instanceType": [
+            4
+        ],
+        "internetEncoding": [
+            0
+        ],
+        "lastLogoff": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "lastLogon": [
+            "2019-01-23 05:56:26.578613+00:00"
+        ],
+        "lastLogonTimestamp": [
+            "2019-01-14 06:54:41.389427+00:00"
+        ],
+        "legacyExchangeDN": [
+            "/o=pcmgrExchange/ou=Monitoring Mailboxes/cn=Recipients/cn=HealthMailbox7626cbde48c74b00a15443e450475b63"
+        ],
+        "logonCount": [
+            26625
+        ],
+        "mail": [
+            "HealthMailbox7626cbde48c74b00a15443e450475b63@pcmgr.local"
+        ],
+        "mailNickname": [
+            "HealthMailbox7626cbde48c74b00a15443e450475b63"
+        ],
+        "msExchAddressBookFlags": [
+            1
+        ],
+        "msExchArchiveDatabaseLink": [
+            "CN=Mailbox Database 1845309341,CN=Databases,CN=Exchange Administrative Group (FYDIBOHF23SPDLT),CN=Administrative Groups,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchArchiveGUID": [
+            {
+                "encoded": "LQAjHzquAkyN0eBPTN9TNg==",
+                "encoding": "base64"
+            }
+        ],
+        "msExchArchiveName": [
+            "\u5c31\u5730\u5b58\u6863 - HealthMailbox7626cbde48c74b00a15443e450475b63"
+        ],
+        "msExchArchiveStatus": [
+            1
+        ],
+        "msExchBypassAudit": [
+            false
+        ],
+        "msExchHideFromAddressLists": [
+            true
+        ],
+        "msExchHomeServerName": [
+            "/o=pcmgrExchange/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Configuration/cn=Servers/cn=LABDC"
+        ],
+        "msExchMDBRulesQuota": [
+            64
+        ],
+        "msExchMailboxAuditEnable": [
+            false
+        ],
+        "msExchMailboxAuditLogAgeLimit": [
+            7776000
+        ],
+        "msExchMailboxGuid": [
+            {
+                "encoded": "il0/GCkPSU6Ff/W7ZPFLew==",
+                "encoding": "base64"
+            }
+        ],
+        "msExchMobileMailboxFlags": [
+            1
+        ],
+        "msExchModerationFlags": [
+            0
+        ],
+        "msExchProvisioningFlags": [
+            0
+        ],
+        "msExchRBACPolicyLink": [
+            "CN=Default Role Assignment Policy,CN=Policies,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchRecipientSoftDeletedStatus": [
+            0
+        ],
+        "msExchRecipientTypeDetails": [
+            549755813888
+        ],
+        "msExchTextMessagingState": [
+            302120705,
+            16842751
+        ],
+        "msExchTransportRecipientSettingsFlags": [
+            0
+        ],
+        "msExchUMDtmfMap": [
+            "emailAddress:432584624526976262233482742002154433450475263",
+            "lastNameFirstName:432584624526925009732623247938229023586415632",
+            "firstNameLastName:432584624526925009732623247938229023586415632"
+        ],
+        "msExchUMEnabledFlags2": [
+            -1
+        ],
+        "msExchUserAccountControl": [
+            0
+        ],
+        "msExchUserCulture": [
+            "en-US"
+        ],
+        "msExchVersion": [
+            1130555651391488
+        ],
+        "name": [
+            "HealthMailbox7626cbde48c74b00a15443e450475b63"
+        ],
+        "objectCategory": [
+            "CN=Person,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "person",
+            "organizationalPerson",
+            "user"
+        ],
+        "objectGUID": [
+            "{f33341cb-22ef-4e27-8ab2-b31caeef2d2c}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1139"
+        ],
+        "primaryGroupID": [
+            513
+        ],
+        "proxyAddresses": [
+            "SIP:HealthMailbox7626cbde48c74b00a15443e450475b63@pcmgr.local",
+            "SMTP:HealthMailbox7626cbde48c74b00a15443e450475b63@pcmgr.local"
+        ],
+        "pwdLastSet": [
+            "2019-01-08 11:31:43.263191+00:00"
+        ],
+        "sAMAccountName": [
+            "SM_acb843d31e2b482e8"
+        ],
+        "sAMAccountType": [
+            805306368
+        ],
+        "uSNChanged": [
+            62166
+        ],
+        "uSNCreated": [
+            36557
+        ],
+        "userAccountControl": [
+            66080
+        ],
+        "userPrincipalName": [
+            "HealthMailbox7626cbde48c74b00a15443e450475b63@pcmgr.local"
+        ],
+        "whenChanged": [
+            "2019-01-14 06:54:41+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-04 06:49:08+00:00"
+        ]
+    },
+    "dn": "CN=HealthMailbox7626cbde48c74b00a15443e450475b63,CN=Monitoring Mailboxes,CN=Microsoft Exchange System Objects,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "accountExpires": [
+            "9999-12-31 23:59:59.999999"
+        ],
+        "badPasswordTime": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "badPwdCount": [
+            0
+        ],
+        "cn": [
+            "HealthMailboxe0eeb90ccbba4f8da7307d7fbebd61d0"
+        ],
+        "codePage": [
+            0
+        ],
+        "countryCode": [
+            0
+        ],
+        "dSCorePropagationData": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "displayName": [
+            "HealthMailbox63ac8e12256e4348ba3b0b755d00a82a"
+        ],
+        "distinguishedName": [
+            "CN=HealthMailboxe0eeb90ccbba4f8da7307d7fbebd61d0,CN=Monitoring Mailboxes,CN=Microsoft Exchange System Objects,DC=pcmgr,DC=local"
+        ],
+        "garbageCollPeriod": [
+            1209600
+        ],
+        "homeMDB": [
+            "CN=Mailbox Database 1845309341,CN=Databases,CN=Exchange Administrative Group (FYDIBOHF23SPDLT),CN=Administrative Groups,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "instanceType": [
+            4
+        ],
+        "internetEncoding": [
+            0
+        ],
+        "lastLogoff": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "lastLogon": [
+            "2019-01-23 05:52:28.523716+00:00"
+        ],
+        "lastLogonTimestamp": [
+            "2019-01-14 07:06:04.221737+00:00"
+        ],
+        "legacyExchangeDN": [
+            "/o=pcmgrExchange/ou=Monitoring Mailboxes/cn=Recipients/cn=HealthMailboxe0eeb90ccbba4f8da7307d7fbebd61d0"
+        ],
+        "logonCount": [
+            8655
+        ],
+        "mail": [
+            "HealthMailboxe0eeb90ccbba4f8da7307d7fbebd61d0@pcmgr.local"
+        ],
+        "mailNickname": [
+            "HealthMailboxe0eeb90ccbba4f8da7307d7fbebd61d0"
+        ],
+        "msExchAddressBookFlags": [
+            1
+        ],
+        "msExchArchiveDatabaseLink": [
+            "CN=Mailbox Database 1845309341,CN=Databases,CN=Exchange Administrative Group (FYDIBOHF23SPDLT),CN=Administrative Groups,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchArchiveGUID": [
+            {
+                "encoded": "+wQTHkw+yk2zTp1AIt+SIQ==",
+                "encoding": "base64"
+            }
+        ],
+        "msExchArchiveName": [
+            "\u5c31\u5730\u5b58\u6863 - HealthMailboxe0eeb90ccbba4f8da7307d7fbebd61d0"
+        ],
+        "msExchArchiveStatus": [
+            1
+        ],
+        "msExchBypassAudit": [
+            false
+        ],
+        "msExchHideFromAddressLists": [
+            true
+        ],
+        "msExchHomeServerName": [
+            "/o=pcmgrExchange/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Configuration/cn=Servers/cn=LABDC"
+        ],
+        "msExchMDBRulesQuota": [
+            64
+        ],
+        "msExchMailboxAuditEnable": [
+            false
+        ],
+        "msExchMailboxAuditLogAgeLimit": [
+            7776000
+        ],
+        "msExchMailboxGuid": [
+            {
+                "encoded": "sRHyadOwrE2tVYwcdEqDAQ==",
+                "encoding": "base64"
+            }
+        ],
+        "msExchMobileMailboxFlags": [
+            1
+        ],
+        "msExchModerationFlags": [
+            0
+        ],
+        "msExchProvisioningFlags": [
+            0
+        ],
+        "msExchRBACPolicyLink": [
+            "CN=Default Role Assignment Policy,CN=Policies,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchRecipientSoftDeletedStatus": [
+            0
+        ],
+        "msExchRecipientTypeDetails": [
+            549755813888
+        ],
+        "msExchTextMessagingState": [
+            302120705,
+            16842751
+        ],
+        "msExchTransportRecipientSettingsFlags": [
+            0
+        ],
+        "msExchUMDtmfMap": [
+            "emailAddress:432584624526930332902222243832730737323236130",
+            "lastNameFirstName:432584624526963228312256343482232027553002822",
+            "firstNameLastName:432584624526963228312256343482232027553002822"
+        ],
+        "msExchUMEnabledFlags2": [
+            -1
+        ],
+        "msExchUserAccountControl": [
+            0
+        ],
+        "msExchUserCulture": [
+            "en-US"
+        ],
+        "msExchVersion": [
+            1130555651391488
+        ],
+        "name": [
+            "HealthMailboxe0eeb90ccbba4f8da7307d7fbebd61d0"
+        ],
+        "objectCategory": [
+            "CN=Person,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "person",
+            "organizationalPerson",
+            "user"
+        ],
+        "objectGUID": [
+            "{13ae1fa3-99ca-4905-a625-612bed574b33}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1138"
+        ],
+        "primaryGroupID": [
+            513
+        ],
+        "proxyAddresses": [
+            "SIP:HealthMailboxe0eeb90ccbba4f8da7307d7fbebd61d0@pcmgr.local",
+            "SMTP:HealthMailboxe0eeb90ccbba4f8da7307d7fbebd61d0@pcmgr.local"
+        ],
+        "pwdLastSet": [
+            "2019-01-08 11:31:45.622574+00:00"
+        ],
+        "sAMAccountName": [
+            "SM_9ee439cd0a96454aa"
+        ],
+        "sAMAccountType": [
+            805306368
+        ],
+        "uSNChanged": [
+            62183
+        ],
+        "uSNCreated": [
+            36548
+        ],
+        "userAccountControl": [
+            66080
+        ],
+        "userPrincipalName": [
+            "HealthMailboxe0eeb90ccbba4f8da7307d7fbebd61d0@pcmgr.local"
+        ],
+        "whenChanged": [
+            "2019-01-14 07:06:04+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-04 06:48:51+00:00"
+        ]
+    },
+    "dn": "CN=HealthMailboxe0eeb90ccbba4f8da7307d7fbebd61d0,CN=Monitoring Mailboxes,CN=Microsoft Exchange System Objects,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "accountExpires": [
+            "9999-12-31 23:59:59.999999"
+        ],
+        "badPasswordTime": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "badPwdCount": [
+            0
+        ],
+        "cn": [
+            "FederatedEmail.4c1f4d8b-8179-4148-93bf-00a95fa1e042"
+        ],
+        "codePage": [
+            0
+        ],
+        "countryCode": [
+            0
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 06:38:36+00:00",
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:09+00:00",
+            "1601-01-01 00:04:16+00:00"
+        ],
+        "displayName": [
+            "Microsoft Exchange Federation Mailbox"
+        ],
+        "distinguishedName": [
+            "CN=FederatedEmail.4c1f4d8b-8179-4148-93bf-00a95fa1e042,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "homeMDB": [
+            "CN=Mailbox Database 1845309341,CN=Databases,CN=Exchange Administrative Group (FYDIBOHF23SPDLT),CN=Administrative Groups,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "instanceType": [
+            4
+        ],
+        "lastLogoff": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "lastLogon": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "legacyExchangeDN": [
+            "/o=pcmgrExchange/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=9f75309b05f04a7cb66791cff15cbaeb-FederatedE"
+        ],
+        "logonCount": [
+            0
+        ],
+        "mDBOverHardQuotaLimit": [
+            1024
+        ],
+        "mDBOverQuotaLimit": [
+            1024
+        ],
+        "mDBStorageQuota": [
+            1024
+        ],
+        "mDBUseDefaults": [
+            false
+        ],
+        "mail": [
+            "FederatedEmail.4c1f4d8b-8179-4148-93bf-00a95fa1e042@pcmgr.local"
+        ],
+        "mailNickname": [
+            "FederatedEmail.4c1f4d8b-8179-4148-93bf-00a95fa1e042"
+        ],
+        "msExchAddressBookFlags": [
+            1
+        ],
+        "msExchArchiveQuota": [
+            104857600
+        ],
+        "msExchArchiveWarnQuota": [
+            94371840
+        ],
+        "msExchBypassAudit": [
+            false
+        ],
+        "msExchCalendarLoggingQuota": [
+            6291456
+        ],
+        "msExchDumpsterQuota": [
+            31457280
+        ],
+        "msExchDumpsterWarningQuota": [
+            20971520
+        ],
+        "msExchHideFromAddressLists": [
+            true
+        ],
+        "msExchHomeServerName": [
+            "/o=pcmgrExchange/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Configuration/cn=Servers/cn=LABDC"
+        ],
+        "msExchMailboxAuditEnable": [
+            false
+        ],
+        "msExchMailboxAuditLogAgeLimit": [
+            7776000
+        ],
+        "msExchMailboxGuid": [
+            {
+                "encoded": "FKWDZYEaz0mEwwW9cKZBug==",
+                "encoding": "base64"
+            }
+        ],
+        "msExchMailboxSecurityDescriptor": [
+            {
+                "encoded": "AQAEgBQAAAAgAAAAAAAAACwAAAABAQAAAAAABQoAAAABAQAAAAAABQoAAAAEABwAAQAAAAACFAAFAAIAAQEAAAAAAAUKAAAA",
+                "encoding": "base64"
+            }
+        ],
+        "msExchMasterAccountSid": [
+            "\u0001\u0001\u0000\u0000\u0000\u0000\u0000\u0005\n\u0000\u0000\u0000"
+        ],
+        "msExchMessageHygieneSCLDeleteThreshold": [
+            9
+        ],
+        "msExchMessageHygieneSCLJunkThreshold": [
+            4
+        ],
+        "msExchMessageHygieneSCLQuarantineThreshold": [
+            9
+        ],
+        "msExchMessageHygieneSCLRejectThreshold": [
+            7
+        ],
+        "msExchModerationFlags": [
+            6
+        ],
+        "msExchPoliciesIncluded": [
+            "f26685cd-fd4f-468d-999d-e0cac211bb06",
+            "{26491cfc-9e50-4857-861b-0cb8df22b5d7}"
+        ],
+        "msExchProvisioningFlags": [
+            0
+        ],
+        "msExchRMSComputerAccountsLink": [
+            "CN=LABDC,OU=Domain Controllers,DC=pcmgr,DC=local"
+        ],
+        "msExchRecipientDisplayType": [
+            10
+        ],
+        "msExchRecipientSoftDeletedStatus": [
+            0
+        ],
+        "msExchRecipientTypeDetails": [
+            8388608
+        ],
+        "msExchTransportRecipientSettingsFlags": [
+            0
+        ],
+        "msExchUMDtmfMap": [
+            "emailAddress:3333728333624542134382817941489323002953213042",
+            "lastNameFirstName:3333728333624542134382817941489323002953213042",
+            "firstNameLastName:3333728333624542134382817941489323002953213042"
+        ],
+        "msExchUMEnabledFlags2": [
+            -1
+        ],
+        "msExchUserAccountControl": [
+            2
+        ],
+        "msExchVersion": [
+            1126140425011200
+        ],
+        "msExchWhenMailboxCreated": [
+            "2019-01-04 06:38:36+00:00"
+        ],
+        "name": [
+            "FederatedEmail.4c1f4d8b-8179-4148-93bf-00a95fa1e042"
+        ],
+        "objectCategory": [
+            "CN=Person,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "person",
+            "organizationalPerson",
+            "user"
+        ],
+        "objectGUID": [
+            "{82c88860-605b-4b0c-97c4-a072b2736b24}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1136"
+        ],
+        "primaryGroupID": [
+            513
+        ],
+        "proxyAddresses": [
+            "SMTP:FederatedEmail.4c1f4d8b-8179-4148-93bf-00a95fa1e042@pcmgr.local"
+        ],
+        "pwdLastSet": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "sAMAccountName": [
+            "SM_5a93a7e8d9db4a21b"
+        ],
+        "sAMAccountType": [
+            805306368
+        ],
+        "sn": [
+            "FederatedEmail.4c1f4d8b-8179-4148-93bf-00a95fa1e042"
+        ],
+        "uSNChanged": [
+            36281
+        ],
+        "uSNCreated": [
+            35135
+        ],
+        "userAccountControl": [
+            514
+        ],
+        "userPrincipalName": [
+            "FederatedEmail.4c1f4d8b-8179-4148-93bf-00a95fa1e042@pcmgr.local"
+        ],
+        "whenChanged": [
+            "2019-01-04 06:38:36+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-04 13:21:09+00:00"
+        ]
+    },
+    "dn": "CN=FederatedEmail.4c1f4d8b-8179-4148-93bf-00a95fa1e042,CN=Users,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "accountExpires": [
+            "9999-12-31 23:59:59.999999"
+        ],
+        "badPasswordTime": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "badPwdCount": [
+            0
+        ],
+        "cn": [
+            "Migration.8f3e7716-2011-43e4-96b1-aba62d229136"
+        ],
+        "codePage": [
+            0
+        ],
+        "countryCode": [
+            0
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 06:38:33+00:00",
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:09+00:00",
+            "1601-01-01 00:04:16+00:00"
+        ],
+        "displayName": [
+            "Microsoft Exchange Migration"
+        ],
+        "distinguishedName": [
+            "CN=Migration.8f3e7716-2011-43e4-96b1-aba62d229136,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "homeMDB": [
+            "CN=Mailbox Database 1845309341,CN=Databases,CN=Exchange Administrative Group (FYDIBOHF23SPDLT),CN=Administrative Groups,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "instanceType": [
+            4
+        ],
+        "lastLogoff": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "lastLogon": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "legacyExchangeDN": [
+            "/o=pcmgrExchange/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=c467554c1545426cbfef5c7e42f23aa9-Migration."
+        ],
+        "logonCount": [
+            0
+        ],
+        "mDBOverHardQuotaLimit": [
+            307200
+        ],
+        "mDBOverQuotaLimit": [
+            307200
+        ],
+        "mDBStorageQuota": [
+            153600
+        ],
+        "mDBUseDefaults": [
+            false
+        ],
+        "mail": [
+            "Migration.8f3e7716-2011-43e4-96b1-aba62d229136@pcmgr.local"
+        ],
+        "mailNickname": [
+            "Migration.8f3e7716-2011-43e4-96b1-aba62d229136"
+        ],
+        "msExchAddressBookFlags": [
+            1
+        ],
+        "msExchArchiveQuota": [
+            104857600
+        ],
+        "msExchArchiveWarnQuota": [
+            94371840
+        ],
+        "msExchBypassAudit": [
+            false
+        ],
+        "msExchCalendarLoggingQuota": [
+            6291456
+        ],
+        "msExchCapabilityIdentifiers": [
+            48
+        ],
+        "msExchDumpsterQuota": [
+            31457280
+        ],
+        "msExchDumpsterWarningQuota": [
+            20971520
+        ],
+        "msExchHideFromAddressLists": [
+            true
+        ],
+        "msExchHomeServerName": [
+            "/o=pcmgrExchange/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Configuration/cn=Servers/cn=LABDC"
+        ],
+        "msExchMailboxAuditEnable": [
+            false
+        ],
+        "msExchMailboxAuditLogAgeLimit": [
+            7776000
+        ],
+        "msExchMailboxGuid": [
+            {
+                "encoded": "zLzQYicndUOXRBRsnMwucw==",
+                "encoding": "base64"
+            }
+        ],
+        "msExchMailboxSecurityDescriptor": [
+            {
+                "encoded": "AQAEgBQAAAAgAAAAAAAAACwAAAABAQAAAAAABQoAAAABAQAAAAAABQoAAAAEABwAAQAAAAACFAAFAAIAAQEAAAAAAAUKAAAA",
+                "encoding": "base64"
+            }
+        ],
+        "msExchMasterAccountSid": [
+            "\u0001\u0001\u0000\u0000\u0000\u0000\u0000\u0005\n\u0000\u0000\u0000"
+        ],
+        "msExchMessageHygieneSCLDeleteThreshold": [
+            9
+        ],
+        "msExchMessageHygieneSCLJunkThreshold": [
+            4
+        ],
+        "msExchMessageHygieneSCLQuarantineThreshold": [
+            9
+        ],
+        "msExchMessageHygieneSCLRejectThreshold": [
+            7
+        ],
+        "msExchModerationFlags": [
+            6
+        ],
+        "msExchPoliciesIncluded": [
+            "f26685cd-fd4f-468d-999d-e0cac211bb06",
+            "{26491cfc-9e50-4857-861b-0cb8df22b5d7}"
+        ],
+        "msExchProvisioningFlags": [
+            0
+        ],
+        "msExchRecipientDisplayType": [
+            10
+        ],
+        "msExchRecipientSoftDeletedStatus": [
+            0
+        ],
+        "msExchRecipientTypeDetails": [
+            8388608
+        ],
+        "msExchRequireAuthToSendTo": [
+            true
+        ],
+        "msExchTextMessagingState": [
+            302120705,
+            16842751
+        ],
+        "msExchTransportRecipientSettingsFlags": [
+            0
+        ],
+        "msExchUMDtmfMap": [
+            "emailAddress:64472846683337716201143349621222623229136",
+            "lastNameFirstName:64472846683337716201143349621222623229136",
+            "firstNameLastName:64472846683337716201143349621222623229136"
+        ],
+        "msExchUMEnabledFlags2": [
+            -1
+        ],
+        "msExchUserAccountControl": [
+            2
+        ],
+        "msExchVersion": [
+            1126140425011200
+        ],
+        "msExchWhenMailboxCreated": [
+            "2019-01-04 06:38:33+00:00"
+        ],
+        "name": [
+            "Migration.8f3e7716-2011-43e4-96b1-aba62d229136"
+        ],
+        "objectCategory": [
+            "CN=Person,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "person",
+            "organizationalPerson",
+            "user"
+        ],
+        "objectGUID": [
+            "{532adc75-da6f-4b9c-b211-c8006ff52c37}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1135"
+        ],
+        "primaryGroupID": [
+            513
+        ],
+        "proxyAddresses": [
+            "SMTP:Migration.8f3e7716-2011-43e4-96b1-aba62d229136@pcmgr.local"
+        ],
+        "pwdLastSet": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "sAMAccountName": [
+            "SM_9aeebd580c8f4a02b"
+        ],
+        "sAMAccountType": [
+            805306368
+        ],
+        "sn": [
+            "Migration.8f3e7716-2011-43e4-96b1-aba62d229136"
+        ],
+        "uSNChanged": [
+            36968
+        ],
+        "uSNCreated": [
+            35130
+        ],
+        "userAccountControl": [
+            514
+        ],
+        "userPrincipalName": [
+            "Migration.8f3e7716-2011-43e4-96b1-aba62d229136@pcmgr.local"
+        ],
+        "whenChanged": [
+            "2019-01-04 08:15:29+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-04 13:21:09+00:00"
+        ]
+    },
+    "dn": "CN=Migration.8f3e7716-2011-43e4-96b1-aba62d229136,CN=Users,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "accountExpires": [
+            "9999-12-31 23:59:59.999999"
+        ],
+        "authOrig": [
+            "CN=DiscoverySearchMailbox {D919BA05-46A6-415f-80AD-7E09334BB852},CN=Users,DC=pcmgr,DC=local"
+        ],
+        "authOrigBL": [
+            "CN=DiscoverySearchMailbox {D919BA05-46A6-415f-80AD-7E09334BB852},CN=Users,DC=pcmgr,DC=local"
+        ],
+        "badPasswordTime": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "badPwdCount": [
+            0
+        ],
+        "cn": [
+            "DiscoverySearchMailbox {D919BA05-46A6-415f-80AD-7E09334BB852}"
+        ],
+        "codePage": [
+            0
+        ],
+        "countryCode": [
+            0
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:09+00:00",
+            "1601-01-01 00:00:01+00:00"
+        ],
+        "delivContLength": [
+            102400
+        ],
+        "displayName": [
+            "\u53d1\u73b0\u641c\u7d22\u90ae\u7bb1"
+        ],
+        "distinguishedName": [
+            "CN=DiscoverySearchMailbox {D919BA05-46A6-415f-80AD-7E09334BB852},CN=Users,DC=pcmgr,DC=local"
+        ],
+        "homeMDB": [
+            "CN=Mailbox Database 1845309341,CN=Databases,CN=Exchange Administrative Group (FYDIBOHF23SPDLT),CN=Administrative Groups,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "instanceType": [
+            4
+        ],
+        "lastLogoff": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "lastLogon": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "legacyExchangeDN": [
+            "/o=pcmgrExchange/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=f88ea49e28dc470da3e9c50a84bd962b-DiscoveryS"
+        ],
+        "logonCount": [
+            0
+        ],
+        "mDBOverHardQuotaLimit": [
+            52428800
+        ],
+        "mDBOverQuotaLimit": [
+            52428800
+        ],
+        "mDBUseDefaults": [
+            false
+        ],
+        "mail": [
+            "DiscoverySearchMailbox{D919BA05-46A6-415f-80AD-7E09334BB852}@pcmgr.local"
+        ],
+        "mailNickname": [
+            "DiscoverySearchMailbox{D919BA05-46A6-415f-80AD-7E09334BB852}"
+        ],
+        "msExchAddressBookFlags": [
+            1
+        ],
+        "msExchArchiveQuota": [
+            104857600
+        ],
+        "msExchArchiveWarnQuota": [
+            94371840
+        ],
+        "msExchBypassAudit": [
+            false
+        ],
+        "msExchCalendarLoggingQuota": [
+            6291456
+        ],
+        "msExchDumpsterQuota": [
+            31457280
+        ],
+        "msExchDumpsterWarningQuota": [
+            20971520
+        ],
+        "msExchELCMailboxFlags": [
+            4
+        ],
+        "msExchHideFromAddressLists": [
+            true
+        ],
+        "msExchHomeServerName": [
+            "/o=pcmgrExchange/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Configuration/cn=Servers/cn=LABDC"
+        ],
+        "msExchMailboxAuditEnable": [
+            false
+        ],
+        "msExchMailboxAuditLogAgeLimit": [
+            7776000
+        ],
+        "msExchMailboxGuid": [
+            {
+                "encoded": "YcnWOIVyvk6leJA0wOoF8g==",
+                "encoding": "base64"
+            }
+        ],
+        "msExchMailboxSecurityDescriptor": [
+            {
+                "encoded": "AQAEjBQAAAAgAAAAAAAAACwAAAABAQAAAAAABQoAAAABAQAAAAAABQoAAAAEAEAAAgAAAAACFAABAAIAAQEAAAAAAAUKAAAAAAIkAAEAAAABBQAAAAAABRUAAACpI1m92Xg6mKH3TNhgBAAA",
+                "encoding": "base64"
+            }
+        ],
+        "msExchMasterAccountSid": [
+            "\u0001\u0001\u0000\u0000\u0000\u0000\u0000\u0005\n\u0000\u0000\u0000"
+        ],
+        "msExchModerationFlags": [
+            6
+        ],
+        "msExchPoliciesIncluded": [
+            "f26685cd-fd4f-468d-999d-e0cac211bb06",
+            "{26491cfc-9e50-4857-861b-0cb8df22b5d7}"
+        ],
+        "msExchProvisioningFlags": [
+            0
+        ],
+        "msExchRBACPolicyLink": [
+            "CN=Default Role Assignment Policy,CN=Policies,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchRecipientSoftDeletedStatus": [
+            0
+        ],
+        "msExchRecipientTypeDetails": [
+            536870912
+        ],
+        "msExchTextMessagingState": [
+            302120705,
+            16842751
+        ],
+        "msExchTransportRecipientSettingsFlags": [
+            0
+        ],
+        "msExchUMDtmfMap": [
+            "emailAddress:347268379732724624526939192205462641538023730933422852",
+            "lastNameFirstName:673924347268379624526939192205462641538023730933422852",
+            "firstNameLastName:673924347268379624526939192205462641538023730933422852"
+        ],
+        "msExchUMEnabledFlags2": [
+            -1
+        ],
+        "msExchUserAccountControl": [
+            2
+        ],
+        "msExchVersion": [
+            88218628259840
+        ],
+        "msExchWhenMailboxCreated": [
+            "2019-01-04 06:38:30+00:00"
+        ],
+        "name": [
+            "DiscoverySearchMailbox {D919BA05-46A6-415f-80AD-7E09334BB852}"
+        ],
+        "objectCategory": [
+            "CN=Person,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "person",
+            "organizationalPerson",
+            "user"
+        ],
+        "objectGUID": [
+            "{ed06baef-d7f4-4a82-9ab4-23f638fc5376}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1134"
+        ],
+        "primaryGroupID": [
+            513
+        ],
+        "proxyAddresses": [
+            "SMTP:DiscoverySearchMailbox{D919BA05-46A6-415f-80AD-7E09334BB852}@pcmgr.local"
+        ],
+        "pwdLastSet": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "sAMAccountName": [
+            "SM_e479539b4fb24cc5b"
+        ],
+        "sAMAccountType": [
+            805306368
+        ],
+        "showInAddressBook": [
+            "CN=All Mailboxes(VLV),CN=All System Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=All Recipients(VLV),CN=All System Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "sn": [
+            "MsExchDiscoveryMailbox D919BA05-46A6-415f-80AD-7E09334BB852"
+        ],
+        "submissionContLength": [
+            102400
+        ],
+        "uSNChanged": [
+            37076
+        ],
+        "uSNCreated": [
+            35125
+        ],
+        "userAccountControl": [
+            514
+        ],
+        "userPrincipalName": [
+            "DiscoverySearchMailbox {D919BA05-46A6-415f-80AD-7E09334BB852}@pcmgr.local"
+        ],
+        "whenChanged": [
+            "2019-01-04 10:22:11+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-04 13:21:09+00:00"
+        ]
+    },
+    "dn": "CN=DiscoverySearchMailbox {D919BA05-46A6-415f-80AD-7E09334BB852},CN=Users,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "accountExpires": [
+            "9999-12-31 23:59:59.999999"
+        ],
+        "badPasswordTime": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "badPwdCount": [
+            0
+        ],
+        "cn": [
+            "SystemMailbox{e0dc1c29-89c3-4034-b678-e6c29d823ed9}"
+        ],
+        "codePage": [
+            0
+        ],
+        "countryCode": [
+            0
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 06:38:27+00:00",
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:09+00:00",
+            "1601-01-01 00:04:16+00:00"
+        ],
+        "displayName": [
+            "Microsoft Exchange"
+        ],
+        "distinguishedName": [
+            "CN=SystemMailbox{e0dc1c29-89c3-4034-b678-e6c29d823ed9},CN=Users,DC=pcmgr,DC=local"
+        ],
+        "homeMDB": [
+            "CN=Mailbox Database 1845309341,CN=Databases,CN=Exchange Administrative Group (FYDIBOHF23SPDLT),CN=Administrative Groups,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "instanceType": [
+            4
+        ],
+        "lastLogoff": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "lastLogon": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "legacyExchangeDN": [
+            "/o=pcmgrExchange/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=becc7ca927a44b71993d74342e6205ba-SystemMail"
+        ],
+        "logonCount": [
+            0
+        ],
+        "mDBUseDefaults": [
+            false
+        ],
+        "mail": [
+            "SystemMailbox{e0dc1c29-89c3-4034-b678-e6c29d823ed9}@pcmgr.local"
+        ],
+        "mailNickname": [
+            "SystemMailbox{e0dc1c29-89c3-4034-b678-e6c29d823ed9}"
+        ],
+        "msExchAddressBookFlags": [
+            1
+        ],
+        "msExchArchiveQuota": [
+            104857600
+        ],
+        "msExchArchiveWarnQuota": [
+            94371840
+        ],
+        "msExchBypassAudit": [
+            false
+        ],
+        "msExchCalendarLoggingQuota": [
+            6291456
+        ],
+        "msExchCapabilityIdentifiers": [
+            41
+        ],
+        "msExchDumpsterQuota": [
+            31457280
+        ],
+        "msExchDumpsterWarningQuota": [
+            20971520
+        ],
+        "msExchELCMailboxFlags": [
+            2
+        ],
+        "msExchHideFromAddressLists": [
+            true
+        ],
+        "msExchHomeServerName": [
+            "/o=pcmgrExchange/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Configuration/cn=Servers/cn=LABDC"
+        ],
+        "msExchMailboxAuditEnable": [
+            false
+        ],
+        "msExchMailboxAuditLogAgeLimit": [
+            7776000
+        ],
+        "msExchMailboxGuid": [
+            {
+                "encoded": "c/PTqsKlgEKUh4opBFTRRA==",
+                "encoding": "base64"
+            }
+        ],
+        "msExchMailboxSecurityDescriptor": [
+            {
+                "encoded": "AQAEgBQAAAAgAAAAAAAAACwAAAABAQAAAAAABQoAAAABAQAAAAAABQoAAAAEABwAAQAAAAACFAAFAAIAAQEAAAAAAAUKAAAA",
+                "encoding": "base64"
+            }
+        ],
+        "msExchMailboxTemplateLink": [
+            "CN=ArbitrationMailbox,CN=Retention Policies Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchMasterAccountSid": [
+            "\u0001\u0001\u0000\u0000\u0000\u0000\u0000\u0005\n\u0000\u0000\u0000"
+        ],
+        "msExchModerationFlags": [
+            6
+        ],
+        "msExchPoliciesIncluded": [
+            "f26685cd-fd4f-468d-999d-e0cac211bb06",
+            "{26491cfc-9e50-4857-861b-0cb8df22b5d7}"
+        ],
+        "msExchProvisioningFlags": [
+            0
+        ],
+        "msExchRecipientDisplayType": [
+            10
+        ],
+        "msExchRecipientSoftDeletedStatus": [
+            0
+        ],
+        "msExchRecipientTypeDetails": [
+            8388608
+        ],
+        "msExchRequireAuthToSendTo": [
+            true
+        ],
+        "msExchTextMessagingState": [
+            302120705,
+            16842751
+        ],
+        "msExchTransportRecipientSettingsFlags": [
+            0
+        ],
+        "msExchUMDtmfMap": [
+            "emailAddress:797836624526930321229892340342678362293823339",
+            "lastNameFirstName:67392434726837930321229892340342678362293823339",
+            "firstNameLastName:67392434726837930321229892340342678362293823339"
+        ],
+        "msExchUMEnabledFlags2": [
+            -1
+        ],
+        "msExchUserAccountControl": [
+            2
+        ],
+        "msExchVersion": [
+            1126140425011200
+        ],
+        "msExchWhenMailboxCreated": [
+            "2019-01-04 06:38:27+00:00"
+        ],
+        "name": [
+            "SystemMailbox{e0dc1c29-89c3-4034-b678-e6c29d823ed9}"
+        ],
+        "objectCategory": [
+            "CN=Person,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "person",
+            "organizationalPerson",
+            "user"
+        ],
+        "objectGUID": [
+            "{784d7355-fe96-49e7-9766-3b34d4efc1db}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1133"
+        ],
+        "primaryGroupID": [
+            513
+        ],
+        "proxyAddresses": [
+            "SMTP:SystemMailbox{e0dc1c29-89c3-4034-b678-e6c29d823ed9}@pcmgr.local"
+        ],
+        "pwdLastSet": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "sAMAccountName": [
+            "SM_76aa368f8636477fa"
+        ],
+        "sAMAccountType": [
+            805306368
+        ],
+        "sn": [
+            "MsExchDiscovery e0dc1c29-89c3-4034-b678-e6c29d823ed9"
+        ],
+        "uSNChanged": [
+            36287
+        ],
+        "uSNCreated": [
+            35120
+        ],
+        "userAccountControl": [
+            514
+        ],
+        "userPrincipalName": [
+            "SystemMailbox{e0dc1c29-89c3-4034-b678-e6c29d823ed9}@pcmgr.local"
+        ],
+        "whenChanged": [
+            "2019-01-04 06:40:00+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-04 13:21:09+00:00"
+        ]
+    },
+    "dn": "CN=SystemMailbox{e0dc1c29-89c3-4034-b678-e6c29d823ed9},CN=Users,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "accountExpires": [
+            "9999-12-31 23:59:59.999999"
+        ],
+        "badPasswordTime": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "badPwdCount": [
+            0
+        ],
+        "cn": [
+            "SystemMailbox{bb558c35-97f1-4cb9-8ff7-d53741dc928c}"
+        ],
+        "codePage": [
+            0
+        ],
+        "countryCode": [
+            0
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 06:38:21+00:00",
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:09+00:00",
+            "1601-01-01 00:04:16+00:00"
+        ],
+        "displayName": [
+            "Microsoft Exchange"
+        ],
+        "distinguishedName": [
+            "CN=SystemMailbox{bb558c35-97f1-4cb9-8ff7-d53741dc928c},CN=Users,DC=pcmgr,DC=local"
+        ],
+        "homeMDB": [
+            "CN=Mailbox Database 1845309341,CN=Databases,CN=Exchange Administrative Group (FYDIBOHF23SPDLT),CN=Administrative Groups,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "instanceType": [
+            4
+        ],
+        "lastLogoff": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "lastLogon": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "legacyExchangeDN": [
+            "/o=pcmgrExchange/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=0561ebf1e89c4fc1b7099e08ba09bb4f-SystemMail"
+        ],
+        "logonCount": [
+            0
+        ],
+        "mDBUseDefaults": [
+            false
+        ],
+        "mail": [
+            "SystemMailbox{bb558c35-97f1-4cb9-8ff7-d53741dc928c}@pcmgr.local"
+        ],
+        "mailNickname": [
+            "SystemMailbox{bb558c35-97f1-4cb9-8ff7-d53741dc928c}"
+        ],
+        "msExchAddressBookFlags": [
+            1
+        ],
+        "msExchApprovalApplicationLink": [
+            "CN=ModeratedRecipients,CN=Approval Applications,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=AutoGroup,CN=Approval Applications,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchArchiveQuota": [
+            104857600
+        ],
+        "msExchArchiveWarnQuota": [
+            94371840
+        ],
+        "msExchBypassAudit": [
+            false
+        ],
+        "msExchCalendarLoggingQuota": [
+            6291456
+        ],
+        "msExchCapabilityIdentifiers": [
+            46,
+            52,
+            51,
+            47,
+            44,
+            43,
+            42,
+            40
+        ],
+        "msExchDumpsterQuota": [
+            31457280
+        ],
+        "msExchDumpsterWarningQuota": [
+            20971520
+        ],
+        "msExchELCMailboxFlags": [
+            2
+        ],
+        "msExchHideFromAddressLists": [
+            true
+        ],
+        "msExchHomeServerName": [
+            "/o=pcmgrExchange/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Configuration/cn=Servers/cn=LABDC"
+        ],
+        "msExchMailboxAuditEnable": [
+            false
+        ],
+        "msExchMailboxAuditLogAgeLimit": [
+            7776000
+        ],
+        "msExchMailboxGuid": [
+            {
+                "encoded": "wnJW5SQqGkGCQgn9DzjkPg==",
+                "encoding": "base64"
+            }
+        ],
+        "msExchMailboxSecurityDescriptor": [
+            {
+                "encoded": "AQAEgBQAAAAgAAAAAAAAACwAAAABAQAAAAAABQoAAAABAQAAAAAABQoAAAAEABwAAQAAAAACFAAFAAIAAQEAAAAAAAUKAAAA",
+                "encoding": "base64"
+            }
+        ],
+        "msExchMailboxTemplateLink": [
+            "CN=ArbitrationMailbox,CN=Retention Policies Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchMasterAccountSid": [
+            "\u0001\u0001\u0000\u0000\u0000\u0000\u0000\u0005\n\u0000\u0000\u0000"
+        ],
+        "msExchModerationFlags": [
+            6
+        ],
+        "msExchPoliciesIncluded": [
+            "f26685cd-fd4f-468d-999d-e0cac211bb06",
+            "{26491cfc-9e50-4857-861b-0cb8df22b5d7}"
+        ],
+        "msExchProvisioningFlags": [
+            0
+        ],
+        "msExchRecipientDisplayType": [
+            10
+        ],
+        "msExchRecipientSoftDeletedStatus": [
+            0
+        ],
+        "msExchRecipientTypeDetails": [
+            8388608
+        ],
+        "msExchRequireAuthToSendTo": [
+            true
+        ],
+        "msExchTextMessagingState": [
+            302120705,
+            16842751
+        ],
+        "msExchTransportRecipientSettingsFlags": [
+            0
+        ],
+        "msExchUMDtmfMap": [
+            "emailAddress:797836624526922558235973142298337353741329282",
+            "lastNameFirstName:797836624526922558235973142298337353741329282",
+            "firstNameLastName:797836624526922558235973142298337353741329282"
+        ],
+        "msExchUMEnabledFlags2": [
+            -1
+        ],
+        "msExchUserAccountControl": [
+            2
+        ],
+        "msExchVersion": [
+            1126140425011200
+        ],
+        "msExchWhenMailboxCreated": [
+            "2019-01-04 06:38:21+00:00"
+        ],
+        "name": [
+            "SystemMailbox{bb558c35-97f1-4cb9-8ff7-d53741dc928c}"
+        ],
+        "objectCategory": [
+            "CN=Person,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "person",
+            "organizationalPerson",
+            "user"
+        ],
+        "objectGUID": [
+            "{2fce363a-6cf2-4d9b-9e7a-00804cadee08}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1132"
+        ],
+        "primaryGroupID": [
+            513
+        ],
+        "proxyAddresses": [
+            "SMTP:SystemMailbox{bb558c35-97f1-4cb9-8ff7-d53741dc928c}@pcmgr.local"
+        ],
+        "pwdLastSet": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "sAMAccountName": [
+            "SM_097d841bf02c491f9"
+        ],
+        "sAMAccountType": [
+            805306368
+        ],
+        "sn": [
+            "SystemMailbox bb558c35-97f1-4cb9-8ff7-d53741dc928c"
+        ],
+        "submissionContLength": [
+            1048576
+        ],
+        "uSNChanged": [
+            36290
+        ],
+        "uSNCreated": [
+            35115
+        ],
+        "userAccountControl": [
+            514
+        ],
+        "userPrincipalName": [
+            "SystemMailbox{bb558c35-97f1-4cb9-8ff7-d53741dc928c}@pcmgr.local"
+        ],
+        "whenChanged": [
+            "2019-01-04 06:40:13+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-04 13:21:08+00:00"
+        ]
+    },
+    "dn": "CN=SystemMailbox{bb558c35-97f1-4cb9-8ff7-d53741dc928c},CN=Users,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "accountExpires": [
+            "9999-12-31 23:59:59.999999"
+        ],
+        "badPasswordTime": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "badPwdCount": [
+            0
+        ],
+        "cn": [
+            "SystemMailbox{1f05a927-0fe6-40ec-a030-43eef5f04be0}"
+        ],
+        "codePage": [
+            0
+        ],
+        "countryCode": [
+            0
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 06:38:18+00:00",
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:08+00:00",
+            "1601-01-01 00:04:16+00:00"
+        ],
+        "displayName": [
+            "Microsoft Exchange \u5ba1\u6279\u52a9\u7406"
+        ],
+        "distinguishedName": [
+            "CN=SystemMailbox{1f05a927-0fe6-40ec-a030-43eef5f04be0},CN=Users,DC=pcmgr,DC=local"
+        ],
+        "homeMDB": [
+            "CN=Mailbox Database 1845309341,CN=Databases,CN=Exchange Administrative Group (FYDIBOHF23SPDLT),CN=Administrative Groups,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "instanceType": [
+            4
+        ],
+        "lastLogoff": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "lastLogon": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "legacyExchangeDN": [
+            "/o=pcmgrExchange/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=c7487fbd52aa4cbeb7b82d34a2bef6b2-SystemMail"
+        ],
+        "logonCount": [
+            0
+        ],
+        "mDBUseDefaults": [
+            false
+        ],
+        "mail": [
+            "SystemMailbox{1f05a927-0fe6-40ec-a030-43eef5f04be0}@pcmgr.local"
+        ],
+        "mailNickname": [
+            "SystemMailbox{1f05a927-0fe6-40ec-a030-43eef5f04be0}"
+        ],
+        "msExchAddressBookFlags": [
+            1
+        ],
+        "msExchApprovalApplicationLink": [
+            "CN=ModeratedRecipients,CN=Approval Applications,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=AutoGroup,CN=Approval Applications,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchArchiveQuota": [
+            104857600
+        ],
+        "msExchArchiveWarnQuota": [
+            94371840
+        ],
+        "msExchBypassAudit": [
+            false
+        ],
+        "msExchCalendarLoggingQuota": [
+            6291456
+        ],
+        "msExchDumpsterQuota": [
+            31457280
+        ],
+        "msExchDumpsterWarningQuota": [
+            20971520
+        ],
+        "msExchELCMailboxFlags": [
+            2
+        ],
+        "msExchHideFromAddressLists": [
+            true
+        ],
+        "msExchHomeServerName": [
+            "/o=pcmgrExchange/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Configuration/cn=Servers/cn=LABDC"
+        ],
+        "msExchMailboxAuditEnable": [
+            false
+        ],
+        "msExchMailboxAuditLogAgeLimit": [
+            7776000
+        ],
+        "msExchMailboxGuid": [
+            {
+                "encoded": "yeK5AMVZnUG701vyruYxxQ==",
+                "encoding": "base64"
+            }
+        ],
+        "msExchMailboxSecurityDescriptor": [
+            {
+                "encoded": "AQAEgBQAAAAgAAAAAAAAACwAAAABAQAAAAAABQoAAAABAQAAAAAABQoAAAAEABwAAQAAAAACFAAFAAIAAQEAAAAAAAUKAAAA",
+                "encoding": "base64"
+            }
+        ],
+        "msExchMailboxTemplateLink": [
+            "CN=ArbitrationMailbox,CN=Retention Policies Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchMasterAccountSid": [
+            "\u0001\u0001\u0000\u0000\u0000\u0000\u0000\u0005\n\u0000\u0000\u0000"
+        ],
+        "msExchModerationFlags": [
+            6
+        ],
+        "msExchPoliciesIncluded": [
+            "f26685cd-fd4f-468d-999d-e0cac211bb06",
+            "{26491cfc-9e50-4857-861b-0cb8df22b5d7}"
+        ],
+        "msExchProvisioningFlags": [
+            0
+        ],
+        "msExchRecipientDisplayType": [
+            10
+        ],
+        "msExchRecipientSoftDeletedStatus": [
+            0
+        ],
+        "msExchRecipientTypeDetails": [
+            8388608
+        ],
+        "msExchRequireAuthToSendTo": [
+            true
+        ],
+        "msExchTransportRecipientSettingsFlags": [
+            0
+        ],
+        "msExchUMDtmfMap": [
+            "emailAddress:797836624526913052927033640322030433335304230",
+            "lastNameFirstName:6739242777682513052927323243292203259333256342",
+            "firstNameLastName:6739242777682513052927323243292203259333256342"
+        ],
+        "msExchUMEnabledFlags2": [
+            -1
+        ],
+        "msExchUserAccountControl": [
+            2
+        ],
+        "msExchVersion": [
+            1126140425011200
+        ],
+        "msExchWhenMailboxCreated": [
+            "2019-01-04 06:38:18+00:00"
+        ],
+        "name": [
+            "SystemMailbox{1f05a927-0fe6-40ec-a030-43eef5f04be0}"
+        ],
+        "objectCategory": [
+            "CN=Person,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "person",
+            "organizationalPerson",
+            "user"
+        ],
+        "objectGUID": [
+            "{b16f6c53-db31-4fbb-8db1-93708af834d9}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1131"
+        ],
+        "primaryGroupID": [
+            513
+        ],
+        "proxyAddresses": [
+            "SMTP:SystemMailbox{1f05a927-0fe6-40ec-a030-43eef5f04be0}@pcmgr.local"
+        ],
+        "pwdLastSet": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "sAMAccountName": [
+            "SM_f35d19057a5e4642b"
+        ],
+        "sAMAccountType": [
+            805306368
+        ],
+        "sn": [
+            "MSExchApproval 1f05a927-3be2-4fb9-aa03-b59fe3b56f4c"
+        ],
+        "uSNChanged": [
+            36251
+        ],
+        "uSNCreated": [
+            35110
+        ],
+        "userAccountControl": [
+            514
+        ],
+        "userPrincipalName": [
+            "SystemMailbox{1f05a927-0fe6-40ec-a030-43eef5f04be0}@pcmgr.local"
+        ],
+        "whenChanged": [
+            "2019-01-04 06:38:18+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-04 13:21:08+00:00"
+        ]
+    },
+    "dn": "CN=SystemMailbox{1f05a927-0fe6-40ec-a030-43eef5f04be0},CN=Users,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "accountExpires": [
+            "9999-12-31 23:59:59.999999"
+        ],
+        "badPasswordTime": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "badPwdCount": [
+            0
+        ],
+        "cn": [
+            "Exchange Online-ApplicationAccount"
+        ],
+        "codePage": [
+            0
+        ],
+        "countryCode": [
+            0
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "1601-01-01 00:00:01+00:00"
+        ],
+        "distinguishedName": [
+            "CN=Exchange Online-ApplicationAccount,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "garbageCollPeriod": [
+            1209600
+        ],
+        "instanceType": [
+            4
+        ],
+        "internetEncoding": [
+            0
+        ],
+        "lastLogoff": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "lastLogon": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "logonCount": [
+            0
+        ],
+        "msExchAddressBookFlags": [
+            1
+        ],
+        "msExchBypassAudit": [
+            false
+        ],
+        "msExchMDBRulesQuota": [
+            64
+        ],
+        "msExchMailboxAuditEnable": [
+            false
+        ],
+        "msExchMailboxAuditLogAgeLimit": [
+            7776000
+        ],
+        "msExchModerationFlags": [
+            6
+        ],
+        "msExchProvisioningFlags": [
+            0
+        ],
+        "msExchRecipientDisplayType": [
+            12
+        ],
+        "msExchRecipientSoftDeletedStatus": [
+            0
+        ],
+        "msExchRecipientTypeDetails": [
+            33554432
+        ],
+        "msExchTransportRecipientSettingsFlags": [
+            0
+        ],
+        "msExchUMEnabledFlags2": [
+            -1
+        ],
+        "msExchUserAccountControl": [
+            0
+        ],
+        "msExchUserBL": [
+            "CN=MailboxSearchApplication-Exchange Online-ApplicationAccount,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=TeamMailboxLifecycleApplication-Exchange Online-ApplicationAccou,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Mailbox Search-Exchange Online-ApplicationAccount,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=LegalHoldApplication-Exchange Online-ApplicationAccount,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=ArchiveApplication-Exchange Online-ApplicationAccount,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=UserApplication-Exchange Online-ApplicationAccount,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchVersion": [
+            1130555651391488
+        ],
+        "name": [
+            "Exchange Online-ApplicationAccount"
+        ],
+        "objectCategory": [
+            "CN=Person,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "person",
+            "organizationalPerson",
+            "user"
+        ],
+        "objectGUID": [
+            "{bd9cb2e3-6c95-4ec0-bdca-bf83f3d8e10f}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1130"
+        ],
+        "primaryGroupID": [
+            513
+        ],
+        "pwdLastSet": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "sAMAccountName": [
+            "$A31000-79LEG095CURR"
+        ],
+        "sAMAccountType": [
+            805306368
+        ],
+        "uSNChanged": [
+            35028
+        ],
+        "uSNCreated": [
+            35027
+        ],
+        "userAccountControl": [
+            546
+        ],
+        "userPrincipalName": [
+            "Exchange_Online-ApplicationAccount@pcmgr.local"
+        ],
+        "whenChanged": [
+            "2019-01-04 13:21:07+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-04 13:21:07+00:00"
+        ]
+    },
+    "dn": "CN=Exchange Online-ApplicationAccount,CN=Users,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "accountExpires": [
+            "9999-12-31 23:59:59.999999"
+        ],
+        "badPasswordTime": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "badPwdCount": [
+            0
+        ],
+        "cn": [
+            "\u5f20\u4f1a\u8ba1"
+        ],
+        "codePage": [
+            0
+        ],
+        "countryCode": [
+            0
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "1601-01-01 00:00:01+00:00"
+        ],
+        "displayName": [
+            "\u5f20\u4f1a\u8ba1"
+        ],
+        "distinguishedName": [
+            "CN=\u5f20\u4f1a\u8ba1,OU=\u8d22\u52a1,DC=pcmgr,DC=local"
+        ],
+        "givenName": [
+            "\u4f1a\u8ba1"
+        ],
+        "homeMDB": [
+            "CN=Mailbox Database 1845309341,CN=Databases,CN=Exchange Administrative Group (FYDIBOHF23SPDLT),CN=Administrative Groups,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "instanceType": [
+            4
+        ],
+        "lastLogoff": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "lastLogon": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "lastLogonTimestamp": [
+            "2019-01-04 10:22:10.754694+00:00"
+        ],
+        "legacyExchangeDN": [
+            "/o=pcmgrExchange/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=user30dd93aa"
+        ],
+        "logonCount": [
+            0
+        ],
+        "mDBUseDefaults": [
+            true
+        ],
+        "mail": [
+            "zhangcaiwu@pcmgr.local"
+        ],
+        "mailNickname": [
+            "zhangcaiwu"
+        ],
+        "msExchArchiveQuota": [
+            104857600
+        ],
+        "msExchArchiveWarnQuota": [
+            94371840
+        ],
+        "msExchCalendarLoggingQuota": [
+            6291456
+        ],
+        "msExchDumpsterQuota": [
+            31457280
+        ],
+        "msExchDumpsterWarningQuota": [
+            20971520
+        ],
+        "msExchHomeServerName": [
+            "/o=pcmgrExchange/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Configuration/cn=Servers/cn=LABDC"
+        ],
+        "msExchMailboxGuid": [
+            {
+                "encoded": "DeHXwpOLTEalqgiKPCR8PA==",
+                "encoding": "base64"
+            }
+        ],
+        "msExchMailboxSecurityDescriptor": [
+            {
+                "encoded": "AQAEgBQAAAAgAAAAAAAAACwAAAABAQAAAAAABQoAAAABAQAAAAAABQoAAAAEABwAAQAAAAACFAABAAIAAQEAAAAAAAUKAAAA",
+                "encoding": "base64"
+            }
+        ],
+        "msExchPoliciesIncluded": [
+            "f26685cd-fd4f-468d-999d-e0cac211bb06",
+            "{26491cfc-9e50-4857-861b-0cb8df22b5d7}"
+        ],
+        "msExchRBACPolicyLink": [
+            "CN=Default Role Assignment Policy,CN=Policies,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchRecipientDisplayType": [
+            1073741824
+        ],
+        "msExchRecipientTypeDetails": [
+            1
+        ],
+        "msExchTextMessagingState": [
+            302120705,
+            16842751
+        ],
+        "msExchUMDtmfMap": [
+            "emailAddress:9426422498",
+            "lastNameFirstName:",
+            "firstNameLastName:"
+        ],
+        "msExchUserAccountControl": [
+            0
+        ],
+        "msExchVersion": [
+            88218628259840
+        ],
+        "msExchWhenMailboxCreated": [
+            "2019-01-04 08:07:21+00:00"
+        ],
+        "name": [
+            "\u5f20\u4f1a\u8ba1"
+        ],
+        "objectCategory": [
+            "CN=Person,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "person",
+            "organizationalPerson",
+            "user"
+        ],
+        "objectGUID": [
+            "{1d70d088-f75b-460e-b8ab-ba6be4551af9}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1110"
+        ],
+        "primaryGroupID": [
+            513
+        ],
+        "proxyAddresses": [
+            "SMTP:zhangcaiwu@pcmgr.local"
+        ],
+        "pwdLastSet": [
+            "2019-01-03 11:42:33.987503+00:00"
+        ],
+        "sAMAccountName": [
+            "zhangcaiwu"
+        ],
+        "sAMAccountType": [
+            805306368
+        ],
+        "showInAddressBook": [
+            "CN=Mailboxes(VLV),CN=All System Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=All Mailboxes(VLV),CN=All System Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=All Recipients(VLV),CN=All System Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=\u9ed8\u8ba4\u5168\u5c40\u5730\u5740\u5217\u8868,CN=All Global Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=\u6240\u6709\u7528\u6237,CN=All Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "sn": [
+            "\u5f20"
+        ],
+        "uSNChanged": [
+            37075
+        ],
+        "uSNCreated": [
+            12841
+        ],
+        "userAccountControl": [
+            66048
+        ],
+        "userPrincipalName": [
+            "zhangcaiwu@pcmgr.local"
+        ],
+        "whenChanged": [
+            "2019-01-04 10:22:11+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 11:42:33+00:00"
+        ]
+    },
+    "dn": "CN=\u5f20\u4f1a\u8ba1,OU=\u8d22\u52a1,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "accountExpires": [
+            "9999-12-31 23:59:59.999999"
+        ],
+        "badPasswordTime": [
+            "2019-01-23 03:03:12.087286+00:00"
+        ],
+        "badPwdCount": [
+            0
+        ],
+        "cn": [
+            "\u80cc\u9505\u4fa0"
+        ],
+        "codePage": [
+            0
+        ],
+        "countryCode": [
+            0
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "1601-01-01 00:00:01+00:00"
+        ],
+        "displayName": [
+            "\u80cc\u9505\u4fa0"
+        ],
+        "distinguishedName": [
+            "CN=\u80cc\u9505\u4fa0,OU=\u5f00\u53d1,DC=pcmgr,DC=local"
+        ],
+        "givenName": [
+            "\u9505\u4fa0"
+        ],
+        "homeMDB": [
+            "CN=Mailbox Database 1845309341,CN=Databases,CN=Exchange Administrative Group (FYDIBOHF23SPDLT),CN=Administrative Groups,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "instanceType": [
+            4
+        ],
+        "lastLogoff": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "lastLogon": [
+            "2019-01-23 05:55:02.262346+00:00"
+        ],
+        "lastLogonTimestamp": [
+            "2019-01-14 02:52:13.457050+00:00"
+        ],
+        "legacyExchangeDN": [
+            "/o=pcmgrExchange/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=userbc04f74d"
+        ],
+        "logonCount": [
+            23
+        ],
+        "mDBUseDefaults": [
+            true
+        ],
+        "mail": [
+            "beiguoxia@pcmgr.local"
+        ],
+        "mailNickname": [
+            "beiguoxia"
+        ],
+        "msExchArchiveQuota": [
+            104857600
+        ],
+        "msExchArchiveWarnQuota": [
+            94371840
+        ],
+        "msExchCalendarLoggingQuota": [
+            6291456
+        ],
+        "msExchDumpsterQuota": [
+            31457280
+        ],
+        "msExchDumpsterWarningQuota": [
+            20971520
+        ],
+        "msExchHomeServerName": [
+            "/o=pcmgrExchange/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Configuration/cn=Servers/cn=LABDC"
+        ],
+        "msExchMailboxGuid": [
+            {
+                "encoded": "m0LqsNaGXkCLMWEPbaPwBA==",
+                "encoding": "base64"
+            }
+        ],
+        "msExchMailboxSecurityDescriptor": [
+            {
+                "encoded": "AQAEgBQAAAAgAAAAAAAAACwAAAABAQAAAAAABQoAAAABAQAAAAAABQoAAAAEABwAAQAAAAACFAABAAIAAQEAAAAAAAUKAAAA",
+                "encoding": "base64"
+            }
+        ],
+        "msExchPoliciesIncluded": [
+            "f26685cd-fd4f-468d-999d-e0cac211bb06",
+            "{26491cfc-9e50-4857-861b-0cb8df22b5d7}"
+        ],
+        "msExchRBACPolicyLink": [
+            "CN=Default Role Assignment Policy,CN=Policies,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchRecipientDisplayType": [
+            1073741824
+        ],
+        "msExchRecipientTypeDetails": [
+            1
+        ],
+        "msExchTextMessagingState": [
+            302120705,
+            16842751
+        ],
+        "msExchUMDtmfMap": [
+            "emailAddress:234486942",
+            "lastNameFirstName:",
+            "firstNameLastName:"
+        ],
+        "msExchUserAccountControl": [
+            0
+        ],
+        "msExchUserCulture": [
+            "zh-CN"
+        ],
+        "msExchVersion": [
+            88218628259840
+        ],
+        "msExchWhenMailboxCreated": [
+            "2019-01-04 08:07:03+00:00"
+        ],
+        "name": [
+            "\u80cc\u9505\u4fa0"
+        ],
+        "objectCategory": [
+            "CN=Person,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "person",
+            "organizationalPerson",
+            "user"
+        ],
+        "objectGUID": [
+            "{e30629e2-9bbd-4dd4-a240-389fb3662882}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1107"
+        ],
+        "primaryGroupID": [
+            513
+        ],
+        "proxyAddresses": [
+            "SMTP:beiguoxia@pcmgr.local"
+        ],
+        "pwdLastSet": [
+            "2019-01-03 11:19:00.228762+00:00"
+        ],
+        "sAMAccountName": [
+            "beiguoxia"
+        ],
+        "sAMAccountType": [
+            805306368
+        ],
+        "showInAddressBook": [
+            "CN=Mailboxes(VLV),CN=All System Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=All Mailboxes(VLV),CN=All System Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=All Recipients(VLV),CN=All System Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=\u9ed8\u8ba4\u5168\u5c40\u5730\u5740\u5217\u8868,CN=All Global Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=\u6240\u6709\u7528\u6237,CN=All Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "sn": [
+            "\u80cc"
+        ],
+        "uSNChanged": [
+            82945
+        ],
+        "uSNCreated": [
+            12793
+        ],
+        "userAccountControl": [
+            66048
+        ],
+        "userPrincipalName": [
+            "beiguoxia@pcmgr.local"
+        ],
+        "whenChanged": [
+            "2019-01-23 02:35:42+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 11:19:00+00:00"
+        ]
+    },
+    "dn": "CN=\u80cc\u9505\u4fa0,OU=\u5f00\u53d1,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "accountExpires": [
+            "9999-12-31 23:59:59.999999"
+        ],
+        "badPasswordTime": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "badPwdCount": [
+            0
+        ],
+        "cn": [
+            "\u674e\u4f1a\u8ba1"
+        ],
+        "codePage": [
+            0
+        ],
+        "countryCode": [
+            0
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "1601-01-01 00:00:01+00:00"
+        ],
+        "displayName": [
+            "\u674e\u4f1a\u8ba1"
+        ],
+        "distinguishedName": [
+            "CN=\u674e\u4f1a\u8ba1,OU=\u8d22\u52a1,DC=pcmgr,DC=local"
+        ],
+        "givenName": [
+            "\u4f1a\u8ba1"
+        ],
+        "homeMDB": [
+            "CN=Mailbox Database 1845309341,CN=Databases,CN=Exchange Administrative Group (FYDIBOHF23SPDLT),CN=Administrative Groups,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "instanceType": [
+            4
+        ],
+        "lastLogoff": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "lastLogon": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "lastLogonTimestamp": [
+            "2019-01-04 10:22:09.723425+00:00"
+        ],
+        "legacyExchangeDN": [
+            "/o=pcmgrExchange/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=user649eef05"
+        ],
+        "logonCount": [
+            0
+        ],
+        "mDBUseDefaults": [
+            true
+        ],
+        "mail": [
+            "licaiwu@pcmgr.local"
+        ],
+        "mailNickname": [
+            "licaiwu"
+        ],
+        "msExchArchiveQuota": [
+            104857600
+        ],
+        "msExchArchiveWarnQuota": [
+            94371840
+        ],
+        "msExchCalendarLoggingQuota": [
+            6291456
+        ],
+        "msExchDumpsterQuota": [
+            31457280
+        ],
+        "msExchDumpsterWarningQuota": [
+            20971520
+        ],
+        "msExchHomeServerName": [
+            "/o=pcmgrExchange/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Configuration/cn=Servers/cn=LABDC"
+        ],
+        "msExchMailboxGuid": [
+            {
+                "encoded": "AHuH+Ibb/0Ol+tCbvGsbcQ==",
+                "encoding": "base64"
+            }
+        ],
+        "msExchMailboxSecurityDescriptor": [
+            {
+                "encoded": "AQAEgBQAAAAgAAAAAAAAACwAAAABAQAAAAAABQoAAAABAQAAAAAABQoAAAAEABwAAQAAAAACFAABAAIAAQEAAAAAAAUKAAAA",
+                "encoding": "base64"
+            }
+        ],
+        "msExchPoliciesIncluded": [
+            "f26685cd-fd4f-468d-999d-e0cac211bb06",
+            "{26491cfc-9e50-4857-861b-0cb8df22b5d7}"
+        ],
+        "msExchRBACPolicyLink": [
+            "CN=Default Role Assignment Policy,CN=Policies,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchRecipientDisplayType": [
+            1073741824
+        ],
+        "msExchRecipientTypeDetails": [
+            1
+        ],
+        "msExchTextMessagingState": [
+            302120705,
+            16842751
+        ],
+        "msExchUMDtmfMap": [
+            "emailAddress:5422498",
+            "lastNameFirstName:",
+            "firstNameLastName:"
+        ],
+        "msExchUserAccountControl": [
+            0
+        ],
+        "msExchVersion": [
+            88218628259840
+        ],
+        "msExchWhenMailboxCreated": [
+            "2019-01-04 08:07:13+00:00"
+        ],
+        "name": [
+            "\u674e\u4f1a\u8ba1"
+        ],
+        "objectCategory": [
+            "CN=Person,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "person",
+            "organizationalPerson",
+            "user"
+        ],
+        "objectGUID": [
+            "{b65a7b7d-d9fc-442a-be5c-4fb451369f00}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1106"
+        ],
+        "primaryGroupID": [
+            513
+        ],
+        "proxyAddresses": [
+            "SMTP:licaiwu@pcmgr.local"
+        ],
+        "pwdLastSet": [
+            "2019-01-03 11:20:03.139431+00:00"
+        ],
+        "sAMAccountName": [
+            "licaiwu"
+        ],
+        "sAMAccountType": [
+            805306368
+        ],
+        "showInAddressBook": [
+            "CN=Mailboxes(VLV),CN=All System Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=All Mailboxes(VLV),CN=All System Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=All Recipients(VLV),CN=All System Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=\u9ed8\u8ba4\u5168\u5c40\u5730\u5740\u5217\u8868,CN=All Global Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=\u6240\u6709\u7528\u6237,CN=All Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "sn": [
+            "\u674e"
+        ],
+        "uSNChanged": [
+            37073
+        ],
+        "uSNCreated": [
+            12784
+        ],
+        "userAccountControl": [
+            66048
+        ],
+        "userPrincipalName": [
+            "licaiwu@pcmgr.local"
+        ],
+        "whenChanged": [
+            "2019-01-04 10:22:10+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 11:17:47+00:00"
+        ]
+    },
+    "dn": "CN=\u674e\u4f1a\u8ba1,OU=\u8d22\u52a1,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "accountExpires": [
+            "9999-12-31 23:59:59.999999"
+        ],
+        "badPasswordTime": [
+            "2019-01-09 04:39:40.520037+00:00"
+        ],
+        "badPwdCount": [
+            4
+        ],
+        "cn": [
+            "\u5f20\u4e09\u4e30"
+        ],
+        "codePage": [
+            0
+        ],
+        "countryCode": [
+            0
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "displayName": [
+            "\u5f20\u4e09\u4e30"
+        ],
+        "distinguishedName": [
+            "CN=\u5f20\u4e09\u4e30,OU=IT,DC=pcmgr,DC=local"
+        ],
+        "givenName": [
+            "\u4e09\u4e30"
+        ],
+        "homeMDB": [
+            "CN=Mailbox Database 1845309341,CN=Databases,CN=Exchange Administrative Group (FYDIBOHF23SPDLT),CN=Administrative Groups,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "instanceType": [
+            4
+        ],
+        "lastLogoff": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "lastLogon": [
+            "2019-01-03 11:39:29.648020+00:00"
+        ],
+        "lastLogonTimestamp": [
+            "2019-01-03 11:30:41.763979+00:00"
+        ],
+        "legacyExchangeDN": [
+            "/o=pcmgrExchange/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=user95701024"
+        ],
+        "logonCount": [
+            4
+        ],
+        "mDBUseDefaults": [
+            true
+        ],
+        "mail": [
+            "sanfeng@pcmgr.local"
+        ],
+        "mailNickname": [
+            "sanfeng"
+        ],
+        "msExchArchiveQuota": [
+            104857600
+        ],
+        "msExchArchiveWarnQuota": [
+            94371840
+        ],
+        "msExchCalendarLoggingQuota": [
+            6291456
+        ],
+        "msExchDumpsterQuota": [
+            31457280
+        ],
+        "msExchDumpsterWarningQuota": [
+            20971520
+        ],
+        "msExchHomeServerName": [
+            "/o=pcmgrExchange/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Configuration/cn=Servers/cn=LABDC"
+        ],
+        "msExchMailboxGuid": [
+            {
+                "encoded": "EYE7GzI9HkeLx9CEyyEEUA==",
+                "encoding": "base64"
+            }
+        ],
+        "msExchMailboxSecurityDescriptor": [
+            {
+                "encoded": "AQAEgBQAAAAgAAAAAAAAACwAAAABAQAAAAAABQoAAAABAQAAAAAABQoAAAAEABwAAQAAAAACFAABAAIAAQEAAAAAAAUKAAAA",
+                "encoding": "base64"
+            }
+        ],
+        "msExchPoliciesIncluded": [
+            "f26685cd-fd4f-468d-999d-e0cac211bb06",
+            "{26491cfc-9e50-4857-861b-0cb8df22b5d7}"
+        ],
+        "msExchRBACPolicyLink": [
+            "CN=Default Role Assignment Policy,CN=Policies,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchRecipientDisplayType": [
+            1073741824
+        ],
+        "msExchRecipientTypeDetails": [
+            1
+        ],
+        "msExchTextMessagingState": [
+            302120705,
+            16842751
+        ],
+        "msExchUMDtmfMap": [
+            "emailAddress:7263364",
+            "lastNameFirstName:",
+            "firstNameLastName:"
+        ],
+        "msExchUserAccountControl": [
+            0
+        ],
+        "msExchVersion": [
+            88218628259840
+        ],
+        "msExchWhenMailboxCreated": [
+            "2019-01-04 08:07:30+00:00"
+        ],
+        "name": [
+            "\u5f20\u4e09\u4e30"
+        ],
+        "objectCategory": [
+            "CN=Person,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "person",
+            "organizationalPerson",
+            "user"
+        ],
+        "objectGUID": [
+            "{87945791-946b-4a4d-92b8-71607a079b48}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1105"
+        ],
+        "primaryGroupID": [
+            513
+        ],
+        "proxyAddresses": [
+            "SMTP:sanfeng@pcmgr.local"
+        ],
+        "pwdLastSet": [
+            "2019-01-03 11:15:16.239140+00:00"
+        ],
+        "sAMAccountName": [
+            "sanfeng"
+        ],
+        "sAMAccountType": [
+            805306368
+        ],
+        "showInAddressBook": [
+            "CN=Mailboxes(VLV),CN=All System Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=All Mailboxes(VLV),CN=All System Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=All Recipients(VLV),CN=All System Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=\u9ed8\u8ba4\u5168\u5c40\u5730\u5740\u5217\u8868,CN=All Global Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=\u6240\u6709\u7528\u6237,CN=All Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "sn": [
+            "\u5f20"
+        ],
+        "uSNChanged": [
+            37072
+        ],
+        "uSNCreated": [
+            12774
+        ],
+        "userAccountControl": [
+            66048
+        ],
+        "userPrincipalName": [
+            "sanfeng@pcmgr.local"
+        ],
+        "whenChanged": [
+            "2019-01-04 10:22:09+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 11:15:16+00:00"
+        ]
+    },
+    "dn": "CN=\u5f20\u4e09\u4e30,OU=IT,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "accountExpires": [
+            "9999-12-31 23:59:59.999999"
+        ],
+        "badPasswordTime": [
+            "2019-01-10 08:08:11.336409+00:00"
+        ],
+        "badPwdCount": [
+            0
+        ],
+        "cn": [
+            "\u5434\u7d2b\u9e4f"
+        ],
+        "codePage": [
+            0
+        ],
+        "countryCode": [
+            0
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "displayName": [
+            "\u5434\u7d2b\u9e4f"
+        ],
+        "distinguishedName": [
+            "CN=\u5434\u7d2b\u9e4f,OU=IT,DC=pcmgr,DC=local"
+        ],
+        "givenName": [
+            "\u7d2b\u9e4f"
+        ],
+        "homeMDB": [
+            "CN=Mailbox Database 1845309341,CN=Databases,CN=Exchange Administrative Group (FYDIBOHF23SPDLT),CN=Administrative Groups,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "instanceType": [
+            4
+        ],
+        "lastLogoff": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "lastLogon": [
+            "2019-01-18 05:43:23.504129+00:00"
+        ],
+        "lastLogonTimestamp": [
+            "2019-01-18 05:43:23.504129+00:00"
+        ],
+        "legacyExchangeDN": [
+            "/o=pcmgrExchange/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=user3cc1e142"
+        ],
+        "logonCount": [
+            20
+        ],
+        "mDBUseDefaults": [
+            true
+        ],
+        "mail": [
+            "zipeng@pcmgr.local"
+        ],
+        "mailNickname": [
+            "zipeng"
+        ],
+        "msDS-SupportedEncryptionTypes": [
+            0
+        ],
+        "msExchArchiveQuota": [
+            104857600
+        ],
+        "msExchArchiveWarnQuota": [
+            94371840
+        ],
+        "msExchCalendarLoggingQuota": [
+            6291456
+        ],
+        "msExchDumpsterQuota": [
+            31457280
+        ],
+        "msExchDumpsterWarningQuota": [
+            20971520
+        ],
+        "msExchHomeServerName": [
+            "/o=pcmgrExchange/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Configuration/cn=Servers/cn=LABDC"
+        ],
+        "msExchMailboxGuid": [
+            {
+                "encoded": "BzOF9/nwV0y56nAyuSA4ew==",
+                "encoding": "base64"
+            }
+        ],
+        "msExchMailboxSecurityDescriptor": [
+            {
+                "encoded": "AQAEgBQAAAAgAAAAAAAAACwAAAABAQAAAAAABQoAAAABAQAAAAAABQoAAAAEABwAAQAAAAACFAABAAIAAQEAAAAAAAUKAAAA",
+                "encoding": "base64"
+            }
+        ],
+        "msExchPoliciesIncluded": [
+            "f26685cd-fd4f-468d-999d-e0cac211bb06",
+            "{26491cfc-9e50-4857-861b-0cb8df22b5d7}"
+        ],
+        "msExchRBACPolicyLink": [
+            "CN=Default Role Assignment Policy,CN=Policies,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchRecipientDisplayType": [
+            1073741824
+        ],
+        "msExchRecipientTypeDetails": [
+            1
+        ],
+        "msExchTextMessagingState": [
+            302120705,
+            16842751
+        ],
+        "msExchUMDtmfMap": [
+            "emailAddress:947364",
+            "lastNameFirstName:",
+            "firstNameLastName:"
+        ],
+        "msExchUserAccountControl": [
+            0
+        ],
+        "msExchUserCulture": [
+            "zh-CN"
+        ],
+        "msExchVersion": [
+            88218628259840
+        ],
+        "msExchWhenMailboxCreated": [
+            "2019-01-04 08:06:50+00:00"
+        ],
+        "name": [
+            "\u5434\u7d2b\u9e4f"
+        ],
+        "objectCategory": [
+            "CN=Person,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "person",
+            "organizationalPerson",
+            "user"
+        ],
+        "objectGUID": [
+            "{0f73078e-0c9a-4da2-86d3-7478a95cfded}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1104"
+        ],
+        "primaryGroupID": [
+            513
+        ],
+        "proxyAddresses": [
+            "SMTP:zipeng@pcmgr.local"
+        ],
+        "pwdLastSet": [
+            "2019-01-03 11:13:03.843672+00:00"
+        ],
+        "sAMAccountName": [
+            "zipeng"
+        ],
+        "sAMAccountType": [
+            805306368
+        ],
+        "showInAddressBook": [
+            "CN=Mailboxes(VLV),CN=All System Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=All Mailboxes(VLV),CN=All System Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=All Recipients(VLV),CN=All System Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=\u9ed8\u8ba4\u5168\u5c40\u5730\u5740\u5217\u8868,CN=All Global Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=\u6240\u6709\u7528\u6237,CN=All Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "sn": [
+            "\u5434"
+        ],
+        "uSNChanged": [
+            72470
+        ],
+        "uSNCreated": [
+            12747
+        ],
+        "userAccountControl": [
+            66048
+        ],
+        "userPrincipalName": [
+            "zipeng@pcmgr.local"
+        ],
+        "whenChanged": [
+            "2019-01-18 05:43:23+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 11:13:03+00:00"
+        ]
+    },
+    "dn": "CN=\u5434\u7d2b\u9e4f,OU=IT,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "accountExpires": [
+            "9999-12-31 23:59:59.999999"
+        ],
+        "adminCount": [
+            1
+        ],
+        "badPasswordTime": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "badPwdCount": [
+            0
+        ],
+        "cn": [
+            "krbtgt"
+        ],
+        "codePage": [
+            0
+        ],
+        "countryCode": [
+            0
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:27:17+00:00",
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-03 11:15:04+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-07-14 04:20:16+00:00"
+        ],
+        "description": [
+            "\u5bc6\u94a5\u53d1\u884c\u4e2d\u5fc3\u670d\u52a1\u5e10\u6237"
+        ],
+        "distinguishedName": [
+            "CN=krbtgt,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "lastLogoff": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "lastLogon": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "logonCount": [
+            0
+        ],
+        "memberOf": [
+            "CN=Denied RODC Password Replication Group,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "msDS-SupportedEncryptionTypes": [
+            0
+        ],
+        "name": [
+            "krbtgt"
+        ],
+        "objectCategory": [
+            "CN=Person,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "person",
+            "organizationalPerson",
+            "user"
+        ],
+        "objectGUID": [
+            "{837c4297-8a02-497c-8002-aff838082b93}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-502"
+        ],
+        "primaryGroupID": [
+            513
+        ],
+        "pwdLastSet": [
+            "2019-01-03 10:59:54.920191+00:00"
+        ],
+        "sAMAccountName": [
+            "krbtgt"
+        ],
+        "sAMAccountType": [
+            805306368
+        ],
+        "servicePrincipalName": [
+            "kadmin/changepw"
+        ],
+        "showInAdvancedViewOnly": [
+            true
+        ],
+        "uSNChanged": [
+            35797
+        ],
+        "uSNCreated": [
+            12324
+        ],
+        "userAccountControl": [
+            514
+        ],
+        "whenChanged": [
+            "2019-01-04 13:27:17+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:59:54+00:00"
+        ]
+    },
+    "dn": "CN=krbtgt,CN=Users,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "accountExpires": [
+            "9999-12-31 23:59:59.999999"
+        ],
+        "badPasswordTime": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "badPwdCount": [
+            0
+        ],
+        "cn": [
+            "Guest"
+        ],
+        "codePage": [
+            0
+        ],
+        "countryCode": [
+            0
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u4f9b\u6765\u5bbe\u8bbf\u95ee\u8ba1\u7b97\u673a\u6216\u8bbf\u95ee\u57df\u7684\u5185\u7f6e\u5e10\u6237"
+        ],
+        "distinguishedName": [
+            "CN=Guest,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "lastLogoff": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "lastLogon": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "logonCount": [
+            0
+        ],
+        "memberOf": [
+            "CN=Guests,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "name": [
+            "Guest"
+        ],
+        "objectCategory": [
+            "CN=Person,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "person",
+            "organizationalPerson",
+            "user"
+        ],
+        "objectGUID": [
+            "{64e66c11-c612-468b-9178-80e484912898}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-501"
+        ],
+        "primaryGroupID": [
+            514
+        ],
+        "pwdLastSet": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "sAMAccountName": [
+            "Guest"
+        ],
+        "sAMAccountType": [
+            805306368
+        ],
+        "uSNChanged": [
+            8197
+        ],
+        "uSNCreated": [
+            8197
+        ],
+        "userAccountControl": [
+            66082
+        ],
+        "whenChanged": [
+            "2019-01-03 10:58:22+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:58:22+00:00"
+        ]
+    },
+    "dn": "CN=Guest,CN=Users,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "accountExpires": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "adminCount": [
+            1
+        ],
+        "badPasswordTime": [
+            "2019-01-09 05:13:07.064062+00:00"
+        ],
+        "badPwdCount": [
+            0
+        ],
+        "cn": [
+            "Administrator"
+        ],
+        "codePage": [
+            0
+        ],
+        "countryCode": [
+            0
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:27:17+00:00",
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-03 11:15:04+00:00",
+            "2019-01-03 11:15:04+00:00",
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "description": [
+            "\u7ba1\u7406\u8ba1\u7b97\u673a(\u57df)\u7684\u5185\u7f6e\u5e10\u6237"
+        ],
+        "displayName": [
+            "Administrator"
+        ],
+        "distinguishedName": [
+            "CN=Administrator,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "homeMDB": [
+            "CN=Mailbox Database 1845309341,CN=Databases,CN=Exchange Administrative Group (FYDIBOHF23SPDLT),CN=Administrative Groups,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "lastLogoff": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "lastLogon": [
+            "2019-01-23 05:53:55.541092+00:00"
+        ],
+        "lastLogonTimestamp": [
+            "2019-01-22 03:44:07.676510+00:00"
+        ],
+        "legacyExchangeDN": [
+            "/o=pcmgrExchange/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Recipients/cn=e81cf58d6b134fa682ade15ccbb10d80-Administra"
+        ],
+        "logonCount": [
+            69
+        ],
+        "logonHours": [
+            {
+                "encoded": "////////////////////////////",
+                "encoding": "base64"
+            }
+        ],
+        "mDBUseDefaults": [
+            true
+        ],
+        "mail": [
+            "Administrator@pcmgr.local"
+        ],
+        "mailNickname": [
+            "Administrator"
+        ],
+        "memberOf": [
+            "CN=Organization Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local",
+            "CN=Group Policy Creator Owners,CN=Users,DC=pcmgr,DC=local",
+            "CN=Domain Admins,CN=Users,DC=pcmgr,DC=local",
+            "CN=Enterprise Admins,CN=Users,DC=pcmgr,DC=local",
+            "CN=Schema Admins,CN=Users,DC=pcmgr,DC=local",
+            "CN=Administrators,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "msExchArchiveQuota": [
+            104857600
+        ],
+        "msExchArchiveWarnQuota": [
+            94371840
+        ],
+        "msExchCalendarLoggingQuota": [
+            6291456
+        ],
+        "msExchDumpsterQuota": [
+            31457280
+        ],
+        "msExchDumpsterWarningQuota": [
+            20971520
+        ],
+        "msExchHomeServerName": [
+            "/o=pcmgrExchange/ou=Exchange Administrative Group (FYDIBOHF23SPDLT)/cn=Configuration/cn=Servers/cn=LABDC"
+        ],
+        "msExchMailboxGuid": [
+            {
+                "encoded": "EknJWYjlBEWPNWvN0+vOqQ==",
+                "encoding": "base64"
+            }
+        ],
+        "msExchMailboxSecurityDescriptor": [
+            {
+                "encoded": "AQAEgBQAAAAgAAAAAAAAACwAAAABAQAAAAAABQoAAAABAQAAAAAABQoAAAAEABwAAQAAAAACFAABAAIAAQEAAAAAAAUKAAAA",
+                "encoding": "base64"
+            }
+        ],
+        "msExchPoliciesIncluded": [
+            "f26685cd-fd4f-468d-999d-e0cac211bb06",
+            "{26491cfc-9e50-4857-861b-0cb8df22b5d7}"
+        ],
+        "msExchRBACPolicyLink": [
+            "CN=Default Role Assignment Policy,CN=Policies,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchRecipientDisplayType": [
+            1073741824
+        ],
+        "msExchRecipientTypeDetails": [
+            1
+        ],
+        "msExchTextMessagingState": [
+            302120705,
+            16842751
+        ],
+        "msExchUMDtmfMap": [
+            "emailAddress:2364647872867",
+            "lastNameFirstName:2364647872867",
+            "firstNameLastName:2364647872867"
+        ],
+        "msExchUserAccountControl": [
+            0
+        ],
+        "msExchUserBL": [
+            "CN=WVPrOpvklA,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchUserCulture": [
+            "zh-CN"
+        ],
+        "msExchVersion": [
+            88218628259840
+        ],
+        "msExchWhenMailboxCreated": [
+            "2019-01-04 06:38:13+00:00"
+        ],
+        "name": [
+            "Administrator"
+        ],
+        "objectCategory": [
+            "CN=Person,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "person",
+            "organizationalPerson",
+            "user"
+        ],
+        "objectGUID": [
+            "{e92bef98-1930-494a-947b-cd1fcdda9810}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-500"
+        ],
+        "primaryGroupID": [
+            513
+        ],
+        "protocolSettings": [
+            "RemotePowerShell\u00a71"
+        ],
+        "proxyAddresses": [
+            "SMTP:Administrator@pcmgr.local"
+        ],
+        "pwdLastSet": [
+            "2019-01-03 10:22:23.412674+00:00"
+        ],
+        "sAMAccountName": [
+            "Administrator"
+        ],
+        "sAMAccountType": [
+            805306368
+        ],
+        "showInAddressBook": [
+            "CN=Mailboxes(VLV),CN=All System Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=All Mailboxes(VLV),CN=All System Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=All Recipients(VLV),CN=All System Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=\u9ed8\u8ba4\u5168\u5c40\u5730\u5740\u5217\u8868,CN=All Global Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=\u6240\u6709\u7528\u6237,CN=All Address Lists,CN=Address Lists Container,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "uSNChanged": [
+            82947
+        ],
+        "uSNCreated": [
+            8196
+        ],
+        "userAccountControl": [
+            512
+        ],
+        "userPrincipalName": [
+            "Administrator@pcmgr.local"
+        ],
+        "whenChanged": [
+            "2019-01-23 02:36:12+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:58:22+00:00"
+        ]
+    },
+    "dn": "CN=Administrator,CN=Users,DC=pcmgr,DC=local"
+}]

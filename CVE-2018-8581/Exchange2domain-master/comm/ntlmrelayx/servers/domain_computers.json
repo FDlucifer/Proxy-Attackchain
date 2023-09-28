@@ -1,0 +1,560 @@
+[{
+    "attributes": {
+        "accountExpires": [
+            "9999-12-31 23:59:59.999999"
+        ],
+        "badPasswordTime": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "badPwdCount": [
+            0
+        ],
+        "cn": [
+            "LAB_VUL2008"
+        ],
+        "codePage": [
+            0
+        ],
+        "countryCode": [
+            0
+        ],
+        "dNSHostName": [
+            "LAB_VUL2008.pcmgr.local"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "distinguishedName": [
+            "CN=LAB_VUL2008,CN=Computers,DC=pcmgr,DC=local"
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            false
+        ],
+        "lastLogoff": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "lastLogon": [
+            "2019-01-23 05:55:43.356466+00:00"
+        ],
+        "lastLogonTimestamp": [
+            "2019-01-13 12:30:50.317097+00:00"
+        ],
+        "localPolicyFlags": [
+            0
+        ],
+        "logonCount": [
+            67
+        ],
+        "mS-DS-CreatorSID": [
+            {
+                "encoded": "AQUAAAAAAAUVAAAAqSNZvdl4Opih90zYUwQAAA==",
+                "encoding": "base64"
+            }
+        ],
+        "msDS-SupportedEncryptionTypes": [
+            28
+        ],
+        "name": [
+            "LAB_VUL2008"
+        ],
+        "objectCategory": [
+            "CN=Computer,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "person",
+            "organizationalPerson",
+            "user",
+            "computer"
+        ],
+        "objectGUID": [
+            "{0f318c79-3902-4108-9fe1-6a6b82e00bd9}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1112"
+        ],
+        "operatingSystem": [
+            "Windows Server 2008 R2 Standard"
+        ],
+        "operatingSystemServicePack": [
+            "Service Pack 1"
+        ],
+        "operatingSystemVersion": [
+            "6.1 (7601)"
+        ],
+        "primaryGroupID": [
+            515
+        ],
+        "pwdLastSet": [
+            "2019-01-03 11:58:16.248013+00:00"
+        ],
+        "sAMAccountName": [
+            "LAB_VUL2008$"
+        ],
+        "sAMAccountType": [
+            805306369
+        ],
+        "servicePrincipalName": [
+            "TERMSRV/LAB_VUL2008",
+            "TERMSRV/lab_vul2008.pcmgr.local",
+            "WSMAN/lab_vul2008",
+            "WSMAN/lab_vul2008.pcmgr.local",
+            "RestrictedKrbHost/LAB_VUL2008",
+            "HOST/LAB_VUL2008",
+            "RestrictedKrbHost/LAB_VUL2008.pcmgr.local",
+            "HOST/LAB_VUL2008.pcmgr.local"
+        ],
+        "uSNChanged": [
+            60171
+        ],
+        "uSNCreated": [
+            12878
+        ],
+        "userAccountControl": [
+            4096
+        ],
+        "whenChanged": [
+            "2019-01-13 12:30:50+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 11:58:16+00:00"
+        ]
+    },
+    "dn": "CN=LAB_VUL2008,CN=Computers,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "accountExpires": [
+            "9999-12-31 23:59:59.999999"
+        ],
+        "badPasswordTime": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "badPwdCount": [
+            0
+        ],
+        "cn": [
+            "LABWIN7"
+        ],
+        "codePage": [
+            0
+        ],
+        "countryCode": [
+            0
+        ],
+        "dNSHostName": [
+            "LABWIN7.pcmgr.local"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "distinguishedName": [
+            "CN=LABWIN7,CN=Computers,DC=pcmgr,DC=local"
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            false
+        ],
+        "lastLogoff": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "lastLogon": [
+            "2019-01-23 04:36:37.781954+00:00"
+        ],
+        "lastLogonTimestamp": [
+            "2019-01-14 02:48:51.523563+00:00"
+        ],
+        "localPolicyFlags": [
+            0
+        ],
+        "logonCount": [
+            67
+        ],
+        "mS-DS-CreatorSID": [
+            {
+                "encoded": "AQUAAAAAAAUVAAAAqSNZvdl4Opih90zYUAQAAA==",
+                "encoding": "base64"
+            }
+        ],
+        "msDS-SupportedEncryptionTypes": [
+            28
+        ],
+        "name": [
+            "LABWIN7"
+        ],
+        "objectCategory": [
+            "CN=Computer,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "person",
+            "organizationalPerson",
+            "user",
+            "computer"
+        ],
+        "objectGUID": [
+            "{368deddd-5e52-45ed-9669-02006dffdf18}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1111"
+        ],
+        "operatingSystem": [
+            "Windows 7 \u4f01\u4e1a\u7248"
+        ],
+        "operatingSystemServicePack": [
+            "Service Pack 1"
+        ],
+        "operatingSystemVersion": [
+            "6.1 (7601)"
+        ],
+        "primaryGroupID": [
+            515
+        ],
+        "pwdLastSet": [
+            "2019-01-03 11:57:21.994801+00:00"
+        ],
+        "sAMAccountName": [
+            "LABWIN7$"
+        ],
+        "sAMAccountType": [
+            805306369
+        ],
+        "servicePrincipalName": [
+            "TERMSRV/LABWIN7",
+            "TERMSRV/labwin7.pcmgr.local",
+            "RestrictedKrbHost/LABWIN7",
+            "HOST/LABWIN7",
+            "RestrictedKrbHost/LABWIN7.pcmgr.local",
+            "HOST/LABWIN7.pcmgr.local"
+        ],
+        "uSNChanged": [
+            61753
+        ],
+        "uSNCreated": [
+            12867
+        ],
+        "userAccountControl": [
+            4096
+        ],
+        "whenChanged": [
+            "2019-01-14 02:48:51+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 11:57:21+00:00"
+        ]
+    },
+    "dn": "CN=LABWIN7,CN=Computers,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "accountExpires": [
+            "9999-12-31 23:59:59.999999"
+        ],
+        "badPasswordTime": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "badPwdCount": [
+            0
+        ],
+        "cn": [
+            "LABWIN2003"
+        ],
+        "codePage": [
+            0
+        ],
+        "countryCode": [
+            0
+        ],
+        "dNSHostName": [
+            "labwin2003.pcmgr.local"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "displayName": [
+            "LABWIN2003$"
+        ],
+        "distinguishedName": [
+            "CN=LABWIN2003,CN=Computers,DC=pcmgr,DC=local"
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            false
+        ],
+        "lastLogoff": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "lastLogon": [
+            "2019-01-23 04:35:35.905365+00:00"
+        ],
+        "lastLogonTimestamp": [
+            "2019-01-15 02:46:50.560486+00:00"
+        ],
+        "localPolicyFlags": [
+            0
+        ],
+        "logonCount": [
+            6
+        ],
+        "mS-DS-CreatorSID": [
+            {
+                "encoded": "AQUAAAAAAAUVAAAAqSNZvdl4Opih90zYUQQAAA==",
+                "encoding": "base64"
+            }
+        ],
+        "name": [
+            "LABWIN2003"
+        ],
+        "objectCategory": [
+            "CN=Computer,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "person",
+            "organizationalPerson",
+            "user",
+            "computer"
+        ],
+        "objectGUID": [
+            "{5431f6f2-5215-47f8-b0c1-3500265d8079}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1108"
+        ],
+        "operatingSystem": [
+            "Windows Server 2003"
+        ],
+        "operatingSystemServicePack": [
+            "Service Pack 2"
+        ],
+        "operatingSystemVersion": [
+            "5.2 (3790)"
+        ],
+        "primaryGroupID": [
+            515
+        ],
+        "pwdLastSet": [
+            "2019-01-03 11:39:29.601130+00:00"
+        ],
+        "sAMAccountName": [
+            "LABWIN2003$"
+        ],
+        "sAMAccountType": [
+            805306369
+        ],
+        "servicePrincipalName": [
+            "HOST/LABWIN2003",
+            "HOST/labwin2003.pcmgr.local"
+        ],
+        "uSNChanged": [
+            64067
+        ],
+        "uSNCreated": [
+            12816
+        ],
+        "userAccountControl": [
+            4096
+        ],
+        "whenChanged": [
+            "2019-01-15 02:46:50+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 11:39:29+00:00"
+        ]
+    },
+    "dn": "CN=LABWIN2003,CN=Computers,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "accountExpires": [
+            "9999-12-31 23:59:59.999999"
+        ],
+        "adminCount": [
+            1
+        ],
+        "badPasswordTime": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "badPwdCount": [
+            0
+        ],
+        "cn": [
+            "LABDC"
+        ],
+        "codePage": [
+            0
+        ],
+        "countryCode": [
+            0
+        ],
+        "dNSHostName": [
+            "LABDC.pcmgr.local"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-23 05:34:49+00:00",
+            "2019-01-23 04:34:48+00:00",
+            "2019-01-23 03:34:48+00:00",
+            "2019-01-23 02:34:48+00:00",
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "distinguishedName": [
+            "CN=LABDC,OU=Domain Controllers,DC=pcmgr,DC=local"
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "lastLogoff": [
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "lastLogon": [
+            "2019-01-23 03:25:38.712423+00:00"
+        ],
+        "lastLogonTimestamp": [
+            "2019-01-13 11:20:01.924768+00:00"
+        ],
+        "localPolicyFlags": [
+            0
+        ],
+        "logonCount": [
+            286
+        ],
+        "memberOf": [
+            "CN=Exchange Install Domain Servers,CN=Microsoft Exchange System Objects,DC=pcmgr,DC=local",
+            "CN=Managed Availability Servers,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local",
+            "CN=Exchange Trusted Subsystem,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local",
+            "CN=Exchange Servers,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "msDFSR-ComputerReferenceBL": [
+            "CN=LABDC,CN=Topology,CN=Domain System Volume,CN=DFSR-GlobalSettings,CN=System,DC=pcmgr,DC=local"
+        ],
+        "msDS-GenerationId": [
+            {
+                "encoded": "VZH2C5mg08A=",
+                "encoding": "base64"
+            }
+        ],
+        "msDS-SupportedEncryptionTypes": [
+            28
+        ],
+        "msExchCapabilityIdentifiers": [
+            1
+        ],
+        "msExchRMSComputerAccountsBL": [
+            "CN=FederatedEmail.4c1f4d8b-8179-4148-93bf-00a95fa1e042,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "name": [
+            "LABDC"
+        ],
+        "objectCategory": [
+            "CN=Computer,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "person",
+            "organizationalPerson",
+            "user",
+            "computer"
+        ],
+        "objectGUID": [
+            "{6d6e6f9a-5db3-4d13-865f-84b6166a8a5c}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1001"
+        ],
+        "operatingSystem": [
+            "Windows Server 2012 R2 Standard"
+        ],
+        "operatingSystemVersion": [
+            "6.3 (9600)"
+        ],
+        "primaryGroupID": [
+            516
+        ],
+        "pwdLastSet": [
+            "2019-01-03 11:00:16.868979+00:00"
+        ],
+        "rIDSetReferences": [
+            "CN=RID Set,CN=LABDC,OU=Domain Controllers,DC=pcmgr,DC=local"
+        ],
+        "sAMAccountName": [
+            "LABDC$"
+        ],
+        "sAMAccountType": [
+            805306369
+        ],
+        "serverReferenceBL": [
+            "CN=LABDC,CN=Servers,CN=Default-First-Site-Name,CN=Sites,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "servicePrincipalName": [
+            "IMAP/LABDC",
+            "IMAP/LABDC.pcmgr.local",
+            "IMAP4/LABDC",
+            "IMAP4/LABDC.pcmgr.local",
+            "POP/LABDC",
+            "POP/LABDC.pcmgr.local",
+            "POP3/LABDC",
+            "POP3/LABDC.pcmgr.local",
+            "exchangeRFR/LABDC",
+            "exchangeRFR/LABDC.pcmgr.local",
+            "exchangeMDB/LABDC",
+            "exchangeMDB/LABDC.pcmgr.local",
+            "SMTP/LABDC",
+            "SMTP/LABDC.pcmgr.local",
+            "SmtpSvc/LABDC",
+            "SmtpSvc/LABDC.pcmgr.local",
+            "exchangeAB/LABDC",
+            "exchangeAB/LABDC.pcmgr.local",
+            "TERMSRV/LABDC",
+            "TERMSRV/LABDC.pcmgr.local",
+            "Dfsr-12F9A27C-BF97-4787-9364-D31B6C55EB04/LABDC.pcmgr.local",
+            "ldap/LABDC.pcmgr.local/ForestDnsZones.pcmgr.local",
+            "ldap/LABDC.pcmgr.local/DomainDnsZones.pcmgr.local",
+            "DNS/LABDC.pcmgr.local",
+            "GC/LABDC.pcmgr.local/pcmgr.local",
+            "RestrictedKrbHost/LABDC.pcmgr.local",
+            "RestrictedKrbHost/LABDC",
+            "RPC/b45414e6-2396-45d4-946f-0de7701afb76._msdcs.pcmgr.local",
+            "HOST/LABDC/PCMGR",
+            "HOST/LABDC.pcmgr.local/PCMGR",
+            "HOST/LABDC",
+            "HOST/LABDC.pcmgr.local",
+            "HOST/LABDC.pcmgr.local/pcmgr.local",
+            "E3514235-4B06-11D1-AB04-00C04FC2DCD2/b45414e6-2396-45d4-946f-0de7701afb76/pcmgr.local",
+            "ldap/LABDC/PCMGR",
+            "ldap/b45414e6-2396-45d4-946f-0de7701afb76._msdcs.pcmgr.local",
+            "ldap/LABDC.pcmgr.local/PCMGR",
+            "ldap/LABDC",
+            "ldap/LABDC.pcmgr.local",
+            "ldap/LABDC.pcmgr.local/pcmgr.local"
+        ],
+        "uSNChanged": [
+            60063
+        ],
+        "uSNCreated": [
+            12293
+        ],
+        "userAccountControl": [
+            532480
+        ],
+        "whenChanged": [
+            "2019-01-13 11:20:01+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:59:54+00:00"
+        ]
+    },
+    "dn": "CN=LABDC,OU=Domain Controllers,DC=pcmgr,DC=local"
+}]

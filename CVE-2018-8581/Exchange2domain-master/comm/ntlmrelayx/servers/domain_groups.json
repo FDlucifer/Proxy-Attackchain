@@ -1,0 +1,5275 @@
+[{
+    "attributes": {
+        "cn": [
+            "Exchange Install Domain Servers"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:20+00:00",
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "description": [
+            "This group is used during Exchange setup and is not intended to be used for other purposes."
+        ],
+        "displayName": [
+            "Exchange Install Domain Servers"
+        ],
+        "distinguishedName": [
+            "CN=Exchange Install Domain Servers,CN=Microsoft Exchange System Objects,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483646
+        ],
+        "instanceType": [
+            4
+        ],
+        "internetEncoding": [
+            0
+        ],
+        "member": [
+            "CN=LABDC,OU=Domain Controllers,DC=pcmgr,DC=local"
+        ],
+        "memberOf": [
+            "CN=Exchange Servers,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "msExchAddressBookFlags": [
+            1
+        ],
+        "msExchBypassAudit": [
+            false
+        ],
+        "msExchGroupExternalMemberCount": [
+            0
+        ],
+        "msExchGroupMemberCount": [
+            0
+        ],
+        "msExchProvisioningFlags": [
+            0
+        ],
+        "name": [
+            "Exchange Install Domain Servers"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{eb519236-60a6-4e14-a192-d2a9fdfc7690}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1137"
+        ],
+        "sAMAccountName": [
+            "$H31000-O04ST7BVOAM7"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            35838
+        ],
+        "uSNCreated": [
+            35772
+        ],
+        "whenChanged": [
+            "2019-01-04 06:17:23+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-04 13:21:19+00:00"
+        ]
+    },
+    "dn": "CN=Exchange Install Domain Servers,CN=Microsoft Exchange System Objects,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "ExchangeLegacyInterop"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "1601-07-14 04:24:33+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ec4\u7528\u4e8e\u4e0e\u76f8\u540c\u6797\u4e2d\u7684 Exchange 2003 \u670d\u52a1\u5668\u8fdb\u884c\u4e92\u64cd\u4f5c\u3002\u4e0d\u5e94\u5220\u9664\u6b64\u7ec4\u3002"
+        ],
+        "distinguishedName": [
+            "CN=ExchangeLegacyInterop,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483640
+        ],
+        "instanceType": [
+            4
+        ],
+        "internetEncoding": [
+            0
+        ],
+        "msExchAddressBookFlags": [
+            1
+        ],
+        "msExchBypassAudit": [
+            false
+        ],
+        "msExchGroupDepartRestriction": [
+            0
+        ],
+        "msExchGroupExternalMemberCount": [
+            0
+        ],
+        "msExchGroupJoinRestriction": [
+            0
+        ],
+        "msExchGroupMemberCount": [
+            0
+        ],
+        "msExchLocalizationFlags": [
+            0
+        ],
+        "msExchMailboxAuditEnable": [
+            false
+        ],
+        "msExchMailboxAuditLogAgeLimit": [
+            7776000
+        ],
+        "msExchModerationFlags": [
+            6
+        ],
+        "msExchProvisioningFlags": [
+            0
+        ],
+        "msExchRecipientSoftDeletedStatus": [
+            0
+        ],
+        "msExchRoleGroupType": [
+            0
+        ],
+        "msExchTransportRecipientSettingsFlags": [
+            0
+        ],
+        "msExchVersion": [
+            44220983382016
+        ],
+        "name": [
+            "ExchangeLegacyInterop"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{889b0aa3-0291-47ce-b1c8-41ff93211cd6}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1129"
+        ],
+        "sAMAccountName": [
+            "ExchangeLegacyInterop"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            33069
+        ],
+        "uSNCreated": [
+            33054
+        ],
+        "whenChanged": [
+            "2019-01-04 13:20:53+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-04 13:20:53+00:00"
+        ]
+    },
+    "dn": "CN=ExchangeLegacyInterop,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Exchange Windows Permissions"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "1601-07-14 22:36:49+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ec4\u5305\u542b\u901a\u8fc7\u7ba1\u7406\u670d\u52a1\u4ee3\u8868\u7528\u6237\u8fd0\u884c Exchange cmdlet \u7684 Exchange \u670d\u52a1\u5668\u3002\u5176\u6210\u5458\u6709\u6743\u8bfb\u53d6\u548c\u4fee\u6539\u6240\u6709 Windows \u5e10\u6237\u548c\u7ec4\u3002\u4e0d\u5e94\u5220\u9664\u6b64\u7ec4\u3002"
+        ],
+        "distinguishedName": [
+            "CN=Exchange Windows Permissions,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483640
+        ],
+        "instanceType": [
+            4
+        ],
+        "internetEncoding": [
+            0
+        ],
+        "member": [
+            "CN=Exchange Trusted Subsystem,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "msExchAddressBookFlags": [
+            1
+        ],
+        "msExchBypassAudit": [
+            false
+        ],
+        "msExchGroupDepartRestriction": [
+            0
+        ],
+        "msExchGroupExternalMemberCount": [
+            0
+        ],
+        "msExchGroupJoinRestriction": [
+            0
+        ],
+        "msExchGroupMemberCount": [
+            0
+        ],
+        "msExchLocalizationFlags": [
+            0
+        ],
+        "msExchMailboxAuditEnable": [
+            false
+        ],
+        "msExchMailboxAuditLogAgeLimit": [
+            7776000
+        ],
+        "msExchModerationFlags": [
+            6
+        ],
+        "msExchProvisioningFlags": [
+            0
+        ],
+        "msExchRecipientSoftDeletedStatus": [
+            0
+        ],
+        "msExchRoleGroupType": [
+            0
+        ],
+        "msExchTransportRecipientSettingsFlags": [
+            0
+        ],
+        "msExchVersion": [
+            44220983382016
+        ],
+        "name": [
+            "Exchange Windows Permissions"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{d80a5540-cdce-4058-8808-a383b09b4a1d}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1128"
+        ],
+        "sAMAccountName": [
+            "Exchange Windows Permissions"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            33063
+        ],
+        "uSNCreated": [
+            33049
+        ],
+        "whenChanged": [
+            "2019-01-04 13:20:53+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-04 13:20:53+00:00"
+        ]
+    },
+    "dn": "CN=Exchange Windows Permissions,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Managed Availability Servers"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "1601-07-14 22:36:49+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ec4\u5305\u542b\u6240\u6709\u7684 Managed Availability \u670d\u52a1\u5668\u3002\u4e0d\u5e94\u5f53\u5220\u9664\u6b64\u7ec4\u3002"
+        ],
+        "distinguishedName": [
+            "CN=Managed Availability Servers,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483640
+        ],
+        "instanceType": [
+            4
+        ],
+        "internetEncoding": [
+            0
+        ],
+        "member": [
+            "CN=Exchange Servers,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local",
+            "CN=LABDC,OU=Domain Controllers,DC=pcmgr,DC=local"
+        ],
+        "msExchAddressBookFlags": [
+            1
+        ],
+        "msExchBypassAudit": [
+            false
+        ],
+        "msExchGroupDepartRestriction": [
+            0
+        ],
+        "msExchGroupExternalMemberCount": [
+            0
+        ],
+        "msExchGroupJoinRestriction": [
+            0
+        ],
+        "msExchGroupMemberCount": [
+            0
+        ],
+        "msExchLocalizationFlags": [
+            0
+        ],
+        "msExchMailboxAuditEnable": [
+            false
+        ],
+        "msExchMailboxAuditLogAgeLimit": [
+            7776000
+        ],
+        "msExchModerationFlags": [
+            6
+        ],
+        "msExchProvisioningFlags": [
+            0
+        ],
+        "msExchRecipientSoftDeletedStatus": [
+            0
+        ],
+        "msExchRoleGroupType": [
+            0
+        ],
+        "msExchTransportRecipientSettingsFlags": [
+            0
+        ],
+        "msExchVersion": [
+            44220983382016
+        ],
+        "name": [
+            "Managed Availability Servers"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{30628d07-791a-4b6e-b4a9-86d4626b73c6}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1127"
+        ],
+        "sAMAccountName": [
+            "Managed Availability Servers"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            35922
+        ],
+        "uSNCreated": [
+            33044
+        ],
+        "whenChanged": [
+            "2019-01-04 06:18:15+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-04 13:20:53+00:00"
+        ]
+    },
+    "dn": "CN=Managed Availability Servers,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "adminCount": [
+            1
+        ],
+        "cn": [
+            "Exchange Trusted Subsystem"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 06:27:58+00:00",
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "1601-07-14 22:36:48+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ec4\u5305\u542b\u901a\u8fc7\u7ba1\u7406\u670d\u52a1\u4ee3\u8868\u7528\u6237\u8fd0\u884c Exchange cmdlet \u7684 Exchange \u670d\u52a1\u5668\u3002\u5176\u6210\u5458\u6709\u6743\u8bfb\u53d6\u548c\u4fee\u6539\u6240\u6709 Exchange \u914d\u7f6e\uff0c\u4ee5\u53ca\u7528\u6237\u5e10\u6237\u548c\u7ec4\u3002\u4e0d\u5e94\u5220\u9664\u6b64\u7ec4\u3002"
+        ],
+        "distinguishedName": [
+            "CN=Exchange Trusted Subsystem,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483640
+        ],
+        "instanceType": [
+            4
+        ],
+        "internetEncoding": [
+            0
+        ],
+        "member": [
+            "CN=LABDC,OU=Domain Controllers,DC=pcmgr,DC=local"
+        ],
+        "memberOf": [
+            "CN=Exchange Windows Permissions,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local",
+            "CN=Administrators,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "msExchAddressBookFlags": [
+            1
+        ],
+        "msExchBypassAudit": [
+            false
+        ],
+        "msExchGroupDepartRestriction": [
+            0
+        ],
+        "msExchGroupExternalMemberCount": [
+            0
+        ],
+        "msExchGroupJoinRestriction": [
+            0
+        ],
+        "msExchGroupMemberCount": [
+            0
+        ],
+        "msExchLocalizationFlags": [
+            0
+        ],
+        "msExchMailboxAuditEnable": [
+            false
+        ],
+        "msExchMailboxAuditLogAgeLimit": [
+            7776000
+        ],
+        "msExchModerationFlags": [
+            6
+        ],
+        "msExchProvisioningFlags": [
+            0
+        ],
+        "msExchRecipientSoftDeletedStatus": [
+            0
+        ],
+        "msExchRoleGroupType": [
+            0
+        ],
+        "msExchTransportRecipientSettingsFlags": [
+            0
+        ],
+        "msExchVersion": [
+            44220983382016
+        ],
+        "name": [
+            "Exchange Trusted Subsystem"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{79f1cdba-b72b-42d5-86b0-e5e727e259df}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1126"
+        ],
+        "sAMAccountName": [
+            "Exchange Trusted Subsystem"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            36176
+        ],
+        "uSNCreated": [
+            33039
+        ],
+        "whenChanged": [
+            "2019-01-04 06:27:58+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-04 13:20:53+00:00"
+        ]
+    },
+    "dn": "CN=Exchange Trusted Subsystem,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Exchange Servers"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "1601-01-01 18:16:33+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ec4\u5305\u542b\u6240\u6709 Exchange \u670d\u52a1\u5668\u3002\u4e0d\u5e94\u5220\u9664\u6b64\u7ec4\u3002"
+        ],
+        "distinguishedName": [
+            "CN=Exchange Servers,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483640
+        ],
+        "instanceType": [
+            4
+        ],
+        "internetEncoding": [
+            0
+        ],
+        "member": [
+            "CN=Exchange Install Domain Servers,CN=Microsoft Exchange System Objects,DC=pcmgr,DC=local",
+            "CN=LABDC,OU=Domain Controllers,DC=pcmgr,DC=local"
+        ],
+        "memberOf": [
+            "CN=Managed Availability Servers,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local",
+            "CN=Windows Authorization Access Group,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "msExchAddressBookFlags": [
+            1
+        ],
+        "msExchBypassAudit": [
+            false
+        ],
+        "msExchGroupDepartRestriction": [
+            0
+        ],
+        "msExchGroupExternalMemberCount": [
+            0
+        ],
+        "msExchGroupJoinRestriction": [
+            0
+        ],
+        "msExchGroupMemberCount": [
+            0
+        ],
+        "msExchLocalizationFlags": [
+            0
+        ],
+        "msExchMailboxAuditEnable": [
+            false
+        ],
+        "msExchMailboxAuditLogAgeLimit": [
+            7776000
+        ],
+        "msExchModerationFlags": [
+            6
+        ],
+        "msExchProvisioningFlags": [
+            0
+        ],
+        "msExchRecipientSoftDeletedStatus": [
+            0
+        ],
+        "msExchRoleGroupType": [
+            0
+        ],
+        "msExchTransportRecipientSettingsFlags": [
+            0
+        ],
+        "msExchVersion": [
+            44220983382016
+        ],
+        "name": [
+            "Exchange Servers"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{0921556a-10ca-4a26-acc4-0e493679303c}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1125"
+        ],
+        "sAMAccountName": [
+            "Exchange Servers"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            35841
+        ],
+        "uSNCreated": [
+            33034
+        ],
+        "whenChanged": [
+            "2019-01-04 06:17:23+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-04 13:20:53+00:00"
+        ]
+    },
+    "dn": "CN=Exchange Servers,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Compliance Management"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "1601-07-14 22:36:49+00:00"
+        ],
+        "description": [
+            "\u6b64\u89d2\u8272\u5c06\u4f7f\u8d1f\u8d23\u5408\u89c4\u6027\u7684\u7279\u5b9a\u7528\u6237\u6b63\u786e\u914d\u7f6e\u548c\u7ba1\u7406 Exchange \u4e2d\u7b26\u5408\u5176\u7b56\u7565\u7684\u5408\u89c4\u6027\u8bbe\u7f6e\u3002"
+        ],
+        "distinguishedName": [
+            "CN=Compliance Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483640
+        ],
+        "instanceType": [
+            4
+        ],
+        "internetEncoding": [
+            0
+        ],
+        "managedBy": [
+            "CN=Organization Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "msExchAddressBookFlags": [
+            1
+        ],
+        "msExchBypassAudit": [
+            false
+        ],
+        "msExchGroupDepartRestriction": [
+            0
+        ],
+        "msExchGroupExternalMemberCount": [
+            0
+        ],
+        "msExchGroupJoinRestriction": [
+            0
+        ],
+        "msExchGroupMemberCount": [
+            0
+        ],
+        "msExchLocalizationFlags": [
+            0
+        ],
+        "msExchMailboxAuditEnable": [
+            false
+        ],
+        "msExchMailboxAuditLogAgeLimit": [
+            7776000
+        ],
+        "msExchModerationFlags": [
+            6
+        ],
+        "msExchProvisioningFlags": [
+            0
+        ],
+        "msExchRecipientSoftDeletedStatus": [
+            0
+        ],
+        "msExchRecipientTypeDetails": [
+            1073741824
+        ],
+        "msExchRoleGroupType": [
+            25
+        ],
+        "msExchTransportRecipientSettingsFlags": [
+            0
+        ],
+        "msExchUserBL": [
+            "CN=View-Only Recipients-Compliance Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=View-Only Configuration-Compliance Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=View-Only Audit Logs-Compliance Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Retention Management-Compliance Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Information Rights Management-Compliance Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Data Loss Prevention-Compliance Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchVersion": [
+            44220983382016
+        ],
+        "name": [
+            "Compliance Management"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{1af12fb0-e8da-4eb8-ad07-c223fdfc7267}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1124"
+        ],
+        "sAMAccountName": [
+            "Compliance Management"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            33032
+        ],
+        "uSNCreated": [
+            33002
+        ],
+        "whenChanged": [
+            "2019-01-04 13:20:53+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-04 13:20:52+00:00"
+        ]
+    },
+    "dn": "CN=Compliance Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Hygiene Management"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "1601-07-14 22:36:49+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ba1\u7406\u89d2\u8272\u7ec4\u6210\u5458\u53ef\u4ee5\u7ba1\u7406 Exchange \u53cd\u5783\u573e\u90ae\u4ef6\u529f\u80fd\uff0c\u5e76\u4e3a\u9632\u75c5\u6bd2\u4ea7\u54c1\u6388\u4e88\u4e0e Exchange \u96c6\u6210\u7684\u6743\u9650\u3002"
+        ],
+        "distinguishedName": [
+            "CN=Hygiene Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483640
+        ],
+        "instanceType": [
+            4
+        ],
+        "internetEncoding": [
+            0
+        ],
+        "managedBy": [
+            "CN=Organization Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "msExchAddressBookFlags": [
+            1
+        ],
+        "msExchBypassAudit": [
+            false
+        ],
+        "msExchGroupDepartRestriction": [
+            0
+        ],
+        "msExchGroupExternalMemberCount": [
+            0
+        ],
+        "msExchGroupJoinRestriction": [
+            0
+        ],
+        "msExchGroupMemberCount": [
+            0
+        ],
+        "msExchLocalizationFlags": [
+            0
+        ],
+        "msExchMailboxAuditEnable": [
+            false
+        ],
+        "msExchMailboxAuditLogAgeLimit": [
+            7776000
+        ],
+        "msExchModerationFlags": [
+            6
+        ],
+        "msExchProvisioningFlags": [
+            0
+        ],
+        "msExchRecipientSoftDeletedStatus": [
+            0
+        ],
+        "msExchRecipientTypeDetails": [
+            1073741824
+        ],
+        "msExchRoleGroupType": [
+            11
+        ],
+        "msExchTransportRecipientSettingsFlags": [
+            0
+        ],
+        "msExchUserBL": [
+            "CN=View-Only Recipients-Hygiene Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=View-Only Configuration-Hygiene Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Transport Hygiene-Hygiene Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Transport Agents-Hygiene Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Receive Connectors-Hygiene Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=ApplicationImpersonation-Hygiene Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchVersion": [
+            44220983382016
+        ],
+        "name": [
+            "Hygiene Management"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{cd0eb066-a3d1-4078-bb59-05b97ccb9669}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1123"
+        ],
+        "sAMAccountName": [
+            "Hygiene Management"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            33030
+        ],
+        "uSNCreated": [
+            32997
+        ],
+        "whenChanged": [
+            "2019-01-04 13:20:53+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-04 13:20:52+00:00"
+        ]
+    },
+    "dn": "CN=Hygiene Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Delegated Setup"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "1601-07-14 22:36:49+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ba1\u7406\u89d2\u8272\u7ec4\u6210\u5458\u5177\u6709\u5728\u5df2\u8bbe\u7f6e\u670d\u52a1\u5668\u4e0a\u5b89\u88c5\u548c\u5378\u8f7d Exchange \u7684\u6743\u9650\u3002\u4e0d\u5e94\u5220\u9664\u6b64\u89d2\u8272\u7ec4\u3002"
+        ],
+        "distinguishedName": [
+            "CN=Delegated Setup,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483640
+        ],
+        "instanceType": [
+            4
+        ],
+        "internetEncoding": [
+            0
+        ],
+        "managedBy": [
+            "CN=Organization Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "msExchAddressBookFlags": [
+            1
+        ],
+        "msExchBypassAudit": [
+            false
+        ],
+        "msExchGroupDepartRestriction": [
+            0
+        ],
+        "msExchGroupExternalMemberCount": [
+            0
+        ],
+        "msExchGroupJoinRestriction": [
+            0
+        ],
+        "msExchGroupMemberCount": [
+            0
+        ],
+        "msExchLocalizationFlags": [
+            0
+        ],
+        "msExchMailboxAuditEnable": [
+            false
+        ],
+        "msExchMailboxAuditLogAgeLimit": [
+            7776000
+        ],
+        "msExchModerationFlags": [
+            6
+        ],
+        "msExchProvisioningFlags": [
+            0
+        ],
+        "msExchRecipientSoftDeletedStatus": [
+            0
+        ],
+        "msExchRecipientTypeDetails": [
+            1073741824
+        ],
+        "msExchRoleGroupType": [
+            10
+        ],
+        "msExchTransportRecipientSettingsFlags": [
+            0
+        ],
+        "msExchUserBL": [
+            "CN=View-Only Configuration-Delegated Setup,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchVersion": [
+            44220983382016
+        ],
+        "name": [
+            "Delegated Setup"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{c2b65910-edd3-461c-b890-e21c7dc245b3}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1122"
+        ],
+        "sAMAccountName": [
+            "Delegated Setup"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            33028
+        ],
+        "uSNCreated": [
+            32992
+        ],
+        "whenChanged": [
+            "2019-01-04 13:20:53+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-04 13:20:52+00:00"
+        ]
+    },
+    "dn": "CN=Delegated Setup,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Server Management"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "1601-07-14 22:36:49+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ba1\u7406\u89d2\u8272\u7ec4\u6210\u5458\u5177\u6709\u5728 Exchange \u7ec4\u7ec7\u5185\u7ba1\u7406\u6240\u6709 Exchange \u670d\u52a1\u5668\u7684\u6743\u9650\uff0c\u4f46\u4e0d\u5177\u6709\u6267\u884c\u5bf9 Exchange \u7ec4\u7ec7\u6709\u7740\u5168\u5c40\u6027\u5f71\u54cd\u7684\u64cd\u4f5c\u7684\u6743\u9650\u3002"
+        ],
+        "distinguishedName": [
+            "CN=Server Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483640
+        ],
+        "instanceType": [
+            4
+        ],
+        "internetEncoding": [
+            0
+        ],
+        "managedBy": [
+            "CN=Organization Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "msExchAddressBookFlags": [
+            1
+        ],
+        "msExchBypassAudit": [
+            false
+        ],
+        "msExchGroupDepartRestriction": [
+            0
+        ],
+        "msExchGroupExternalMemberCount": [
+            0
+        ],
+        "msExchGroupJoinRestriction": [
+            0
+        ],
+        "msExchGroupMemberCount": [
+            0
+        ],
+        "msExchLocalizationFlags": [
+            0
+        ],
+        "msExchMailboxAuditEnable": [
+            false
+        ],
+        "msExchMailboxAuditLogAgeLimit": [
+            7776000
+        ],
+        "msExchModerationFlags": [
+            6
+        ],
+        "msExchProvisioningFlags": [
+            0
+        ],
+        "msExchRecipientSoftDeletedStatus": [
+            0
+        ],
+        "msExchRecipientTypeDetails": [
+            1073741824
+        ],
+        "msExchRoleGroupType": [
+            9
+        ],
+        "msExchTransportRecipientSettingsFlags": [
+            0
+        ],
+        "msExchUserBL": [
+            "CN=Transport Queues-Server Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Receive Connectors-Server Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=POP3 And IMAP4 Protocols-Server Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Monitoring-Server Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Exchange Virtual Directories-Server Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Exchange Servers-Server Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Exchange Server Certificates-Server Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Exchange Connectors-Server Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Databases-Server Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Database Copies-Server Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchVersion": [
+            44220983382016
+        ],
+        "name": [
+            "Server Management"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{fb842a22-2d14-4d20-9910-cd2d9e3a0a11}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1121"
+        ],
+        "sAMAccountName": [
+            "Server Management"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            33026
+        ],
+        "uSNCreated": [
+            32987
+        ],
+        "whenChanged": [
+            "2019-01-04 13:20:53+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-04 13:20:52+00:00"
+        ]
+    },
+    "dn": "CN=Server Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Discovery Management"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "1601-07-14 22:36:49+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ba1\u7406\u89d2\u8272\u7ec4\u6210\u5458\u53ef\u4ee5\u5728 Exchange \u7ec4\u7ec7\u4e2d\u9488\u5bf9\u7b26\u5408\u7279\u5b9a\u6807\u51c6\u7684\u6570\u636e\u6267\u884c\u90ae\u7bb1\u7684\u641c\u7d22\u3002"
+        ],
+        "distinguishedName": [
+            "CN=Discovery Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483640
+        ],
+        "instanceType": [
+            4
+        ],
+        "internetEncoding": [
+            0
+        ],
+        "managedBy": [
+            "CN=Organization Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "msExchAddressBookFlags": [
+            1
+        ],
+        "msExchBypassAudit": [
+            false
+        ],
+        "msExchGroupDepartRestriction": [
+            0
+        ],
+        "msExchGroupExternalMemberCount": [
+            0
+        ],
+        "msExchGroupJoinRestriction": [
+            0
+        ],
+        "msExchGroupMemberCount": [
+            0
+        ],
+        "msExchLocalizationFlags": [
+            0
+        ],
+        "msExchMailboxAuditEnable": [
+            false
+        ],
+        "msExchMailboxAuditLogAgeLimit": [
+            7776000
+        ],
+        "msExchModerationFlags": [
+            6
+        ],
+        "msExchProvisioningFlags": [
+            0
+        ],
+        "msExchRecipientSoftDeletedStatus": [
+            0
+        ],
+        "msExchRecipientTypeDetails": [
+            1073741824
+        ],
+        "msExchRoleGroupType": [
+            8
+        ],
+        "msExchTransportRecipientSettingsFlags": [
+            0
+        ],
+        "msExchUserBL": [
+            "CN=Mailbox Search-Discovery Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Legal Hold-Discovery Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchVersion": [
+            44220983382016
+        ],
+        "name": [
+            "Discovery Management"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{b16ad086-88f8-446c-ba54-77c77265977c}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1120"
+        ],
+        "sAMAccountName": [
+            "Discovery Management"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            33024
+        ],
+        "uSNCreated": [
+            32982
+        ],
+        "whenChanged": [
+            "2019-01-04 13:20:53+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-04 13:20:52+00:00"
+        ]
+    },
+    "dn": "CN=Discovery Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Records Management"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "1601-07-14 22:36:49+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ba1\u7406\u89d2\u8272\u7ec4\u6210\u5458\u53ef\u4ee5\u914d\u7f6e\u5408\u89c4\u6027\u529f\u80fd\uff0c\u5982\u4fdd\u7559\u7b56\u7565\u6807\u8bb0\u3001\u90ae\u4ef6\u5206\u7c7b\u3001\u4f20\u8f93\u89c4\u5219\u7b49\u3002"
+        ],
+        "distinguishedName": [
+            "CN=Records Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483640
+        ],
+        "instanceType": [
+            4
+        ],
+        "internetEncoding": [
+            0
+        ],
+        "managedBy": [
+            "CN=Organization Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "msExchAddressBookFlags": [
+            1
+        ],
+        "msExchBypassAudit": [
+            false
+        ],
+        "msExchGroupDepartRestriction": [
+            0
+        ],
+        "msExchGroupExternalMemberCount": [
+            0
+        ],
+        "msExchGroupJoinRestriction": [
+            0
+        ],
+        "msExchGroupMemberCount": [
+            0
+        ],
+        "msExchLocalizationFlags": [
+            0
+        ],
+        "msExchMailboxAuditEnable": [
+            false
+        ],
+        "msExchMailboxAuditLogAgeLimit": [
+            7776000
+        ],
+        "msExchModerationFlags": [
+            6
+        ],
+        "msExchProvisioningFlags": [
+            0
+        ],
+        "msExchRecipientSoftDeletedStatus": [
+            0
+        ],
+        "msExchRecipientTypeDetails": [
+            1073741824
+        ],
+        "msExchRoleGroupType": [
+            7
+        ],
+        "msExchTransportRecipientSettingsFlags": [
+            0
+        ],
+        "msExchUserBL": [
+            "CN=Transport Rules-Records Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Retention Management-Records Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Message Tracking-Records Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Journaling-Records Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Audit Logs-Records Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchVersion": [
+            44220983382016
+        ],
+        "name": [
+            "Records Management"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{0ef8021e-64a9-4583-a513-b7875c7cce93}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1119"
+        ],
+        "sAMAccountName": [
+            "Records Management"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            33022
+        ],
+        "uSNCreated": [
+            32977
+        ],
+        "whenChanged": [
+            "2019-01-04 13:20:53+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-04 13:20:52+00:00"
+        ]
+    },
+    "dn": "CN=Records Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Help Desk"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "1601-07-14 22:36:49+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ba1\u7406\u89d2\u8272\u7ec4\u6210\u5458\u53ef\u4ee5\u5728 Exchange \u7ec4\u7ec7\u4e2d\u67e5\u770b\u6536\u4ef6\u4eba\uff0c\u4ee5\u53ca\u67e5\u770b\u548c\u7ba1\u7406\u5355\u4e2a\u6536\u4ef6\u4eba\u7684\u914d\u7f6e\u3002\u6b64\u89d2\u8272\u7ec4\u6210\u5458\u53ea\u80fd\u7ba1\u7406\u6bcf\u4e2a\u7528\u6237\u7ba1\u7406\u5176\u81ea\u7528\u90ae\u7bb1\u7684\u914d\u7f6e\u3002\u5176\u4ed6\u6743\u9650\u53ef\u901a\u8fc7\u5411\u8be5\u89d2\u8272\u7ec4\u5206\u914d\u5176\u4ed6\u7ba1\u7406\u89d2\u8272\u6765\u6dfb\u52a0\u3002"
+        ],
+        "distinguishedName": [
+            "CN=Help Desk,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483640
+        ],
+        "instanceType": [
+            4
+        ],
+        "internetEncoding": [
+            0
+        ],
+        "managedBy": [
+            "CN=Organization Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "msExchAddressBookFlags": [
+            1
+        ],
+        "msExchBypassAudit": [
+            false
+        ],
+        "msExchGroupDepartRestriction": [
+            0
+        ],
+        "msExchGroupExternalMemberCount": [
+            0
+        ],
+        "msExchGroupJoinRestriction": [
+            0
+        ],
+        "msExchGroupMemberCount": [
+            0
+        ],
+        "msExchLocalizationFlags": [
+            0
+        ],
+        "msExchMailboxAuditEnable": [
+            false
+        ],
+        "msExchMailboxAuditLogAgeLimit": [
+            7776000
+        ],
+        "msExchModerationFlags": [
+            6
+        ],
+        "msExchProvisioningFlags": [
+            0
+        ],
+        "msExchRecipientSoftDeletedStatus": [
+            0
+        ],
+        "msExchRecipientTypeDetails": [
+            1073741824
+        ],
+        "msExchRoleGroupType": [
+            6
+        ],
+        "msExchTransportRecipientSettingsFlags": [
+            0
+        ],
+        "msExchUserBL": [
+            "CN=View-Only Recipients-Help Desk,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=User Options-Help Desk,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchVersion": [
+            44220983382016
+        ],
+        "name": [
+            "Help Desk"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{65b748da-60fb-4dd5-a792-08a0c6a7bda9}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1118"
+        ],
+        "sAMAccountName": [
+            "Help Desk"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            33020
+        ],
+        "uSNCreated": [
+            32972
+        ],
+        "whenChanged": [
+            "2019-01-04 13:20:53+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-04 13:20:52+00:00"
+        ]
+    },
+    "dn": "CN=Help Desk,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "UM Management"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "1601-07-14 22:36:49+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ba1\u7406\u89d2\u8272\u7ec4\u6210\u5458\u53ef\u4ee5\u7ba1\u7406\u7edf\u4e00\u6d88\u606f\u7ec4\u7ec7\u3001\u670d\u52a1\u5668\u548c\u6536\u4ef6\u4eba\u914d\u7f6e\u3002"
+        ],
+        "distinguishedName": [
+            "CN=UM Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483640
+        ],
+        "instanceType": [
+            4
+        ],
+        "internetEncoding": [
+            0
+        ],
+        "managedBy": [
+            "CN=Organization Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "msExchAddressBookFlags": [
+            1
+        ],
+        "msExchBypassAudit": [
+            false
+        ],
+        "msExchGroupDepartRestriction": [
+            0
+        ],
+        "msExchGroupExternalMemberCount": [
+            0
+        ],
+        "msExchGroupJoinRestriction": [
+            0
+        ],
+        "msExchGroupMemberCount": [
+            0
+        ],
+        "msExchLocalizationFlags": [
+            0
+        ],
+        "msExchMailboxAuditEnable": [
+            false
+        ],
+        "msExchMailboxAuditLogAgeLimit": [
+            7776000
+        ],
+        "msExchModerationFlags": [
+            6
+        ],
+        "msExchProvisioningFlags": [
+            0
+        ],
+        "msExchRecipientSoftDeletedStatus": [
+            0
+        ],
+        "msExchRecipientTypeDetails": [
+            1073741824
+        ],
+        "msExchRoleGroupType": [
+            5
+        ],
+        "msExchTransportRecipientSettingsFlags": [
+            0
+        ],
+        "msExchUserBL": [
+            "CN=Unified Messaging-UM Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=UM Prompts-UM Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=UM Mailboxes-UM Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchVersion": [
+            44220983382016
+        ],
+        "name": [
+            "UM Management"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{aa342dce-7675-4102-b261-fe7974c4cfe8}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1117"
+        ],
+        "sAMAccountName": [
+            "UM Management"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            33018
+        ],
+        "uSNCreated": [
+            32967
+        ],
+        "whenChanged": [
+            "2019-01-04 13:20:53+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-04 13:20:52+00:00"
+        ]
+    },
+    "dn": "CN=UM Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Public Folder Management"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "1601-01-01 18:16:33+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ba1\u7406\u89d2\u8272\u7ec4\u6210\u5458\u53ef\u4ee5\u7ba1\u7406\u516c\u7528\u6587\u4ef6\u5939\uff0c\u8fd8\u53ef\u4ee5\u521b\u5efa\u548c\u5220\u9664\u516c\u7528\u6587\u4ef6\u5939\u5e76\u7ba1\u7406\u5176\u8bbe\u7f6e\uff0c\u5982\u526f\u672c\u3001\u914d\u989d\u3001\u671f\u9650\u3001\u6743\u9650\u4ee5\u53ca\u90ae\u4ef6\u542f\u7528\u548c\u90ae\u4ef6\u7981\u7528\u516c\u7528\u6587\u4ef6\u5939\u3002"
+        ],
+        "distinguishedName": [
+            "CN=Public Folder Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483640
+        ],
+        "instanceType": [
+            4
+        ],
+        "internetEncoding": [
+            0
+        ],
+        "managedBy": [
+            "CN=Organization Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "msExchAddressBookFlags": [
+            1
+        ],
+        "msExchBypassAudit": [
+            false
+        ],
+        "msExchGroupDepartRestriction": [
+            0
+        ],
+        "msExchGroupExternalMemberCount": [
+            0
+        ],
+        "msExchGroupJoinRestriction": [
+            0
+        ],
+        "msExchGroupMemberCount": [
+            0
+        ],
+        "msExchLocalizationFlags": [
+            0
+        ],
+        "msExchMailboxAuditEnable": [
+            false
+        ],
+        "msExchMailboxAuditLogAgeLimit": [
+            7776000
+        ],
+        "msExchModerationFlags": [
+            6
+        ],
+        "msExchProvisioningFlags": [
+            0
+        ],
+        "msExchRecipientSoftDeletedStatus": [
+            0
+        ],
+        "msExchRecipientTypeDetails": [
+            1073741824
+        ],
+        "msExchRoleGroupType": [
+            4
+        ],
+        "msExchTransportRecipientSettingsFlags": [
+            0
+        ],
+        "msExchUserBL": [
+            "CN=Public Folders-Public Folder Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Mail Enabled Public Folders-Public Folder Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchVersion": [
+            44220983382016
+        ],
+        "name": [
+            "Public Folder Management"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{b4215551-26fb-4b7f-8116-50e4da1e9b27}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1116"
+        ],
+        "sAMAccountName": [
+            "Public Folder Management"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            33067
+        ],
+        "uSNCreated": [
+            32962
+        ],
+        "whenChanged": [
+            "2019-01-04 13:20:53+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-04 13:20:52+00:00"
+        ]
+    },
+    "dn": "CN=Public Folder Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "View-Only Organization Management"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "1601-07-14 22:36:49+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ba1\u7406\u89d2\u8272\u7ec4\u6210\u5458\u53ef\u4ee5\u5728 Exchange \u7ec4\u7ec7\u4e2d\u67e5\u770b\u6536\u4ef6\u4eba\u548c\u914d\u7f6e\u5bf9\u8c61\uff0c\u53ca\u5176\u8fd9\u4e9b\u5bf9\u8c61\u7684\u5c5e\u6027\u3002"
+        ],
+        "distinguishedName": [
+            "CN=View-Only Organization Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483640
+        ],
+        "instanceType": [
+            4
+        ],
+        "internetEncoding": [
+            0
+        ],
+        "managedBy": [
+            "CN=Organization Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "msExchAddressBookFlags": [
+            1
+        ],
+        "msExchBypassAudit": [
+            false
+        ],
+        "msExchGroupDepartRestriction": [
+            0
+        ],
+        "msExchGroupExternalMemberCount": [
+            0
+        ],
+        "msExchGroupJoinRestriction": [
+            0
+        ],
+        "msExchGroupMemberCount": [
+            0
+        ],
+        "msExchLocalizationFlags": [
+            0
+        ],
+        "msExchMailboxAuditEnable": [
+            false
+        ],
+        "msExchMailboxAuditLogAgeLimit": [
+            7776000
+        ],
+        "msExchModerationFlags": [
+            6
+        ],
+        "msExchProvisioningFlags": [
+            0
+        ],
+        "msExchRecipientSoftDeletedStatus": [
+            0
+        ],
+        "msExchRecipientTypeDetails": [
+            1073741824
+        ],
+        "msExchRoleGroupType": [
+            3
+        ],
+        "msExchTransportRecipientSettingsFlags": [
+            0
+        ],
+        "msExchUserBL": [
+            "CN=View-Only Recipients-View-Only Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=View-Only Configuration-View-Only Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Monitoring-View-Only Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchVersion": [
+            44220983382016
+        ],
+        "name": [
+            "View-Only Organization Management"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{85d8d74c-657b-4181-8b67-670aa1b2c460}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1115"
+        ],
+        "sAMAccountName": [
+            "View-Only Organization Management"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            33014
+        ],
+        "uSNCreated": [
+            32957
+        ],
+        "whenChanged": [
+            "2019-01-04 13:20:53+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-04 13:20:52+00:00"
+        ]
+    },
+    "dn": "CN=View-Only Organization Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Recipient Management"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "1601-07-14 22:36:49+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ba1\u7406\u89d2\u8272\u7ec4\u6210\u5458\u6709\u6743\u5728 Exchange \u7ec4\u7ec7\u4e2d\u521b\u5efa\u3001\u7ba1\u7406\u548c\u5220\u9664 Exchange \u6536\u4ef6\u4eba\u5bf9\u8c61\u3002"
+        ],
+        "distinguishedName": [
+            "CN=Recipient Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483640
+        ],
+        "instanceType": [
+            4
+        ],
+        "internetEncoding": [
+            0
+        ],
+        "managedBy": [
+            "CN=Organization Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "msExchAddressBookFlags": [
+            1
+        ],
+        "msExchBypassAudit": [
+            false
+        ],
+        "msExchGroupDepartRestriction": [
+            0
+        ],
+        "msExchGroupExternalMemberCount": [
+            0
+        ],
+        "msExchGroupJoinRestriction": [
+            0
+        ],
+        "msExchGroupMemberCount": [
+            0
+        ],
+        "msExchLocalizationFlags": [
+            0
+        ],
+        "msExchMailboxAuditEnable": [
+            false
+        ],
+        "msExchMailboxAuditLogAgeLimit": [
+            7776000
+        ],
+        "msExchModerationFlags": [
+            6
+        ],
+        "msExchProvisioningFlags": [
+            0
+        ],
+        "msExchRecipientSoftDeletedStatus": [
+            0
+        ],
+        "msExchRecipientTypeDetails": [
+            1073741824
+        ],
+        "msExchRoleGroupType": [
+            2
+        ],
+        "msExchTransportRecipientSettingsFlags": [
+            0
+        ],
+        "msExchUserBL": [
+            "CN=Team Mailboxes-Recipient Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Recipient Policies-Recipient Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Move Mailboxes-Recipient Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Migration-Recipient Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Message Tracking-Recipient Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Mail Recipients-Recipient Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Mail Recipient Creation-Recipient Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Distribution Groups-Recipient Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchVersion": [
+            44220983382016
+        ],
+        "name": [
+            "Recipient Management"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{4f10d961-7ea4-4a00-842d-a9281dc7e00f}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1114"
+        ],
+        "sAMAccountName": [
+            "Recipient Management"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            33012
+        ],
+        "uSNCreated": [
+            32952
+        ],
+        "whenChanged": [
+            "2019-01-04 13:20:53+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-04 13:20:52+00:00"
+        ]
+    },
+    "dn": "CN=Recipient Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "adminCount": [
+            1
+        ],
+        "cn": [
+            "Organization Management"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 06:27:58+00:00",
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-04 13:20:53+00:00",
+            "1601-07-14 22:36:48+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ba1\u7406\u89d2\u8272\u7ec4\u6210\u5458\u5177\u6709\u5bf9 Exchange \u5bf9\u8c61\u53ca\u5176\u5728 Exchange \u7ec4\u7ec7\u4e2d\u7684\u5c5e\u6027\u8fdb\u884c\u7ba1\u7406\u7684\u6743\u9650\u3002\u53e6\u5916\uff0c\u6210\u5458\u8fd8\u53ef\u4ee5\u4ee3\u8868\u7ec4\u7ec7\u4e2d\u7684\u89d2\u8272\u7ec4\u548c\u7ba1\u7406\u89d2\u8272\u3002\u4e0d\u5e94\u5220\u9664\u6b64\u89d2\u8272\u7ec4\u3002"
+        ],
+        "distinguishedName": [
+            "CN=Organization Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483640
+        ],
+        "instanceType": [
+            4
+        ],
+        "internetEncoding": [
+            0
+        ],
+        "managedBy": [
+            "CN=Organization Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "managedObjects": [
+            "CN=Compliance Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local",
+            "CN=Hygiene Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local",
+            "CN=Delegated Setup,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local",
+            "CN=Server Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local",
+            "CN=Discovery Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local",
+            "CN=Records Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local",
+            "CN=Help Desk,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local",
+            "CN=UM Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local",
+            "CN=Public Folder Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local",
+            "CN=View-Only Organization Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local",
+            "CN=Recipient Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local",
+            "CN=Organization Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+        ],
+        "member": [
+            "CN=Administrator,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "memberOf": [
+            "CN=Administrators,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "msExchAddressBookFlags": [
+            1
+        ],
+        "msExchBypassAudit": [
+            false
+        ],
+        "msExchGroupDepartRestriction": [
+            0
+        ],
+        "msExchGroupExternalMemberCount": [
+            0
+        ],
+        "msExchGroupJoinRestriction": [
+            0
+        ],
+        "msExchGroupMemberCount": [
+            0
+        ],
+        "msExchLocalizationFlags": [
+            0
+        ],
+        "msExchMailboxAuditEnable": [
+            false
+        ],
+        "msExchMailboxAuditLogAgeLimit": [
+            7776000
+        ],
+        "msExchModerationFlags": [
+            6
+        ],
+        "msExchProvisioningFlags": [
+            0
+        ],
+        "msExchRecipientSoftDeletedStatus": [
+            0
+        ],
+        "msExchRecipientTypeDetails": [
+            1073741824
+        ],
+        "msExchRoleGroupType": [
+            1
+        ],
+        "msExchTransportRecipientSettingsFlags": [
+            0
+        ],
+        "msExchUserBL": [
+            "CN=MyVoiceMail-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=MyTextMessaging-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=MyTeamMailboxes-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=MyRetentionPolicies-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=MyProfileInformation-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=MyDistributionGroups-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=MyDistributionGroupMembership-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=MyDiagnostics-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=MyContactInformation-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=MyBaseOptions-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=My Marketplace Apps-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=My Custom Apps-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=WorkloadManagement-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=WorkloadManagement-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=View-Only Recipients-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=View-Only Recipients-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=View-Only Configuration-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=View-Only Configuration-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=View-Only Audit Logs-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=View-Only Audit Logs-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=User Options-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=User Options-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=UserApplication-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Unified Messaging-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Unified Messaging-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=UnScoped Role Management-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=UM Prompts-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=UM Prompts-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=UM Mailboxes-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=UM Mailboxes-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Transport Rules-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Transport Rules-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Transport Queues-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Transport Queues-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Transport Hygiene-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Transport Hygiene-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Transport Agents-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Transport Agents-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Team Mailboxes-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Team Mailboxes-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=TeamMailboxLifecycleApplication-Organization Management-Delegati,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Support Diagnostics-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Send Connectors-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Send Connectors-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Security Group Creation and Membership-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Security Group Creation and Membership-Organization Management-D,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Role Management-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Role Management-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Retention Management-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Retention Management-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Reset Password-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Remote and Accepted Domains-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Remote and Accepted Domains-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Recipient Policies-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Recipient Policies-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Receive Connectors-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Receive Connectors-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Public Folders-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Public Folders-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=POP3 And IMAP4 Protocols-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=POP3 And IMAP4 Protocols-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Organization Transport Settings-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Organization Transport Settings-Organization Management-Delegati,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Organization Configuration-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Organization Configuration-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Organization Client Access-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Organization Client Access-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Org Marketplace Apps-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Org Marketplace Apps-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Org Custom Apps-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Org Custom Apps-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=OfficeExtensionApplication-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Move Mailboxes-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Move Mailboxes-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Monitoring-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Monitoring-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Migration-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Migration-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Message Tracking-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Message Tracking-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=MailboxSearchApplication-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Mailbox Search-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Mailbox Import Export-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Mail Tips-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Mail Tips-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Mail Recipients-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Mail Recipients-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Mail Recipient Creation-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Mail Recipient Creation-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Mail Enabled Public Folders-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Mail Enabled Public Folders-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=LegalHoldApplication-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Legal Hold-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Legal Hold-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Journaling-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Journaling-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Information Rights Management-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Information Rights Management-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Federated Sharing-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Federated Sharing-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Exchange Virtual Directories-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Exchange Virtual Directories-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Exchange Servers-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Exchange Servers-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Exchange Server Certificates-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Exchange Server Certificates-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=ExchangeCrossServiceIntegration-Organization Management-Delegati,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Exchange Connectors-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Exchange Connectors-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=E-Mail Address Policies-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=E-Mail Address Policies-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Edge Subscriptions-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Edge Subscriptions-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Distribution Groups-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Distribution Groups-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Disaster Recovery-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Disaster Recovery-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Databases-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Databases-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Database Copies-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Database Copies-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Database Availability Groups-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Database Availability Groups-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Data Loss Prevention-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Data Loss Prevention-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Cmdlet Extension Agents-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Cmdlet Extension Agents-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Audit Logs-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Audit Logs-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=ArchiveApplication-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=ApplicationImpersonation-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Address Lists-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Address Lists-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Active Directory Permissions-Organization Management,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local",
+            "CN=Active Directory Permissions-Organization Management-Delegating,CN=Role Assignments,CN=RBAC,CN=pcmgrExchange,CN=Microsoft Exchange,CN=Services,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "msExchVersion": [
+            44220983382016
+        ],
+        "name": [
+            "Organization Management"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{3ecab5be-1a22-4cc6-a036-baf0a26e492a}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1113"
+        ],
+        "sAMAccountName": [
+            "Organization Management"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            36177
+        ],
+        "uSNCreated": [
+            32947
+        ],
+        "whenChanged": [
+            "2019-01-04 06:27:58+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-04 13:20:52+00:00"
+        ]
+    },
+    "dn": "CN=Organization Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "DnsUpdateProxy"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "1601-01-01 00:00:01+00:00"
+        ],
+        "description": [
+            "\u5141\u8bb8\u66ff\u5176\u4ed6\u5ba2\u6237\u7aef(\u5982 DHCP \u670d\u52a1\u5668)\u6267\u884c\u52a8\u6001\u66f4\u65b0\u7684 DNS \u5ba2\u6237\u7aef\u3002"
+        ],
+        "distinguishedName": [
+            "CN=DnsUpdateProxy,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483646
+        ],
+        "instanceType": [
+            4
+        ],
+        "name": [
+            "DnsUpdateProxy"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{611f5472-3ac5-408a-895e-143b201fc825}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1103"
+        ],
+        "sAMAccountName": [
+            "DnsUpdateProxy"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            12474
+        ],
+        "uSNCreated": [
+            12474
+        ],
+        "whenChanged": [
+            "2019-01-03 11:00:34+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 11:00:34+00:00"
+        ]
+    },
+    "dn": "CN=DnsUpdateProxy,CN=Users,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "DnsAdmins"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "1601-01-01 00:00:01+00:00"
+        ],
+        "description": [
+            "DNS Administrators \u7ec4"
+        ],
+        "distinguishedName": [
+            "CN=DnsAdmins,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483644
+        ],
+        "instanceType": [
+            4
+        ],
+        "name": [
+            "DnsAdmins"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{d8217301-1606-41a4-abb2-e012a78014bb}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1102"
+        ],
+        "sAMAccountName": [
+            "DnsAdmins"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "uSNChanged": [
+            12471
+        ],
+        "uSNCreated": [
+            12469
+        ],
+        "whenChanged": [
+            "2019-01-03 11:00:34+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 11:00:34+00:00"
+        ]
+    },
+    "dn": "CN=DnsAdmins,CN=Users,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Protected Users"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ec4\u7684\u6210\u5458\u5c06\u53d7\u5230\u9488\u5bf9\u8eab\u4efd\u9a8c\u8bc1\u5b89\u5168\u5a01\u80c1\u7684\u989d\u5916\u4fdd\u62a4\u3002\u6709\u5173\u8be6\u7ec6\u4fe1\u606f\uff0c\u8bf7\u53c2\u9605 http://go.microsoft.com/fwlink/?LinkId=298939\u3002"
+        ],
+        "distinguishedName": [
+            "CN=Protected Users,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483646
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "name": [
+            "Protected Users"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{b97f326b-d494-467d-ab39-665229bdfb3c}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-525"
+        ],
+        "sAMAccountName": [
+            "Protected Users"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            12450
+        ],
+        "uSNCreated": [
+            12448
+        ],
+        "whenChanged": [
+            "2019-01-03 10:59:56+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:59:56+00:00"
+        ]
+    },
+    "dn": "CN=Protected Users,CN=Users,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Cloneable Domain Controllers"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u53ef\u4ee5\u514b\u9686\u6b64\u7ec4\u4e2d\u4f5c\u4e3a\u57df\u63a7\u5236\u5668\u7684\u6210\u5458\u3002"
+        ],
+        "distinguishedName": [
+            "CN=Cloneable Domain Controllers,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483646
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "name": [
+            "Cloneable Domain Controllers"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{d7fe73bd-01d0-4d09-9cab-563449afac20}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-522"
+        ],
+        "sAMAccountName": [
+            "Cloneable Domain Controllers"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            12445
+        ],
+        "uSNCreated": [
+            12443
+        ],
+        "whenChanged": [
+            "2019-01-03 10:59:56+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:59:56+00:00"
+        ]
+    },
+    "dn": "CN=Cloneable Domain Controllers,CN=Users,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Enterprise Read-only Domain Controllers"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u8be5\u7ec4\u7684\u6210\u5458\u662f\u4f01\u4e1a\u4e2d\u7684\u53ea\u8bfb\u57df\u63a7\u5236\u5668"
+        ],
+        "distinguishedName": [
+            "CN=Enterprise Read-only Domain Controllers,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483640
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "name": [
+            "Enterprise Read-only Domain Controllers"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{2674d0b2-0d94-4ab9-9507-c5888b9dd1ee}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-498"
+        ],
+        "sAMAccountName": [
+            "Enterprise Read-only Domain Controllers"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            12434
+        ],
+        "uSNCreated": [
+            12432
+        ],
+        "whenChanged": [
+            "2019-01-03 10:59:56+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:59:56+00:00"
+        ]
+    },
+    "dn": "CN=Enterprise Read-only Domain Controllers,CN=Users,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "adminCount": [
+            1
+        ],
+        "cn": [
+            "Read-only Domain Controllers"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:27:17+00:00",
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-03 11:15:04+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-07-14 04:20:16+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ec4\u4e2d\u7684\u6210\u5458\u662f\u57df\u4e2d\u53ea\u8bfb\u57df\u63a7\u5236\u5668"
+        ],
+        "distinguishedName": [
+            "CN=Read-only Domain Controllers,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483646
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "memberOf": [
+            "CN=Denied RODC Password Replication Group,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "name": [
+            "Read-only Domain Controllers"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{fc457703-985a-4ca8-a1b8-d1d5aa39b21e}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-521"
+        ],
+        "sAMAccountName": [
+            "Read-only Domain Controllers"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            35798
+        ],
+        "uSNCreated": [
+            12422
+        ],
+        "whenChanged": [
+            "2019-01-04 13:27:17+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:59:55+00:00"
+        ]
+    },
+    "dn": "CN=Read-only Domain Controllers,CN=Users,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Denied RODC Password Replication Group"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u4e0d\u5141\u8bb8\u5c06\u6b64\u7ec4\u4e2d\u6210\u5458\u7684\u5bc6\u7801\u590d\u5236\u5230\u57df\u4e2d\u7684\u6240\u6709\u53ea\u8bfb\u57df\u63a7\u5236\u5668"
+        ],
+        "distinguishedName": [
+            "CN=Denied RODC Password Replication Group,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483644
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "member": [
+            "CN=Read-only Domain Controllers,CN=Users,DC=pcmgr,DC=local",
+            "CN=Group Policy Creator Owners,CN=Users,DC=pcmgr,DC=local",
+            "CN=Domain Admins,CN=Users,DC=pcmgr,DC=local",
+            "CN=Cert Publishers,CN=Users,DC=pcmgr,DC=local",
+            "CN=Enterprise Admins,CN=Users,DC=pcmgr,DC=local",
+            "CN=Schema Admins,CN=Users,DC=pcmgr,DC=local",
+            "CN=Domain Controllers,CN=Users,DC=pcmgr,DC=local",
+            "CN=krbtgt,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "name": [
+            "Denied RODC Password Replication Group"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{aea039ab-840b-4a3d-b84a-e6053179872a}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-572"
+        ],
+        "sAMAccountName": [
+            "Denied RODC Password Replication Group"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "uSNChanged": [
+            12436
+        ],
+        "uSNCreated": [
+            12408
+        ],
+        "whenChanged": [
+            "2019-01-03 10:59:56+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:59:55+00:00"
+        ]
+    },
+    "dn": "CN=Denied RODC Password Replication Group,CN=Users,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Allowed RODC Password Replication Group"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u5141\u8bb8\u5c06\u6b64\u7ec4\u4e2d\u6210\u5458\u7684\u5bc6\u7801\u590d\u5236\u5230\u57df\u4e2d\u7684\u6240\u6709\u53ea\u8bfb\u57df\u63a7\u5236\u5668"
+        ],
+        "distinguishedName": [
+            "CN=Allowed RODC Password Replication Group,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483644
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "name": [
+            "Allowed RODC Password Replication Group"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{3af7f67f-5f8d-454a-803e-2785330bff49}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-571"
+        ],
+        "sAMAccountName": [
+            "Allowed RODC Password Replication Group"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "uSNChanged": [
+            12407
+        ],
+        "uSNCreated": [
+            12405
+        ],
+        "whenChanged": [
+            "2019-01-03 10:59:55+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:59:55+00:00"
+        ]
+    },
+    "dn": "CN=Allowed RODC Password Replication Group,CN=Users,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Terminal Server License Servers"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ec4\u7684\u6210\u5458\u53ef\u4ee5\u4f7f\u7528\u6709\u5173\u8bb8\u53ef\u8bc1\u9881\u53d1\u7684\u4fe1\u606f\u66f4\u65b0 Active Directory \u4e2d\u7684\u7528\u6237\u5e10\u6237\uff0c\u4ee5\u8fdb\u884c\u8ddf\u8e2a\u548c\u62a5\u544a TS \u6bcf\u7528\u6237 CAL \u4f7f\u7528\u60c5\u51b5"
+        ],
+        "distinguishedName": [
+            "CN=Terminal Server License Servers,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483643
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "name": [
+            "Terminal Server License Servers"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{7f2d7af3-9e9f-40e6-8277-0a36bc5e89dd}"
+        ],
+        "objectSid": [
+            "S-1-5-32-561"
+        ],
+        "sAMAccountName": [
+            "Terminal Server License Servers"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "systemFlags": [
+            -1946157056
+        ],
+        "uSNChanged": [
+            12377
+        ],
+        "uSNCreated": [
+            12375
+        ],
+        "whenChanged": [
+            "2019-01-03 10:59:55+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:59:55+00:00"
+        ]
+    },
+    "dn": "CN=Terminal Server License Servers,CN=Builtin,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Windows Authorization Access Group"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ec4\u7684\u6210\u5458\u53ef\u4ee5\u8bbf\u95ee User \u5bf9\u8c61\u4e0a\u7ecf\u8fc7\u8ba1\u7b97\u7684 tokenGroupsGlobalAndUniversal \u5c5e\u6027"
+        ],
+        "distinguishedName": [
+            "CN=Windows Authorization Access Group,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483643
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "member": [
+            "CN=Exchange Servers,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local",
+            "CN=S-1-5-9,CN=ForeignSecurityPrincipals,DC=pcmgr,DC=local"
+        ],
+        "name": [
+            "Windows Authorization Access Group"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{e2d41183-3451-44a4-b548-f29933cc665f}"
+        ],
+        "objectSid": [
+            "S-1-5-32-560"
+        ],
+        "sAMAccountName": [
+            "Windows Authorization Access Group"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "systemFlags": [
+            -1946157056
+        ],
+        "uSNChanged": [
+            35781
+        ],
+        "uSNCreated": [
+            12372
+        ],
+        "whenChanged": [
+            "2019-01-04 13:21:35+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:59:55+00:00"
+        ]
+    },
+    "dn": "CN=Windows Authorization Access Group,CN=Builtin,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Incoming Forest Trust Builders"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ec4\u7684\u6210\u5458\u53ef\u4ee5\u521b\u5efa\u5230\u6b64\u6797\u7684\u4f20\u5165\u3001\u5355\u5411\u4fe1\u4efb"
+        ],
+        "distinguishedName": [
+            "CN=Incoming Forest Trust Builders,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483643
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "name": [
+            "Incoming Forest Trust Builders"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{29fa2757-f01a-4cc3-a2ad-316d1d3251fc}"
+        ],
+        "objectSid": [
+            "S-1-5-32-557"
+        ],
+        "sAMAccountName": [
+            "Incoming Forest Trust Builders"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "systemFlags": [
+            -1946157056
+        ],
+        "uSNChanged": [
+            12371
+        ],
+        "uSNCreated": [
+            12369
+        ],
+        "whenChanged": [
+            "2019-01-03 10:59:55+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:59:55+00:00"
+        ]
+    },
+    "dn": "CN=Incoming Forest Trust Builders,CN=Builtin,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Pre-Windows 2000 Compatible Access"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u5141\u8bb8\u8bbf\u95ee\u5728\u57df\u4e2d\u6240\u6709\u7528\u6237\u548c\u7ec4\u7684\u8bfb\u53d6\u8bbf\u95ee\u53cd\u5411\u517c\u5bb9\u7ec4\u3002"
+        ],
+        "distinguishedName": [
+            "CN=Pre-Windows 2000 Compatible Access,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483643
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "member": [
+            "CN=S-1-5-11,CN=ForeignSecurityPrincipals,DC=pcmgr,DC=local"
+        ],
+        "name": [
+            "Pre-Windows 2000 Compatible Access"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{11e140a4-1c32-4d8c-9a00-f6aaa407205f}"
+        ],
+        "objectSid": [
+            "S-1-5-32-554"
+        ],
+        "sAMAccountName": [
+            "Pre-Windows 2000 Compatible Access"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "systemFlags": [
+            -1946157056
+        ],
+        "uSNChanged": [
+            12393
+        ],
+        "uSNCreated": [
+            12366
+        ],
+        "whenChanged": [
+            "2019-01-03 10:59:55+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:59:55+00:00"
+        ]
+    },
+    "dn": "CN=Pre-Windows 2000 Compatible Access,CN=Builtin,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "adminCount": [
+            1
+        ],
+        "cn": [
+            "Account Operators"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:27:17+00:00",
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-03 11:15:04+00:00",
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "description": [
+            "\u6210\u5458\u53ef\u4ee5\u7ba1\u7406\u57df\u7528\u6237\u548c\u7ec4\u5e10\u6237"
+        ],
+        "distinguishedName": [
+            "CN=Account Operators,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483643
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "name": [
+            "Account Operators"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{9819b4d3-b086-4b9b-95ab-6bb56ba687a0}"
+        ],
+        "objectSid": [
+            "S-1-5-32-548"
+        ],
+        "sAMAccountName": [
+            "Account Operators"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "systemFlags": [
+            -1946157056
+        ],
+        "uSNChanged": [
+            35795
+        ],
+        "uSNCreated": [
+            12363
+        ],
+        "whenChanged": [
+            "2019-01-04 13:27:17+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:59:54+00:00"
+        ]
+    },
+    "dn": "CN=Account Operators,CN=Builtin,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "adminCount": [
+            1
+        ],
+        "cn": [
+            "Server Operators"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:27:17+00:00",
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-03 11:15:04+00:00",
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "description": [
+            "\u6210\u5458\u53ef\u4ee5\u7ba1\u7406\u57df\u670d\u52a1\u5668"
+        ],
+        "distinguishedName": [
+            "CN=Server Operators,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483643
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "name": [
+            "Server Operators"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{c4b53398-eb4c-4f15-8962-27c252be7443}"
+        ],
+        "objectSid": [
+            "S-1-5-32-549"
+        ],
+        "sAMAccountName": [
+            "Server Operators"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "systemFlags": [
+            -1946157056
+        ],
+        "uSNChanged": [
+            35794
+        ],
+        "uSNCreated": [
+            12360
+        ],
+        "whenChanged": [
+            "2019-01-04 13:27:17+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:59:54+00:00"
+        ]
+    },
+    "dn": "CN=Server Operators,CN=Builtin,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "RAS and IAS Servers"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u8fd9\u4e2a\u7ec4\u4e2d\u7684\u670d\u52a1\u5668\u53ef\u4ee5\u8bbf\u95ee\u7528\u6237\u7684\u8fdc\u7a0b\u8bbf\u95ee\u5c5e\u6027"
+        ],
+        "distinguishedName": [
+            "CN=RAS and IAS Servers,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483644
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "name": [
+            "RAS and IAS Servers"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{358b420b-47ce-4ddb-b335-af21c5dc59d4}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-553"
+        ],
+        "sAMAccountName": [
+            "RAS and IAS Servers"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "uSNChanged": [
+            12359
+        ],
+        "uSNCreated": [
+            12357
+        ],
+        "whenChanged": [
+            "2019-01-03 10:59:54+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:59:54+00:00"
+        ]
+    },
+    "dn": "CN=RAS and IAS Servers,CN=Users,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Group Policy Creator Owners"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u8fd9\u4e2a\u7ec4\u4e2d\u7684\u6210\u5458\u53ef\u4ee5\u4fee\u6539\u57df\u7684\u7ec4\u7b56\u7565"
+        ],
+        "distinguishedName": [
+            "CN=Group Policy Creator Owners,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483646
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "member": [
+            "CN=Administrator,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "memberOf": [
+            "CN=Denied RODC Password Replication Group,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "name": [
+            "Group Policy Creator Owners"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{3ef2f30f-af8f-4315-8ccd-0c6dce4f74f5}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-520"
+        ],
+        "sAMAccountName": [
+            "Group Policy Creator Owners"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            12391
+        ],
+        "uSNCreated": [
+            12354
+        ],
+        "whenChanged": [
+            "2019-01-03 10:59:55+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:59:54+00:00"
+        ]
+    },
+    "dn": "CN=Group Policy Creator Owners,CN=Users,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Domain Guests"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u57df\u7684\u6240\u6709\u6765\u5bbe"
+        ],
+        "distinguishedName": [
+            "CN=Domain Guests,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483646
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "memberOf": [
+            "CN=Guests,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "name": [
+            "Domain Guests"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{46e5619e-2257-44c8-bd59-e3c14715d72d}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-514"
+        ],
+        "sAMAccountName": [
+            "Domain Guests"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            12353
+        ],
+        "uSNCreated": [
+            12351
+        ],
+        "whenChanged": [
+            "2019-01-03 10:59:54+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:59:54+00:00"
+        ]
+    },
+    "dn": "CN=Domain Guests,CN=Users,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Domain Users"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u6240\u6709\u57df\u7528\u6237"
+        ],
+        "distinguishedName": [
+            "CN=Domain Users,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483646
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "memberOf": [
+            "CN=Users,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "name": [
+            "Domain Users"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{afdf3076-56b9-4b6a-a7ff-65c3154cd9ca}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-513"
+        ],
+        "sAMAccountName": [
+            "Domain Users"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            12350
+        ],
+        "uSNCreated": [
+            12348
+        ],
+        "whenChanged": [
+            "2019-01-03 10:59:54+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:59:54+00:00"
+        ]
+    },
+    "dn": "CN=Domain Users,CN=Users,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "adminCount": [
+            1
+        ],
+        "cn": [
+            "Domain Admins"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:27:17+00:00",
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-03 11:15:04+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-07-14 04:20:16+00:00"
+        ],
+        "description": [
+            "\u6307\u5b9a\u7684\u57df\u7ba1\u7406\u5458"
+        ],
+        "distinguishedName": [
+            "CN=Domain Admins,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483646
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "member": [
+            "CN=Administrator,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "memberOf": [
+            "CN=Denied RODC Password Replication Group,CN=Users,DC=pcmgr,DC=local",
+            "CN=Administrators,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "name": [
+            "Domain Admins"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{2c60f8d5-9577-4ceb-ba05-00083b43a597}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-512"
+        ],
+        "sAMAccountName": [
+            "Domain Admins"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            35790
+        ],
+        "uSNCreated": [
+            12345
+        ],
+        "whenChanged": [
+            "2019-01-04 13:27:17+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:59:54+00:00"
+        ]
+    },
+    "dn": "CN=Domain Admins,CN=Users,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Cert Publishers"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ec4\u7684\u6210\u5458\u88ab\u5141\u8bb8\u53d1\u5e03\u8bc1\u4e66\u5230\u76ee\u5f55"
+        ],
+        "distinguishedName": [
+            "CN=Cert Publishers,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483644
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "memberOf": [
+            "CN=Denied RODC Password Replication Group,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "name": [
+            "Cert Publishers"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{372d4b6d-ae4a-4f61-aaa9-cc4c7cfde5bd}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-517"
+        ],
+        "sAMAccountName": [
+            "Cert Publishers"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "uSNChanged": [
+            12344
+        ],
+        "uSNCreated": [
+            12342
+        ],
+        "whenChanged": [
+            "2019-01-03 10:59:54+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:59:54+00:00"
+        ]
+    },
+    "dn": "CN=Cert Publishers,CN=Users,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "adminCount": [
+            1
+        ],
+        "cn": [
+            "Enterprise Admins"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:27:17+00:00",
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-03 11:15:04+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-07-14 04:20:16+00:00"
+        ],
+        "description": [
+            "\u4f01\u4e1a\u7684\u6307\u5b9a\u7cfb\u7edf\u7ba1\u7406\u5458"
+        ],
+        "distinguishedName": [
+            "CN=Enterprise Admins,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483640
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "member": [
+            "CN=Administrator,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "memberOf": [
+            "CN=Denied RODC Password Replication Group,CN=Users,DC=pcmgr,DC=local",
+            "CN=Administrators,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "name": [
+            "Enterprise Admins"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{04990349-21fb-483f-a960-f287bfdb08fe}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-519"
+        ],
+        "sAMAccountName": [
+            "Enterprise Admins"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            35788
+        ],
+        "uSNCreated": [
+            12339
+        ],
+        "whenChanged": [
+            "2019-01-04 13:27:17+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:59:54+00:00"
+        ]
+    },
+    "dn": "CN=Enterprise Admins,CN=Users,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "adminCount": [
+            1
+        ],
+        "cn": [
+            "Schema Admins"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:27:17+00:00",
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-03 11:15:04+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-07-14 04:20:16+00:00"
+        ],
+        "description": [
+            "\u67b6\u6784\u7684\u6307\u5b9a\u7cfb\u7edf\u7ba1\u7406\u5458"
+        ],
+        "distinguishedName": [
+            "CN=Schema Admins,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483640
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "member": [
+            "CN=Administrator,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "memberOf": [
+            "CN=Denied RODC Password Replication Group,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "name": [
+            "Schema Admins"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{33aa0410-53e2-47f4-be0f-d42751418d97}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-518"
+        ],
+        "sAMAccountName": [
+            "Schema Admins"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            35787
+        ],
+        "uSNCreated": [
+            12336
+        ],
+        "whenChanged": [
+            "2019-01-04 13:27:17+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:59:54+00:00"
+        ]
+    },
+    "dn": "CN=Schema Admins,CN=Users,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "adminCount": [
+            1
+        ],
+        "cn": [
+            "Domain Controllers"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:27:17+00:00",
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-03 11:15:04+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-07-14 04:20:16+00:00"
+        ],
+        "description": [
+            "\u57df\u4e2d\u6240\u6709\u57df\u63a7\u5236\u5668"
+        ],
+        "distinguishedName": [
+            "CN=Domain Controllers,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483646
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "memberOf": [
+            "CN=Denied RODC Password Replication Group,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "name": [
+            "Domain Controllers"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{49418c3a-2f6c-429b-9b9a-ecec3d7fb870}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-516"
+        ],
+        "sAMAccountName": [
+            "Domain Controllers"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            35799
+        ],
+        "uSNCreated": [
+            12333
+        ],
+        "whenChanged": [
+            "2019-01-04 13:27:17+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:59:54+00:00"
+        ]
+    },
+    "dn": "CN=Domain Controllers,CN=Users,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Domain Computers"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u52a0\u5165\u5230\u57df\u4e2d\u7684\u6240\u6709\u5de5\u4f5c\u7ad9\u548c\u670d\u52a1\u5668"
+        ],
+        "distinguishedName": [
+            "CN=Domain Computers,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483646
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "name": [
+            "Domain Computers"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{8b4589ca-8dbc-48b9-9045-530fa4f7b035}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-515"
+        ],
+        "sAMAccountName": [
+            "Domain Computers"
+        ],
+        "sAMAccountType": [
+            268435456
+        ],
+        "uSNChanged": [
+            12332
+        ],
+        "uSNCreated": [
+            12330
+        ],
+        "whenChanged": [
+            "2019-01-03 10:59:54+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:59:54+00:00"
+        ]
+    },
+    "dn": "CN=Domain Computers,CN=Users,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Remote Management Users"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ec4\u7684\u6210\u5458\u53ef\u4ee5\u901a\u8fc7\u7ba1\u7406\u534f\u8bae(\u4f8b\u5982\uff0c\u901a\u8fc7 Windows \u8fdc\u7a0b\u7ba1\u7406\u670d\u52a1\u5b9e\u73b0\u7684 WS-Management)\u8bbf\u95ee WMI \u8d44\u6e90\u3002\u8fd9\u4ec5\u9002\u7528\u4e8e\u6388\u4e88\u7528\u6237\u8bbf\u95ee\u6743\u9650\u7684 WMI \u547d\u540d\u7a7a\u95f4\u3002"
+        ],
+        "distinguishedName": [
+            "CN=Remote Management Users,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483643
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "name": [
+            "Remote Management Users"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{9af1abc7-6b37-41ad-b048-fed874868f65}"
+        ],
+        "objectSid": [
+            "S-1-5-32-580"
+        ],
+        "sAMAccountName": [
+            "Remote Management Users"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "systemFlags": [
+            -1946157056
+        ],
+        "uSNChanged": [
+            8229
+        ],
+        "uSNCreated": [
+            8229
+        ],
+        "whenChanged": [
+            "2019-01-03 10:58:22+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:58:22+00:00"
+        ]
+    },
+    "dn": "CN=Remote Management Users,CN=Builtin,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Access Control Assistance Operators"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ec4\u7684\u6210\u5458\u53ef\u4ee5\u8fdc\u7a0b\u67e5\u8be2\u6b64\u8ba1\u7b97\u673a\u4e0a\u8d44\u6e90\u7684\u6388\u6743\u5c5e\u6027\u548c\u6743\u9650\u3002"
+        ],
+        "distinguishedName": [
+            "CN=Access Control Assistance Operators,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483643
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "name": [
+            "Access Control Assistance Operators"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{6ac6d515-3e0e-47cf-ac65-496f21dd30fe}"
+        ],
+        "objectSid": [
+            "S-1-5-32-579"
+        ],
+        "sAMAccountName": [
+            "Access Control Assistance Operators"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "systemFlags": [
+            -1946157056
+        ],
+        "uSNChanged": [
+            8228
+        ],
+        "uSNCreated": [
+            8228
+        ],
+        "whenChanged": [
+            "2019-01-03 10:58:22+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:58:22+00:00"
+        ]
+    },
+    "dn": "CN=Access Control Assistance Operators,CN=Builtin,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Hyper-V Administrators"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ec4\u7684\u6210\u5458\u62e5\u6709\u5bf9 Hyper-V \u6240\u6709\u529f\u80fd\u7684\u5b8c\u5168\u4e14\u4e0d\u53d7\u9650\u5236\u7684\u8bbf\u95ee\u6743\u9650\u3002"
+        ],
+        "distinguishedName": [
+            "CN=Hyper-V Administrators,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483643
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "name": [
+            "Hyper-V Administrators"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{2aa86462-52d2-447a-abc6-ae6101d1c647}"
+        ],
+        "objectSid": [
+            "S-1-5-32-578"
+        ],
+        "sAMAccountName": [
+            "Hyper-V Administrators"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "systemFlags": [
+            -1946157056
+        ],
+        "uSNChanged": [
+            8227
+        ],
+        "uSNCreated": [
+            8227
+        ],
+        "whenChanged": [
+            "2019-01-03 10:58:22+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:58:22+00:00"
+        ]
+    },
+    "dn": "CN=Hyper-V Administrators,CN=Builtin,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "RDS Management Servers"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ec4\u4e2d\u7684\u670d\u52a1\u5668\u53ef\u4ee5\u5728\u8fd0\u884c\u8fdc\u7a0b\u684c\u9762\u670d\u52a1\u7684\u670d\u52a1\u5668\u4e0a\u6267\u884c\u4f8b\u7a0b\u7ba1\u7406\u64cd\u4f5c\u3002\u9700\u8981\u5c06\u6b64\u7ec4\u586b\u5145\u5230\u8fdc\u7a0b\u684c\u9762\u670d\u52a1\u90e8\u7f72\u4e2d\u7684\u6240\u6709\u670d\u52a1\u5668\u4e0a\u3002\u5fc5\u987b\u5c06\u8fd0\u884c RDS \u4e2d\u5fc3\u7ba1\u7406\u670d\u52a1\u7684\u670d\u52a1\u5668\u5305\u62ec\u5230\u6b64\u7ec4\u4e2d\u3002"
+        ],
+        "distinguishedName": [
+            "CN=RDS Management Servers,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483643
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "name": [
+            "RDS Management Servers"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{b38460b5-5764-4f38-bfd9-138b0c52de5c}"
+        ],
+        "objectSid": [
+            "S-1-5-32-577"
+        ],
+        "sAMAccountName": [
+            "RDS Management Servers"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "systemFlags": [
+            -1946157056
+        ],
+        "uSNChanged": [
+            8226
+        ],
+        "uSNCreated": [
+            8226
+        ],
+        "whenChanged": [
+            "2019-01-03 10:58:22+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:58:22+00:00"
+        ]
+    },
+    "dn": "CN=RDS Management Servers,CN=Builtin,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "RDS Endpoint Servers"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ec4\u4e2d\u7684\u670d\u52a1\u5668\u8fd0\u884c\u865a\u62df\u673a\u548c\u4e3b\u673a\u4f1a\u8bdd\uff0c\u7528\u6237 RemoteApp \u7a0b\u5e8f\u548c\u4e2a\u4eba\u865a\u62df\u684c\u9762\u5c06\u5728\u8fd9\u4e9b\u865a\u62df\u673a\u548c\u4f1a\u8bdd\u4e2d\u8fd0\u884c\u3002\u9700\u8981\u5c06\u6b64\u7ec4\u586b\u5145\u5230\u8fd0\u884c RD \u8fde\u63a5\u4ee3\u7406\u7684\u670d\u52a1\u5668\u4e0a\u3002\u5728\u90e8\u7f72\u4e2d\u4f7f\u7528\u7684 RD \u4f1a\u8bdd\u4e3b\u673a\u670d\u52a1\u5668\u548c RD \u865a\u62df\u5316\u4e3b\u673a\u670d\u52a1\u5668\u9700\u8981\u4f4d\u4e8e\u6b64\u7ec4\u4e2d\u3002"
+        ],
+        "distinguishedName": [
+            "CN=RDS Endpoint Servers,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483643
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "name": [
+            "RDS Endpoint Servers"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{8987f968-cb23-4ab7-8469-4b92eb75ab03}"
+        ],
+        "objectSid": [
+            "S-1-5-32-576"
+        ],
+        "sAMAccountName": [
+            "RDS Endpoint Servers"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "systemFlags": [
+            -1946157056
+        ],
+        "uSNChanged": [
+            8225
+        ],
+        "uSNCreated": [
+            8225
+        ],
+        "whenChanged": [
+            "2019-01-03 10:58:22+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:58:22+00:00"
+        ]
+    },
+    "dn": "CN=RDS Endpoint Servers,CN=Builtin,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "RDS Remote Access Servers"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ec4\u4e2d\u7684\u670d\u52a1\u5668\u4f7f RemoteApp \u7a0b\u5e8f\u548c\u4e2a\u4eba\u865a\u62df\u684c\u9762\u7528\u6237\u80fd\u591f\u8bbf\u95ee\u8fd9\u4e9b\u8d44\u6e90\u3002\u5728\u9762\u5411 Internet \u7684\u90e8\u7f72\u4e2d\uff0c\u8fd9\u4e9b\u670d\u52a1\u5668\u901a\u5e38\u90e8\u7f72\u5728\u8fb9\u7f18\u7f51\u7edc\u4e2d\u3002\u9700\u8981\u5c06\u6b64\u7ec4\u586b\u5145\u5230\u8fd0\u884c RD \u8fde\u63a5\u4ee3\u7406\u7684\u670d\u52a1\u5668\u4e0a\u3002\u5728\u90e8\u7f72\u4e2d\u4f7f\u7528\u7684 RD \u7f51\u5173\u670d\u52a1\u5668\u548c RD Web \u8bbf\u95ee\u670d\u52a1\u5668\u9700\u8981\u4f4d\u4e8e\u6b64\u7ec4\u4e2d\u3002"
+        ],
+        "distinguishedName": [
+            "CN=RDS Remote Access Servers,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483643
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "name": [
+            "RDS Remote Access Servers"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{c2bc2e25-9a70-4616-bc51-52742e9ec626}"
+        ],
+        "objectSid": [
+            "S-1-5-32-575"
+        ],
+        "sAMAccountName": [
+            "RDS Remote Access Servers"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "systemFlags": [
+            -1946157056
+        ],
+        "uSNChanged": [
+            8224
+        ],
+        "uSNCreated": [
+            8224
+        ],
+        "whenChanged": [
+            "2019-01-03 10:58:22+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:58:22+00:00"
+        ]
+    },
+    "dn": "CN=RDS Remote Access Servers,CN=Builtin,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Certificate Service DCOM Access"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u5141\u8bb8\u8be5\u7ec4\u7684\u6210\u5458\u8fde\u63a5\u5230\u4f01\u4e1a\u4e2d\u7684\u8bc1\u4e66\u9881\u53d1\u673a\u6784"
+        ],
+        "distinguishedName": [
+            "CN=Certificate Service DCOM Access,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483643
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "name": [
+            "Certificate Service DCOM Access"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{a400d081-0a09-4b45-9544-ee7a2d64a403}"
+        ],
+        "objectSid": [
+            "S-1-5-32-574"
+        ],
+        "sAMAccountName": [
+            "Certificate Service DCOM Access"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "systemFlags": [
+            -1946157056
+        ],
+        "uSNChanged": [
+            8223
+        ],
+        "uSNCreated": [
+            8223
+        ],
+        "whenChanged": [
+            "2019-01-03 10:58:22+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:58:22+00:00"
+        ]
+    },
+    "dn": "CN=Certificate Service DCOM Access,CN=Builtin,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Event Log Readers"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ec4\u7684\u6210\u5458\u53ef\u4ee5\u4ece\u672c\u5730\u8ba1\u7b97\u673a\u4e2d\u8bfb\u53d6\u4e8b\u4ef6\u65e5\u5fd7"
+        ],
+        "distinguishedName": [
+            "CN=Event Log Readers,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483643
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "name": [
+            "Event Log Readers"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{b3815798-f5a8-4d7d-826d-2d9921652614}"
+        ],
+        "objectSid": [
+            "S-1-5-32-573"
+        ],
+        "sAMAccountName": [
+            "Event Log Readers"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "systemFlags": [
+            -1946157056
+        ],
+        "uSNChanged": [
+            8222
+        ],
+        "uSNCreated": [
+            8222
+        ],
+        "whenChanged": [
+            "2019-01-03 10:58:22+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:58:22+00:00"
+        ]
+    },
+    "dn": "CN=Event Log Readers,CN=Builtin,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Cryptographic Operators"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u6388\u6743\u6210\u5458\u6267\u884c\u52a0\u5bc6\u64cd\u4f5c\u3002"
+        ],
+        "distinguishedName": [
+            "CN=Cryptographic Operators,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483643
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "name": [
+            "Cryptographic Operators"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{b6fe5ef0-7c04-44bf-bd8f-27624d202329}"
+        ],
+        "objectSid": [
+            "S-1-5-32-569"
+        ],
+        "sAMAccountName": [
+            "Cryptographic Operators"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "systemFlags": [
+            -1946157056
+        ],
+        "uSNChanged": [
+            8221
+        ],
+        "uSNCreated": [
+            8221
+        ],
+        "whenChanged": [
+            "2019-01-03 10:58:22+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:58:22+00:00"
+        ]
+    },
+    "dn": "CN=Cryptographic Operators,CN=Builtin,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "IIS_IUSRS"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "Internet \u4fe1\u606f\u670d\u52a1\u4f7f\u7528\u7684\u5185\u7f6e\u7ec4\u3002"
+        ],
+        "distinguishedName": [
+            "CN=IIS_IUSRS,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483643
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "name": [
+            "IIS_IUSRS"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{17b83533-67fd-4a7b-84c3-60a5b10bab09}"
+        ],
+        "objectSid": [
+            "S-1-5-32-568"
+        ],
+        "sAMAccountName": [
+            "IIS_IUSRS"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "systemFlags": [
+            -1946157056
+        ],
+        "uSNChanged": [
+            16396
+        ],
+        "uSNCreated": [
+            8220
+        ],
+        "whenChanged": [
+            "2019-01-04 03:04:17+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:58:22+00:00"
+        ]
+    },
+    "dn": "CN=IIS_IUSRS,CN=Builtin,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Distributed COM Users"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u6210\u5458\u5141\u8bb8\u542f\u52a8\u3001\u6fc0\u6d3b\u548c\u4f7f\u7528\u6b64\u8ba1\u7b97\u673a\u4e0a\u7684\u5206\u5e03\u5f0f COM \u5bf9\u8c61\u3002"
+        ],
+        "distinguishedName": [
+            "CN=Distributed COM Users,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483643
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "name": [
+            "Distributed COM Users"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{9a79092b-dbd3-439b-84a3-1a850dddefe5}"
+        ],
+        "objectSid": [
+            "S-1-5-32-562"
+        ],
+        "sAMAccountName": [
+            "Distributed COM Users"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "systemFlags": [
+            -1946157056
+        ],
+        "uSNChanged": [
+            8219
+        ],
+        "uSNCreated": [
+            8219
+        ],
+        "whenChanged": [
+            "2019-01-03 10:58:22+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:58:22+00:00"
+        ]
+    },
+    "dn": "CN=Distributed COM Users,CN=Builtin,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Performance Log Users"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u8be5\u7ec4\u4e2d\u7684\u6210\u5458\u53ef\u4ee5\u8ba1\u5212\u8fdb\u884c\u6027\u80fd\u8ba1\u6570\u5668\u65e5\u5fd7\u8bb0\u5f55\u3001\u542f\u7528\u8ddf\u8e2a\u8bb0\u5f55\u63d0\u4f9b\u7a0b\u5e8f\uff0c\u4ee5\u53ca\u5728\u672c\u5730\u6216\u901a\u8fc7\u8fdc\u7a0b\u8bbf\u95ee\u6b64\u8ba1\u7b97\u673a\u6765\u6536\u96c6\u4e8b\u4ef6\u8ddf\u8e2a\u8bb0\u5f55"
+        ],
+        "distinguishedName": [
+            "CN=Performance Log Users,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483643
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "name": [
+            "Performance Log Users"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{d2f27af9-ee8a-4d7f-b253-d87f84a26db5}"
+        ],
+        "objectSid": [
+            "S-1-5-32-559"
+        ],
+        "sAMAccountName": [
+            "Performance Log Users"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "systemFlags": [
+            -1946157056
+        ],
+        "uSNChanged": [
+            8218
+        ],
+        "uSNCreated": [
+            8218
+        ],
+        "whenChanged": [
+            "2019-01-03 10:58:22+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:58:22+00:00"
+        ]
+    },
+    "dn": "CN=Performance Log Users,CN=Builtin,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Performance Monitor Users"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ec4\u7684\u6210\u5458\u53ef\u4ee5\u4ece\u672c\u5730\u548c\u8fdc\u7a0b\u8bbf\u95ee\u6027\u80fd\u8ba1\u6570\u5668\u6570\u636e"
+        ],
+        "distinguishedName": [
+            "CN=Performance Monitor Users,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483643
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "name": [
+            "Performance Monitor Users"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{5b1a8c9a-0602-47c5-964f-03bd5b40f1fa}"
+        ],
+        "objectSid": [
+            "S-1-5-32-558"
+        ],
+        "sAMAccountName": [
+            "Performance Monitor Users"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "systemFlags": [
+            -1946157056
+        ],
+        "uSNChanged": [
+            8217
+        ],
+        "uSNCreated": [
+            8217
+        ],
+        "whenChanged": [
+            "2019-01-03 10:58:22+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:58:22+00:00"
+        ]
+    },
+    "dn": "CN=Performance Monitor Users,CN=Builtin,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Network Configuration Operators"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ec4\u4e2d\u7684\u6210\u5458\u6709\u90e8\u5206\u7ba1\u7406\u6743\u9650\u6765\u7ba1\u7406\u7f51\u7edc\u529f\u80fd\u7684\u914d\u7f6e"
+        ],
+        "distinguishedName": [
+            "CN=Network Configuration Operators,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483643
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "name": [
+            "Network Configuration Operators"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{755f268d-1797-4e8c-8a4a-5aa223b08a1d}"
+        ],
+        "objectSid": [
+            "S-1-5-32-556"
+        ],
+        "sAMAccountName": [
+            "Network Configuration Operators"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "systemFlags": [
+            -1946157056
+        ],
+        "uSNChanged": [
+            8216
+        ],
+        "uSNCreated": [
+            8216
+        ],
+        "whenChanged": [
+            "2019-01-03 10:58:22+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:58:22+00:00"
+        ]
+    },
+    "dn": "CN=Network Configuration Operators,CN=Builtin,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Remote Desktop Users"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u6b64\u7ec4\u4e2d\u7684\u6210\u5458\u88ab\u6388\u4e88\u8fdc\u7a0b\u767b\u5f55\u7684\u6743\u9650"
+        ],
+        "distinguishedName": [
+            "CN=Remote Desktop Users,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483643
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "name": [
+            "Remote Desktop Users"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{cd00f0f9-9f01-475e-9d23-4a3049056570}"
+        ],
+        "objectSid": [
+            "S-1-5-32-555"
+        ],
+        "sAMAccountName": [
+            "Remote Desktop Users"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "systemFlags": [
+            -1946157056
+        ],
+        "uSNChanged": [
+            8215
+        ],
+        "uSNCreated": [
+            8215
+        ],
+        "whenChanged": [
+            "2019-01-03 10:58:22+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:58:22+00:00"
+        ]
+    },
+    "dn": "CN=Remote Desktop Users,CN=Builtin,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "adminCount": [
+            1
+        ],
+        "cn": [
+            "Replicator"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:27:17+00:00",
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-03 11:15:04+00:00",
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "description": [
+            "\u652f\u6301\u57df\u4e2d\u7684\u6587\u4ef6\u590d\u5236"
+        ],
+        "distinguishedName": [
+            "CN=Replicator,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483643
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "name": [
+            "Replicator"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{00a3820f-ea95-42cb-acf2-2daa8364cc7d}"
+        ],
+        "objectSid": [
+            "S-1-5-32-552"
+        ],
+        "sAMAccountName": [
+            "Replicator"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "systemFlags": [
+            -1946157056
+        ],
+        "uSNChanged": [
+            35791
+        ],
+        "uSNCreated": [
+            8214
+        ],
+        "whenChanged": [
+            "2019-01-04 13:27:17+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:58:22+00:00"
+        ]
+    },
+    "dn": "CN=Replicator,CN=Builtin,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "adminCount": [
+            1
+        ],
+        "cn": [
+            "Backup Operators"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:27:17+00:00",
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-03 11:15:04+00:00",
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "description": [
+            "\u5907\u4efd\u64cd\u4f5c\u5458\u4e3a\u4e86\u5907\u4efd\u6216\u8fd8\u539f\u6587\u4ef6\u53ef\u4ee5\u66ff\u4ee3\u5b89\u5168\u9650\u5236"
+        ],
+        "distinguishedName": [
+            "CN=Backup Operators,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483643
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "name": [
+            "Backup Operators"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{b141f724-3fd3-4b75-b153-012cfa00af9f}"
+        ],
+        "objectSid": [
+            "S-1-5-32-551"
+        ],
+        "sAMAccountName": [
+            "Backup Operators"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "systemFlags": [
+            -1946157056
+        ],
+        "uSNChanged": [
+            35792
+        ],
+        "uSNCreated": [
+            8213
+        ],
+        "whenChanged": [
+            "2019-01-04 13:27:17+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:58:22+00:00"
+        ]
+    },
+    "dn": "CN=Backup Operators,CN=Builtin,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "adminCount": [
+            1
+        ],
+        "cn": [
+            "Print Operators"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:27:17+00:00",
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-03 11:15:04+00:00",
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "description": [
+            "\u6210\u5458\u53ef\u4ee5\u7ba1\u7406\u5728\u57df\u63a7\u5236\u5668\u4e0a\u5b89\u88c5\u7684\u6253\u5370\u673a"
+        ],
+        "distinguishedName": [
+            "CN=Print Operators,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483643
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "name": [
+            "Print Operators"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{8eef00f0-7bfc-4c4a-b79f-0a7f317668c5}"
+        ],
+        "objectSid": [
+            "S-1-5-32-550"
+        ],
+        "sAMAccountName": [
+            "Print Operators"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "systemFlags": [
+            -1946157056
+        ],
+        "uSNChanged": [
+            35796
+        ],
+        "uSNCreated": [
+            8212
+        ],
+        "whenChanged": [
+            "2019-01-04 13:27:17+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:58:22+00:00"
+        ]
+    },
+    "dn": "CN=Print Operators,CN=Builtin,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Guests"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u6309\u9ed8\u8ba4\u503c\uff0c\u6765\u5bbe\u8ddf\u7528\u6237\u7ec4\u7684\u6210\u5458\u6709\u540c\u7b49\u8bbf\u95ee\u6743\uff0c\u4f46\u6765\u5bbe\u5e10\u6237\u7684\u9650\u5236\u66f4\u591a"
+        ],
+        "distinguishedName": [
+            "CN=Guests,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483643
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "member": [
+            "CN=Domain Guests,CN=Users,DC=pcmgr,DC=local",
+            "CN=Guest,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "name": [
+            "Guests"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{8a8a590d-ea63-47f3-96fa-fb6de328f47c}"
+        ],
+        "objectSid": [
+            "S-1-5-32-546"
+        ],
+        "sAMAccountName": [
+            "Guests"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "systemFlags": [
+            -1946157056
+        ],
+        "uSNChanged": [
+            12383
+        ],
+        "uSNCreated": [
+            8209
+        ],
+        "whenChanged": [
+            "2019-01-03 10:59:55+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:58:22+00:00"
+        ]
+    },
+    "dn": "CN=Guests,CN=Builtin,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "Users"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "\u9632\u6b62\u7528\u6237\u8fdb\u884c\u6709\u610f\u6216\u65e0\u610f\u7684\u7cfb\u7edf\u8303\u56f4\u7684\u66f4\u6539\uff0c\u4f46\u662f\u53ef\u4ee5\u8fd0\u884c\u5927\u90e8\u5206\u5e94\u7528\u7a0b\u5e8f"
+        ],
+        "distinguishedName": [
+            "CN=Users,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483643
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "member": [
+            "CN=Domain Users,CN=Users,DC=pcmgr,DC=local",
+            "CN=S-1-5-11,CN=ForeignSecurityPrincipals,DC=pcmgr,DC=local",
+            "CN=S-1-5-4,CN=ForeignSecurityPrincipals,DC=pcmgr,DC=local"
+        ],
+        "name": [
+            "Users"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{44c0b859-2562-485c-9c5b-6d11b20cd14e}"
+        ],
+        "objectSid": [
+            "S-1-5-32-545"
+        ],
+        "sAMAccountName": [
+            "Users"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "systemFlags": [
+            -1946157056
+        ],
+        "uSNChanged": [
+            12381
+        ],
+        "uSNCreated": [
+            8203
+        ],
+        "whenChanged": [
+            "2019-01-03 10:59:55+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:58:22+00:00"
+        ]
+    },
+    "dn": "CN=Users,CN=Builtin,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "adminCount": [
+            1
+        ],
+        "cn": [
+            "Administrators"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:27:17+00:00",
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-04 13:21:19+00:00",
+            "2019-01-03 11:15:04+00:00",
+            "1601-01-01 00:00:00+00:00"
+        ],
+        "description": [
+            "\u7ba1\u7406\u5458\u5bf9\u8ba1\u7b97\u673a/\u57df\u6709\u4e0d\u53d7\u9650\u5236\u7684\u5b8c\u5168\u8bbf\u95ee\u6743"
+        ],
+        "distinguishedName": [
+            "CN=Administrators,CN=Builtin,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483643
+        ],
+        "instanceType": [
+            4
+        ],
+        "isCriticalSystemObject": [
+            true
+        ],
+        "member": [
+            "CN=Exchange Trusted Subsystem,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local",
+            "CN=Organization Management,OU=Microsoft Exchange Security Groups,DC=pcmgr,DC=local",
+            "CN=Domain Admins,CN=Users,DC=pcmgr,DC=local",
+            "CN=Enterprise Admins,CN=Users,DC=pcmgr,DC=local",
+            "CN=Administrator,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "name": [
+            "Administrators"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{9c9b567a-29d9-46df-8ded-afff007f3b62}"
+        ],
+        "objectSid": [
+            "S-1-5-32-544"
+        ],
+        "sAMAccountName": [
+            "Administrators"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "systemFlags": [
+            -1946157056
+        ],
+        "uSNChanged": [
+            35918
+        ],
+        "uSNCreated": [
+            8200
+        ],
+        "whenChanged": [
+            "2019-01-04 06:17:33+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:58:22+00:00"
+        ]
+    },
+    "dn": "CN=Administrators,CN=Builtin,DC=pcmgr,DC=local"
+},{
+    "attributes": {
+        "cn": [
+            "WinRMRemoteWMIUsers__"
+        ],
+        "dSCorePropagationData": [
+            "2019-01-04 13:21:20+00:00",
+            "2019-01-03 10:59:56+00:00",
+            "1601-01-01 00:04:17+00:00"
+        ],
+        "description": [
+            "Members of this group can access WMI resources over management protocols (such as WS-Management via the Windows Remote Management service). This applies only to WMI namespaces that grant access to the user."
+        ],
+        "distinguishedName": [
+            "CN=WinRMRemoteWMIUsers__,CN=Users,DC=pcmgr,DC=local"
+        ],
+        "groupType": [
+            -2147483644
+        ],
+        "instanceType": [
+            4
+        ],
+        "name": [
+            "WinRMRemoteWMIUsers__"
+        ],
+        "objectCategory": [
+            "CN=Group,CN=Schema,CN=Configuration,DC=pcmgr,DC=local"
+        ],
+        "objectClass": [
+            "top",
+            "group"
+        ],
+        "objectGUID": [
+            "{b1bfc938-a7b7-4810-9351-5f3ca9745ff1}"
+        ],
+        "objectSid": [
+            "S-1-5-21-3176735657-2553968857-3628922785-1000"
+        ],
+        "sAMAccountName": [
+            "WinRMRemoteWMIUsers__"
+        ],
+        "sAMAccountType": [
+            536870912
+        ],
+        "uSNChanged": [
+            8198
+        ],
+        "uSNCreated": [
+            8198
+        ],
+        "whenChanged": [
+            "2019-01-03 10:58:22+00:00"
+        ],
+        "whenCreated": [
+            "2019-01-03 10:58:22+00:00"
+        ]
+    },
+    "dn": "CN=WinRMRemoteWMIUsers__,CN=Users,DC=pcmgr,DC=local"
+}]

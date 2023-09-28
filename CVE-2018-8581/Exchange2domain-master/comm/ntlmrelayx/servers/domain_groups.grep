@@ -1,0 +1,65 @@
+cn	sAMAccountName	memberOf	description	whenCreated	whenChanged	objectSid
+Exchange Install Domain Servers	$H31000-O04ST7BVOAM7	Exchange Servers	This group is used during Exchange setup and is not intended to be used for other purposes.	2019-01-04 13:21:19+00:00	2019-01-04 06:17:23+00:00	S-1-5-21-3176735657-2553968857-3628922785-1137
+ExchangeLegacyInterop	ExchangeLegacyInterop		此组用于与相同林中的 Exchange 2003 服务器进行互操作。不应删除此组。	2019-01-04 13:20:53+00:00	2019-01-04 13:20:53+00:00	S-1-5-21-3176735657-2553968857-3628922785-1129
+Exchange Windows Permissions	Exchange Windows Permissions		此组包含通过管理服务代表用户运行 Exchange cmdlet 的 Exchange 服务器。其成员有权读取和修改所有 Windows 帐户和组。不应删除此组。	2019-01-04 13:20:53+00:00	2019-01-04 13:20:53+00:00	S-1-5-21-3176735657-2553968857-3628922785-1128
+Managed Availability Servers	Managed Availability Servers		此组包含所有的 Managed Availability 服务器。不应当删除此组。	2019-01-04 13:20:53+00:00	2019-01-04 06:18:15+00:00	S-1-5-21-3176735657-2553968857-3628922785-1127
+Exchange Trusted Subsystem	Exchange Trusted Subsystem	Exchange Windows Permissions, Administrators	此组包含通过管理服务代表用户运行 Exchange cmdlet 的 Exchange 服务器。其成员有权读取和修改所有 Exchange 配置，以及用户帐户和组。不应删除此组。	2019-01-04 13:20:53+00:00	2019-01-04 06:27:58+00:00	S-1-5-21-3176735657-2553968857-3628922785-1126
+Exchange Servers	Exchange Servers	Managed Availability Servers, Windows Authorization Access Group	此组包含所有 Exchange 服务器。不应删除此组。	2019-01-04 13:20:53+00:00	2019-01-04 06:17:23+00:00	S-1-5-21-3176735657-2553968857-3628922785-1125
+Compliance Management	Compliance Management		此角色将使负责合规性的特定用户正确配置和管理 Exchange 中符合其策略的合规性设置。	2019-01-04 13:20:52+00:00	2019-01-04 13:20:53+00:00	S-1-5-21-3176735657-2553968857-3628922785-1124
+Hygiene Management	Hygiene Management		此管理角色组成员可以管理 Exchange 反垃圾邮件功能，并为防病毒产品授予与 Exchange 集成的权限。	2019-01-04 13:20:52+00:00	2019-01-04 13:20:53+00:00	S-1-5-21-3176735657-2553968857-3628922785-1123
+Delegated Setup	Delegated Setup		此管理角色组成员具有在已设置服务器上安装和卸载 Exchange 的权限。不应删除此角色组。	2019-01-04 13:20:52+00:00	2019-01-04 13:20:53+00:00	S-1-5-21-3176735657-2553968857-3628922785-1122
+Server Management	Server Management		此管理角色组成员具有在 Exchange 组织内管理所有 Exchange 服务器的权限，但不具有执行对 Exchange 组织有着全局性影响的操作的权限。	2019-01-04 13:20:52+00:00	2019-01-04 13:20:53+00:00	S-1-5-21-3176735657-2553968857-3628922785-1121
+Discovery Management	Discovery Management		此管理角色组成员可以在 Exchange 组织中针对符合特定标准的数据执行邮箱的搜索。	2019-01-04 13:20:52+00:00	2019-01-04 13:20:53+00:00	S-1-5-21-3176735657-2553968857-3628922785-1120
+Records Management	Records Management		此管理角色组成员可以配置合规性功能，如保留策略标记、邮件分类、传输规则等。	2019-01-04 13:20:52+00:00	2019-01-04 13:20:53+00:00	S-1-5-21-3176735657-2553968857-3628922785-1119
+Help Desk	Help Desk		此管理角色组成员可以在 Exchange 组织中查看收件人，以及查看和管理单个收件人的配置。此角色组成员只能管理每个用户管理其自用邮箱的配置。其他权限可通过向该角色组分配其他管理角色来添加。	2019-01-04 13:20:52+00:00	2019-01-04 13:20:53+00:00	S-1-5-21-3176735657-2553968857-3628922785-1118
+UM Management	UM Management		此管理角色组成员可以管理统一消息组织、服务器和收件人配置。	2019-01-04 13:20:52+00:00	2019-01-04 13:20:53+00:00	S-1-5-21-3176735657-2553968857-3628922785-1117
+Public Folder Management	Public Folder Management		此管理角色组成员可以管理公用文件夹，还可以创建和删除公用文件夹并管理其设置，如副本、配额、期限、权限以及邮件启用和邮件禁用公用文件夹。	2019-01-04 13:20:52+00:00	2019-01-04 13:20:53+00:00	S-1-5-21-3176735657-2553968857-3628922785-1116
+View-Only Organization Management	View-Only Organization Management		此管理角色组成员可以在 Exchange 组织中查看收件人和配置对象，及其这些对象的属性。	2019-01-04 13:20:52+00:00	2019-01-04 13:20:53+00:00	S-1-5-21-3176735657-2553968857-3628922785-1115
+Recipient Management	Recipient Management		此管理角色组成员有权在 Exchange 组织中创建、管理和删除 Exchange 收件人对象。	2019-01-04 13:20:52+00:00	2019-01-04 13:20:53+00:00	S-1-5-21-3176735657-2553968857-3628922785-1114
+Organization Management	Organization Management	Administrators	此管理角色组成员具有对 Exchange 对象及其在 Exchange 组织中的属性进行管理的权限。另外，成员还可以代表组织中的角色组和管理角色。不应删除此角色组。	2019-01-04 13:20:52+00:00	2019-01-04 06:27:58+00:00	S-1-5-21-3176735657-2553968857-3628922785-1113
+DnsUpdateProxy	DnsUpdateProxy		允许替其他客户端(如 DHCP 服务器)执行动态更新的 DNS 客户端。	2019-01-03 11:00:34+00:00	2019-01-03 11:00:34+00:00	S-1-5-21-3176735657-2553968857-3628922785-1103
+DnsAdmins	DnsAdmins		DNS Administrators 组	2019-01-03 11:00:34+00:00	2019-01-03 11:00:34+00:00	S-1-5-21-3176735657-2553968857-3628922785-1102
+Protected Users	Protected Users		此组的成员将受到针对身份验证安全威胁的额外保护。有关详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkId=298939。	2019-01-03 10:59:56+00:00	2019-01-03 10:59:56+00:00	S-1-5-21-3176735657-2553968857-3628922785-525
+Cloneable Domain Controllers	Cloneable Domain Controllers		可以克隆此组中作为域控制器的成员。	2019-01-03 10:59:56+00:00	2019-01-03 10:59:56+00:00	S-1-5-21-3176735657-2553968857-3628922785-522
+Enterprise Read-only Domain Controllers	Enterprise Read-only Domain Controllers		该组的成员是企业中的只读域控制器	2019-01-03 10:59:56+00:00	2019-01-03 10:59:56+00:00	S-1-5-21-3176735657-2553968857-3628922785-498
+Read-only Domain Controllers	Read-only Domain Controllers	Denied RODC Password Replication Group	此组中的成员是域中只读域控制器	2019-01-03 10:59:55+00:00	2019-01-04 13:27:17+00:00	S-1-5-21-3176735657-2553968857-3628922785-521
+Denied RODC Password Replication Group	Denied RODC Password Replication Group		不允许将此组中成员的密码复制到域中的所有只读域控制器	2019-01-03 10:59:55+00:00	2019-01-03 10:59:56+00:00	S-1-5-21-3176735657-2553968857-3628922785-572
+Allowed RODC Password Replication Group	Allowed RODC Password Replication Group		允许将此组中成员的密码复制到域中的所有只读域控制器	2019-01-03 10:59:55+00:00	2019-01-03 10:59:55+00:00	S-1-5-21-3176735657-2553968857-3628922785-571
+Terminal Server License Servers	Terminal Server License Servers		此组的成员可以使用有关许可证颁发的信息更新 Active Directory 中的用户帐户，以进行跟踪和报告 TS 每用户 CAL 使用情况	2019-01-03 10:59:55+00:00	2019-01-03 10:59:55+00:00	S-1-5-32-561
+Windows Authorization Access Group	Windows Authorization Access Group		此组的成员可以访问 User 对象上经过计算的 tokenGroupsGlobalAndUniversal 属性	2019-01-03 10:59:55+00:00	2019-01-04 13:21:35+00:00	S-1-5-32-560
+Incoming Forest Trust Builders	Incoming Forest Trust Builders		此组的成员可以创建到此林的传入、单向信任	2019-01-03 10:59:55+00:00	2019-01-03 10:59:55+00:00	S-1-5-32-557
+Pre-Windows 2000 Compatible Access	Pre-Windows 2000 Compatible Access		允许访问在域中所有用户和组的读取访问反向兼容组。	2019-01-03 10:59:55+00:00	2019-01-03 10:59:55+00:00	S-1-5-32-554
+Account Operators	Account Operators		成员可以管理域用户和组帐户	2019-01-03 10:59:54+00:00	2019-01-04 13:27:17+00:00	S-1-5-32-548
+Server Operators	Server Operators		成员可以管理域服务器	2019-01-03 10:59:54+00:00	2019-01-04 13:27:17+00:00	S-1-5-32-549
+RAS and IAS Servers	RAS and IAS Servers		这个组中的服务器可以访问用户的远程访问属性	2019-01-03 10:59:54+00:00	2019-01-03 10:59:54+00:00	S-1-5-21-3176735657-2553968857-3628922785-553
+Group Policy Creator Owners	Group Policy Creator Owners	Denied RODC Password Replication Group	这个组中的成员可以修改域的组策略	2019-01-03 10:59:54+00:00	2019-01-03 10:59:55+00:00	S-1-5-21-3176735657-2553968857-3628922785-520
+Domain Guests	Domain Guests	Guests	域的所有来宾	2019-01-03 10:59:54+00:00	2019-01-03 10:59:54+00:00	S-1-5-21-3176735657-2553968857-3628922785-514
+Domain Users	Domain Users	Users	所有域用户	2019-01-03 10:59:54+00:00	2019-01-03 10:59:54+00:00	S-1-5-21-3176735657-2553968857-3628922785-513
+Domain Admins	Domain Admins	Denied RODC Password Replication Group, Administrators	指定的域管理员	2019-01-03 10:59:54+00:00	2019-01-04 13:27:17+00:00	S-1-5-21-3176735657-2553968857-3628922785-512
+Cert Publishers	Cert Publishers	Denied RODC Password Replication Group	此组的成员被允许发布证书到目录	2019-01-03 10:59:54+00:00	2019-01-03 10:59:54+00:00	S-1-5-21-3176735657-2553968857-3628922785-517
+Enterprise Admins	Enterprise Admins	Denied RODC Password Replication Group, Administrators	企业的指定系统管理员	2019-01-03 10:59:54+00:00	2019-01-04 13:27:17+00:00	S-1-5-21-3176735657-2553968857-3628922785-519
+Schema Admins	Schema Admins	Denied RODC Password Replication Group	架构的指定系统管理员	2019-01-03 10:59:54+00:00	2019-01-04 13:27:17+00:00	S-1-5-21-3176735657-2553968857-3628922785-518
+Domain Controllers	Domain Controllers	Denied RODC Password Replication Group	域中所有域控制器	2019-01-03 10:59:54+00:00	2019-01-04 13:27:17+00:00	S-1-5-21-3176735657-2553968857-3628922785-516
+Domain Computers	Domain Computers		加入到域中的所有工作站和服务器	2019-01-03 10:59:54+00:00	2019-01-03 10:59:54+00:00	S-1-5-21-3176735657-2553968857-3628922785-515
+Remote Management Users	Remote Management Users		此组的成员可以通过管理协议(例如，通过 Windows 远程管理服务实现的 WS-Management)访问 WMI 资源。这仅适用于授予用户访问权限的 WMI 命名空间。	2019-01-03 10:58:22+00:00	2019-01-03 10:58:22+00:00	S-1-5-32-580
+Access Control Assistance Operators	Access Control Assistance Operators		此组的成员可以远程查询此计算机上资源的授权属性和权限。	2019-01-03 10:58:22+00:00	2019-01-03 10:58:22+00:00	S-1-5-32-579
+Hyper-V Administrators	Hyper-V Administrators		此组的成员拥有对 Hyper-V 所有功能的完全且不受限制的访问权限。	2019-01-03 10:58:22+00:00	2019-01-03 10:58:22+00:00	S-1-5-32-578
+RDS Management Servers	RDS Management Servers		此组中的服务器可以在运行远程桌面服务的服务器上执行例程管理操作。需要将此组填充到远程桌面服务部署中的所有服务器上。必须将运行 RDS 中心管理服务的服务器包括到此组中。	2019-01-03 10:58:22+00:00	2019-01-03 10:58:22+00:00	S-1-5-32-577
+RDS Endpoint Servers	RDS Endpoint Servers		此组中的服务器运行虚拟机和主机会话，用户 RemoteApp 程序和个人虚拟桌面将在这些虚拟机和会话中运行。需要将此组填充到运行 RD 连接代理的服务器上。在部署中使用的 RD 会话主机服务器和 RD 虚拟化主机服务器需要位于此组中。	2019-01-03 10:58:22+00:00	2019-01-03 10:58:22+00:00	S-1-5-32-576
+RDS Remote Access Servers	RDS Remote Access Servers		此组中的服务器使 RemoteApp 程序和个人虚拟桌面用户能够访问这些资源。在面向 Internet 的部署中，这些服务器通常部署在边缘网络中。需要将此组填充到运行 RD 连接代理的服务器上。在部署中使用的 RD 网关服务器和 RD Web 访问服务器需要位于此组中。	2019-01-03 10:58:22+00:00	2019-01-03 10:58:22+00:00	S-1-5-32-575
+Certificate Service DCOM Access	Certificate Service DCOM Access		允许该组的成员连接到企业中的证书颁发机构	2019-01-03 10:58:22+00:00	2019-01-03 10:58:22+00:00	S-1-5-32-574
+Event Log Readers	Event Log Readers		此组的成员可以从本地计算机中读取事件日志	2019-01-03 10:58:22+00:00	2019-01-03 10:58:22+00:00	S-1-5-32-573
+Cryptographic Operators	Cryptographic Operators		授权成员执行加密操作。	2019-01-03 10:58:22+00:00	2019-01-03 10:58:22+00:00	S-1-5-32-569
+IIS_IUSRS	IIS_IUSRS		Internet 信息服务使用的内置组。	2019-01-03 10:58:22+00:00	2019-01-04 03:04:17+00:00	S-1-5-32-568
+Distributed COM Users	Distributed COM Users		成员允许启动、激活和使用此计算机上的分布式 COM 对象。	2019-01-03 10:58:22+00:00	2019-01-03 10:58:22+00:00	S-1-5-32-562
+Performance Log Users	Performance Log Users		该组中的成员可以计划进行性能计数器日志记录、启用跟踪记录提供程序，以及在本地或通过远程访问此计算机来收集事件跟踪记录	2019-01-03 10:58:22+00:00	2019-01-03 10:58:22+00:00	S-1-5-32-559
+Performance Monitor Users	Performance Monitor Users		此组的成员可以从本地和远程访问性能计数器数据	2019-01-03 10:58:22+00:00	2019-01-03 10:58:22+00:00	S-1-5-32-558
+Network Configuration Operators	Network Configuration Operators		此组中的成员有部分管理权限来管理网络功能的配置	2019-01-03 10:58:22+00:00	2019-01-03 10:58:22+00:00	S-1-5-32-556
+Remote Desktop Users	Remote Desktop Users		此组中的成员被授予远程登录的权限	2019-01-03 10:58:22+00:00	2019-01-03 10:58:22+00:00	S-1-5-32-555
+Replicator	Replicator		支持域中的文件复制	2019-01-03 10:58:22+00:00	2019-01-04 13:27:17+00:00	S-1-5-32-552
+Backup Operators	Backup Operators		备份操作员为了备份或还原文件可以替代安全限制	2019-01-03 10:58:22+00:00	2019-01-04 13:27:17+00:00	S-1-5-32-551
+Print Operators	Print Operators		成员可以管理在域控制器上安装的打印机	2019-01-03 10:58:22+00:00	2019-01-04 13:27:17+00:00	S-1-5-32-550
+Guests	Guests		按默认值，来宾跟用户组的成员有同等访问权，但来宾帐户的限制更多	2019-01-03 10:58:22+00:00	2019-01-03 10:59:55+00:00	S-1-5-32-546
+Users	Users		防止用户进行有意或无意的系统范围的更改，但是可以运行大部分应用程序	2019-01-03 10:58:22+00:00	2019-01-03 10:59:55+00:00	S-1-5-32-545
+Administrators	Administrators		管理员对计算机/域有不受限制的完全访问权	2019-01-03 10:58:22+00:00	2019-01-04 06:17:33+00:00	S-1-5-32-544
+WinRMRemoteWMIUsers__	WinRMRemoteWMIUsers__		Members of this group can access WMI resources over management protocols (such as WS-Management via the Windows Remote Management service). This applies only to WMI namespaces that grant access to the user.	2019-01-03 10:58:22+00:00	2019-01-03 10:58:22+00:00	S-1-5-21-3176735657-2553968857-3628922785-1000

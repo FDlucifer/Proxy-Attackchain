@@ -1,0 +1,2 @@
+cn	lockOutObservationWindow	lockoutDuration	lockoutThreshold	maxPwdAge	minPwdAge	minPwdLength	pwdHistoryLength	pwdProperties
+	30.0 minutes	30.0 minutes	0	42.00 days	1.00 days	7	24	PASSWORD_COMPLEX

@@ -12,7 +12,7 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 
 | NAME | CVE | patch time | description | avaliable |
 | ----------- | ----------- | ----------- | ----------- | ----------- |
-| CVE-2018-8581 | [CVE-2018-8581]() |  |  | yes |
+| CVE-2018-8581 (completed) | [CVE-2018-8581](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2018-8581) | Jan 3, 2019 | Microsoft Exchange Server SSRF Elevation of Privilege Vulnerability | yes |
 | CVE-2018-8302 | [CVE-2018-8302]() |  |  | yes |
 | CVE-2019-1040 | [CVE-2019-1040]() |  |  | yes |
 | CVE-2020-0688 (completed) | [CVE-2020-0688](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2020-0688) | Feb 11, 2020 | Microsoft Exchange Validation Key Remote Code Execution Vulnerability | yes |
@@ -50,17 +50,67 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 
  - [Exchange Server build numbers and release dates](https://learn.microsoft.com/en-us/exchange/new-features/build-numbers-and-release-dates?view=exchserver-2019)
 
-# CVE-2018-8581
+# CVE-2018-8581 (completed)
 ## CVE-2018-8581 part links
 
+ - 漏洞影响的exchange版本信息
+
+``` bash
+早期Exchange 2010、Exchange 2013、Exchange 2016
+```
+
+复现环境推荐：
+
+``` bash
+操作系统windows2008 + Exchange2010SP2
+exchange 2013 sp1 + windows 2012
+```
+
+这是一个邮箱层面的横向渗透和提权漏洞，它可以在拥有了一个普通权限邮箱账号密码后，完成对其他用户(包括域管理员)邮箱收件箱的委托接管
+
+该漏洞实质是由SSRF （Server-Side Request Forgery：服务器端请求伪造）漏洞和其他通信机制相结合造成的。Exchange允许任何用户为推送订阅指定所需的URL，服务器将尝试向这个URL发送通知，漏洞存在于Exchange服务器使用CredentialCache.DefaultCredentials进行连接的场景。
+
+现实利用场景中攻击者只需拥有合法Exchange邮箱账户，只要向Exchange Server所在的主机发送精心构造的恶意数据包，触发漏洞导致向受害者邮箱中添加入站(inbond)规则，之后受害者的所有入站(inbond)电子邮件都将转发给攻击者。由于攻击发生在攻击者和服务器之间，故大多数情况下受害者几乎是无感知的。
+
+在Exchange Web Service(EWS)中，CredentialCache.DefaultCredentials运行在NT AUTHORITYSYSTEM权限之上。这将导致Exchange Server向攻击者的服务器发送NTLM hash。允许使用这些NTLM hash来进行HTTP身份验证。
+
+ - ![](./pics/CVE-2018-8581.jpg)
+
+现在可以使用这些hash来访问Exchange Web Service(EWS)。由于它运行在NT AUTHORITY/SYSTEM级别，攻击者可以获得TokenSerializationRight的"特权"session。然后SOAP请求头存在的SSRF漏洞可以使其冒充任何用户，从而导致该提权漏洞的产生。
+
+下面是一个SOAP报头的示例，它模拟了具有S-1-5-21-4187549019-2363330540-1546371449-500的SID的管理员用户:
+
+ - ![](./pics/CVE-2018-8581-1.jpg)
+
+攻击场景1: 攻击者利用此漏洞，以目标网络上的邮箱权限接管网络中任何人的收件箱，造成严重的信息泄露。
+
+攻击场景2: 攻击者可利用此漏洞直接控制目标网络中的某个Windows域，控制该域内所有Windows计算机。
+
+ - github 利用工具
  - [Exchange2domain](https://github.com/Ridter/Exchange2domain)
  - [CVE-2018-8581](https://github.com/WyAtu/CVE-2018-8581)
+ - [ZDI adds PoC for CVE-2018-8581](https://github.com/thezdi/PoC/tree/master/CVE-2018-8581)
 
+ - 网上原理及利用分析复现文章很多也很详细就不重复复现了
+ - [AN INSINCERE FORM OF FLATTERY: IMPERSONATING USERS ON MICROSOFT EXCHANGE](https://www.zerodayinitiative.com/blog/2018/12/19/an-insincere-form-of-flattery-impersonating-users-on-microsoft-exchange)
+ - [Microsoft Exchange – Privilege Escalation](https://pentestlab.blog/tag/cve-2018-8581/)
+ - [Microsoft Exchange漏洞复现之CVE-2018-8581](https://www.cnblogs.com/devi1o/articles/13588854.html)
+ - [Microsoft Exchange 任意用户伪造漏洞（CVE-2018-8581）分析](https://paper.seebug.org/804/)
+ - [CVE-2018-8581复现](https://www.jianshu.com/p/e081082cbc73)
+ - [MICROSOFT EXCHANGE任意用户伪造漏洞(CVE-2018-8581)复现](https://blog.dp7.xyz/post/CVE-2018-8581/)
+ - [利用Exchange Server CVE-2018-8581+HASH传递玩爆AD](https://blog.51cto.com/mooing/2347487)
+ - [Microsoft Exchange漏洞记录(撸向域控) - CVE-2018-8581](https://www.cnblogs.com/iamstudy/articles/Microsoft_Exchange_CVE-2018-8581.html?from=singlemessage)
+ - [Exchange SSRF漏洞利用及分析](https://yoga7xm.top/2020/01/15/8581/)
+ - [cve-2018-8581 youtube demo](https://www.youtube.com/watch?v=isy-QjJykss)
 
 # CVE-2018-8302
 ## CVE-2018-8302 part links
 
  - []()
+
+
+
+
 
 # CVE-2019-1040
 ## CVE-2019-1040 part links
