@@ -66,7 +66,7 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 exchange 2013 sp1 + windows 2012
 ```
 
-这是一个邮箱层面的横向渗透和提权漏洞，它可以在拥有了一个普通权限邮箱账号密码后，完成对其他用户(包括域管理员)邮箱收件箱的委托接管
+这是一个邮箱层面的横向渗透和提权漏洞，NTLM RELAY代表性的经典漏洞，它可以在拥有了一个普通权限邮箱账号密码后，完成对其他用户(包括域管理员)邮箱收件箱的委托接管
 
 该漏洞实质是由SSRF （Server-Side Request Forgery：服务器端请求伪造）漏洞和其他通信机制相结合造成的。Exchange允许任何用户为推送订阅指定所需的URL，服务器将尝试向这个URL发送通知，漏洞存在于Exchange服务器使用CredentialCache.DefaultCredentials进行连接的场景。
 
