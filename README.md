@@ -14,8 +14,8 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | ----------- | ----------- | ----------- | ----------- | ----------- |
 | CVE-2018-8581 (completed) | [CVE-2018-8581](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2018-8581) | Jan 3, 2019 | Microsoft Exchange Server SSRF Elevation of Privilege Vulnerability | yes |
 | CVE-2018-8302 (completed) | [CVE-2018-8302](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2018-8302) | Aug 16, 2018 | Microsoft Exchange Memory Corruption Vulnerability | yes |
-| CVE-2019-1019 (completed) | [CVE-2019-1019](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2019-1019) | Jun 11, 2019 | Microsoft Windows Security Feature Bypass Vulnerability | yes |
-| CVE-2019-1040 (completed) | [CVE-2019-1040](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2019-1040) | Jun 11, 2019 | Windows NTLM Tampering Vulnerability | yes |
+| CVE-2019-1019 (暂无域环境) | [CVE-2019-1019](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2019-1019) | Jun 11, 2019 | Microsoft Windows Security Feature Bypass Vulnerability | yes |
+| CVE-2019-1040 (暂无域环境) | [CVE-2019-1040](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2019-1040) | Jun 11, 2019 | Windows NTLM Tampering Vulnerability | yes |
 | CVE-2020-0688 (completed) | [CVE-2020-0688](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2020-0688) | Feb 11, 2020 | Microsoft Exchange Validation Key Remote Code Execution Vulnerability | yes |
 | CVE-2020-16875 | [CVE-2020-16875]() |  |  | yes |
 | CVE-2020-17083 | [CVE-2020-17083]() |  |  | yes |
@@ -116,7 +116,7 @@ exchange 2013 sp1 + windows 2012
 
 利用该漏洞需要定制的电子邮件发送到易受攻击的Exchange服务器。配合UM和语音邮件钓鱼
 
-# CVE-2019-1019 (completed)
+# CVE-2019-1019 (暂无域环境)
 ## CVE-2019-1019 part links
 
  - [Near-Ubiquitous Microsoft RCE Bugs Affect All Versions of Windows](https://threatpost.com/critical-microsoft-rce-bugs-windows/145572/)
@@ -130,7 +130,7 @@ exchange 2013 sp1 + windows 2012
 
 
 
-# CVE-2019-1040 (completed)
+# CVE-2019-1040 (暂无域环境)
 ## CVE-2019-1040 part links
 
  - [CVE-2019-1040 with Exchange](https://github.com/Ridter/CVE-2019-1040)
@@ -140,6 +140,9 @@ exchange 2013 sp1 + windows 2012
  - [CVE-2019-1040](https://www.heresecurity.wiki/heng-xiang-yi-dong/ntlm-zhong-ji-he-zhong-jian-ren-gong-ji/cve-2019-1040)
  - [CVE-2019-1040: Relaying SMB to LDAP - Demo](https://www.youtube.com/watch?v=86EFtshy4xU)
  - [内网大杀器利用：CVE-2019-1040漏洞](https://www.anquanke.com/post/id/180379/)
+ - [CVE-2019-1040配合打印机漏洞实现攻击主域控进行资源委派攻击辅助域控](https://www.cnblogs.com/zpchcbd/p/15857942.html)
+ - [结合CVE-2019-1040漏洞的两种域提权深度利用分析](https://cloud.tencent.com/developer/article/1987720)
+ - [委派攻击知识点全收录！利用委派的姿势能有多花哨？ | 技术精选 0121](https://mp.weixin.qq.com/s/GdmnlsKJJXhElA4GuwxTKQ)
 
 
  - ntlmrelay及域渗透相关技术原理深入
@@ -159,15 +162,65 @@ exchange 2013 sp1 + windows 2012
  - [Toxic Waste Removal for Active Directory](./research-pdfs/04262018-Webcast-Toxic-Waste-Removal-by-Andy-Robbins.pdf)
  - [aclpwn - Active Directory ACL exploitation with BloodHound](https://www.slideshare.net/DirkjanMollema/aclpwn-active-directory-acl-exploitation-with-bloodhound)
  - [Remote NTLM relaying through meterpreter on Windows port 445](https://diablohorn.com/2018/08/25/remote-ntlm-relaying-through-meterpreter-on-windows-port-445/)
+ - [NTLM Relay](https://en.hackndo.com/ntlm-relay/)
+
 
 
 当中间人攻击者能够成功绕过NTLM MIC(消息完整性检查)保护时，Microsoft Windows中存在篡改漏洞。成功利用此漏洞的攻击者可以获得降级NTLM安全特性的能力。
 
 要利用此漏洞，攻击者需要篡改NTLM exchange。然后，攻击者可以修改NTLM报文的flag，而不会使签名失效。
 
-CVE-2019-1040 漏洞使得修改 NTLM 身份验证数据包而不会使身份验证失效成为可能，从而使攻击者能够删除阻止从 SMB 中继到 LDAP 的flag
+CVE-2019-1040 漏洞使得修改 NTLM 身份验证数据包而不会使身份验证失效，从而使攻击者能够删除阻止从 SMB 中继到 LDAP 的flag
 
-影响版本:
+### 攻击域Exchange Server/管理员
+
+ - 前提条件
+
+A、Exchange服务器可以是任何版本（包括为PrivExchange修补的版本）。唯一的要求是，在以共享权限或RBAC模式安装时，Exchange默认具有高权限。
+
+B、域内任意账户。（由于能产生SpoolService错误的唯一要求是任何经过身份验证的域内帐户）
+
+C、CVE-2019-1040漏洞的实质是NTLM数据包完整性校验存在缺陷，故可以修改NTLM身份验证数据包而不会使身份验证失效。而此攻击链中攻击者删除了数据包中阻止从SMB转发到LDAP的标志。
+
+D、构造请求使Exchange Server向攻击者进行身份验证，并通过LDAP将该身份验证中继到域控制器，即可使用中继受害者的权限在Active Directory中执行操作。比如为攻击者帐户授予DCSync权限。
+
+E、如果在可信但完全不同的AD林中有用户，同样可以在域中执行完全相同的攻击。（因为任何经过身份验证的用户都可以触发SpoolService反向连接）
+
+ - 漏洞利用攻击链
+
+1、使用域内任意帐户，通过SMB连接到被攻击ExchangeServer，并指定中继攻击服务器。同时必须利用SpoolService错误触发反向SMB链接。
+
+2、中继服务器通过SMB回连攻击者主机，然后利用ntlmrelayx将利用CVE-2019-1040漏洞修改NTLM身份验证数据后的SMB请求据包中继到LDAP。
+
+3、使用中继的LDAP身份验证，此时Exchange Server可以为攻击者帐户授予DCSync权限。
+
+4、攻击者帐户使用DCSync转储AD域中的所有域用户密码哈希值（包含域管理员的hash，此时已拿下整个域）。
+
+### 攻击域AD Server/管理员
+
+ - 前提条件
+
+A、服务器可以是任何未修补的Windows Server或工作站，包括域控制器。在定位域控制器时，至少需要一个易受攻击的域控制器来中继身份验证，同时需要在域控制器上触发SpoolService错误。
+
+B、需要控制计算机帐户。这可以是攻击者从中获取密码的计算机帐户，因为他们已经是工作站上的Administrator或攻击者创建的计算机帐户，滥用Active Directory中的任何帐户都可以默认创建这些帐户。
+
+C、CVE-2019-1040漏洞的实质是NTLM数据包完整性校验存在缺陷，故可以修改NTLM身份验证数据包而不会使身份验证失效。而此攻击链中攻击者删除了数据包中阻止从SMB转发到LDAP的标志。
+
+D、通过滥用基于资源的约束Kerberos委派，可以在AD域控服务器上授予攻击者模拟任意域用户权限。包括域管理员权限。
+
+E、如果在可信但完全不同的AD林中有用户，同样可以在域中执行完全相同的攻击。（因为任何经过身份验证的用户都可以触发SpoolService反向连接）
+
+ - 漏洞利用攻击链
+
+1、使用域内任意帐户，通过SMB连接到被攻击域控服务器，并指定中继攻击服务器。同时必须利用SpoolService错误触发反向SMB链接。
+
+2、中继服务器通过SMB回连攻击者主机，然后利用ntlmrelayx将利用CVE-2019-1040漏洞修改NTLM身份验证数据后的SMB请求据包中继到LDAP。
+
+3、使用中继的LDAP身份验证，将受害者服务器的基于资源的约束委派权限授予攻击者控制下的计算机帐户。
+
+4、攻击者现在可以作为AD服务器上的任意用户进行身份验证。包括域管理员。
+
+ - 影响版本:
 
 ``` bash
 Windows 10 for 32-bit Systems
@@ -214,18 +267,6 @@ version 1803 (Server Core Installation)
 Windows Server
 version 1903 (Server Core installation)
 ```
-
-
-
-
-
-
-
-
-
-
-
-
 
 # CVE-2020-0688 (completed)
 ## CVE-2020-0688 part links
