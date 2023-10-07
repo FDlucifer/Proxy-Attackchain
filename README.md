@@ -13,8 +13,9 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | NAME | CVE | patch time | description | avaliable |
 | ----------- | ----------- | ----------- | ----------- | ----------- |
 | CVE-2018-8581 (completed) | [CVE-2018-8581](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2018-8581) | Jan 3, 2019 | Microsoft Exchange Server SSRF Elevation of Privilege Vulnerability | yes |
-| CVE-2018-8302 | [CVE-2018-8302]() |  |  | yes |
-| CVE-2019-1040 | [CVE-2019-1040]() |  |  | yes |
+| CVE-2018-8302 (completed) | [CVE-2018-8302](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2018-8302) | Aug 16, 2018 | Microsoft Exchange Memory Corruption Vulnerability | yes |
+| CVE-2019-1019 (completed) | [CVE-2019-1019](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2019-1019) | Jun 11, 2019 | Microsoft Windows Security Feature Bypass Vulnerability | yes |
+| CVE-2019-1040 (completed) | [CVE-2019-1040](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2019-1040) | Jun 11, 2019 | Windows NTLM Tampering Vulnerability | yes |
 | CVE-2020-0688 (completed) | [CVE-2020-0688](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2020-0688) | Feb 11, 2020 | Microsoft Exchange Validation Key Remote Code Execution Vulnerability | yes |
 | CVE-2020-16875 | [CVE-2020-16875]() |  |  | yes |
 | CVE-2020-17083 | [CVE-2020-17083]() |  |  | yes |
@@ -31,9 +32,9 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | ProxyShell (completed) | [CVE-2021-31207](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-31207) | May 11, 2021 | Post-auth Arbitrary-File-Write leads to RCE | yes |
 | proxytoken (completed) | [CVE-2021-33766](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-33766) | July 13, 2021 | With this vulnerability, an unauthenticated attacker can perform configuration actions on mailboxes belonging to arbitrary users. As an illustration of the impact, this can be used to copy all emails addressed to a target and account and forward them to an account controlled by the attacker. | yes |
 | Microsoft Exchange Server 远程执行代码漏洞 (completed) | [CVE-2021-42321](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-42321) | Nov 17, 2021 | Exchange Deserialization RCE | yes |
-| ProxyRelay (test failed) | [CVE-2021-33768](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-33768) | July 13, 2021 | Relay to Exchange FrontEnd | yes |
-| ProxyRelay (test failed) | [CVE-2022-21979](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-21979) | October 11, 2022 | Relay to Exchange BackEnd | yes |
-| ProxyRelay (test failed) | [CVE-2021-26414](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-26414) | June 8, 2021 | Relay to Exchange DCOM | yes |
+| ProxyRelay (暂无域环境) | [CVE-2021-33768](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-33768) | July 13, 2021 | Relay to Exchange FrontEnd | yes |
+| ProxyRelay (暂无域环境) | [CVE-2022-21979](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-21979) | October 11, 2022 | Relay to Exchange BackEnd | yes |
+| ProxyRelay (暂无域环境) | [CVE-2021-26414](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-26414) | June 8, 2021 | Relay to Exchange DCOM | yes |
 | ProxyNotShell (completed) | [CVE-2022-41040](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-41040) | 2022年11月8日 | 服务端请求伪造(SSRF)漏洞 | yes |
 | ProxyNotShell (completed) | [CVE-2022-41082](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-41082) | 2022年11月8日 | 远程执行代码RCE漏洞 | yes |
 | ProxyNotRelay |  |  |  | yes |
@@ -43,7 +44,7 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | CVE-2022-23277 (completed) | [CVE-2022-23277](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2022-23277) | Mar 8, 2022 | 由于SerializationBinder的错误使用导致反序列化白名单的绕过，从而实现认证后RCE。触发漏洞的功能与CVE-2021-42321一致 | yes |
 | ProxyNotFound | [CVE-2021-28480](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-28480) | April 13, 2021 | Pre-auth SSRF/ACL bypass | no |
 | ProxyNotFound | [CVE-2021-28481](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-28481) | April 13, 2021 | Pre-auth SSRF/ACL bypass | no |
-| CVE-2023-21707 (test failed) | [CVE-2023-21707](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-21707) | 2023年3月9日 | Microsoft Exchange Server 远程执行代码漏洞 | yes |
+| CVE-2023-21707 (暂无域环境) | [CVE-2023-21707](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2023-21707) | 2023年3月9日 | Microsoft Exchange Server 远程执行代码漏洞 | yes |
 | proxymaybeshell (completed) | [proxymaybeshell](https://mp.weixin.qq.com/s/mvc-HS1nB2rWzWHLBkYz2A) | 2023年9月15日 | proxyshell ssrf + proxynotshell伪造X-Rps-CAT token | yes |
 
  - 所有exchange server的iso镜像版本CU及安全更新补丁SU信息均可在以下microsoft官网查询和下载到
@@ -103,21 +104,128 @@ exchange 2013 sp1 + windows 2012
  - [Exchange SSRF漏洞利用及分析](https://yoga7xm.top/2020/01/15/8581/)
  - [cve-2018-8581 youtube demo](https://www.youtube.com/watch?v=isy-QjJykss)
 
-# CVE-2018-8302
+# CVE-2018-8302 (completed)
 ## CVE-2018-8302 part links
 
- - []()
+ - [Demonstrating CVE-2018-8302: A Microsoft Exchange Memory Corruption Vulnerability](https://www.youtube.com/watch?v=OIhxzof22JU)
+ - [VOICEMAIL VANDALISM: GETTING REMOTE CODE EXECUTION ON MICROSOFT EXCHANGE SERVER](https://www.zerodayinitiative.com/blog/2018/8/14/voicemail-vandalism-getting-remote-code-execution-on-microsoft-exchange-server)
+
+ - 影响版本: exchange <= Aug 14, 2018
+
+当Microsoft Exchange软件无法正确处理内存中的对象时，导致远程代码执行漏洞。成功利用该漏洞的攻击者可以以System用户通过.NET BinaryFormatter反序列化在上下文中执行任意代码。然后攻击者可以安装程序;查看、更改或删除数据;或者创建新帐户。
+
+利用该漏洞需要定制的电子邮件发送到易受攻击的Exchange服务器。配合UM和语音邮件钓鱼
+
+# CVE-2019-1019 (completed)
+## CVE-2019-1019 part links
+
+ - [Near-Ubiquitous Microsoft RCE Bugs Affect All Versions of Windows](https://threatpost.com/critical-microsoft-rce-bugs-windows/145572/)
+
+
+存在一个安全特性绕过漏洞，其中NETLOGON消息能够获取会话密钥并签名消息。
+
+要利用此漏洞，攻击者可以发送特制的身份验证请求。成功利用此漏洞的攻击者可以使用原始用户权限访问另一台计算机。
 
 
 
 
 
-# CVE-2019-1040
+# CVE-2019-1040 (completed)
 ## CVE-2019-1040 part links
 
  - [CVE-2019-1040 with Exchange](https://github.com/Ridter/CVE-2019-1040)
  - [Exploiting CVE-2019-1040 - Combining relay vulnerabilities for RCE and Domain Admin](https://dirkjanm.io/exploiting-CVE-2019-1040-relay-vulnerabilities-for-rce-and-domain-admin/)
  - [CVE-2019-1040-dcpwn](https://github.com/Ridter/CVE-2019-1040-dcpwn)
+ - [UltraRelay Updated by Lazaar Sami for the exploit CVE-2019-1040](https://github.com/lazaars/UltraRealy_with_CVE-2019-1040)
+ - [CVE-2019-1040](https://www.heresecurity.wiki/heng-xiang-yi-dong/ntlm-zhong-ji-he-zhong-jian-ren-gong-ji/cve-2019-1040)
+ - [CVE-2019-1040: Relaying SMB to LDAP - Demo](https://www.youtube.com/watch?v=86EFtshy4xU)
+ - [内网大杀器利用：CVE-2019-1040漏洞](https://www.anquanke.com/post/id/180379/)
+
+
+ - ntlmrelay及域渗透相关技术原理深入
+
+ - [dcpwn](https://github.com/QAX-A-Team/dcpwn)
+ - [Derbycon - The Unintended Risks of Trusting Active Directory](https://www.slideshare.net/harmj0y/derbycon-the-unintended-risks-of-trusting-active-directory)
+ - [The worst of both worlds: Combining NTLM Relaying and Kerberos delegation](https://dirkjanm.io/worst-of-both-worlds-ntlm-relaying-and-kerberos-delegation/)
+ - [Abusing Exchange: One API call away from Domain Admin](https://dirkjanm.io/abusing-exchange-one-api-call-away-from-domain-admin/)
+ - [Another Word on Delegation](https://posts.specterops.io/another-word-on-delegation-10bdbe3cd94a)
+ - [mitm6 – compromising IPv4 networks via IPv6](https://blog.fox-it.com/2018/01/11/mitm6-compromising-ipv4-networks-via-ipv6/)
+ - [Wagging the Dog: Abusing Resource-Based Constrained Delegation to Attack Active Directory](https://shenaniganslabs.io/2019/01/28/Wagging-the-Dog.html)
+ - ["Relaying" Kerberos - Having fun with unconstrained delegation](https://dirkjanm.io/krbrelayx-unconstrained-delegation-abuse-toolkit/)
+ - [Escalating privileges with ACLs in Active Directory](https://blog.fox-it.com/2018/04/26/escalating-privileges-with-acls-in-active-directory/)
+ - [Relaying credentials everywhere with ntlmrelayx](https://blog.fox-it.com/2017/05/09/relaying-credentials-everywhere-with-ntlmrelayx/)
+ - [D2T2 - NTLM Relay Is Dead Long Live NTLM Relay - Jianing Wang and Junyu Zhou](./research-pdfs/D2T2%20-%20NTLM%20Relay%20Is%20Dead%20Long%20Live%20NTLM%20Relay%20-%20Jianing%20Wang%20and%20Junyu%20Zhou.pdf)
+ - [An ACE Up the Sleeve: Designing Active Directory DACL Backdoors](./research-pdfs/us-17-Robbins-An-ACE-Up-The-Sleeve-Designing-Active-Directory-DACL-Backdoors-wp.pdf)
+ - [Toxic Waste Removal for Active Directory](./research-pdfs/04262018-Webcast-Toxic-Waste-Removal-by-Andy-Robbins.pdf)
+ - [aclpwn - Active Directory ACL exploitation with BloodHound](https://www.slideshare.net/DirkjanMollema/aclpwn-active-directory-acl-exploitation-with-bloodhound)
+ - [Remote NTLM relaying through meterpreter on Windows port 445](https://diablohorn.com/2018/08/25/remote-ntlm-relaying-through-meterpreter-on-windows-port-445/)
+
+
+当中间人攻击者能够成功绕过NTLM MIC(消息完整性检查)保护时，Microsoft Windows中存在篡改漏洞。成功利用此漏洞的攻击者可以获得降级NTLM安全特性的能力。
+
+要利用此漏洞，攻击者需要篡改NTLM exchange。然后，攻击者可以修改NTLM报文的flag，而不会使签名失效。
+
+CVE-2019-1040 漏洞使得修改 NTLM 身份验证数据包而不会使身份验证失效成为可能，从而使攻击者能够删除阻止从 SMB 中继到 LDAP 的flag
+
+影响版本:
+
+``` bash
+Windows 10 for 32-bit Systems
+Windows 10 for x64-based Systems
+Microsoft Windows 10 Version 1607 for 32-bit Systems
+Microsoft Windows 10 Version 1607 for x64-based Systems
+Microsoft Windows 10 version 1703 for 32-bit Systems
+Microsoft Windows 10 version 1703 for x64-based Systems
+Microsoft Windows 10 version 1709 for 32-bit Systems
+Microsoft Windows 10 Version 1709 for ARM64-based Systems
+Windows 10 Version 1709 for x64-based Systems
+Microsoft Windows 10 Version 1803 for 32-bit Systems
+Microsoft Windows 10 Version 1803 for ARM64-based Systems
+Microsoft Windows 10 Version 1803 for x64-based Systems
+Windows 10 Version 1809 for 32-bit Systems
+Windows 10 Version 1809 for ARM64-based Systems
+Windows 10 Version 1809 for x64-based Systems
+Windows 10 Version 1903 for 32-bit Systems
+Windows 10 Version 1903 for ARM64-based Systems
+Windows 10 Version 1903 for x64-based Systems
+Windows 7 for 32-bit Systems Service Pack 1
+Windows 7 for x64-based Systems Service Pack 1
+Windows 8.1 for 32-bit systems
+Windows 8.1 for x64-based systems
+Microsoft Windows RT 8.1
+Windows Server 2008 for 32-bit Systems Service Pack 2
+Windows Server 2008 for 32-bit Systems Service Pack 2 (Server Core installation)
+Windows Server 2008 for Itanium-Based Systems Service Pack 2
+Windows Server 2008 for x64-based Systems Service Pack 2
+Windows Server 2008 for x64-based Systems Service Pack 2 (Server Core installation)
+Windows Server 2008 R2 for Itanium-Based Systems Service Pack 1
+Windows Server 2008 R2 for x64-based Systems Service Pack 1
+Windows Server 2008 R2 for x64-based Systems Service Pack 1 (Server Core installation)
+Windows Server 2012
+Windows Server 2012 (Server Core installation)
+Windows Server 2012 R2
+Windows Server 2012 R2 (Server Core installation)
+Microsoft Windows Server 2016
+Windows Server 2016 (Server Core installation)
+Microsoft Windows Server 2019
+Windows Server 2019 (Server Core installation)
+Windows Server
+version 1803 (Server Core Installation)
+Windows Server
+version 1903 (Server Core installation)
+```
+
+
+
+
+
+
+
+
+
+
+
+
 
 # CVE-2020-0688 (completed)
 ## CVE-2020-0688 part links
@@ -709,7 +817,7 @@ ClientExtensionCollectionFormatter.Deserialize() 改为使用 ExchangeBinaryForm
 开发人员把类名写错，System.Security.ClaimsPrincipal 的正确写法应该是 System.Security.Claims.ClaimsPrincipal,直接改为正确的类名。
 
 
-# ProxyRelay (test failed)
+# ProxyRelay (暂无域环境)
 ## ProxyRelay part links
 
  - [A New Attack Surface on MS Exchange Part 4 - ProxyRelay!](https://blog.orange.tw/2022/10/proxyrelay-a-new-attack-surface-on-ms-exchange-part-4.html)
@@ -723,13 +831,6 @@ ClientExtensionCollectionFormatter.Deserialize() 改为使用 ExchangeBinaryForm
  <= Exchange Server 2019 CU12
 ```
 
-github的这个脚本报错，待后续深入研究relay attack后再来解决
-
-``` bash
-[-] Authenticating against https://192.168.14.6 as EXCHANGE2016CU2/WIN-O3C32QA97FP$ FAILED
-DCERPC Runtime Error: code: 0x5 - rpc_s_access_denied
-```
- - ![](./pics/proxyrelay-err.png)
  - [Relaying NTLM authentication over RPC](https://blog.compass-security.com/2020/05/relaying-ntlm-authentication-over-rpc/)
  - [Attacking MS Exchange Web Interfaces](https://swarm.ptsecurity.com/attacking-ms-exchange-web-interfaces/)
 
@@ -1316,7 +1417,7 @@ psi.Arguments = " -EncodedCommand UwBlAHQALQBDAG8AbgB0AGUAbgB0ACAALQBQAGEAdABoAC
  - ![](pics/CVE-2022-23277-0.png)
 
 
-# CVE-2023-21707 (反序列化远程代码执行) (test failed)
+# CVE-2023-21707 (反序列化远程代码执行) (暂无域环境)
 ## CVE-2023-21707 part links
 
  - [Microsoft Exchange Powershell Remoting Deserialization leading to RCE (CVE-2023-21707) 英语版](https://starlabs.sg/blog/2023/04-microsoft-exchange-powershell-remoting-deserialization-leading-to-rce-cve-2023-21707/)
@@ -1332,16 +1433,6 @@ psi.Arguments = " -EncodedCommand UwBlAHQALQBDAG8AbgB0AGUAbgB0ACAALQBQAGEAdABoAC
  < Exchange Server 2013 CU23 Feb23SU	February 14, 2023	15.0.1497.47	15.00.1497.047
 ```
 
-此exp使用报如下错误，处理起来比较棘手
-
-``` bash
-gssapi.raw.misc.GSSError: Major (851968): Unspecified GSS failure.  Minor code may provide more information, Minor (2529639053): Matching credential not found
-
-spnego.exceptions.SpnegoError: SpnegoError (4294967295): Major (851968): Unspecified GSS failure.  Minor code may provide more information, Minor (2529639053): Matching credential not found, Context: Processing security token
-```
-
-漏洞原作者的exp使用.net写的
-
  - ![](./pics/CVE-2023-21707.png)
 
  - [Proxynotshell 反序列化及 CVE-2023-21707 漏洞研究](https://xz.aliyun.com/t/12634?accounttraceid=97643b6cad1f48a9bc8b9b3016267889gmyp)
@@ -1353,7 +1444,9 @@ Microsoft.Exchange.Security.Authentication.GenericSidIdentity是ClaimsIdentity�
 
 这为漏洞利用提供了机会，可以在第二个反序列化阶段滥用来触发RCE
 
- - 该exp必须在存在域的内网环境中使用，还要能访问目标exchange的80(http)和88(Kerberos)端口，还需要知道目标机的账号密码，有些鸡肋
+ - 1. 该exp必须在存在域的内网环境中使用
+ - 2. 能访问目标exchange的80(http)和88(Kerberos)端口
+ - 3. 需要知道目标机的账号密码
 
 利用 ysoserial.net 生成 ClaimsIdentity 的 BinaryFormatter 的反序列化 payload，再将 payload 的 b64 编码数据通过反射放入 ClaimsIdentity 的 m_serializedClaims 中。也就是 Microsoft.Exchange.Security.Authentication.GenericSidIdentity 的 m_serializedClaims 中，再将这个类通过 BinaryFormatter 进行序列化，将序列化结果写入exception的SerializationData，就得到了可用的 payload
 
