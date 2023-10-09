@@ -133,6 +133,7 @@ exchange 2013 sp1 + windows 2012
 # CVE-2019-1040 (暂无域环境)
 ## CVE-2019-1040 part links
 
+ - [dcpwn](https://github.com/QAX-A-Team/dcpwn)
  - [CVE-2019-1040 with Exchange](https://github.com/Ridter/CVE-2019-1040)
  - [Exploiting CVE-2019-1040 - Combining relay vulnerabilities for RCE and Domain Admin](https://dirkjanm.io/exploiting-CVE-2019-1040-relay-vulnerabilities-for-rce-and-domain-admin/)
  - [CVE-2019-1040-dcpwn](https://github.com/Ridter/CVE-2019-1040-dcpwn)
@@ -143,11 +144,14 @@ exchange 2013 sp1 + windows 2012
  - [CVE-2019-1040配合打印机漏洞实现攻击主域控进行资源委派攻击辅助域控](https://www.cnblogs.com/zpchcbd/p/15857942.html)
  - [结合CVE-2019-1040漏洞的两种域提权深度利用分析](https://cloud.tencent.com/developer/article/1987720)
  - [委派攻击知识点全收录！利用委派的姿势能有多花哨？ | 技术精选 0121](https://mp.weixin.qq.com/s/GdmnlsKJJXhElA4GuwxTKQ)
+ - [CVE-2019-1040漏洞分析学习](https://blog.csdn.net/qq_43645782/article/details/119672072)
+ - [Cve 2019 1040 Intranet Killer](https://syst1m.com/post/cve-2019-1040-intranet-killer/)
+ - [域环境搭建，CVE-2019-1040 原理及复现](http://www.sanyuee.top/index.php/archives/545/)
+ - []()
 
 
- - ntlmrelay及域渗透相关技术原理深入
+ - ntlm relay攻击及域渗透相关技术原理深入
 
- - [dcpwn](https://github.com/QAX-A-Team/dcpwn)
  - [Derbycon - The Unintended Risks of Trusting Active Directory](https://www.slideshare.net/harmj0y/derbycon-the-unintended-risks-of-trusting-active-directory)
  - [The worst of both worlds: Combining NTLM Relaying and Kerberos delegation](https://dirkjanm.io/worst-of-both-worlds-ntlm-relaying-and-kerberos-delegation/)
  - [Abusing Exchange: One API call away from Domain Admin](https://dirkjanm.io/abusing-exchange-one-api-call-away-from-domain-admin/)
@@ -163,7 +167,7 @@ exchange 2013 sp1 + windows 2012
  - [aclpwn - Active Directory ACL exploitation with BloodHound](https://www.slideshare.net/DirkjanMollema/aclpwn-active-directory-acl-exploitation-with-bloodhound)
  - [Remote NTLM relaying through meterpreter on Windows port 445](https://diablohorn.com/2018/08/25/remote-ntlm-relaying-through-meterpreter-on-windows-port-445/)
  - [NTLM Relay](https://en.hackndo.com/ntlm-relay/)
-
+ - [Relay](https://www.thehacker.recipes/a-d/movement/ntlm/relay)
 
 
 当中间人攻击者能够成功绕过NTLM MIC(消息完整性检查)保护时，Microsoft Windows中存在篡改漏洞。成功利用此漏洞的攻击者可以获得降级NTLM安全特性的能力。
