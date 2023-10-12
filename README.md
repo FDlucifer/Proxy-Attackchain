@@ -16,6 +16,8 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | CVE-2018-8302 (completed) | [CVE-2018-8302](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2018-8302) | Aug 16, 2018 | Microsoft Exchange Memory Corruption Vulnerability | yes |
 | CVE-2019-1019 (暂无域环境) | [CVE-2019-1019](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2019-1019) | Jun 11, 2019 | Microsoft Windows suffers from an HTTP to SMB NTLM reflection that leads to a privilege escalation. | yes |
 | CVE-2019-1040 (暂无域环境) | [CVE-2019-1040](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2019-1040) | Jun 11, 2019 | Windows NTLM Tampering Vulnerability | yes |
+| CVE-2019-1166 (暂无域环境) | [CVE-2019-1166](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2019-1166) | Oct 8, 2019 | Windows NTLM Tampering Vulnerability | yes |
+| CVE-2019-1373 () | [CVE-2019-1373](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2019-1373) | Nov 12, 2019 | Microsoft Exchange Remote Code Execution Vulnerability | yes |
 | CVE-2020-0688 (completed) | [CVE-2020-0688](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2020-0688) | Feb 11, 2020 | Microsoft Exchange Validation Key Remote Code Execution Vulnerability | yes |
 | CVE-2020-16875 (completed) | [CVE-2020-16875](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2020-16875) | Sep 8, 2020 | Microsoft Exchange Server DlpUtils AddTenantDlpPolicy Remote Code Execution | yes |
 | CVE-2020-17083 | [CVE-2020-17083]() |  |  | yes |
@@ -271,6 +273,19 @@ Windows Server
 version 1903 (Server Core installation)
 ```
 
+# CVE-2019-1166 (暂无域环境)
+## CVE-2019-1166 part links
+
+
+
+# CVE-2019-1373 ()
+## CVE-2019-1373 part links
+
+
+
+
+
+
 # CVE-2020-0688 (completed)
 ## CVE-2020-0688 part links
 
@@ -383,6 +398,15 @@ msf6 exploit(windows/http/exchange_ecp_dlp_policy) > run
 
  - [Microsoft Exchange Server ExportExchangeCertificate WriteCertiricate File Write Remote Code Execution Vulnerability](https://srcincite.io/pocs/cve-2020-17083.ps1.txt)
  - [CVE-2020-17083 Microsoft Exchange Server任意代码执行漏洞 POC](https://mp.weixin.qq.com/s/LMUMmuGfT3nmKN88O5hBAA)
+
+
+
+
+
+
+
+
+
 
 # CVE-2020-17143
 ## CVE-2020-17143 part links
