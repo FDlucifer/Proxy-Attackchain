@@ -16,6 +16,7 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | CVE-2018-8302 (completed) | [CVE-2018-8302](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2018-8302) | Aug 16, 2018 | Microsoft Exchange Memory Corruption Vulnerability | yes |
 | CVE-2019-1019 (暂无域环境) | [CVE-2019-1019](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2019-1019) | Jun 11, 2019 | Microsoft Windows Security Feature Bypass Vulnerability | yes |
 | CVE-2019-1040 (暂无域环境) | [CVE-2019-1040](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2019-1040) | Jun 11, 2019 | Windows NTLM Tampering Vulnerability | yes |
+| CVE-2019-1019 (暂无域环境) | [CVE-2019-1019](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2019-1019) | Jun 11, 2019 | Microsoft Windows Security Feature Bypass Vulnerability | yes |
 | CVE-2020-0688 (completed) | [CVE-2020-0688](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2020-0688) | Feb 11, 2020 | Microsoft Exchange Validation Key Remote Code Execution Vulnerability | yes |
 | CVE-2020-16875 | [CVE-2020-16875]() |  |  | yes |
 | CVE-2020-17083 | [CVE-2020-17083]() |  |  | yes |
@@ -147,8 +148,6 @@ exchange 2013 sp1 + windows 2012
  - [CVE-2019-1040漏洞分析学习](https://blog.csdn.net/qq_43645782/article/details/119672072)
  - [Cve 2019 1040 Intranet Killer](https://syst1m.com/post/cve-2019-1040-intranet-killer/)
  - [域环境搭建，CVE-2019-1040 原理及复现](http://www.sanyuee.top/index.php/archives/545/)
- - []()
-
 
  - ntlm relay攻击及域渗透相关技术原理深入
 
@@ -168,6 +167,10 @@ exchange 2013 sp1 + windows 2012
  - [Remote NTLM relaying through meterpreter on Windows port 445](https://diablohorn.com/2018/08/25/remote-ntlm-relaying-through-meterpreter-on-windows-port-445/)
  - [NTLM Relay](https://en.hackndo.com/ntlm-relay/)
  - [Relay](https://www.thehacker.recipes/a-d/movement/ntlm/relay)
+ - [MITM and coerced auths](https://www.thehacker.recipes/a-d/movement/mitm-and-coerced-authentications)
+ - [rough PoC to connect to spoolss to elicit machine account authentication](https://gist.github.com/3xocyte/cfaf8a34f76569a8251bde65fe69dccc)
+ - [Kerberos unconstrained delegation abuse toolkit](https://github.com/dirkjanm/krbrelayx)
+ - [NTLM Relay](https://wuhash.gitee.io/2020-09-01.html)
 
 
 当中间人攻击者能够成功绕过NTLM MIC(消息完整性检查)保护时，Microsoft Windows中存在篡改漏洞。成功利用此漏洞的攻击者可以获得降级NTLM安全特性的能力。
@@ -271,6 +274,20 @@ version 1803 (Server Core Installation)
 Windows Server
 version 1903 (Server Core installation)
 ```
+
+# CVE-2019-1019 (暂无域环境)
+## CVE-2019-1019 part links
+
+ - []()
+
+安全特性绕过漏洞，其中NETLOGON消息能够获取会话密钥并签名消息。
+
+要利用此漏洞，攻击者可以发送特制的身份验证请求。成功利用此漏洞的攻击者可以使用原始用户权限访问另一台计算机。
+
+
+
+
+
 
 # CVE-2020-0688 (completed)
 ## CVE-2020-0688 part links
