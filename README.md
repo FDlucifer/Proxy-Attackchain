@@ -14,9 +14,8 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | ----------- | ----------- | ----------- | ----------- | ----------- |
 | CVE-2018-8581 (completed) | [CVE-2018-8581](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2018-8581) | Jan 3, 2019 | Microsoft Exchange Server SSRF Elevation of Privilege Vulnerability | yes |
 | CVE-2018-8302 (completed) | [CVE-2018-8302](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2018-8302) | Aug 16, 2018 | Microsoft Exchange Memory Corruption Vulnerability | yes |
-| CVE-2019-1019 (暂无域环境) | [CVE-2019-1019](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2019-1019) | Jun 11, 2019 | Microsoft Windows Security Feature Bypass Vulnerability | yes |
+| CVE-2019-1019 (暂无域环境) | [CVE-2019-1019](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2019-1019) | Jun 11, 2019 | Microsoft Windows suffers from an HTTP to SMB NTLM reflection that leads to a privilege escalation. | yes |
 | CVE-2019-1040 (暂无域环境) | [CVE-2019-1040](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2019-1040) | Jun 11, 2019 | Windows NTLM Tampering Vulnerability | yes |
-| CVE-2019-1019 (暂无域环境) | [CVE-2019-1019](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2019-1019) | Jun 11, 2019 | Microsoft Windows Security Feature Bypass Vulnerability | yes |
 | CVE-2020-0688 (completed) | [CVE-2020-0688](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2020-0688) | Feb 11, 2020 | Microsoft Exchange Validation Key Remote Code Execution Vulnerability | yes |
 | CVE-2020-16875 | [CVE-2020-16875]() |  |  | yes |
 | CVE-2020-17083 | [CVE-2020-17083]() |  |  | yes |
@@ -121,11 +120,13 @@ exchange 2013 sp1 + windows 2012
 ## CVE-2019-1019 part links
 
  - [Near-Ubiquitous Microsoft RCE Bugs Affect All Versions of Windows](https://threatpost.com/critical-microsoft-rce-bugs-windows/145572/)
+ - [Microsoft Windows 10.0.17134.648 - HTTP -> SMB NTLM Reflection Leads to Privilege Elevation](https://www.exploit-db.com/exploits/47115)
 
 
 存在一个安全特性绕过漏洞，其中NETLOGON消息能够获取会话密钥并签名消息。
 
 要利用此漏洞，攻击者可以发送特制的身份验证请求。成功利用此漏洞的攻击者可以使用原始用户权限访问另一台计算机。
+
 
 
 
@@ -274,20 +275,6 @@ version 1803 (Server Core Installation)
 Windows Server
 version 1903 (Server Core installation)
 ```
-
-# CVE-2019-1019 (暂无域环境)
-## CVE-2019-1019 part links
-
- - []()
-
-安全特性绕过漏洞，其中NETLOGON消息能够获取会话密钥并签名消息。
-
-要利用此漏洞，攻击者可以发送特制的身份验证请求。成功利用此漏洞的攻击者可以使用原始用户权限访问另一台计算机。
-
-
-
-
-
 
 # CVE-2020-0688 (completed)
 ## CVE-2020-0688 part links
