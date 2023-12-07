@@ -23,8 +23,8 @@ ProxyLogon is Just the Tip of the Iceberg: A New Attack Surface on Microsoft Exc
 | CVE-2020-17132 (completed) [youtube demo](https://www.youtube.com/watch?v=S9S2YChZK7k) | [CVE-2020-17132](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2020-17132) | Dec 8, 2020 | Microsoft Exchange Server DlpUtils AddTenantDlpPolicy Remote Code Execution CVE-2020-16875 bypass | yes |
 | CVE-2020-17083(completed) [youtube demo](https://www.youtube.com/watch?v=fVoTnd1tBMc) | [CVE-2020-17083](https://msrc.microsoft.com/update-guide/en-us/advisory/CVE-2020-17083) | Nov 10, 2020 | Microsoft Exchange Server Remote Code Execution Vulnerability | yes |
 | CVE-2020-17141 & CVE-2020-17143 xxe file read (completed) [youtube demo](https://www.youtube.com/watch?v=SxDCQKpdbhw) | [CVE-2020-17141 & CVE-2020-17143](https://msrc.microsoft.com/update-guide/en-us/advisory/CVE-2020-17143) | Dec 8, 2020 | Microsoft Exchange Server Information Disclosure Vulnerability | yes |
-| CVE-2020-17144 | [CVE-2020-17144]() |  |  | yes |
-| CVE-2021-24085 | [CVE-2021-24085](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2021-24085) | Feb 9, 2021 | An authenticated attacker can leak a cert file which results in a CSRF token to be generated. | yes |
+| CVE-2020-17144 (completed) | [CVE-2020-17144](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2020-17144) | Dec 8, 2020 | Microsoft Exchange Remote Code Execution Vulnerability | yes |
+| CVE-2021-24085 () | [CVE-2021-24085](https://msrc.microsoft.com/update-guide/en-US/advisory/CVE-2021-24085) | Feb 9, 2021 | An authenticated attacker can leak a cert file which results in a CSRF token to be generated. | yes |
 | CVE-2021-28482 | [CVE-2021-28482]() |  |  | yes |
 | ProxyLogon (completed) [youtube demo](https://www.youtube.com/watch?v=KoGodxigujA) | [CVE-2021-26855](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-26855) | Mar 02, 2021 | server-side request forgery (SSRF) | yes |
 | ProxyLogon (completed) [youtube demo](https://www.youtube.com/watch?v=KoGodxigujA) | [CVE-2021-27065](https://msrc.microsoft.com/update-guide/vulnerability/CVE-2021-27065) | Mar 02, 2021 | Microsoft.Exchange.Management.DDIService.WriteFileActivity未校验写文件后缀，可由文件内容部分可控的相关功能写入WebShell | yes |
@@ -611,33 +611,43 @@ MAPI=1
 (+) stolen: /leaked?%3C!%5BCDATA%5B;%20for%2016-bit%20app%20support%0D%0A%5Bfonts%5D%0D%0A%5Bextensions%5D%0D%0A%5Bmci%20extensions%5D%0D%0A%5Bfiles%5D%0D%0A%5BMail%5D%0D%0AMAPI=1%0D%0A%5D%5D%3E
 ```
 
-# CVE-2020-17144 ()
+# CVE-2020-17144 (completed)
 ## CVE-2020-17144 part links
 
  - [CVE-2020-17144漏洞分析与武器化](https://www.zcgonvh.com/post/analysis_of_CVE-2020-17144_and_to_weaponizing.html)
  - [CVE-2020-17144 zcgonvh github exp](https://github.com/zcgonvh/CVE-2020-17144)
  - [Exchange2010 authorized RCE](https://github.com/Airboi/CVE-2020-17144-EXP)
+ - [CVE-2020-17144 : Microsoft Exchange Server EWS Insecure Deserialization](https://www.keysight.com/blogs/tech/nwvs/2022/03/10/cve-2020-17144-microsoft-exchange-server-ews-insecure-deserialization)
+ - [【超详细】Microsoft Exchange 远程代码执行漏洞复现【CVE-2020-17144】](https://mp.weixin.qq.com/s?__biz=MzU5NjA0ODAyNg==&mid=2247484324&idx=1&sn=f3c8e8b37386e4ca8e7d65ed059ba0c4&chksm=fe69e251c91e6b476a26d5296152153b5d279d61cc78a6abf91001fd1d15d50f18c3944c884a&scene=126&sessionid=1608521158&key=032c59c0a43519d159f58e3ddbdf9a4f22f4b5f6de472ffb622cc9bbb5922e25bf20bf89928225fb7094f5ec307fcf3db24d356336d7081b3146a18a8508ac16589d79c3e6ef43d31ce8d1d05e5a6cb97aa87121903c9115f3b5ecfe85a23089a7c2fd9def86e59614a2b466d1187d87cd65edbe87e40fa2f3587c3d1f2b47b4&ascene=1&uin=MjExMzQ5OTU0NA%3D%3D&devicetype=Windows+10+x64&version=6300002f&lang=zh_CN&exportkey=A%2FMi0SWv7TyhMLihi1rfRe8%3D&pass_ticket=nGG1z%2BnLMzm8%2F%2FVIQpbkOytO59crshu1nx6DmKyMbxjesQ8ypSPy6YiXuyKi9boi&wx_header=0)
 
+ - 影响exchange系统版本信息
 
+``` bash
+Microsoft Exchange Server 2010 Service Pack 3 Update Rollup 31
+```
 
+ - 网上有很多成熟武器化exp工具和分析文章，这里不再重复复现
 
-
-
-
-
-
-
-
-
-
-# CVE-2021-24085
+# CVE-2021-24085 ()
 ## CVE-2021-24085 part links
 
  - [Hunting Down MS Exchange Attacks. Part 2 (CVE-2020–0688, CVE-2020–16875, CVE-2021–24085)](https://bi-zone.medium.com/hunting-down-ms-exchange-attacks-part-2-cve-2020-0688-cve-2020-16875-cve-2021-24085-8355ec0917c)
+ - [Microsoft Exchange Server msExchEcpCanary Cross Site Request Forgery Elevation of Privilege Vulnerability](https://github.com/sourceincite/CVE-2021-24085)
+
+ - 影响exchange系统版本信息
+
+``` bash
+microsoft:exchange_server:2016:cumulative_update_18
+microsoft:exchange_server:2016:cumulative_update_19
+microsoft:exchange_server:2019:cumulative_update_7
+microsoft:exchange_server:2019:cumulative_update_8
+```
 
 
 
-# CVE-2021-28482
+
+
+# CVE-2021-28482 ()
 ## CVE-2021-28482 part links
 
 

