@@ -1,5 +1,7 @@
 # Proxy-Attackchain
 
+> **阅读定位：Exchange Server 历史安全资料汇编。** 如果是为维护自己的环境阅读，建议先从[防御阅读说明](DEFENSIVE-NOTES.md)核对资产清单、更新基线和日志保留。汇编包含不同来源的资料，历史记录不能代替当前的供应商公告。
+
 proxylogon & proxyshell & proxyoracle & proxytoken & all exchange server history vulns summarization :)
 
 1. ProxyLogon: The most well-known and impactful Exchange exploit chain
